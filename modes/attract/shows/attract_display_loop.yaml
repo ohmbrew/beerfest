@@ -41,7 +41,7 @@
             duration: .5s
             repeat: false
       - type: Text
-        text: FREE PLAY
+        text: FREE PLAY!
         font_size: 50
         color: green
         y: 10
