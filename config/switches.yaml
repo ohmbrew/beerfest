@@ -1,0 +1,155 @@
+#config_version=5
+
+switches:
+  # Upper Switch PCB: A0
+  # Bank A (A0-B0)
+  s_drinko_d:
+    number: A0-B0-0
+  s_drinko_r:
+    number: A0-B0-1
+  s_drinko_i:
+    number: A0-B0-2
+  s_drinko_n:
+    number: A0-B0-3
+  s_drinko_k:
+    number: A0-B0-4
+  s_drinko_o:
+    number: A0-B0-5
+  s_drinko_bang:
+    number: A0-B0-6
+  s_plunger_lane_exit:
+    number: A0-B0-7
+    type: NC
+    tags: playfield_active
+  # Bank B (A0-B1)
+  s_pongcup1:
+    number: A0-B1-0
+    type: NC
+  s_pongcup2:
+    number: A0-B1-1
+    type: NC
+  s_popbumper_lower:
+    number: A0-B1-2
+  s_popbumper_upper_left:
+    number: A0-B1-3
+  s_popbumper_upper_right:
+    number: A0-B1-4
+  s_flipper_left:
+    number: A0-B1-5
+    tags: flipper_left
+  s_flipper_right:
+    number: A0-B1-6
+    tags: flipper_right
+  s_start:
+    number: A0-B1-7
+    tags: start
+  
+  # Left Switch PCB (A1)
+  # Bank A (A1-B0)
+  s_drain:
+    number: A1-B0-0
+  s_slingshot_left:
+    number: A1-B0-1
+  s_laneleft_inner:
+    number: A1-B0-2
+  s_laneleft_outer:
+    number: A1-B0-3
+  s_slingshot_quarters:
+    number: A1-B0-4
+  s_quarters:
+    number: A1-B0-5
+  s_take_hit:
+    number: A1-B0-6
+    type: NC
+  s_chug_beer:
+    number: A1-B0-7
+    type: NC
+  # Bank B (A1-B1)
+  s_diverter:
+    number: A1-B1-0
+    type: NC
+  s_tavern_exit:
+    number: A1-B1-1
+    type: NC
+  s_tavern_spinner:
+    number: A1-B1-2
+    tags: playfield_active
+  s_kicker_rimrules:
+    number: A1-B1-3
+    ignore_window_ms: 500
+  s_do_shot:
+    number: A1-B1-4
+    type: NC
+  s_tgt_ramp_boot:
+    number: A1-B1-5
+  s_target_rimrules:
+    number: A1-B1-6
+  s_orbit_entry:
+    number: A1-B1-7
+
+  # Right Switch PCB (A2)
+  # Bank A (A2-B0)
+  s_trojankeg_left:
+    number: A2-B0-0
+    tags: playfield_active
+  s_trojankeg_middle:
+    number: A2-B0-1
+    tags: playfield_active
+  s_trojankeg_right:
+    number: A2-B0-2
+    tags: playfield_active
+  s_kicker_mode:
+    number: A2-B0-3
+    ignore_window_ms: 500
+    type: NC
+  s_chance: 
+    number: A2-B0-4
+    tags: playfield_active
+  s_special:
+    number: A2-B0-5
+  s_ramp_drinko:
+    number: A2-B0-6
+    type: NC
+  s_orbit_exit:
+    number: A2-B0-7
+  # Bank B (A2-B1)
+  s_slingshot_right:
+    number: A2-B1-0
+  s_laneright_inner:
+    number: A2-B1-1
+  s_laneright_outer:
+    number: A2-B1-2
+  s_trough3:
+    number: A2-B1-3
+    type: NC
+  s_trough1:
+    number: A2-B1-4
+    type: NC
+  s_trough2:
+    number: A2-B1-5
+    type: NC
+  
+
+  s_trough_eject:
+    number: A2-B1-6
+  s_plunger_lane:
+    number: A2-B1-7
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,290 @@
+#config_version=5
+
+lights:
+  # Drinko (7xRGB, J5/J9)
+  drinko_n:
+    start_channel: 1-250
+    type: grb
+    tags: strip
+  drinko_i:
+    previous: drinko_n
+    type: grb
+    tags: strip
+  drinko_r:
+    previous: drinko_i
+    type: grb
+    tags: strip
+  drinko_d:
+    previous: drinko_r
+    type: grb
+    tags: strip
+  drinko_k:
+    previous: drinko_d
+    type: grb
+    tags: strip
+  drinko_o:
+    previous: drinko_k
+    type: grb
+    tags: strip
+  drinko_bang:
+    previous: drinko_o
+    type: grb
+    tags: strip
+  
+  arrow_orbit1:
+    previous: drinko_bang
+    type: grb
+    tags: strip
+  arrow_orbit2:
+    previous: arrow_orbit1
+    type: grb
+    tags: strip
+  arrow_orbit3:
+    previous: arrow_orbit2
+    type: grb
+    tags: strip
+  arrow_rimrules1:
+    previous: arrow_orbit3
+    type: grb
+    tags: strip
+  arrow_rimrules2:
+    previous: arrow_rimrules1
+    type: grb
+    tags: strip
+  arrow_rimrules3:
+    previous: arrow_rimrules2
+    type: grb
+    tags: strip
+  arrow_boot1:
+    previous: arrow_rimrules3
+    type: grb
+    tags: strip
+  arrow_boot2:
+    previous: arrow_boot1
+    type: grb
+    tags: strip
+  arrow_boot3:
+    previous: arrow_boot2
+    type: grb
+    tags: strip
+  arrow_tavern3:
+    previous: arrow_boot3
+    type: grb
+    tags: strip
+  arrow_tavern2:
+    previous: arrow_tavern3
+    type: grb
+    tags: strip
+  arrow_tavern1:
+    previous: arrow_tavern2
+    type: grb
+    tags: strip
+  
+  strikeout_shot:
+    previous: arrow_tavern1
+    type: grb
+    tags: strip
+  strikeout_beer:
+    previous: strikeout_shot
+    type: grb
+    tags: strip
+  strikeout_bong:
+    previous: strikeout_beer
+    type: grb
+    tags: strip
+    
+  quarters:
+    previous: strikeout_bong
+    type: grb
+    tags: strip
+
+  slingquarters_upper:
+    previous: quarters
+    type: grb
+    tags: strip
+  slingquarters_lower:
+    previous: slingquarters_upper
+    type: grb
+    tags: strip
+
+  lane_left_outer:
+    previous: slingquarters_lower
+    type: grb
+    tags: strip
+  lane_left_inner:
+    previous: lane_left_outer
+    type: grb
+    tags: strip
+
+  slingleft_upper:
+    previous: lane_left_inner
+    type: grb
+    tags: strip
+  slingleft_lower:
+    previous: slingleft_upper
+    type: grb
+    tags: strip
+
+  flipper_left:
+    previous: slingleft_lower
+    type: grb
+    tags: strip
+
+
+  
+
+  # BeerMug lights are tagged so that mug mode can efficiently turn on sets of lights corresponding to how many count_events
+  # have happened. After some # of hit events, the qualify mode will be available
+  beermug7:
+    previous: flipper_left
+    type: grb
+    tags: strip, mugfill7
+  beermug6:
+    previous: beermug7
+    type: grb
+    tags: strip, mugfill6, mugfill7
+  beermug5:
+    previous: beermug6
+    type: grb
+    tags: strip, mugfill5, mugfill6, mugfill7
+  beermug4:
+    previous: beermug5
+    type: grb
+    tags: strip, mugfill4, mugfill5, mugfill6, mugfill7
+  beermug3:
+    previous: beermug4
+    type: grb
+    tags: strip, mugfill3, mugfill4, mugfill5, mugfill6, mugfill7
+  beermug2:
+    previous: beermug3
+    type: grb
+    tags: strip, mugfill2, mugfill3, mugfill4, mugfill5, mugfill6, mugfill7
+  beermug1:
+    previous: beermug2
+    type: grb
+    tags: strip, mugfill1, mugfill2, mugfill3, mugfill4, mugfill5, mugfill6, mugfill7
+  
+  ball_save:
+    previous: beermug1
+    type: grb
+    tags: strip
+
+  flipper_right:
+    previous: ball_save
+    type: grb
+    tags: strip
+  slingright_lower:
+    previous: flipper_right
+    type: grb
+    tags: strip
+  slingright_upper:
+    previous: slingright_lower
+    type: grb
+    tags: strip
+
+  lane_right_inner:
+    previous: slingright_upper
+    type: grb
+    tags: strip
+  lane_right_outer:
+    previous: lane_right_inner
+    type: grb
+    tags: strip
+
+  special:
+    previous: lane_right_outer
+    type: grb
+    tags: strip
+  chance:
+    previous: special
+    type: grb
+    tags: strip
+
+  arrow_mode1:
+    previous: chance
+    type: grb
+    tags: strip
+  arrow_mode2:
+    previous: arrow_mode1
+    type: grb
+    tags: strip
+  arrow_mode3:
+    previous: arrow_mode2
+    type: grb
+    tags: strip
+  arrow_drinko1:
+    previous: arrow_mode3
+    type: grb
+    tags: strip
+  arrow_drinko2:
+    previous: arrow_drinko1
+    type: grb
+    tags: strip
+  arrow_drinko3:
+    previous: arrow_drinko2
+    type: grb
+    tags: strip
+
+  trojankeg_right:
+    previous: arrow_drinko3
+    type: grb
+    tags: strip
+  trojankeg_middle:
+    previous: trojankeg_right
+    type: grb
+    tags: strip
+  trojankeg_left:
+    previous: trojankeg_middle
+    type: grb
+    tags: strip
+
+  balls_locked3:
+    previous: trojankeg_left
+    type: grb
+    tags: strip
+  balls_locked2:
+    previous: balls_locked3
+    type: grb
+    tags: strip
+  balls_locked1:
+    previous: balls_locked2
+    type: grb
+    tags: strip
+
+  drinko_bonus3:
+    previous: balls_locked1
+    type: grb
+    tags: strip
+  drinko_bonus2:
+    previous: drinko_bonus3
+    type: grb
+    tags: strip
+  drinko_bonus1:
+    previous: drinko_bonus2
+    type: grb
+    tags: strip
+
+  mode_dasboot:
+    previous: drinko_bonus1
+    type: grb
+    tags: strip
+  mode_volumechug:
+    previous: mode_dasboot
+    type: grb
+    tags: strip
+  mode_longpour:
+    previous: mode_volumechug
+    type: grb
+    tags: strip
+  mode_quarters:
+    previous: mode_longpour
+    type: grb
+    tags: strip
+  mode_strikeout:
+    previous: mode_quarters
+    type: grb
+    tags: strip
+  mode_trojankeg:
+    previous: mode_strikeout
+    type: grb
+    tags: strip

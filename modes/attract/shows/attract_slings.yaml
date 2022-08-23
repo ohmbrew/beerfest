@@ -1,0 +1,18 @@
+#show_version=5
+- time: 0
+  lights:
+    slingleft_upper: on
+    slingleft_lower: off
+    slingright_upper: off
+    slingright_lower: on
+    slingquarters_upper: off
+    slingquarters_lower: on
+- time: '+1'
+  lights:
+    slingleft_upper: off
+    slingleft_lower: on
+    slingright_upper: on
+    slingright_lower: off
+    slingquarters_upper: white
+    slingquarters_lower: off
+    

@@ -1,0 +1,54 @@
+#config_version=5
+##! mode: quarters
+
+mode:
+  start_events: start_mode_quarters
+  stop_events: stop_mode_quarters, stop_missions, timer_round_timer_quarters_stopped   # end round when timer stops
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+  priority: 300
+
+sound_player:
+  mode_quarters_started:
+    voice_quarters_intro:
+      action: play
+      events_when_stopped: kicker_mode_eject
+
+shows:
+  flash_quarters_insert:
+    - time: 0
+      lights:
+        mode_quarters:
+          color: red
+          fade: .1s
+    - time: '+1'
+      lights:
+        mode_quarters: 
+          color: white
+          fade: .1s
+    - time: '+1'
+      lights:
+        mode_quarters:
+          color: blue
+          fade: .1s
+
+show_player:
+  kicker_mode_eject:
+    flash_quarters_insert:
+      speed: 4
+
+# timed round
+timers:
+  round_timer_quarters:
+    start_value: 5
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: kicker_mode_eject
+
+variable_player:
+  mode_quarters_started:
+    has_quarters:
+      action: set
+      int: 1

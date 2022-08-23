@@ -1,0 +1,43 @@
+#config_version=5
+
+show_player:
+  mode_attract_started:
+    attract_init_lights:
+      loops: 0
+  mode_attract_started.1:
+    attract_display_loop:
+      loops: -1
+  mode_attract_started.2:
+    attract_drinko:
+      loops: -1
+      speed: 4
+  mode_attract_started.3:
+    attract_beermug:
+      loops: -1
+      speed: 5
+  mode_attract_started.4:
+    attract_outerlights:
+      loops: -1
+      speed: 7
+  mode_attract_started.5:
+    attract_trojankeg:
+      loops: -1
+      speed: 1
+  mode_attract_started.6:
+    attract_slings:
+      loops: -1
+      speed: 2
+  mode_attract_started.7:
+    attract_arrows:
+      loops: -1
+      speed: 2   
+  mode_attract_started.8:
+    attract_bonuslocked:
+      loops: -1
+      speed: 4
+  mode_attract_started.9:
+    attract_modes:
+      loops: -1
+
+
+

@@ -1,0 +1,265 @@
+#config_version=5
+
+hardware:
+  platform: p3_roc
+  driverboards: pdb
+  servo_controllers: pololu_maestro
+
+pololu_maestro:
+  port: /dev/ttyACM0  # lower ttyACMX is the USB command port, higher one is for TTL serial port. We use lower.
+  servo_min: 2300
+  servo_max: 9700
+
+displays:
+  window:
+    width: 1800
+    height: 1024
+
+config:
+  - lights.yaml
+  - coils.yaml
+  - switches.yaml
+  - sounds.yaml
+
+modes:
+  - base
+  - global
+  - field
+  - longpour
+  - quarters
+  - strikeout
+
+player_vars:
+  current_mode:
+    initial_value: Normal
+    value_type: str
+  num_drinko_bonus:
+    initial_value: 0
+    value_type: int
+  has_longpour:
+    initial_value: 0
+    value_type: int
+  has_quarters:
+    initial_value: 0
+    value_type: int
+  has_strikeout:
+    initial_value: 0
+    value_type: int
+  has_volumechug:
+    initial_value: 0
+    value_type: int
+  has_trojankeg:
+    initial_value: 0
+    value_type: int
+  has_dasboot:
+    initial_value: 0
+    value_type: int
+
+slides:
+  welcome_slide:
+    widgets:
+      - type: text
+        text: PINBALL!
+        font_size: 100
+        color: red
+      - type: rectangle
+        width: 500
+        height: 200
+
+#slide_player:
+#  init_done: welcome_slide
+
+keyboard:
+  z:
+    switch: s_left_flipper
+  m:
+    switch: s_right_flipper
+  s:
+    switch: s_start
+  k:
+    switch: s_kicker_mode
+  p:
+    switch: s_popbumper_upper
+  t:
+    switch: s_trough_eject
+
+# documentation: https://docs.missionpinball.org/en/latest/hardware/multimorphic/leds.html
+p_roc:
+  pd_led_boards:
+    1:
+      use_ws281x_1: true
+      ws281x_1_last_address: 599
+
+# pinball.org/en/latest/hardware/multimorphic/servos.html
+#p_roc:
+#  pd_led_boards:
+#    2:
+#      max_servo_value: 290  # roughly maps to 2ms
+#      use_servo_10: trudmesge
+      #use_servo_11: true
+
+servos:
+  servo_diverter:
+    number: 5
+    servo_min: 0.35       # 1105 us, far right
+    servo_max: 0.55       # 1480 us, far left
+    positions:
+      1.0: diverter_left
+      0.0: diverter_right  
+    reset_position: 0.0
+    reset_events: mode_attract_started
+    debug: true
+  servo_pongtable:
+    number: 3
+    servo_min: 0.03
+    servo_max: 1.0
+    positions:
+      0.0: pongcup_1
+      1.0: pongcup_2
+      #0.0: pongcup_2
+      #1.0: pongcup_1
+    reset_position: 1.0
+    reset_events: mode_attract_started
+
+sound_system:
+  tracks:
+    music:
+      type: standard
+      simultaneous_sounds: 1
+      volume: 1.0
+    voice:
+      type: standard
+      simultaneous_sounds: 4
+      volume: 1.0
+    sfx:
+      type: standard
+      simultaneous_sounds: 8
+      volume: 1.0
+assets:
+  sounds:
+    default:
+      load: on_demand
+    music:
+      track: music
+    sfx:
+      track: sfx
+    voice:
+      track: voice
+  videos:
+    beerfest_intro1:
+      file: BeerfestIntro.mp4
+
+
+sound_player:
+  mode_attract_started:
+    intro:
+      action: play
+      loops: 0
+      events_when_stopped: intro_complete
+  intro_complete:
+    introrepeat:
+      action: play
+      loops: -1
+  mode_attract_stopped:
+    intro:
+      action: stop
+    introrepeat:
+      action: stop
+  game_started:
+    intro:
+      action: stop
+    introrepeat:
+      action: play
+      track: music
+      loops: -1
+      volume: .5
+
+drop_targets:
+  take_hit:
+    switch: s_take_hit
+  chug_beer:
+    switch: s_chug_beer
+  do_shot:
+    switch: s_do_shot
+drop_target_banks:
+  strike_out_bank:
+    drop_targets: take_hit, chug_beer, do_shot
+    reset_coils: c_strike_out
+    reset_on_complete: 1s
+
+flippers:
+  flipper_left:
+    main_coil: c_flipper_left
+    activation_switch: s_flipper_left
+  flipper_right:
+    main_coil: c_flipper_right
+    activation_switch: s_flipper_right
+
+spinners:
+  tavern_spinner:
+    switch: s_tavern_spinner
+    active_ms: 500
+
+ball_devices:
+  bd_drain:
+    ball_switches: s_drain
+    eject_coil: c_drain_eject
+    eject_targets: bd_trough
+    eject_timeouts: 2s
+    tags: drain
+  bd_trough:
+    ball_switches: s_trough_eject, s_trough1, s_trough2, s_trough3
+    eject_coil: c_trough_eject
+    eject_targets: bd_plunger_lane
+    tags: home, trough
+    eject_timeouts: 2s
+    debug: true
+  bd_plunger_lane:
+    ball_switches: s_plunger_lane
+    eject_targets: playfield
+    mechanical_eject: true
+    eject_timeouts: 5s
+    debug: true
+  bd_kicker_mode:
+    ball_switches: s_kicker_mode
+    eject_coil: c_kicker_mode
+    eject_timeouts: 1s
+  bd_kicker_rimrules:
+    ball_switches: s_kicker_rimrules
+    eject_coil: c_kicker_rimrules
+    eject_timeouts: 1s
+  bd_pongcup1:
+    ball_switches: s_pongcup1
+    eject_coil: c_pongcup1
+    eject_timeouts: 2s
+  bd_pongcup2:
+    ball_switches: s_pongcup2
+    eject_coil: c_pongcup2
+    eject_timeouts: 2s
+
+ball_holds:
+  kicker_mode:
+    balls_to_hold: 1
+    hold_devices: bd_kicker_mode
+    release_one_events: kicker_mode_eject
+  kicker_rimrules:
+    balls_to_hold: 1
+    hold_devices: bd_kicker_rimrules
+    release_one_events: kicker_rimrules_eject
+  pongcup1:
+    balls_to_hold: 1
+    hold_devices: bd_pongcup1
+    release_one_events: multiball_release_cup1
+  pongcup2:
+    balls_to_hold: 1
+    hold_devices: bd_pongcup2
+    release_one_events: multiball_release_cup2
+
+playfields:
+  playfield:
+    tags: default
+    default_source_device: bd_plunger_lane
+
+
+
+virtual_platform_start_active_switches: s_trough_eject, s_trough1, s_trough2, s_trough3

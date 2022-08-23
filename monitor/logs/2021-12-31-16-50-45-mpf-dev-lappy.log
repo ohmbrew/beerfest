@@ -1,0 +1,5 @@
+2021-12-31 16:50:45,150 : INFO : root : Loading config.
+2021-12-31 16:50:45,154 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2021-12-31 16:50:45,155 : INFO : ConfigProcessor : Loading config from cache: /tmp/e3d97b1e476dc216c46a65be7ac8b889.mpf_cache
+2021-12-31 16:50:45,225 : INFO : ConfigProcessor : Loading config from cache: /tmp/a473e406bf52b2392dd4aa4125be698d.mpf_cache
+2021-12-31 16:50:45,226 : INFO : ConfigProcessor : Loading config from cache: /tmp/1925f851f668a1e8f8ac702a0f45b6db.mpf_cache

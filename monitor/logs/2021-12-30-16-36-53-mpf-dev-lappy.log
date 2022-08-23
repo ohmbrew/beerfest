@@ -1,0 +1,5 @@
+2021-12-30 16:36:53,197 : INFO : root : Loading config.
+2021-12-30 16:36:53,202 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2021-12-30 16:36:53,202 : INFO : ConfigProcessor : Loading config from file /home/ohm/mpfenv/lib/python3.7/site-packages/mpf/mpfconfig.yaml.
+2021-12-30 16:36:53,277 : INFO : ConfigProcessor : Loading config: /home/ohm/mpfenv/lib/python3.7/site-packages/mpf/mpfconfig.yaml
+2021-12-30 16:36:53,278 : INFO : ConfigProcessor : Loading config from file /home/ohm/projects/embedded/55-pinball/mpf-beerfest/monitor/config/config.yaml.

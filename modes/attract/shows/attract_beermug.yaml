@@ -1,0 +1,100 @@
+#show_version=5
+- time: '+4'
+  lights:
+    beermug1: on
+- time: '+1'
+  lights:
+    beermug1: off
+    beermug2: on
+- time: '+1'
+  lights:
+    beermug2: off
+    beermug3: on
+- time: '+1'
+  lights:
+    beermug3: off
+    beermug4: on
+- time: '+1'
+  lights:
+    beermug4: off
+    beermug5: on
+- time: '+1'
+  lights:
+    beermug5: off
+    beermug6: on
+- time: '+1'
+  lights:
+    beermug6: off
+    beermug7: on
+- time: '+1'
+  lights:
+    beermug6: on
+    beermug7: off
+- time: '+1'
+  lights:
+    beermug5: on
+    beermug6: off
+- time: '+1'
+  lights:
+    beermug4: on
+    beermug5: off
+- time: '+1'
+  lights:
+    beermug3: on
+    beermug4: off
+- time: '+1'
+  lights:
+    beermug2: on
+    beermug3: off
+- time: '+1'
+  lights:
+    beermug1: on
+    beermug2: off
+- time: '+1'
+  lights:
+    beermug1: on
+- time: '+1'
+  lights:
+    beermug2: on
+- time: '+1'
+  lights:
+    beermug3: on
+- time: '+1'
+  lights:
+    beermug4: on
+- time: '+1'
+  lights:
+    beermug5: on
+- time: '+1'
+  lights:
+    beermug6: on
+- time: '+1'
+  lights:
+    beermug7: on
+- time: '+1'
+  lights:
+    beermug1: on
+    beermug2: on
+    beermug3: on
+    beermug4: on
+    beermug5: on
+    beermug6: on
+    beermug7: on
+- time: '+1'
+  lights:
+    beermug7: off
+- time: '+1'
+  lights:
+    beermug6: off
+- time: '+1'
+  lights:
+    beermug5: off
+- time: '+1'
+  lights:
+    beermug4: off
+- time: '+1'
+  lights:
+    beermug3: off
+- time: '+1'
+  lights:
+    beermug2: off

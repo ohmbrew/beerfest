@@ -1,0 +1,65 @@
+#show_version=5
+- time: 0
+  lights:
+    strikeout_shot: red
+    strikeout_beer: off
+    strikeout_bong: off
+    quarters: off
+    lane_left_outer: off
+    lane_left_inner: off
+    lane_right_inner: off
+    lane_right_outer: off
+    special: off
+    chance: off   
+- time: '+1'
+  lights:
+    strikeout_shot: off
+    strikeout_beer: white
+- time: '+1'
+  lights:
+    strikeout_beer: off
+    strikeout_bong: white
+- time: '+1'
+  lights:
+    strikeout_bong: off
+    quarters: white
+- time: '+1'
+  lights:
+    quarters: off
+    lane_left_outer: white
+- time: '+1'
+  lights:
+    lane_left_outer: off
+    lane_left_inner: white
+
+- time: '+1'
+  lights:
+    lane_left_inner: off
+    flipper_left: white
+
+- time: '+1'
+  lights:
+    flipper_left: off
+    ball_save: red
+
+- time: '+1'
+  lights:
+    ball_save: off
+    flipper_right: white
+
+- time: '+1'
+  lights:
+    flipper_right: off
+    lane_right_inner: white
+- time: '+1'
+  lights:
+    lane_right_inner: off
+    lane_right_outer: white
+- time: '+1'
+  lights:
+    lane_right_outer: off
+    special: white
+- time: '+1'
+  lights:
+    special: off
+    chance: white 

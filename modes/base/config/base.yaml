@@ -1,0 +1,417 @@
+#config_version=5
+##! mode: base
+
+mode:
+  start_events: ball_started
+  priority: 100
+
+event_player:
+  mode_base_started:
+    - start_mode_global
+    - initialize_drinko_bonus
+  mode_base_will_stop:
+    - stop_mode_global
+  mode_type_wizard_started:
+    - stop_mode_global
+  mode_type_wizard_stopped{not mode["base"].stopping}:
+    - start_mode_global
+  shot_drinko_d_hit:
+    sp_drinko_d
+  shot_drinko_r_hit:
+    sp_drinko_r
+  shot_drinko_i_hit:
+    sp_drinko_i
+  shot_drinko_n_hit:
+    sp_drinko_n
+  shot_drinko_k_hit:
+    sp_drinko_k
+  shot_drinko_o_hit:
+    sp_drinko_o
+  shot_drinko_bang_hit:
+    sp_drinko_bang
+  award_drinko_bonus{(not device.achievement_groups.drinko_bonus.enabled) and device.achievements.drinko_bonus3.state=="completed"}:
+    - sp_drinko_bonus   # play show here because it won't be played in the achievements section
+    - drinko_hammered   # award pts here cuz it won't be awarded in achievements section anymore
+
+slide_player:
+  mode_base_started:
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 100
+      - type: text
+        text: PLAYER (number)
+        y: 10
+        x: 10
+        font_size: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: text
+        text: BALL (ball)
+        y: 10
+        x: right-10
+        anchor_x: right
+        anchor_y: bottom
+        font_size: 50
+
+accruals:
+  drinko_bonus_accrual:
+    events:
+      - shot_drinko_d_hit
+      - shot_drinko_r_hit
+      - shot_drinko_i_hit
+      - shot_drinko_n_hit
+      - shot_drinko_k_hit
+      - shot_drinko_o_hit
+      - shot_drinko_bang_hit
+    events_when_complete: award_drinko_bonus
+    reset_on_complete: true
+    disable_on_complete: false
+
+# shows to light lights when drinko sensor has been hit
+shows:
+  show_light_d:
+    - time: 0
+      lights:
+        drinko_d: green
+    - duration: -1
+  show_light_r:
+    - time: 0
+      lights:
+        drinko_r: green
+    - duration: -1
+  show_light_i:
+    - time: 0
+      lights:
+        drinko_i: green
+    - duration: -1
+  show_light_n:
+    - time: 0
+      lights:
+        drinko_n: green
+    - duration: -1
+  show_light_k:
+    - time: 0
+      lights:
+        drinko_k: green
+    - duration: -1
+  show_light_o:
+    - time: 0
+      lights:
+        drinko_o: green
+    - duration: -1
+  show_light_bang:
+    - time: 0
+      lights:
+        drinko_bang: green
+    - duration: -1
+  show_drinko_bonus:
+    - time: 0
+      lights:
+        (drinko_bonus): on
+      shows:
+        bonus_drinko_show:
+          speed: 4
+          loops: 0
+      events: (enable_drinkoX)
+    - duration: -1
+  show_drinko_hammered:
+    - time: 0
+      lights:
+        drinko_bonus3: on
+    - time: '+1'
+      lights:
+        drinko_bonus3: off
+  show_longpour_insert:
+    - time: 0
+      lights:
+        mode_longpour: green
+    - duration: -1
+  show_quarters_insert:
+    - time: 0
+      lights:
+        mode_quarters: green
+    - duration: -1
+  show_strikeout_insert:
+    - time: 0
+      lights:
+        mode_strikeout: green
+    - duration: -1
+  show_volumechug_insert:
+    - time: 0
+      lights:
+        mode_volumechug: green
+    - duration: -1
+  show_trojankeg_insert:
+    - time: 0
+      lights:
+        mode_trojankeg: green
+    - duration: -1
+  show_dasboot_insert:
+    - time: 0
+      lights:
+        mode_dasboot: green
+    - duration: -1
+  show_ball_save:
+    - time: 0
+      lights:
+        (light): (on_color)
+    - time: '+1'
+      lights:
+        (light): (off_color)
+
+sound_player:
+  award_drinko_bonus:
+    voice_notthatdrunk:
+      action: play
+
+show_player:
+  sp_drinko_d:
+    show_light_d
+  sp_drinko_r:
+    show_light_r
+  sp_drinko_i:
+    show_light_i
+  sp_drinko_n:
+    show_light_n
+  sp_drinko_k:
+    show_light_k
+  sp_drinko_o:
+    show_light_o
+  sp_drinko_bang:
+    show_light_bang
+  sp_drinko_bonus:
+    show_drinko_bonus
+  drinko_hammered:
+    show_drinko_hammered:
+      speed: 4
+  mode_longpour_stopped{current_player.has_longpour}: show_longpour_insert
+  mode_quarters_stopped{current_player.has_quarters}: show_quarters_insert
+  mode_strikeout_stopped{current_player.has_strikeout}: show_strikeout_insert
+  ball_save_ball_save_ball_save_timer_start:
+    show_ball_save:
+      show_tokens:
+        light: ball_save
+        on_color: green
+        off_color: off
+      speed: 2
+  ball_save_ball_save_ball_save_hurry_up:
+    show_ball_save:
+      show_tokens:
+        light: ball_save
+        on_color: green
+        off_color: off
+      speed: 4
+  ball_save_ball_save_ball_save_disabled:
+    show_ball_save:
+      show_tokens:
+        light: ball_save
+        on_color: off
+        off_color: off
+
+ball_saves:
+  ball_save_ball_save:
+    active_time: 10s
+    hurry_up_time: 3s
+    timer_start_events: playfield_active
+    auto_launch: false
+    balls_to_save: 1
+    debug: true
+
+achievements:
+  drinko_bonus1:
+    show_tokens:
+      drinko_bonus: drinko_bonus1
+      enable_drinkoX: enable_drinko_bonus2
+    show_when_completed: show_drinko_bonus         
+    enable_events: initialize_drinko_bonus
+    complete_events: award_drinko_bonus
+    reset_events: reset_drinko_bonus
+  drinko_bonus2:
+    show_tokens:
+      drinko_bonus: drinko_bonus2
+      enable_drinkoX: enable_drinko_bonus3
+    show_when_completed: show_drinko_bonus         
+    enable_events: enable_drinko_bonus2
+    complete_events: award_drinko_bonus
+    reset_events: reset_drinko_bonus
+  drinko_bonus3:
+    show_tokens:
+      drinko_bonus: drinko_bonus3
+    show_when_completed: show_drinko_bonus         
+    enable_events: enable_drinko_bonus3
+    complete_events: award_drinko_bonus
+    reset_events: reset_drinko_bonus
+
+achievement_groups:
+  drinko_bonus:
+    achievements:
+      - drinko_bonus1
+      - drinko_bonus2
+      - drinko_bonus3
+    auto_select: yes
+    start_selected_events: award_drinko_bonus
+    enable_while_no_achievement_started: false
+    enable_events: initialize_drinko_bonus
+    events_when_all_completed: drinko_hammered
+
+# using a state machine to track diverter servo state. The shot_diverter_hit event (triggered by RampSplit opto) transitions the
+# state machine to the other state. On mode_attract_started, the diverter is pointed right, which will make the ball go down the
+# left ramp first. On first shot_diverter_hit, we move from start to diverter_right_ramp (moving diverter left). And then it
+# toggles back and forth from left and right ramp after that.
+state_machines:
+  diverter_state_machine:
+    persist_state: true
+    states:
+      start:
+        label:
+      diverter_rightramp:
+        label: Right Wire Ramp!
+        show_when_active:
+          show: diverter_show
+          show_tokens:
+            dir: left    # using the diverter_show with a token. send 'left' to send diverter servo to left (right ramp now active)
+          loops: 0
+      diverter_leftramp:
+        label: Left Wire Ramp!
+        show_when_active:
+          show: diverter_show
+          show_tokens:
+            dir: right    # using the diverter_show with a token. send 'right' to send diverter servo to right (left ramp now active)
+          loops: 0
+    transitions:
+      - source: start
+        target: diverter_rightramp
+        events: shot_diverter_hit
+      - source: diverter_rightramp
+        target: diverter_leftramp
+        events: shot_diverter_hit
+      - source: diverter_leftramp
+        target: diverter_rightramp
+        events: shot_diverter_hit
+  
+  pongtable_state_machine:
+    persist_state: true
+    states:
+      start:
+        label:
+      pongtable_cup1:
+        label: PongTable Cup 1 Active
+        show_when_active:
+          show: pongtable_show
+          show_tokens:
+            cup: 1
+          loops: 0
+      pongtable_cup2:
+        label: PongTable Cup 2 Active
+        show_when_active:
+          show: pongtable_show
+          show_tokens:
+            cup: 2
+          loops: 0
+    transitions:
+      - source: start
+        target: pongtable_cup1
+        events: mode_attract_started
+      - source: pongtable_cup1
+        target: pongtable_cup2
+        events: shot_pongcup1_hit
+      - source: pongtable_cup2
+        target: pongtable_cup1
+        events: shot_pongcup2_hit
+
+variable_player:
+  shot_trojankeg_left_hit:
+    score: 1000
+  shot_trojankeg_middle_hit:
+    score: 1000
+  shot_trojankeg_right_hit:
+    score: 1000  
+  shot_popbumper_lower_hit:
+    score: 1000
+  shot_popbumper_upper_right_hit:
+    score: 1000
+  shot_popbumper_upper_left_hit:
+    score: 1000
+  shot_chance_hit:
+    score: 20000
+  shot_take_hit_hit:
+    score: 50000
+  shot_chug_beer_hit:
+    score: 50000
+  shot_do_shot_hit:
+    score: 50000
+  shot_quarters_hit:
+    score: 25000
+  shot_tavern_spinner_hit:
+    score: 100
+  enable_drinko_bonus2:
+    score: 100000   # means we got bonus1
+  enable_drinko_bonus3:
+    score: 200000   # means we got bonus2
+  drinko_hammered:
+    score: 1000000
+
+  #s_tavern_spinner_active:
+  #  spinner_rotations: 1
+
+#counters:
+#  spinner_rotations:
+#    count_events: spinner_tavern_spinner_hit
+#    count_complete_value: 10
+
+shots:
+  shot_plunger_lane_exit:
+    switch: s_plunger_lane_exit
+  shot_popbumper_lower:
+    switch: s_popbumper_lower
+  shot_popbumper_upper_right:
+    switch: s_popbumper_upper_right
+  shot_popbumper_upper_left:
+    switch: s_popbumper_upper_left
+  shot_trojankeg_left:
+    switch: s_trojankeg_left
+  shot_trojankeg_middle:
+    switch: s_trojankeg_middle
+  shot_trojankeg_right:
+    switch: s_trojankeg_right
+  shot_chance:
+    switch: s_chance
+  shot_take_hit:
+    switch: s_take_hit
+  shot_chug_beer:
+    switch: s_chug_beer
+  shot_do_shot:
+    switch: s_do_shot
+  shot_kicker_rimrules:
+    switch: s_kicker_rimrules
+  shot_kicker_mode:
+    switch: s_kicker_mode
+  shot_quarters:
+    switch: s_quarters
+  shot_tavern_spinner:
+    switch: s_tavern_spinner
+  shot_pongcup1:
+    switch: s_pongcup1
+  shot_pongcup2:
+    switch: s_pongcup2
+  shot_diverter:
+    switch: s_diverter
+  shot_drinko_d:
+    switch: s_drinko_d
+  shot_drinko_r:
+    switch: s_drinko_r
+  shot_drinko_i:
+    switch: s_drinko_i
+  shot_drinko_n:
+    switch: s_drinko_n
+  shot_drinko_k:
+    switch: s_drinko_k
+  shot_drinko_o:
+    switch: s_drinko_o
+  shot_drinko_bang:
+    switch: s_drinko_bang  
+
+

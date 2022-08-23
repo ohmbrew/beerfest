@@ -1,0 +1,49 @@
+#show_version=5
+- time: '+1'
+  lights:
+    balls_locked1: on
+    drinko_bonus3: on
+- time: '+1'
+  lights:
+    balls_locked1: off
+    drinko_bonus3: off
+    balls_locked2: on
+    drinko_bonus2: on
+- time: '+1'
+  lights:
+    balls_locked2: off
+    drinko_bonus2: off
+    balls_locked3: on
+    drinko_bonus1: on
+- time: '+1'
+  lights:
+    balls_locked3: off
+    drinko_bonus1: off
+    balls_locked2: on
+    drinko_bonus2: on
+- time: '+1'
+  lights:
+    balls_locked2: off
+    drinko_bonus2: off
+    balls_locked1: on
+    drinko_bonus3: on
+- time: '+1'
+  lights:
+    balls_locked2: on
+    drinko_bonus2: on
+- time: '+1'
+  lights:
+    balls_locked3: on
+    drinko_bonus1: on
+- time: '+1'
+  lights:
+    balls_locked1: off
+    drinko_bonus3: off
+- time: '+1'
+  lights:
+    balls_locked2: off
+    drinko_bonus2: off
+- time: '+1'
+  lights:
+    balls_locked3: off
+    drinko_bonus1: off   

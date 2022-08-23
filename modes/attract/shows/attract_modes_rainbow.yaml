@@ -1,0 +1,121 @@
+#show_version=5
+- time: '+1'
+  lights:
+    mode_longpour:
+      color: red
+      fade: .25s
+    mode_quarters:
+      color: red
+      fade: .25s
+    mode_strikeout: 
+      color: red
+      fade: .25s
+    mode_volumechug: 
+      color: red
+      fade: .25s
+    mode_trojankeg: 
+      color: red
+      fade: .25s
+    mode_dasboot: 
+      color: red
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_longpour: 
+      color: orange
+      fade: .25s
+    mode_quarters: 
+      color: orange
+      fade: .25s
+    mode_strikeout: 
+      color: orange
+      fade: .25s
+    mode_volumechug: 
+      color: orange
+      fade: .25s
+    mode_trojankeg: 
+      color: orange
+      fade: .25s
+    mode_dasboot: 
+      color: orange
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_longpour: 
+      color: yellow
+      fade: .25s
+    mode_quarters: 
+      color: yellow
+      fade: .25s
+    mode_strikeout: 
+      color: yellow
+      fade: .25s
+    mode_volumechug: 
+      color: yellow
+      fade: .25s
+    mode_trojankeg: 
+      color: yellow
+      fade: .25s
+    mode_dasboot: 
+      color: yellow
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_longpour: 
+      color: green
+      fade: .25s
+    mode_quarters: 
+      color: green
+      fade: .25s
+    mode_strikeout: 
+      color: green
+      fade: .25s
+    mode_volumechug: 
+      color: green
+      fade: .25s
+    mode_trojankeg: 
+      color: green
+      fade: .25s
+    mode_dasboot: 
+      color: green
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_longpour: 
+      color: blue
+      fade: .25s
+    mode_quarters: 
+      color: blue
+      fade: .25s
+    mode_strikeout: 
+      color: blue
+      fade: .25s
+    mode_volumechug: 
+      color: blue
+      fade: .25s
+    mode_trojankeg: 
+      color: blue
+      fade: .25s
+    mode_dasboot: 
+      color: blue
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_longpour: 
+      color: purple
+      fade: .25s
+    mode_quarters: 
+      color: purple
+      fade: .25s
+    mode_strikeout: 
+      color: purple
+      fade: .25s
+    mode_volumechug: 
+      color: purple
+      fade: .25s
+    mode_trojankeg: 
+      color: purple
+      fade: .25s
+    mode_dasboot: 
+      color: purple
+      fade: .25s

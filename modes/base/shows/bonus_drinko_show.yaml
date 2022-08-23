@@ -1,0 +1,92 @@
+#show_version=5
+- time: 0
+  lights:
+    drinko_d: red
+    drinko_r: red
+    drinko_i: red
+    drinko_n: red
+    drinko_k: red
+    drinko_o: red
+    drinko_bang: red
+- time: '+1'
+  lights:
+    drinko_d: white
+    drinko_r: white
+    drinko_i: white
+    drinko_n: white
+    drinko_k: white
+    drinko_o: white
+    drinko_bang: white
+- time: '+1'
+  lights:
+    drinko_d: blue
+    drinko_r: blue
+    drinko_i: blue
+    drinko_n: blue
+    drinko_k: blue
+    drinko_o: blue
+    drinko_bang: blue
+- time: '+1'
+  lights:
+    drinko_d: red
+    drinko_r: red
+    drinko_i: red
+    drinko_n: red
+    drinko_k: red
+    drinko_o: red
+    drinko_bang: red
+- time: '+1'
+  lights:
+    drinko_d: white
+    drinko_r: white
+    drinko_i: white
+    drinko_n: white
+    drinko_k: white
+    drinko_o: white
+    drinko_bang: white
+- time: '+1'
+  lights:
+    drinko_d: blue
+    drinko_r: blue
+    drinko_i: blue
+    drinko_n: blue
+    drinko_k: blue
+    drinko_o: blue
+    drinko_bang: blue
+- time: '+1'
+  lights:
+    drinko_d: red
+    drinko_r: red
+    drinko_i: red
+    drinko_n: red
+    drinko_k: red
+    drinko_o: red
+    drinko_bang: red
+- time: '+1'
+  lights:
+    drinko_d: white
+    drinko_r: white
+    drinko_i: white
+    drinko_n: white
+    drinko_k: white
+    drinko_o: white
+    drinko_bang: white
+- time: '+1'
+  lights:
+    drinko_d: blue
+    drinko_r: blue
+    drinko_i: blue
+    drinko_n: blue
+    drinko_k: blue
+    drinko_o: blue
+    drinko_bang: blue
+- time: '+1'
+  lights:
+    drinko_d: off
+    drinko_r: off
+    drinko_i: off
+    drinko_n: off
+    drinko_k: off
+    drinko_o: off
+    drinko_bang: off
+- duration: -1

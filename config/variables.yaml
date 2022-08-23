@@ -1,0 +1,7 @@
+#config_version=5
+
+machine_vars:
+  diverter_state:
+    initial_value: 0
+    persist: false
+    value_type: int

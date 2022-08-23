@@ -1,0 +1,4 @@
+- This is the "machine folder" for MPF
+- Must "source setenv.sh" every time working with mpf. This script calls the /home/ohm/mpfenv/bin/activate script which sets environment variables for the shell.
+  - I also added to this script a modification to the PATH which adds /home/ohm/.local/bin/. For some reason the MPF installer did not add this to PATH, only /home/ohm/mpfenv/bin. mpf command was not working anywhere on command line...so I just added it to the activate script
+  

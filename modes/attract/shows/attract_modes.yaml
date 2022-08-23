@@ -1,0 +1,12 @@
+#show_version=5
+- duration: 5.5s
+  shows:
+    attract_modes_rainbow:
+      loops: 3
+      speed: 5
+- duration: 8.5s
+  shows:
+    attract_modes_build:
+      loops: 1
+      speed: 5
+  

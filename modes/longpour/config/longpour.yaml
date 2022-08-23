@@ -1,0 +1,57 @@
+#config_version=5
+##! mode: longpour
+
+mode:
+  start_events: start_mode_longpour
+  stop_events: stop_mode_longpour, stop_missions, timer_round_timer_longpour_stopped   # end round when timer stops
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+  priority: 300
+
+sound_player:
+  mode_longpour_started:
+    voice_longpour_intro:
+      action: play
+      events_when_stopped: kicker_mode_eject
+
+shows:
+  flash_longpour_insert:
+    - time: 0
+      lights:
+        mode_longpour:
+          color: red
+          fade: .1s
+    - time: '+1'
+      lights:
+        mode_longpour: 
+          color: white
+          fade: .1s
+    - time: '+1'
+      lights:
+        mode_longpour:
+          color: blue
+          fade: .1s
+
+show_player:
+  kicker_mode_eject:
+    flash_longpour_insert:
+      speed: 4
+
+# timed round
+timers:
+  round_timer_longpour:
+    start_value: 60
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: kicker_mode_eject
+
+variable_player:
+  mode_longpour_started:
+    has_longpour:
+      action: set
+      int: 1
+
+
+

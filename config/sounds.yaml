@@ -1,0 +1,108 @@
+#config_version=5
+
+sounds:
+  introrepeat:
+    file: introrepeat1.wav
+    volume: 1.0
+  intro:
+    file: intro1.wav
+    volume: 1.0
+  voice_sink2left:
+    file: sink2left.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -18db
+        release_point: 1.0 sec
+        release: 3.0 sec
+  voice_betterwhendrunk:
+    file: betterwhendrunk.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_longpour_intro:
+    file: modeintro_longpour.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_quarters_intro:
+    file: modeintro_quarters.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_strikeout_intro:
+    file: modeintro_strikeout.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_volumechug_intro:
+    file: modeintro_volumechug.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_trojankeg_intro:
+    file: modeintro_trojankeg.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_dasboot_intro:
+    file: modeintro_dasboot.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_notthatdrunk:
+    file: notthatdrunk2.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec

@@ -1,0 +1,102 @@
+#show_version=5
+- time: '+1'
+  lights:
+    mode_longpour:
+      color: red
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_quarters: 
+      color: red
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_strikeout: 
+      color: red
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_volumechug: 
+      color: red
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_trojankeg: 
+      color: red
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_dasboot: 
+      color: red
+      fade: .25s
+
+- time: '+1'
+  lights:
+    mode_longpour: 
+      color: white
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_quarters: 
+      color: white
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_strikeout: 
+      color: white
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_volumechug: 
+      color: white
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_trojankeg: 
+      color: white
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_dasboot: 
+      color: white
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_dasboot: 
+      color: white
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_longpour: 
+      color: blue
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_quarters: 
+      color: blue
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_strikeout: 
+      color: blue
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_volumechug: 
+      color: blue
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_trojankeg: 
+      color: blue
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_dasboot: 
+      color: blue
+      fade: .25s
+- time: '+1'
+  lights:
+    mode_dasboot: 
+      color: blue
+      fade: .25s

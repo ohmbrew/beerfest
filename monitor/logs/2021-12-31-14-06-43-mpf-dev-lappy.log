@@ -1,0 +1,6 @@
+2021-12-31 14:06:43,733 : INFO : root : Loading config.
+2021-12-31 14:06:43,737 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2021-12-31 14:06:43,737 : WARNING : ConfigProcessor : Config file in cache changed: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/monitor/config/config.yaml
+2021-12-31 14:06:43,738 : INFO : ConfigProcessor : Loading config from file /home/ohm/mpfenv/lib/python3.7/site-packages/mpf/mpfconfig.yaml.
+2021-12-31 14:06:43,820 : INFO : ConfigProcessor : Loading config: /home/ohm/mpfenv/lib/python3.7/site-packages/mpf/mpfconfig.yaml
+2021-12-31 14:06:43,821 : INFO : ConfigProcessor : Loading config from file /home/ohm/projects/embedded/55-pinball/mpf-beerfest/monitor/config/config.yaml.

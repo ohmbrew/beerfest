@@ -1,0 +1,136 @@
+#config_version=5
+## #! mode: mug
+# This mode counts various hit events and increasingly 'fills' the mug lights every other hit.
+# Idea is to enable our game mode qualifier mode when the mug fills up. Thinking of using both
+# the beer keg and rim rules saucer holes to start a game mode selection.
+#mode:
+#  start_events: start_mode_mug, ball_started
+#  stop_events: stop_mode_mug
+#  priority: 150
+
+# this counter does the...counting
+counters:
+  count_mug_lights:
+    count_events: >
+      shot_popbumper_lower_hit, shot_popbumper_upper_right_hit, shot_popbumper_upper_left_hit,
+      shot_trojankeg_left_hit, shot_trojankeg_middle_hit, shot_trojankeg_right_hit, shot_chance_hit,
+      shot_take_hit_hit, shot_chug_beer_hit, shot_do_shot_hit, shot_quarters_hit
+    count_complete_value: 14
+    events_when_hit: fill_mug_X
+    events_when_complete: start_qualify
+    reset_on_complete: false
+
+# this show sets lights appropriately. beer mug lights are tagged. Lowest light has tags of mugfill1-7, the second
+# lowest light is tagged with mugfill2-7, and the highest light is tagged with only mugfill7. This results in the
+# appropriate set of mug lights lit as the count goes higher.
+shows:
+  fill_mug:
+    # - lights:
+    #     beermug1_std: off
+    #     beermug2_std: off
+    #     beermug3_std: off
+    #     beermug4_std: off
+    #     beermug5_std: off
+    #     beermug6_std: off
+    #     beermug7_std: off
+    - time: 0
+      lights:
+        (tag): on
+    - duration: -1
+
+# fill_mug_X event is called whenever count_events are detected. conditional events below call the show
+show_player:
+  fill_mug_X{count==2}:
+    fill_mug:
+      show_tokens:
+        tag: mugfill1
+      loops: 0
+  fill_mug_X{count==4}:
+    fill_mug:
+      show_tokens:
+        tag: mugfill2
+      loops: 0
+  fill_mug_X{count==6}:
+    fill_mug:
+      show_tokens:
+        tag: mugfill3
+      loops: 0
+  fill_mug_X{count==8}:
+    fill_mug:
+      show_tokens:
+        tag: mugfill4
+      loops: 0
+  fill_mug_X{count==10}:
+    fill_mug:
+      show_tokens:
+        tag: mugfill5
+      loops: 0
+  fill_mug_X{count==12}:
+    fill_mug:
+      show_tokens:
+        tag: mugfill6
+      loops: 0
+  fill_mug_X{count==14}:
+    fill_mug:
+      show_tokens:
+        tag: mugfill7    
+      loops: 0
+
+
+# slide_player:
+#   mode_base_started:
+#     widgets:
+#       - type: text
+#         text: (score)
+#         number_grouping: true
+#         min_digits: 2
+#         font_size: 100
+#       - type: text
+#         text: PLAYER (number)
+#         y: 10
+#         x: 10
+#         font_size: 50
+#         anchor_x: left
+#         anchor_y: bottom
+#       - type: text
+#         text: BALL (ball)
+#         y: 10
+#         x: right-10
+#         anchor_x: right
+#         anchor_y: bottom
+#         font_size: 50
+
+# using a state machine to track diverter servo state. The shot_diverter_hit event (triggered by RampSplit opto) transitions the
+# state machine to the other state. On mode_attract_started, the diverter is pointed right, which will make the ball go down the
+# left ramp first. On first shot_diverter_hit, we move from start to diverter_right_ramp (moving diverter left). And then it
+# toggles back and forth from left and right ramp after that.
+# state_machines:
+#   diverter_state_machine:
+#     persist_state: true
+#     states:
+#       start:
+#         label:
+#       diverter_rightramp:
+#         label: Right Wire Ramp!
+#         show_when_active:
+#           show: diverter_show
+#           show_tokens:
+#             dir: left    # using the diverter_show with a token. send 'left' to send diverter servo to left (right ramp now active)
+#           loops: 0
+#       diverter_leftramp:
+#         label: Left Wire Ramp!
+#         show_when_active:
+#           show: diverter_show
+#           show_tokens:
+#             dir: right    # using the diverter_show with a token. send 'right' to send diverter servo to right (left ramp now active)
+#           loops: 0
+#     transitions:
+#       - source: start
+#         target: diverter_rightramp
+#         events: shot_diverter_hit
+#       - source: diverter_rightramp
+#         target: diverter_leftramp
+#         events: shot_diverter_hit
+#       - source: diverter_leftramp
+#         target: diverter_rightramp
+#         events: shot_diverter_hit

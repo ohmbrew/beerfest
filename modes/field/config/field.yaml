@@ -1,0 +1,70 @@
+#config_version=5
+##! mode: field
+
+mode:
+  start_events: start_mode_field
+  stop_events: stop_mode_field
+  priority: 300
+
+config:
+  - mug.yaml
+  - qualify.yaml
+  - drinko_bonus.yaml
+
+sound_player:
+  shot_take_hit_hit:
+    takeahit:
+      action: play
+  shot_chug_beer_hit:
+    chugyourbeer:
+      action: play
+  shot_do_shot_hit:
+    doashot:
+      action: play
+  play_betterwhendrunk_and_eject:
+    voice_betterwhendrunk:
+      action: play
+      events_when_stopped: kicker_mode_eject
+  shot_kicker_rimrules_hit:
+    rimrules:
+      action: play
+      events_when_stopped: kicker_rimrules_eject
+  shot_trojankeg_left_hit:
+    prosit:
+      action: play
+  shot_trojankeg_middle_hit:
+    prosit:
+      action: play
+  shot_trojankeg_right_hit:
+    prosit:
+      action: play
+  shot_chance_hit:
+    chance:
+      action: play
+  shot_quarters_hit:
+    quarters:
+      action: play
+  shot_pongcup1_hit:
+    voice_sink2left:
+      action: play
+      events_when_stopped: multiball_release_cup1
+  shot_pongcup2_hit:
+    voice_sink2left:
+      action: play
+      events_when_stopped: multiball_release_cup2
+  shot_diverter_hit:
+    2burps:
+      action: play
+
+event_player:
+  shot_kicker_mode_hit{device.counters.count_mug_lights.value >= 14}: launch_random_game_mode
+  shot_kicker_mode_hit{device.counters.count_mug_lights.value < 14}: play_betterwhendrunk_and_eject
+
+random_event_player:
+  launch_random_game_mode:
+    events:
+      - start_mode_longpour
+      - start_mode_quarters
+      - start_mode_strikeout
+
+# ball save for some # of seconds after ball registers on playfield
