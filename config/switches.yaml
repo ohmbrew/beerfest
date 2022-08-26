@@ -77,6 +77,7 @@ switches:
   s_kicker_rimrules:
     number: A1-B1-3
     ignore_window_ms: 500
+    type: NC
   s_do_shot:
     number: A1-B1-4
     type: NC

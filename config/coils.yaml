@@ -37,9 +37,7 @@ coils:
   c_strike_out:
     number: A0-B1-3
     default_pulse_ms: 35
-  c_kicker_rimrules:
-    number: A0-B1-4
-    default_pulse_ms: 35
+  # A0-B1-4 unreliable. RimRules coil stopped firing...moved to A0-B1-7. Works again...
   c_pongcup1:
     number: A0-B1-5
     default_pulse_ms: 750
@@ -48,6 +46,9 @@ coils:
     number: A0-B1-6
     default_pulse_ms: 750
     default_hold_power: .5  
+  c_kicker_rimrules:
+    number: A0-B1-7
+    default_pulse_ms: 35
 
   # PD-LED is A1
 
