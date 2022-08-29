@@ -321,7 +321,7 @@ state_machines:
     transitions:
       - source: start
         target: pongtable_cup1
-        events: mode_attract_started
+        events: mode_base_started
       - source: pongtable_cup1
         target: pongtable_cup2
         events: shot_pongcup1_hit
