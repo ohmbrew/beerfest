@@ -1,0 +1,257 @@
+2022-08-28 22:11:13,934 : INFO : root : Loading config.
+2022-08-28 22:11:13,939 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2022-08-28 22:11:13,939 : INFO : ConfigProcessor : Loading config from cache: /tmp/5251055949d167756f63ede37e444bb8.mpf_cache
+2022-08-28 22:11:13,995 : INFO : ConfigProcessor : Loading config from cache: /tmp/f9e3dd4704f85a1981134d11860e8190.mpf_cache
+2022-08-28 22:11:13,996 : INFO : ConfigProcessor : Loading config from cache: /tmp/973d4e7a920ce70e84cdae92155661d2.mpf_cache
+2022-08-28 22:11:13,996 : INFO : ConfigProcessor : Loading config from cache: /tmp/c263835eea05018f0e1b2484a463cfd0.mpf_cache
+2022-08-28 22:11:13,997 : INFO : ConfigProcessor : Loading config from cache: /tmp/b44a335d40507c0f628b4f10d8bdbe3d.mpf_cache
+2022-08-28 22:11:13,997 : INFO : ConfigProcessor : Loading config from cache: /tmp/0ddf414cfccb2c0452c35cfa8a9dd932.mpf_cache
+2022-08-28 22:11:13,998 : INFO : ConfigProcessor : Loading config from cache: /tmp/3c5ed8820afd558a1694414def6eff9e.mpf_cache
+2022-08-28 22:11:13,998 : INFO : ConfigProcessor : Loading config from cache: /tmp/d2988ecd206705de1912aa00bbd6a8b6.mpf_cache
+2022-08-28 22:11:13,999 : INFO : ConfigProcessor : Loading config from cache: /tmp/28df6b6086bac6bd1736f21d72b88a0b.mpf_cache
+2022-08-28 22:11:13,999 : INFO : ConfigProcessor : Loading config from cache: /tmp/e5f9b86e5f4b96e36fc897d512b252a6.mpf_cache
+2022-08-28 22:11:14,000 : INFO : ConfigProcessor : Loading config from cache: /tmp/15e84690bd995590cd3b1c0b3545ce43.mpf_cache
+2022-08-28 22:11:14,000 : INFO : ConfigProcessor : Loading config from cache: /tmp/225a5d974283937307bc0e739d5c1a8f.mpf_cache
+2022-08-28 22:11:14,001 : INFO : ConfigProcessor : Loading config from cache: /tmp/4635650b31546e1baa7aee010f8c2c4d.mpf_cache
+2022-08-28 22:11:14,001 : INFO : ConfigProcessor : Loading config from cache: /tmp/cb9177e792f641e361fc7dac01137a90.mpf_cache
+2022-08-28 22:11:14,002 : INFO : ConfigProcessor : Loading config from cache: /tmp/a24b2382fbd67cc142a9a6f3663d7122.mpf_cache
+2022-08-28 22:11:14,002 : INFO : ConfigProcessor : Loading config from cache: /tmp/e7e96e5c75caa9bd3cb8b231ecbc6017.mpf_cache
+2022-08-28 22:11:14,003 : INFO : ConfigProcessor : Loading config from cache: /tmp/eef157c123e6f8b805af551151f02a60.mpf_cache
+2022-08-28 22:11:14,003 : INFO : ConfigProcessor : Loading config from cache: /tmp/c3d5cb164dea000742e09e9079929b1c.mpf_cache
+2022-08-28 22:11:14,004 : INFO : ConfigProcessor : Loading config from cache: /tmp/474c711d458d32a388c385883d78b8e5.mpf_cache
+2022-08-28 22:11:14,004 : INFO : ConfigProcessor : Loading config from cache: /tmp/6e4ae55d94b4111c75c2be55a051e25f.mpf_cache
+2022-08-28 22:11:14,004 : INFO : ConfigProcessor : Loading config from cache: /tmp/6ea31842a955eda2b517dcfd824ead3e.mpf_cache
+2022-08-28 22:11:14,005 : INFO : ConfigProcessor : Loading config from cache: /tmp/bd17fdc7cc405fa6d585e392ecb7d869.mpf_cache
+2022-08-28 22:11:14,005 : INFO : ConfigProcessor : Loading config from cache: /tmp/4c8982e8fec21961dcac5e3624b63382.mpf_cache
+2022-08-28 22:11:14,006 : INFO : ConfigProcessor : Loading config from cache: /tmp/e3cc8890e0f3cdbfb9a0aaf9e93a7560.mpf_cache
+2022-08-28 22:11:14,007 : INFO : Machine : Mission Pinball Framework Core Engine v0.55.0
+2022-08-28 22:11:14,007 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'jsonlogging': False, 'logfile': 'logs/2022-08-28-22-11-13-mpf-dev-lappy.log', 'pause': False, 'production': False, 'text_ui': False, 'loglevel': 15, 'consoleloglevel': 10, 'force_platform': 'virtual', 'syslog_address': None, 'mc_file_name': None, 'no_sound': False}
+2022-08-28 22:11:14,007 : INFO : Machine : MPF path: /usr/local/lib/python3.8/dist-packages/mpf
+2022-08-28 22:11:14,007 : INFO : Machine : Machine path: /home/ohm/projects/embedded/55-pinball/mpf-beerfest
+2022-08-28 22:11:14,007 : INFO : Machine : Platform: linux
+2022-08-28 22:11:14,007 : INFO : Machine : Python executable location: /usr/bin/python3
+2022-08-28 22:11:14,008 : INFO : Machine : Python version: 3.8.10 (64-bit)
+2022-08-28 22:11:14,011 : INFO : Machine : Initialise MPF.
+2022-08-28 22:11:14,053 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,092 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,092 : INFO : EventManager : Event: ======'machine_var_player1_score'====== Args={'value': 180400, 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,092 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'MPF v0.55.0', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,092 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'MPF v0.55.0, Config version:5, Show version: 5, BCP version:1.1', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,092 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.8.10', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,110 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-5.15.0-46-generic-x86_64-with-glibc2.29', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,111 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,111 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '5.15.0-46-generic', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,111 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#49~20.04.1-Ubuntu SMP Thu Aug 4 19:15:44 UTC 2022', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,111 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2022-08-28 22:11:14,111 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2022-08-28 22:11:14,152 : INFO : EventManager : Event: ======'drop_target_bank_strike_out_bank_up'====== Args={}
+2022-08-28 22:11:14,171 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2022-08-28 22:11:14,171 : INFO : SwitchController : Found active switch: ('A2-B1-3', <Platform.Virtual>) <switch.s_trough3>
+2022-08-28 22:11:14,172 : INFO : SwitchController : Found active switch: ('A2-B1-4', <Platform.Virtual>) <switch.s_trough1>
+2022-08-28 22:11:14,172 : INFO : SwitchController : Found active switch: ('A2-B1-5', <Platform.Virtual>) <switch.s_trough2>
+2022-08-28 22:11:14,172 : INFO : SwitchController : Found active switch: ('A2-B1-6', <Platform.Virtual>) <switch.s_trough_eject>
+2022-08-28 22:11:14,189 : INFO : EventManager : Event: ======'bcp_connection_attempt'====== Args={'name': 'local_display', 'host': 'localhost', 'port': 5050}
+2022-08-28 22:11:14,190 : INFO : BCPClientSocket : Connecting BCP to 'local_display' at localhost:5050...
+2022-08-28 22:11:15,306 : INFO : BCPClientSocket : Connected BCP to 'local_display' localhost:5050
+2022-08-28 22:11:15,307 : INFO : EventManager : Event: ======'bcp_clients_connected'====== Args={}
+2022-08-28 22:11:15,308 : INFO : ball_device.bd_kicker_mode : BCH: Initial count: 0
+2022-08-28 22:11:15,308 : INFO : ball_device.bd_kicker_mode : State: idle
+2022-08-28 22:11:15,309 : INFO : ball_device.bd_kicker_rimrules : BCH: Initial count: 0
+2022-08-28 22:11:15,309 : INFO : ball_device.bd_kicker_rimrules : State: idle
+2022-08-28 22:11:15,310 : INFO : ball_device.bd_pongcup1 : BCH: Initial count: 0
+2022-08-28 22:11:15,310 : INFO : ball_device.bd_pongcup1 : State: idle
+2022-08-28 22:11:15,311 : INFO : ball_device.bd_pongcup2 : BCH: Initial count: 0
+2022-08-28 22:11:15,311 : INFO : ball_device.bd_pongcup2 : State: idle
+2022-08-28 22:11:15,312 : INFO : ball_device.bd_drain : BCH: Initial count: 0
+2022-08-28 22:11:15,312 : INFO : ball_device.bd_drain : State: idle
+2022-08-28 22:11:15,313 : INFO : ball_device.bd_trough : BCH: Initial count: 4
+2022-08-28 22:11:15,313 : INFO : ball_device.bd_trough : State: idle
+2022-08-28 22:11:15,314 : INFO : ball_device.bd_plunger_lane : BCH: Initial count: 0
+2022-08-28 22:11:15,314 : INFO : ball_device.bd_plunger_lane : State: idle
+2022-08-28 22:11:15,365 : INFO : EventManager : Event: ======'init_phase_3'====== Args={}
+2022-08-28 22:11:15,387 : INFO : EventManager : Event: ======'machine_var_mc_version'====== Args={'value': 'MPF-MC v0.55.0', 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,387 : INFO : EventManager : Event: ======'machine_var_mc_extended_version'====== Args={'value': 'MPF-MC v0.55.0 (config_version=5, BCP v1.1, Requires MPF v0.55.0-dev.49)', 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,389 : INFO : EventManager : Event: ======'init_phase_4'====== Args={}
+2022-08-28 22:11:15,390 : INFO : EventManager : Event: ======'playfield_active'====== Args={}
+2022-08-28 22:11:15,390 : INFO : EventManager : Event: ======'unexpected_ball_on_playfield'====== Args={}
+2022-08-28 22:11:15,390 : INFO : EventManager : Event: ======'playfield_active'====== Args={}
+2022-08-28 22:11:15,390 : INFO : EventManager : Event: ======'unexpected_ball_on_playfield'====== Args={}
+2022-08-28 22:11:15,390 : INFO : EventManager : Event: ======'playfield_active'====== Args={}
+2022-08-28 22:11:15,391 : INFO : EventManager : Event: ======'unexpected_ball_on_playfield'====== Args={}
+2022-08-28 22:11:15,391 : INFO : BallController : Initial balls found: 4
+2022-08-28 22:11:15,393 : INFO : EventManager : Event: ======'machine_var_audits_events_game_ended'====== Args={'value': 0, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,393 : INFO : EventManager : Event: ======'machine_var_audits_events_game_started'====== Args={'value': 0, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,393 : INFO : EventManager : Event: ======'machine_var_audits_player_score'====== Args={'value': {'average': 79744.06779661016, 'top': [601400, 492700, 483900, 419700, 385000, 321000, 277600, 266500, 242900, 240000], 'total': 59}, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,394 : INFO : EventManager : Event: ======'machine_var_audits_shots_chance'====== Args={'value': 96, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,394 : INFO : EventManager : Event: ======'machine_var_audits_shots_chug_beer'====== Args={'value': 60, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,394 : INFO : EventManager : Event: ======'machine_var_audits_shots_do_shot'====== Args={'value': 56, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,395 : INFO : EventManager : Event: ======'machine_var_audits_shots_kicker_mode'====== Args={'value': 137, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,395 : INFO : EventManager : Event: ======'machine_var_audits_shots_kicker_rimrules'====== Args={'value': 97, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,396 : INFO : EventManager : Event: ======'machine_var_audits_shots_pongtable_exit'====== Args={'value': 24, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,396 : INFO : EventManager : Event: ======'machine_var_audits_shots_pongtable_front_left'====== Args={'value': 89, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,396 : INFO : EventManager : Event: ======'machine_var_audits_shots_pongtable_front_right'====== Args={'value': 78, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,397 : INFO : EventManager : Event: ======'machine_var_audits_shots_quarters'====== Args={'value': 30, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,397 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_chance'====== Args={'value': 79, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,397 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_chug_beer'====== Args={'value': 75, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,398 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_diverter'====== Args={'value': 130, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,398 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_do_shot'====== Args={'value': 84, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,399 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_drinko_bang'====== Args={'value': 137, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,399 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_drinko_d'====== Args={'value': 146, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,399 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_drinko_i'====== Args={'value': 142, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,400 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_drinko_k'====== Args={'value': 135, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,400 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_drinko_n'====== Args={'value': 135, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,401 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_drinko_o'====== Args={'value': 138, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,401 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_drinko_r'====== Args={'value': 144, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,402 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_kicker_mode'====== Args={'value': 186, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,405 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_kicker_rimrules'====== Args={'value': 109, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,405 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_plunger_lane_exit'====== Args={'value': 38, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,405 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_pongcup1'====== Args={'value': 120, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,406 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_pongcup2'====== Args={'value': 20, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,406 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_popbumper_lower'====== Args={'value': 261, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,406 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_popbumper_upper_left'====== Args={'value': 495, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,406 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_popbumper_upper_right'====== Args={'value': 484, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,407 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_quarters'====== Args={'value': 139, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,407 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_take_hit'====== Args={'value': 78, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,407 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_tavern_spinner'====== Args={'value': 1322, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,407 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_trojankeg_left'====== Args={'value': 1082, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,408 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_trojankeg_middle'====== Args={'value': 160, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,408 : INFO : EventManager : Event: ======'machine_var_audits_shots_shot_trojankeg_right'====== Args={'value': 112, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,408 : INFO : EventManager : Event: ======'machine_var_audits_shots_take_hit'====== Args={'value': 57, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,409 : INFO : EventManager : Event: ======'machine_var_audits_shots_trojankeg_left'====== Args={'value': 37, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,409 : INFO : EventManager : Event: ======'machine_var_audits_shots_trojankeg_middle'====== Args={'value': 28, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,409 : INFO : EventManager : Event: ======'machine_var_audits_shots_trojankeg_right'====== Args={'value': 32, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,409 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_chance'====== Args={'value': 188, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,410 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_chug_beer'====== Args={'value': 152, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,410 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_diverter'====== Args={'value': 133, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,410 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_do_shot'====== Args={'value': 157, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,410 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drain'====== Args={'value': 594, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,411 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drinko_bang'====== Args={'value': 161, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,411 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drinko_d'====== Args={'value': 175, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,411 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drinko_i'====== Args={'value': 262, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,412 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drinko_k'====== Args={'value': 154, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,412 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drinko_n'====== Args={'value': 798, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,412 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drinko_o'====== Args={'value': 276, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,412 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_drinko_r'====== Args={'value': 270, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,413 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_flipper_left'====== Args={'value': 1944, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,413 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_flipper_right'====== Args={'value': 2251, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,413 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_kicker_mode'====== Args={'value': 780, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,414 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_kicker_rimrules'====== Args={'value': 598, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,414 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_laneleft_inner'====== Args={'value': 17, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,414 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_laneleft_outer'====== Args={'value': 2, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,414 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_laneright_inner'====== Args={'value': 19, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,415 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_laneright_outer'====== Args={'value': 12, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,415 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_left_flipper'====== Args={'value': 154, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,416 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_left_slingshot'====== Args={'value': 32, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,416 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_orbit_entry'====== Args={'value': 0, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,416 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_orbit_exit'====== Args={'value': 0, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,417 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_plunger_lane'====== Args={'value': 1237, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,417 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_plunger_lane_exit'====== Args={'value': 226, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,417 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_pongcup1'====== Args={'value': 120, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,418 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_pongcup2'====== Args={'value': 20, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,418 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_pongtable_exit'====== Args={'value': 40, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,418 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_pongtable_front_left'====== Args={'value': 95, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,418 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_pongtable_front_right'====== Args={'value': 87, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,419 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_popbumper_lower'====== Args={'value': 799, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,419 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_popbumper_upper'====== Args={'value': 141, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,420 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_popbumper_upper_left'====== Args={'value': 555, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,420 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_popbumper_upper_right'====== Args={'value': 548, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,420 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_quarters'====== Args={'value': 173, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,421 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_ramp_drinko'====== Args={'value': 34, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,421 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_right_flipper'====== Args={'value': 183, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,421 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_slingshot_left'====== Args={'value': 925, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,422 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_slingshot_quarters'====== Args={'value': 217, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,422 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_slingshot_right'====== Args={'value': 1033, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,422 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_special'====== Args={'value': 2, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,423 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_start'====== Args={'value': 18, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,423 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_take_hit'====== Args={'value': 154, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,423 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_target_rimrules'====== Args={'value': 17, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,423 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_tavern_exit'====== Args={'value': 0, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,424 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_tavern_spinner'====== Args={'value': 2793, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,424 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_tgt_ramp_boot'====== Args={'value': 34, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,424 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trogan_keg'====== Args={'value': 22, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,424 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trojankeg_left'====== Args={'value': 1119, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,425 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trojankeg_middle'====== Args={'value': 188, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,425 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trojankeg_right'====== Args={'value': 144, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,425 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trough1'====== Args={'value': 381, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,425 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trough2'====== Args={'value': 360, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,426 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trough3'====== Args={'value': 19, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,426 : INFO : EventManager : Event: ======'machine_var_audits_switches_s_trough_eject'====== Args={'value': 565, 'prev_value': None, 'change': True}
+2022-08-28 22:11:15,427 : INFO : EventManager : Event: ======'init_phase_5'====== Args={}
+2022-08-28 22:11:15,427 : INFO : EventManager : Event: ======'init_done'====== Args={}
+2022-08-28 22:11:15,428 : INFO : EventManager : Event: ======'machine_reset_phase_1'====== Args={}
+2022-08-28 22:11:15,438 : INFO : EventManager : Event: ======'machine_reset_phase_2'====== Args={}
+2022-08-28 22:11:15,439 : INFO : EventManager : Event: ======'machine_reset_phase_3'====== Args={}
+2022-08-28 22:11:15,439 : INFO : drop_target_bank.strike_out_bank : All targets are already up. Will not reset bank.
+2022-08-28 22:11:15,439 : INFO : EventManager : Event: ======'reset_complete'====== Args={}
+2022-08-28 22:11:15,439 : INFO : EventManager : Event: ======'mode_attract_will_start'====== Args={}
+2022-08-28 22:11:15,441 : INFO : EventManager : Event: ======'mode_attract_starting'====== Args={}
+2022-08-28 22:11:15,442 : INFO : Mode.attract : Started. Priority: 10
+2022-08-28 22:11:15,442 : INFO : EventManager : Event: ======'modes_active_modes_changed'====== Args={}
+2022-08-28 22:11:15,442 : INFO : EventManager : Event: ======'mode_attract_started'====== Args={}
+2022-08-28 22:11:15,445 : INFO : EventManager : Event: ======'collecting_balls_complete'====== Args={}
+2022-08-28 22:11:15,445 : INFO : Machine : Starting the main run loop.
+2022-08-28 22:11:15,454 : INFO : EventManager : Event: ======'slide_beerfest_intro_created'====== Args={'_from_bcp': True}
+2022-08-28 22:11:15,456 : INFO : EventManager : Event: ======'slide_beerfest_intro_active'====== Args={'_from_bcp': True}
+2022-08-28 22:11:15,485 : INFO : BcpServer : New client connected.
+2022-08-28 22:11:30,017 : INFO : EventManager : Event: ======'intro_complete'====== Args={'sound_instance': '<SoundInstance: intro (139800341252032), Volume=1.0, Loops=0, Priority=0, Loaded=True, Track=music>', '_from_bcp': True}
+2022-08-28 22:11:30,480 : INFO : EventManager : Event: ======'slide_press_start_created'====== Args={'_from_bcp': True}
+2022-08-28 22:11:30,487 : INFO : EventManager : Event: ======'slide_press_start_active'====== Args={'_from_bcp': True}
+2022-08-28 22:11:33,464 : INFO : EventManager : Event: ======'slide_last_game_score_slide_created'====== Args={'_from_bcp': True}
+2022-08-28 22:11:33,481 : INFO : EventManager : Event: ======'slide_last_game_score_slide_active'====== Args={'_from_bcp': True}
+2022-08-28 22:11:36,458 : INFO : EventManager : Event: ======'slide_beerfest_intro_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:11:36,473 : INFO : EventManager : Event: ======'slide_beerfest_intro_created'====== Args={'_from_bcp': True}
+2022-08-28 22:11:36,474 : INFO : EventManager : Event: ======'slide_beerfest_intro_active'====== Args={'_from_bcp': True}
+2022-08-28 22:11:51,472 : INFO : EventManager : Event: ======'slide_press_start_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:11:51,482 : INFO : EventManager : Event: ======'slide_press_start_created'====== Args={'_from_bcp': True}
+2022-08-28 22:11:51,490 : INFO : EventManager : Event: ======'slide_press_start_active'====== Args={'_from_bcp': True}
+2022-08-28 22:11:54,459 : INFO : EventManager : Event: ======'slide_last_game_score_slide_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:11:54,467 : INFO : EventManager : Event: ======'slide_last_game_score_slide_created'====== Args={'_from_bcp': True}
+2022-08-28 22:11:54,471 : INFO : EventManager : Event: ======'slide_last_game_score_slide_active'====== Args={'_from_bcp': True}
+2022-08-28 22:11:57,467 : INFO : EventManager : Event: ======'slide_beerfest_intro_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:11:57,492 : INFO : EventManager : Event: ======'slide_beerfest_intro_created'====== Args={'_from_bcp': True}
+2022-08-28 22:11:57,496 : INFO : EventManager : Event: ======'slide_beerfest_intro_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:12,462 : INFO : EventManager : Event: ======'slide_press_start_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:12,472 : INFO : EventManager : Event: ======'slide_press_start_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:12,479 : INFO : EventManager : Event: ======'slide_press_start_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:15,450 : INFO : EventManager : Event: ======'slide_last_game_score_slide_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:15,461 : INFO : EventManager : Event: ======'slide_last_game_score_slide_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:15,466 : INFO : EventManager : Event: ======'slide_last_game_score_slide_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:18,456 : INFO : EventManager : Event: ======'slide_beerfest_intro_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:18,472 : INFO : EventManager : Event: ======'slide_beerfest_intro_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:18,480 : INFO : EventManager : Event: ======'slide_beerfest_intro_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:33,463 : INFO : EventManager : Event: ======'slide_press_start_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:33,485 : INFO : EventManager : Event: ======'slide_press_start_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:33,495 : INFO : EventManager : Event: ======'slide_press_start_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:36,449 : INFO : EventManager : Event: ======'slide_last_game_score_slide_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:36,454 : INFO : EventManager : Event: ======'slide_last_game_score_slide_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:36,456 : INFO : EventManager : Event: ======'slide_last_game_score_slide_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:39,450 : INFO : EventManager : Event: ======'slide_beerfest_intro_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:39,466 : INFO : EventManager : Event: ======'slide_beerfest_intro_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:39,468 : INFO : EventManager : Event: ======'slide_beerfest_intro_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:54,457 : INFO : EventManager : Event: ======'slide_press_start_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:54,464 : INFO : EventManager : Event: ======'slide_press_start_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:54,468 : INFO : EventManager : Event: ======'slide_press_start_active'====== Args={'_from_bcp': True}
+2022-08-28 22:12:57,455 : INFO : EventManager : Event: ======'slide_last_game_score_slide_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:12:57,468 : INFO : EventManager : Event: ======'slide_last_game_score_slide_created'====== Args={'_from_bcp': True}
+2022-08-28 22:12:57,474 : INFO : EventManager : Event: ======'slide_last_game_score_slide_active'====== Args={'_from_bcp': True}
+2022-08-28 22:13:00,462 : INFO : EventManager : Event: ======'slide_beerfest_intro_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:13:00,463 : INFO : EventManager : Event: ======'slide_beerfest_intro_created'====== Args={'_from_bcp': True}
+2022-08-28 22:13:00,466 : INFO : EventManager : Event: ======'slide_beerfest_intro_active'====== Args={'_from_bcp': True}
+2022-08-28 22:13:15,456 : INFO : EventManager : Event: ======'slide_press_start_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:13:15,472 : INFO : EventManager : Event: ======'slide_press_start_created'====== Args={'_from_bcp': True}
+2022-08-28 22:13:15,473 : INFO : EventManager : Event: ======'slide_press_start_active'====== Args={'_from_bcp': True}
+2022-08-28 22:13:18,461 : INFO : EventManager : Event: ======'slide_last_game_score_slide_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:13:18,474 : INFO : EventManager : Event: ======'slide_last_game_score_slide_created'====== Args={'_from_bcp': True}
+2022-08-28 22:13:18,477 : INFO : EventManager : Event: ======'slide_last_game_score_slide_active'====== Args={'_from_bcp': True}
+2022-08-28 22:13:21,451 : INFO : EventManager : Event: ======'slide_beerfest_intro_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:13:21,469 : INFO : EventManager : Event: ======'slide_beerfest_intro_created'====== Args={'_from_bcp': True}
+2022-08-28 22:13:21,470 : INFO : EventManager : Event: ======'slide_beerfest_intro_active'====== Args={'_from_bcp': True}
+2022-08-28 22:13:36,448 : INFO : EventManager : Event: ======'slide_press_start_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:13:36,454 : INFO : EventManager : Event: ======'slide_press_start_created'====== Args={'_from_bcp': True}
+2022-08-28 22:13:36,456 : INFO : EventManager : Event: ======'slide_press_start_active'====== Args={'_from_bcp': True}
+2022-08-28 22:13:39,469 : INFO : EventManager : Event: ======'slide_last_game_score_slide_removed'====== Args={'_from_bcp': True}
+2022-08-28 22:13:39,481 : INFO : EventManager : Event: ======'slide_last_game_score_slide_created'====== Args={'_from_bcp': True}
+2022-08-28 22:13:39,487 : INFO : EventManager : Event: ======'slide_last_game_score_slide_active'====== Args={'_from_bcp': True}
+2022-08-28 22:13:42,446 : INFO : Machine : Shutting down...
+2022-08-28 22:13:42,446 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2022-08-28 22:13:42,451 : INFO : root : MPF run loop ended.

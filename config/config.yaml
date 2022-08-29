@@ -115,9 +115,8 @@ servos:
     servo_max: 1.0
     positions:
       0.0: pongcup_1
+      0.5: pongcup_None
       1.0: pongcup_2
-      #0.0: pongcup_2
-      #1.0: pongcup_1
     reset_position: 1.0
     reset_events: mode_attract_started
 

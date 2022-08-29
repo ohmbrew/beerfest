@@ -266,16 +266,16 @@ state_machines:
     persist_state: true
     states:
       start:
-        label:
+        label: Diverter Starting
       diverter_rightramp:
-        label: Right Wire Ramp!
+        label: Right Wire Ramp
         show_when_active:
           show: diverter_show
           show_tokens:
             dir: left    # using the diverter_show with a token. send 'left' to send diverter servo to left (right ramp now active)
           loops: 0
       diverter_leftramp:
-        label: Left Wire Ramp!
+        label: Left Wire Ramp
         show_when_active:
           show: diverter_show
           show_tokens:
@@ -283,8 +283,8 @@ state_machines:
           loops: 0
     transitions:
       - source: start
-        target: diverter_rightramp
-        events: shot_diverter_hit
+        target: diverter_leftramp
+        events: mode_base_started
       - source: diverter_rightramp
         target: diverter_leftramp
         events: shot_diverter_hit
@@ -296,7 +296,7 @@ state_machines:
     persist_state: true
     states:
       start:
-        label:
+        label: PongTable Starting
       pongtable_cup1:
         label: PongTable Cup 1 Active
         show_when_active:
@@ -311,6 +311,13 @@ state_machines:
           show_tokens:
             cup: 2
           loops: 0
+      pongtable_cupNone:
+        label: PongTable Cup 2 Active
+        show_when_active:
+          show: pongtable_show
+          show_tokens:
+            cup: None
+          loops: 0
     transitions:
       - source: start
         target: pongtable_cup1
@@ -319,9 +326,11 @@ state_machines:
         target: pongtable_cup2
         events: shot_pongcup1_hit
       - source: pongtable_cup2
-        target: pongtable_cup1
+        target: pongtable_cupNone
         events: shot_pongcup2_hit
-
+      - source: pongtable_cupNone
+        target: pongtable_cup1
+        events: shot_
 variable_player:
   shot_trojankeg_left_hit:
     score: 1000
@@ -377,6 +386,8 @@ shots:
     switch: s_trojankeg_middle
   shot_trojankeg_right:
     switch: s_trojankeg_right
+  shot_special:
+    switch: s_special
   shot_chance:
     switch: s_chance
   shot_take_hit:
@@ -399,6 +410,8 @@ shots:
     switch: s_pongcup2
   shot_diverter:
     switch: s_diverter
+  shot_ramp_drinko:
+    switch: s_ramp_drinko
   shot_drinko_d:
     switch: s_drinko_d
   shot_drinko_r:
