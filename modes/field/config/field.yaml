@@ -47,11 +47,11 @@ sound_player:
   shot_pongcup1_hit:
     voice_sink2left:
       action: play
-      events_when_stopped: multiball_release_cup1
+      events_when_stopped: pongtable_movetocup2
   shot_pongcup2_hit:
-    voice_sink2left:
+    voice_sink1left:
       action: play
-      events_when_stopped: multiball_release_cup2
+      events_when_stopped: pongtable_movetocup2
   shot_diverter_hit:
     2burps:
       action: play
