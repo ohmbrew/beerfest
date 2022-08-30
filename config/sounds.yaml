@@ -18,6 +18,17 @@ sounds:
         attenuation: -18db
         release_point: 1.0 sec
         release: 3.0 sec
+  voice_sink1left:
+    file: sink1left.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -18db
+        release_point: 1.0 sec
+        release: 3.0 sec
   voice_betterwhendrunk:
     file: betterwhendrunk.wav
     track: voice

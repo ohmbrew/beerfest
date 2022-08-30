@@ -324,13 +324,14 @@ state_machines:
         events: mode_base_started
       - source: pongtable_cup1
         target: pongtable_cup2
-        events: shot_pongcup1_hit
+        events: pongtable_movetocup2
       - source: pongtable_cup2
         target: pongtable_cupNone
-        events: shot_pongcup2_hit
+        events: pongtable_movetocupNone
       - source: pongtable_cupNone
         target: pongtable_cup1
-        events: shot_
+        events: game_ending
+
 variable_player:
   shot_trojankeg_left_hit:
     score: 1000
