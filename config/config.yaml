@@ -28,6 +28,10 @@ modes:
   - longpour
   - quarters
   - strikeout
+  - mball_lock1
+  - mball_lock2
+  - mball_lock3
+  - multiball
 
 player_vars:
   current_mode:

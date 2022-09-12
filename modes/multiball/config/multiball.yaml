@@ -1,0 +1,48 @@
+#config_version=5
+##! mode: multiball
+
+mode:
+  start_events: multiball_lock_pt_lock3_full
+  stop_events: multiball_pt_multiball_ended
+
+multiballs:
+  pt_multiball:
+    ball_count: 3
+    ball_count_type: total
+    shoot_again: 5s
+    start_events: mode_multiball_started
+    ball_locks: bd_pongcup1, bd_pongcup2, bd_kicker_rimrules
+    
+state_machines:
+  multiball:
+    states:
+      start:
+        label: PongTable lock not enabled
+      lock_enabled:
+        label: PongTable lock enabled
+        events_when_started: enable_lock
+        events_when_stopped: disable_lock
+      multiball_available:
+        label: PongTable multiball can be started
+      multiball_running:
+        label: PongTable multiball running
+        events_when_started: start_multiball
+    transitions:
+      # for reference - conditional event DEVICE. not DEVICES.
+      #- source: start, lock_enabled
+      #  target: multiball_available
+      #  events: mode_multiball_started{device.ball_devices.bd_lock.balls==2}
+      - source: start
+        target: lock_enabled
+        events: test_event1
+      - source: lock_enabled
+        target: multiball_available
+        events: multiball_lock_pt_full
+      - source: multiball_available
+        target: multiball_running
+        events: test_event2
+      - source: multiball_running
+        target: start
+        events: multiball_pt_multiball_ended
+
+
