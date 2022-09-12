@@ -40,11 +40,11 @@ coils:
   # A0-B1-4 unreliable. RimRules coil stopped firing...moved to A0-B1-7. Works again...
   c_pongcup1:
     number: A0-B1-5
-    default_pulse_ms: 750
+    default_pulse_ms: 500
     default_hold_power: .5
   c_pongcup2:
     number: A0-B1-6
-    default_pulse_ms: 750
+    default_pulse_ms: 500
     default_hold_power: .5  
   c_kicker_rimrules:
     number: A0-B1-7
