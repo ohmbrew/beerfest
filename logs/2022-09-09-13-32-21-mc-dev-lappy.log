@@ -1,0 +1,11 @@
+2022-09-09 13:32:21,314 : kivy : Factory: 186 symbols loaded
+2022-09-09 13:32:21,432 : kivy : ImageLoaderFFPy: Using ffpyplayer 4.3.2
+2022-09-09 13:32:21,432 : kivy : Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_ffpyplayer 
+2022-09-09 13:32:21,455 : kivy : VideoFFPy: Using ffpyplayer 4.3.2
+2022-09-09 13:32:21,455 : kivy : Video: Provider: ffpyplayer(['video_ffmpeg'] ignored)
+2022-09-09 13:32:21,628 : kivy : Loading MPF-MC controller
+2022-09-09 13:32:21,630 : YamlMultifileConfigLoader : Machine config file #1: config
+2022-09-09 13:32:21,630 : ConfigProcessor : Config file in cache changed: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config
+2022-09-09 13:32:21,631 : ConfigProcessor : Loading config from file /usr/local/lib/python3.8/dist-packages/mpfmc/mcconfig.yaml.
+2022-09-09 13:32:21,671 : ConfigProcessor : Loading config: /usr/local/lib/python3.8/dist-packages/mpfmc/mcconfig.yaml
+2022-09-09 13:32:21,671 : ConfigProcessor : Loading config from file /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config.

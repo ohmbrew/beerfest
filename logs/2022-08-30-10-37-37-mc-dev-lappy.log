@@ -1,0 +1,26 @@
+2022-08-30 10:37:37,362 : kivy : Factory: 186 symbols loaded
+2022-08-30 10:37:37,470 : kivy : ImageLoaderFFPy: Using ffpyplayer 4.3.2
+2022-08-30 10:37:37,470 : kivy : Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_ffpyplayer 
+2022-08-30 10:37:37,492 : kivy : VideoFFPy: Using ffpyplayer 4.3.2
+2022-08-30 10:37:37,492 : kivy : Video: Provider: ffpyplayer(['video_ffmpeg'] ignored)
+2022-08-30 10:37:37,654 : kivy : Loading MPF-MC controller
+2022-08-30 10:37:37,656 : YamlMultifileConfigLoader : Machine config file #1: config
+2022-08-30 10:37:37,656 : ConfigProcessor : Config file in cache changed: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config
+2022-08-30 10:37:37,656 : ConfigProcessor : Loading config from file /usr/local/lib/python3.8/dist-packages/mpfmc/mcconfig.yaml.
+2022-08-30 10:37:37,695 : ConfigProcessor : Loading config: /usr/local/lib/python3.8/dist-packages/mpfmc/mcconfig.yaml
+2022-08-30 10:37:37,695 : ConfigProcessor : Loading config from file /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config.
+2022-08-30 10:37:37,730 : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config
+2022-08-30 10:37:37,770 : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/lights.yaml
+2022-08-30 10:37:37,785 : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/coils.yaml
+2022-08-30 10:37:37,803 : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/switches.yaml
+2022-08-30 10:37:37,823 : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/sounds.yaml
+2022-08-30 10:37:37,826 : ConfigProcessor : Config file cache created: /tmp/6533edd829376a7b4277e38b26621cc4.mpf_cache
+2022-08-30 10:37:37,826 : ConfigProcessor : Loading config from cache: /tmp/f9e3dd4704f85a1981134d11860e8190.mpf_cache
+2022-08-30 10:37:37,827 : ConfigProcessor : Loading config from cache: /tmp/973d4e7a920ce70e84cdae92155661d2.mpf_cache
+2022-08-30 10:37:37,827 : ConfigProcessor : Loading config from cache: /tmp/c263835eea05018f0e1b2484a463cfd0.mpf_cache
+2022-08-30 10:37:37,827 : ConfigProcessor : Loading config from cache: /tmp/b44a335d40507c0f628b4f10d8bdbe3d.mpf_cache
+2022-08-30 10:37:37,827 : ConfigProcessor : Loading config from cache: /tmp/0ddf414cfccb2c0452c35cfa8a9dd932.mpf_cache
+2022-08-30 10:37:37,828 : ConfigProcessor : Loading config from cache: /tmp/3c5ed8820afd558a1694414def6eff9e.mpf_cache
+2022-08-30 10:37:37,828 : ConfigProcessor : Loading config from cache: /tmp/d2988ecd206705de1912aa00bbd6a8b6.mpf_cache
+2022-08-30 10:37:37,828 : ConfigProcessor : Loading config from cache: /tmp/28df6b6086bac6bd1736f21d72b88a0b.mpf_cache
+2022-08-30 10:37:37,828 : ConfigProcessor : Loading config from file /home/ohm/projects/embedded/55-pinball/mpf-beerfest/modes/multiball/config/multiball.yaml.

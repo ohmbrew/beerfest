@@ -1,0 +1,20 @@
+2022-08-30 10:34:47,249 : INFO : root : Loading config.
+2022-08-30 10:34:47,255 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2022-08-30 10:34:47,255 : WARNING : ConfigProcessor : Config file in cache changed: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config.yaml
+2022-08-30 10:34:47,255 : INFO : ConfigProcessor : Loading config from file /usr/local/lib/python3.8/dist-packages/mpf/mpfconfig.yaml.
+2022-08-30 10:34:47,381 : INFO : ConfigProcessor : Loading config: /usr/local/lib/python3.8/dist-packages/mpf/mpfconfig.yaml
+2022-08-30 10:34:47,382 : INFO : ConfigProcessor : Loading config from file /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config.yaml.
+2022-08-30 10:34:47,420 : INFO : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/config.yaml
+2022-08-30 10:34:47,482 : INFO : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/lights.yaml
+2022-08-30 10:34:47,498 : INFO : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/coils.yaml
+2022-08-30 10:34:47,533 : INFO : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/switches.yaml
+2022-08-30 10:34:47,556 : INFO : ConfigProcessor : Loading config: /home/ohm/projects/embedded/55-pinball/mpf-beerfest/config/sounds.yaml
+2022-08-30 10:34:47,560 : INFO : ConfigProcessor : Config file cache created: /tmp/5251055949d167756f63ede37e444bb8.mpf_cache
+2022-08-30 10:34:47,615 : INFO : ConfigProcessor : Loading config from cache: /tmp/f9e3dd4704f85a1981134d11860e8190.mpf_cache
+2022-08-30 10:34:47,616 : INFO : ConfigProcessor : Loading config from cache: /tmp/973d4e7a920ce70e84cdae92155661d2.mpf_cache
+2022-08-30 10:34:47,616 : INFO : ConfigProcessor : Loading config from cache: /tmp/c263835eea05018f0e1b2484a463cfd0.mpf_cache
+2022-08-30 10:34:47,617 : INFO : ConfigProcessor : Loading config from cache: /tmp/b44a335d40507c0f628b4f10d8bdbe3d.mpf_cache
+2022-08-30 10:34:47,617 : INFO : ConfigProcessor : Loading config from cache: /tmp/0ddf414cfccb2c0452c35cfa8a9dd932.mpf_cache
+2022-08-30 10:34:47,618 : INFO : ConfigProcessor : Loading config from cache: /tmp/3c5ed8820afd558a1694414def6eff9e.mpf_cache
+2022-08-30 10:34:47,618 : INFO : ConfigProcessor : Loading config from cache: /tmp/d2988ecd206705de1912aa00bbd6a8b6.mpf_cache
+2022-08-30 10:34:47,619 : INFO : ConfigProcessor : Loading config from cache: /tmp/28df6b6086bac6bd1736f21d72b88a0b.mpf_cache
