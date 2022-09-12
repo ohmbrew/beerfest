@@ -74,18 +74,16 @@ slides:
 #  init_done: welcome_slide
 
 keyboard:
-  z:
-    switch: s_left_flipper
-  m:
-    switch: s_right_flipper
   s:
     switch: s_start
-  k:
-    switch: s_kicker_mode
-  p:
-    switch: s_popbumper_upper
-  t:
-    switch: s_trough_eject
+  1:
+    event: pongcup_1
+  2:
+    event: pongcup_2
+  3:
+    event: release_cup1
+  4:
+    event: release_cup2
 
 # documentation: https://docs.missionpinball.org/en/latest/hardware/multimorphic/leds.html
 p_roc:
