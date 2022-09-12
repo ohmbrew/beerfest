@@ -81,9 +81,9 @@ keyboard:
   2:
     event: pongcup_2
   3:
-    event: release_cup1
+    event: test_release1
   4:
-    event: release_cup2
+    event: test_release2
 
 # documentation: https://docs.missionpinball.org/en/latest/hardware/multimorphic/leds.html
 p_roc:
@@ -232,10 +232,12 @@ ball_devices:
   bd_pongcup1:
     ball_switches: s_pongcup1
     eject_coil: c_pongcup1
+    eject_events: test_release1
     eject_timeouts: 2s
   bd_pongcup2:
     ball_switches: s_pongcup2
     eject_coil: c_pongcup2
+    eject_events: test_release2
     eject_timeouts: 2s
 
 ball_holds:
