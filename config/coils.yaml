@@ -42,10 +42,12 @@ coils:
     number: A0-B1-5
     default_pulse_ms: 500
     default_hold_power: .5
+    pulse_events: release_cup1
   c_pongcup2:
     number: A0-B1-6
     default_pulse_ms: 500
-    default_hold_power: .5  
+    default_hold_power: .5
+    pulse_events: release_cup2
   c_kicker_rimrules:
     number: A0-B1-7
     default_pulse_ms: 35
