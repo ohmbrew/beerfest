@@ -213,7 +213,7 @@ show_player:
 
 ball_saves:
   ball_save_ball_save:
-    active_time: 10s
+    active_time: 5s
     hurry_up_time: 3s
     timer_start_events: playfield_active
     auto_launch: false
