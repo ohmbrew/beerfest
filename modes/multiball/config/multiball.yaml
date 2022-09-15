@@ -11,7 +11,7 @@ multiballs:
     ball_count_type: total
     shoot_again: 5s
     start_events: start_multiball
-    ball_locks: bd_pongcup1, bd_pongcup2, bd_kicker_rimrules
+    ball_locks: bd_pongcup1, bd_pongcup2
 
 multiball_locks:
   pt_lock1:
@@ -28,12 +28,12 @@ multiball_locks:
     disable_events: start_multiball
     reset_count_for_current_player_events: multiball_pt_multiball_started
 
-  pt_lock3:
-    lock_devices: bd_kicker_rimrules
-    balls_to_lock: 1
-    enable_events: enable_pt_lock
-    disable_events: start_multiball
-    reset_count_for_current_player_events: multiball_pt_multiball_started
+  #pt_lock3:
+  #  lock_devices: bd_kicker_rimrules
+  #  balls_to_lock: 1
+  #  enable_events: enable_pt_lock
+  #  disable_events: start_multiball
+  #  reset_count_for_current_player_events: multiball_pt_multiball_started
 
 state_machines:
   multiball:
