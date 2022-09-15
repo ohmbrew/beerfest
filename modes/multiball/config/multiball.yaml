@@ -12,7 +12,7 @@ multiballs:
     ball_count_type: total
     shoot_again: 5s
     start_events: start_multiball
-    ball_locks: bd_pongcup1, bd_pongcup2
+    #ball_locks: bd_pongcup1, bd_pongcup2
 
 multiball_locks:
   pt_lock1:
