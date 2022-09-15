@@ -7,6 +7,7 @@ mode:
 
 multiballs:
   pt_multiball:
+    debug: true
     ball_count: 3
     ball_count_type: total
     shoot_again: 5s
@@ -15,6 +16,7 @@ multiballs:
 
 multiball_locks:
   pt_lock1:
+    debug: true
     lock_devices: bd_pongcup1
     balls_to_lock: 1
     enable_events: enable_pt_lock
@@ -22,6 +24,7 @@ multiball_locks:
     reset_count_for_current_player_events: multiball_pt_multiball_started
 
   pt_lock2:
+    debug: true
     lock_devices: bd_pongcup2
     balls_to_lock: 1
     enable_events: enable_pt_lock
