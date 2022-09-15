@@ -292,45 +292,46 @@ state_machines:
         target: diverter_rightramp
         events: shot_diverter_hit
   
-  pongtable_state_machine:
-    persist_state: true
-    states:
-      start:
-        label: PongTable Starting
-      pongtable_cup1:
-        label: PongTable Cup 1 Active
-        show_when_active:
-          show: pongtable_show
-          show_tokens:
-            cup: 1
-          loops: 0
-      pongtable_cup2:
-        label: PongTable Cup 2 Active
-        show_when_active:
-          show: pongtable_show
-          show_tokens:
-            cup: 2
-          loops: 0
-      pongtable_cupNone:
-        label: PongTable Cup 2 Active
-        show_when_active:
-          show: pongtable_show
-          show_tokens:
-            cup: None
-          loops: 0
-    transitions:
-      - source: start
-        target: pongtable_cup1
-        events: mode_base_started
-      - source: pongtable_cup1
-        target: pongtable_cup2
-        events: pongtable_movetocup2
-      - source: pongtable_cup2
-        target: pongtable_cupNone
-        events: pongtable_movetocupNone
-      - source: pongtable_cupNone
-        target: pongtable_cup1
-        events: game_ending
+  # Implemented pong table state machine in multiball.yaml
+  # pongtable_state_machine:
+  #   persist_state: true
+  #   states:
+  #     start:
+  #       label: PongTable Starting
+  #     pongtable_cup1:
+  #       label: PongTable Cup 1 Active
+  #       show_when_active:
+  #         show: pongtable_show
+  #         show_tokens:
+  #           cup: 1
+  #         loops: 0
+  #     pongtable_cup2:
+  #       label: PongTable Cup 2 Active
+  #       show_when_active:
+  #         show: pongtable_show
+  #         show_tokens:
+  #           cup: 2
+  #         loops: 0
+  #     pongtable_cupNone:
+  #       label: PongTable Cup 2 Active
+  #       show_when_active:
+  #         show: pongtable_show
+  #         show_tokens:
+  #           cup: None
+  #         loops: 0
+  #   transitions:
+  #     - source: start
+  #       target: pongtable_cup1
+  #       events: mode_base_started
+  #     - source: pongtable_cup1
+  #       target: pongtable_cup2
+  #       events: pongtable_movetocup2
+  #     - source: pongtable_cup2
+  #       target: pongtable_cupNone
+  #       events: pongtable_movetocupNone
+  #     - source: pongtable_cupNone
+  #       target: pongtable_cup1
+  #       events: game_ending
 
 variable_player:
   shot_trojankeg_left_hit:

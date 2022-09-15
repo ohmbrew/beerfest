@@ -42,7 +42,7 @@ coils:
     number: A0-B1-5
     default_pulse_ms: 500
     default_hold_power: .5
-    pulse_events: release_cup1
+    pulse_events: release_cup1    # adding this event removes the default pulse_event, which collecting_balls was using to fire the release coils too early.
   c_pongcup2:
     number: A0-B1-6
     default_pulse_ms: 500

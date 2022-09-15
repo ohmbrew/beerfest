@@ -2,8 +2,8 @@
 ##! mode: multiball
 
 mode:
-  start_events: multiball_lock_pt_lock3_full
-  stop_events: multiball_pt_multiball_ended
+  start_events: mode_base_started
+  stop_events: game_ended
 
 multiballs:
   pt_multiball:
@@ -12,37 +12,88 @@ multiballs:
     shoot_again: 5s
     start_events: mode_multiball_started
     ball_locks: bd_pongcup1, bd_pongcup2, bd_kicker_rimrules
-    
+
+multiball_locks:
+  pt_lock1:
+    lock_devices: bd_pongcup1
+    balls_to_lock: 1
+    enable_events: enable_pt_lock
+    disable_events: start_multiball
+    reset_count_for_current_player_events: multiball_pt_multiball_started
+
+  pt_lock2:
+    lock_devices: bd_pongcup2
+    balls_to_lock: 1
+    enable_events: enable_pt_lock
+    disable_events: start_multiball
+    reset_count_for_current_player_events: multiball_pt_multiball_started
+
+  pt_lock3:
+    lock_devices: bd_kicker_rimrules
+    balls_to_lock: 1
+    enable_events: enable_pt_lock
+    disable_events: start_multiball
+    reset_count_for_current_player_events: multiball_pt_multiball_started
+
 state_machines:
   multiball:
+    persist_state: true
     states:
       start:
-        label: PongTable lock not enabled
-      lock_enabled:
-        label: PongTable lock enabled
-        events_when_started: enable_lock
-        events_when_stopped: disable_lock
-      multiball_available:
-        label: PongTable multiball can be started
+        label: PongTable lock not enabled   # turn table to 90 deg so balls just fall thru to PF
+        show_when_active:
+          show: pongtable_show
+          show_tokens:
+            cup: 0
+          loops: 0
+      pongtable_cup1:
+        label: PongTable Cup 1 Active
+        events_when_started: enable_pt_lock
+        show_when_active:
+          show: pongtable_show
+          show_tokens:
+            cup: 1
+          loops: 0
+      pongtable_cup2:
+        label: PongTable Cup 2 Active
+        show_when_active:
+          show: pongtable_show
+          show_tokens:
+            cup: 2
+          loops: 0
+      pongtable_cupNone:
+        label: PongTable Cup 2 Active
+        show_when_active:
+          show: pongtable_show
+          show_tokens:
+            cup: 0
+          loops: 0
       multiball_running:
         label: PongTable multiball running
         events_when_started: start_multiball
+        show_when_active:
+          show: pongtable_releaseall_show
+          loops: 0
+          
     transitions:
       # for reference - conditional event DEVICE. not DEVICES.
       #- source: start, lock_enabled
       #  target: multiball_available
       #  events: mode_multiball_started{device.ball_devices.bd_lock.balls==2}
       - source: start
-        target: lock_enabled
-        events: test_event1
-      - source: lock_enabled
-        target: multiball_available
-        events: multiball_lock_pt_full
-      - source: multiball_available
+        target: pongtable_cup1
+        events: mode_multiball_started    # currently multiball is enabled whenever this mode is started. TODO: Add beer mug fill up to act as enabler
+      - source: pongtable_cup1
+        target: pongtable_cup2
+        events: pongtable_movetocup2
+      - source: pongtable_cup2
+        target: pongtable_cupNone
+        events: pongtable_movetocupNone
+      - source: pongtable_cupNone
         target: multiball_running
-        events: test_event2
+        events: kicker_rimrules_eject
       - source: multiball_running
-        target: start
+        target: pongtable_cup1
         events: multiball_pt_multiball_ended
 
 
