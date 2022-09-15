@@ -10,7 +10,7 @@ multiballs:
     ball_count: 3
     ball_count_type: total
     shoot_again: 5s
-    start_events: mode_multiball_started
+    start_events: start_multiball
     ball_locks: bd_pongcup1, bd_pongcup2, bd_kicker_rimrules
 
 multiball_locks:
@@ -74,7 +74,7 @@ state_machines:
         show_when_active:
           show: pongtable_releaseall_show
           loops: 0
-          
+
     transitions:
       # for reference - conditional event DEVICE. not DEVICES.
       #- source: start, lock_enabled
