@@ -28,9 +28,6 @@ modes:
   - longpour
   - quarters
   - strikeout
-  - mball_lock1
-  - mball_lock2
-  - mball_lock3
   - multiball
 
 player_vars:
@@ -117,7 +114,7 @@ servos:
     servo_max: 1.0
     positions:
       0.0: pongcup_1
-      0.5: pongcup_None
+      0.5: pongcup_0
       1.0: pongcup_2
     reset_position: 0.0
     reset_events: mode_attract_started
@@ -249,6 +246,7 @@ ball_holds:
     balls_to_hold: 1
     hold_devices: bd_kicker_rimrules
     release_one_events: kicker_rimrules_eject
+  # Using multiball_locks instead of ball_holds for the pong cup
   #pongcup1:
   #  balls_to_hold: 1
   #  hold_devices: bd_pongcup1

@@ -51,7 +51,7 @@ sound_player:
   shot_pongcup2_hit:
     voice_sink1left:
       action: play
-      events_when_stopped: pongtable_movetocup2
+      events_when_stopped: pongtable_movetocupNone
   shot_diverter_hit:
     2burps:
       action: play
