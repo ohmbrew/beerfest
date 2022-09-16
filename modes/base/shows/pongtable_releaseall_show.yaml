@@ -10,5 +10,7 @@
   events: pongcup_1
 - time: '+1.5'
   events: release_cup1
+- time: '+.5'
+  events: pongcups_released
 
 
