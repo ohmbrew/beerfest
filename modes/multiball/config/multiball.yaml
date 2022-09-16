@@ -48,7 +48,7 @@ multiball_locks:
 
 state_machines:
   multiball:
-    persist_state: true
+    #persist_state: true
     states:
       start:
         label: PongTable lock not enabled   # turn table to 90 deg so balls just fall thru to PF
