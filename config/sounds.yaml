@@ -7,8 +7,23 @@ sounds:
   intro:
     file: intro1.wav
     volume: 1.0
+  music_bubbles:
+    file: soundtrack-bubbles.wav
+    volume: 1.0
+  music_drinkonme:
+    file: soundtrack-drinkonme.wav
+    volume: 1.0
+  music_hardasarock:
+    file: soundtrack-hardasarock.wav
+    volume: 1.0
+  music_jungleboogie:
+    file: soundtrack-jungleboogie.wav
+    volume: 1.0
+  music_wasted:
+    file: soundtrack-wasted.wav
+    volume: 1.0
   voice_sink2left:
-    file: sink2left.wav
+    file: notthatdrunk1.wav
     track: voice
     volume: 1.0
     ducking:
@@ -19,7 +34,7 @@ sounds:
         release_point: 1.0 sec
         release: 3.0 sec
   voice_sink1left:
-    file: sink1left.wav
+    file: notthatdrunk2.wav
     track: voice
     volume: 1.0
     ducking:
@@ -41,7 +56,7 @@ sounds:
         release_point: .5 sec
         release: 1.5 sec
   voice_longpour_intro:
-    file: modeintro_longpour.wav
+    file: modeintro-longpour.wav
     track: voice
     volume: 1.0
     ducking:
@@ -52,7 +67,7 @@ sounds:
         release_point: .5 sec
         release: 1.5 sec
   voice_quarters_intro:
-    file: modeintro_quarters.wav
+    file: modeintro-quarters.wav
     track: voice
     volume: 1.0
     ducking:
@@ -63,7 +78,7 @@ sounds:
         release_point: .5 sec
         release: 1.5 sec
   voice_strikeout_intro:
-    file: modeintro_strikeout.wav
+    file: modeintro-strikeout.wav
     track: voice
     volume: 1.0
     ducking:
@@ -74,7 +89,7 @@ sounds:
         release_point: .5 sec
         release: 1.5 sec
   voice_volumechug_intro:
-    file: modeintro_volumechug.wav
+    file: modeintro-volumechug.wav
     track: voice
     volume: 1.0
     ducking:
@@ -85,7 +100,7 @@ sounds:
         release_point: .5 sec
         release: 1.5 sec
   voice_trojankeg_intro:
-    file: modeintro_trojankeg.wav
+    file: modeintro-trojankeg.wav
     track: voice
     volume: 1.0
     ducking:
@@ -96,7 +111,7 @@ sounds:
         release_point: .5 sec
         release: 1.5 sec
   voice_dasboot_intro:
-    file: modeintro_dasboot.wav
+    file: modeintro-dasboot.wav
     track: voice
     volume: 1.0
     ducking:
@@ -106,8 +121,19 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
-  voice_notthatdrunk:
-    file: notthatdrunk2.wav
+  voice_cheers:
+    file: cheers.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec     
+  voice_eyeofjew:
+    file: eyeofthejew1.wav
     track: voice
     volume: 1.0
     ducking:
@@ -117,3 +143,14 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
+  voice_tavern:
+    file: tavern1.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec     

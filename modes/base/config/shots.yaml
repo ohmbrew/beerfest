@@ -1,0 +1,68 @@
+#config_version=5
+
+shots:
+  shot_plunger_lane_exit:
+    switch: s_plunger_lane_exit
+  shot_popbumper_lower:
+    switch: s_popbumper_lower
+  shot_popbumper_upper_right:
+    switch: s_popbumper_upper_right
+  shot_popbumper_upper_left:
+    switch: s_popbumper_upper_left
+  shot_trojankeg_left:
+    switch: s_trojankeg_left
+  shot_trojankeg_middle:
+    switch: s_trojankeg_middle
+  shot_trojankeg_right:
+    switch: s_trojankeg_right
+  shot_special:
+    switch: s_special
+  shot_chance:
+    switch: s_chance
+  shot_take_hit:
+    switch: s_take_hit
+  shot_chug_beer:
+    switch: s_chug_beer
+  shot_do_shot:
+    switch: s_do_shot
+  shot_kicker_rimrules:
+    switch: s_kicker_rimrules
+  shot_kicker_mode:
+    switch: s_kicker_mode
+  shot_quarters:
+    switch: s_quarters
+  shot_tavern_spinner:
+    switch: s_tavern_spinner
+  shot_pongcup1:
+    switch: s_pongcup1
+  shot_pongcup2:
+    switch: s_pongcup2
+  shot_diverter:
+    switch: s_diverter
+  shot_ramp_drinko:
+    switch: s_ramp_drinko
+  shot_drinko_d:
+    switch: s_drinko_d
+  shot_drinko_r:
+    switch: s_drinko_r
+  shot_drinko_i:
+    switch: s_drinko_i
+  shot_drinko_n:
+    switch: s_drinko_n
+  shot_drinko_k:
+    switch: s_drinko_k
+  shot_drinko_o:
+    switch: s_drinko_o
+  shot_drinko_bang:
+    switch: s_drinko_bang
+  shot_sling_quarters:
+    switch: s_slingshot_quarters
+  shot_sling_left:
+    switch: s_slingshot_left
+  shot_sling_right:
+    switch: s_slingshot_right
+  shot_ramp_boot:
+    switch: s_tgt_ramp_boot
+  shot_tgt_rimrules:
+    switch: s_target_rimrules
+  

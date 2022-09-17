@@ -55,6 +55,15 @@ sound_player:
   shot_diverter_hit:
     2burps:
       action: play
+  shot_ramp_boot_hit:
+    voice_cheers:
+      action: play
+  shot_tgt_rimrules_hit:
+    voice_eyeofjew:
+      action: play
+  spinner_tavern_spinner_active:
+    voice_tavern:
+      action: play
 
 event_player:
   shot_kicker_mode_hit{device.counters.count_mug_lights.value >= 14}: launch_random_game_mode

@@ -38,17 +38,21 @@ shots:
   shot_drinko_o: 138
   shot_drinko_r: 144
   shot_kicker_mode: 187
-  shot_kicker_rimrules: 111
+  shot_kicker_rimrules: 112
   shot_plunger_lane_exit: 38
-  shot_pongcup1: 139
-  shot_pongcup2: 29
+  shot_pongcup1: 140
+  shot_pongcup2: 30
   shot_popbumper_lower: 261
-  shot_popbumper_upper_left: 495
+  shot_popbumper_upper_left: 497
   shot_popbumper_upper_right: 484
-  shot_quarters: 139
+  shot_quarters: 142
+  shot_ramp_boot: 10
+  shot_ramp_drinko: 1
+  shot_sling_quarters: 17
   shot_take_hit: 78
-  shot_tavern_spinner: 1322
-  shot_trojankeg_left: 1123
+  shot_tavern_spinner: 1380
+  shot_tgt_rimrules: 5
+  shot_trojankeg_left: 1134
   shot_trojankeg_middle: 161
   shot_trojankeg_right: 112
   take_hit: 57
@@ -71,41 +75,41 @@ switches:
   s_flipper_left: 1944
   s_flipper_right: 2251
   s_kicker_mode: 781
-  s_kicker_rimrules: 600
-  s_laneleft_inner: 17
-  s_laneleft_outer: 2
+  s_kicker_rimrules: 601
+  s_laneleft_inner: 18
+  s_laneleft_outer: 4
   s_laneright_inner: 19
-  s_laneright_outer: 12
+  s_laneright_outer: 13
   s_left_flipper: 154
   s_left_slingshot: 32
   s_orbit_entry: 0
   s_orbit_exit: 0
   s_plunger_lane: 1256
   s_plunger_lane_exit: 226
-  s_pongcup1: 139
-  s_pongcup2: 29
+  s_pongcup1: 140
+  s_pongcup2: 30
   s_pongtable_exit: 40
   s_pongtable_front_left: 95
   s_pongtable_front_right: 87
   s_popbumper_lower: 799
   s_popbumper_upper: 141
-  s_popbumper_upper_left: 555
+  s_popbumper_upper_left: 557
   s_popbumper_upper_right: 548
-  s_quarters: 173
-  s_ramp_drinko: 34
+  s_quarters: 176
+  s_ramp_drinko: 35
   s_right_flipper: 183
   s_slingshot_left: 925
-  s_slingshot_quarters: 217
+  s_slingshot_quarters: 234
   s_slingshot_right: 1033
   s_special: 2
   s_start: 18
   s_take_hit: 154
-  s_target_rimrules: 17
+  s_target_rimrules: 22
   s_tavern_exit: 0
-  s_tavern_spinner: 2793
-  s_tgt_ramp_boot: 34
+  s_tavern_spinner: 2851
+  s_tgt_ramp_boot: 44
   s_trogan_keg: 22
-  s_trojankeg_left: 1160
+  s_trojankeg_left: 1171
   s_trojankeg_middle: 189
   s_trojankeg_right: 144
   s_trough1: 381
