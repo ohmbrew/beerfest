@@ -181,11 +181,14 @@ sound_player:
 
 show_player:
   shot_popbumper_lower_hit:
-    show_pop_lower
+    show_pop_lower:
+      loops: 0
   shot_popbumper_upper_left_hit:
-    show_pop_left
+    show_pop_left:
+      loops: 0
   shot_popbumper_upper_right_hit:
-    show_pop_right  
+    show_pop_right:
+      loops: 0
   sp_drinko_d:
     show_light_d
   sp_drinko_r:
