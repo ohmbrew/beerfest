@@ -1,6 +1,13 @@
 #config_version=5
 
 lights:
+  pop_left:
+    number: A2-B0-0
+  pop_right:
+    number: A2-B0-1
+  pop_lower:
+    number: A2-B0-2
+    
   # Drinko (7xRGB, J5/J9)
   drinko_n:
     start_channel: 1-250

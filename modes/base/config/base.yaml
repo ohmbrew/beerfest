@@ -5,6 +5,9 @@ mode:
   start_events: ball_started
   priority: 100
 
+config:
+  - shots.yaml
+
 event_player:
   mode_base_started:
     - start_mode_global
@@ -72,6 +75,27 @@ accruals:
 
 # shows to light lights when drinko sensor has been hit
 shows:
+  show_pop_left:
+    - time: 0
+      lights:
+        pop_left: on
+    - time: '+.5'
+      lights:
+        pop_left: off
+  show_pop_right:
+    - time: 0
+      lights:
+        pop_right: on
+    - time: '+.5'
+      lights:
+        pop_right: off
+  show_pop_lower:
+    - time: 0
+      lights:
+        pop_lower: on
+    - time: '+.5'
+      lights:
+        pop_lower: off     
   show_light_d:
     - time: 0
       lights:
@@ -164,10 +188,16 @@ shows:
 
 sound_player:
   award_drinko_bonus:
-    voice_notthatdrunk:
+    voice_sink1left:
       action: play
 
 show_player:
+  shot_popbumper_lower_hit:
+    show_pop_lower
+  shot_popbumper_upper_left_hit:
+    show_pop_left
+  shot_popbumper_upper_right_hit:
+    show_pop_right  
   sp_drinko_d:
     show_light_d
   sp_drinko_r:
@@ -291,47 +321,6 @@ state_machines:
       - source: diverter_leftramp
         target: diverter_rightramp
         events: shot_diverter_hit
-  
-  # Implemented pong table state machine in multiball.yaml
-  # pongtable_state_machine:
-  #   persist_state: true
-  #   states:
-  #     start:
-  #       label: PongTable Starting
-  #     pongtable_cup1:
-  #       label: PongTable Cup 1 Active
-  #       show_when_active:
-  #         show: pongtable_show
-  #         show_tokens:
-  #           cup: 1
-  #         loops: 0
-  #     pongtable_cup2:
-  #       label: PongTable Cup 2 Active
-  #       show_when_active:
-  #         show: pongtable_show
-  #         show_tokens:
-  #           cup: 2
-  #         loops: 0
-  #     pongtable_cupNone:
-  #       label: PongTable Cup 2 Active
-  #       show_when_active:
-  #         show: pongtable_show
-  #         show_tokens:
-  #           cup: None
-  #         loops: 0
-  #   transitions:
-  #     - source: start
-  #       target: pongtable_cup1
-  #       events: mode_base_started
-  #     - source: pongtable_cup1
-  #       target: pongtable_cup2
-  #       events: pongtable_movetocup2
-  #     - source: pongtable_cup2
-  #       target: pongtable_cupNone
-  #       events: pongtable_movetocupNone
-  #     - source: pongtable_cupNone
-  #       target: pongtable_cup1
-  #       events: game_ending
 
 variable_player:
   shot_trojankeg_left_hit:
@@ -357,76 +346,24 @@ variable_player:
   shot_quarters_hit:
     score: 25000
   shot_tavern_spinner_hit:
-    score: 100
+    score: 2010
   enable_drinko_bonus2:
     score: 100000   # means we got bonus1
   enable_drinko_bonus3:
     score: 200000   # means we got bonus2
   drinko_hammered:
     score: 1000000
+  shot_sling_quarters_hit:
+    score: 1010
+  shot_sling_left_hit:
+    score: 1010
+  shot_sling_right_hit:
+    score: 1010
+  shot_ramp_boot_hit:
+    score: 10000
+  shot_tgt_rimrules_hit:
+    score: 10000
 
-  #s_tavern_spinner_active:
-  #  spinner_rotations: 1
 
-#counters:
-#  spinner_rotations:
-#    count_events: spinner_tavern_spinner_hit
-#    count_complete_value: 10
-
-shots:
-  shot_plunger_lane_exit:
-    switch: s_plunger_lane_exit
-  shot_popbumper_lower:
-    switch: s_popbumper_lower
-  shot_popbumper_upper_right:
-    switch: s_popbumper_upper_right
-  shot_popbumper_upper_left:
-    switch: s_popbumper_upper_left
-  shot_trojankeg_left:
-    switch: s_trojankeg_left
-  shot_trojankeg_middle:
-    switch: s_trojankeg_middle
-  shot_trojankeg_right:
-    switch: s_trojankeg_right
-  shot_special:
-    switch: s_special
-  shot_chance:
-    switch: s_chance
-  shot_take_hit:
-    switch: s_take_hit
-  shot_chug_beer:
-    switch: s_chug_beer
-  shot_do_shot:
-    switch: s_do_shot
-  shot_kicker_rimrules:
-    switch: s_kicker_rimrules
-  shot_kicker_mode:
-    switch: s_kicker_mode
-  shot_quarters:
-    switch: s_quarters
-  shot_tavern_spinner:
-    switch: s_tavern_spinner
-  shot_pongcup1:
-    switch: s_pongcup1
-  shot_pongcup2:
-    switch: s_pongcup2
-  shot_diverter:
-    switch: s_diverter
-  shot_ramp_drinko:
-    switch: s_ramp_drinko
-  shot_drinko_d:
-    switch: s_drinko_d
-  shot_drinko_r:
-    switch: s_drinko_r
-  shot_drinko_i:
-    switch: s_drinko_i
-  shot_drinko_n:
-    switch: s_drinko_n
-  shot_drinko_k:
-    switch: s_drinko_k
-  shot_drinko_o:
-    switch: s_drinko_o
-  shot_drinko_bang:
-    switch: s_drinko_bang  
 
 
