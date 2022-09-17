@@ -77,25 +77,13 @@ accruals:
 shows:
   show_pop_left:
     - time: 0
-      lights:
-        pop_left: on
-    - time: '+.5'
-      lights:
-        pop_left: off
+      events: pop_light_left
   show_pop_right:
     - time: 0
-      lights:
-        pop_right: on
-    - time: '+.5'
-      lights:
-        pop_right: off
+      events: pop_light_right
   show_pop_lower:
     - time: 0
-      lights:
-        pop_lower: on
-    - time: '+.5'
-      lights:
-        pop_lower: off     
+      events: pop_light_lower   
   show_light_d:
     - time: 0
       lights:
