@@ -24,10 +24,10 @@ switches:
   # Bank B (A0-B1)
   s_pongcup1:
     number: A0-B1-0
-    #type: NC
+    type: NC
   s_pongcup2:
     number: A0-B1-1
-    #type: NC
+    type: NC
   s_popbumper_lower:
     number: A0-B1-2
   s_popbumper_upper_left:
