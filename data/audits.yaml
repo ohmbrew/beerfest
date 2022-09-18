@@ -43,7 +43,7 @@ shots:
   shot_pongcup1: 140
   shot_pongcup2: 30
   shot_popbumper_lower: 261
-  shot_popbumper_upper_left: 497
+  shot_popbumper_upper_left: 499
   shot_popbumper_upper_right: 484
   shot_quarters: 142
   shot_ramp_boot: 10
@@ -84,7 +84,7 @@ switches:
   s_left_slingshot: 32
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1256
+  s_plunger_lane: 1257
   s_plunger_lane_exit: 226
   s_pongcup1: 140
   s_pongcup2: 30
@@ -93,7 +93,7 @@ switches:
   s_pongtable_front_right: 87
   s_popbumper_lower: 799
   s_popbumper_upper: 141
-  s_popbumper_upper_left: 557
+  s_popbumper_upper_left: 559
   s_popbumper_upper_right: 548
   s_quarters: 176
   s_ramp_drinko: 35
