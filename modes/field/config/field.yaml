@@ -34,7 +34,7 @@ sound_player:
     voice_betterwhendrunk:
       action: play
       events_when_stopped: kicker_mode_eject
-  shot_kicker_rimrules_hit:
+  play_rimrules_and_eject:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
@@ -83,6 +83,8 @@ sound_player:
 event_player:
   shot_kicker_mode_hit{device.counters.count_mug_lights.value >= 14}: launch_random_game_mode
   shot_kicker_mode_hit{device.counters.count_mug_lights.value < 14}: play_betterwhendrunk_and_eject
+  shot_kicker_rimrules_hit{device.counters.count_mug_lights.value >= 14}: launch_random_game_mode
+  shot_kicker_rimrules_hit{device.counters.count_mug_lights.value < 14}: play_rimrules_and_eject
 
 random_event_player:
   launch_random_game_mode:
