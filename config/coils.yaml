@@ -50,7 +50,7 @@ coils:
     pulse_events: release_cup2
   c_kicker_rimrules:
     number: A0-B1-7
-    default_pulse_ms: 15
+    default_pulse_ms: 8
 
   # PD-LED is A1
 
