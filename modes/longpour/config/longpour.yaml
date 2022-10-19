@@ -9,14 +9,11 @@ mode:
   priority: 300
 
 sound_player:
-  #mode_longpour_started:
-  #  introrepeat:
-  #    action: stop
-  mode_longpour_started.1:
+  mode_longpour_started:
     voice_longpour_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject
   kicker_mode_eject:
     music_hardasarock:
       action: play
@@ -24,10 +21,6 @@ sound_player:
   mode_longpour_will_stop:
     music_hardasarock:
       action: stop
-  #mode_longpour_will_stop.1:
-  #  introrepeat:
-  #    action: play
-  #    loops: -1
   shot_diverter_hit:
     2burps:
       action: play
