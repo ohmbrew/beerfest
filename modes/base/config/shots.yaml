@@ -61,7 +61,7 @@ shots:
     switch: s_slingshot_left
   shot_sling_right:
     switch: s_slingshot_right
-  shot_ramp_boot:
+  shot_tgt_ramp_boot:
     switch: s_tgt_ramp_boot
   shot_tgt_rimrules:
     switch: s_target_rimrules

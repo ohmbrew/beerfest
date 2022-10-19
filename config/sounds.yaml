@@ -3,6 +3,7 @@
 sounds:
   introrepeat:
     file: introrepeat1.wav
+    track: music
     volume: 1.0
   intro:
     file: intro1.wav
@@ -14,7 +15,8 @@ sounds:
     file: soundtrack-drinkonme.wav
     volume: 1.0
   music_hardasarock:
-    file: soundtrack-hardasarock.wav
+    file: soundtrackhardasarock.wav
+    track: music
     volume: 1.0
   music_jungleboogie:
     file: soundtrack-jungleboogie.wav

@@ -123,11 +123,11 @@ sound_system:
   tracks:
     music:
       type: standard
-      simultaneous_sounds: 1
+      simultaneous_sounds: 2
       volume: 1.0
     voice:
       type: standard
-      simultaneous_sounds: 4
+      simultaneous_sounds: 2
       volume: 1.0
     sfx:
       type: standard
