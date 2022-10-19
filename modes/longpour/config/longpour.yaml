@@ -46,7 +46,7 @@ sound_player:
   shot_do_shot_hit:
     doashot:
       action: play
-  play_betterwhendrunk_and_eject:
+  shot_kicker_mode_hit:
     voice_betterwhendrunk:
       action: play
       events_when_stopped: kicker_mode_eject
@@ -80,7 +80,6 @@ sound_player:
     voice_sink1left:
       action: play
       events_when_stopped: pongtable_movetocupNone
-     
 
 slides:
   show_default:
