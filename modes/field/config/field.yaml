@@ -12,6 +12,15 @@ config:
   - drinko_bonus.yaml
 
 sound_player:
+  mode_field_started:
+    introrepeat:
+      action: play
+      track: music
+      loops: -1
+      volume: .5
+  mode_field_will_stop:
+    introrepeat:
+      action: stop    
   shot_take_hit_hit:
     takeahit:
       action: play
