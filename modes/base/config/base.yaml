@@ -43,7 +43,7 @@ slide_player:
         text: (score)
         number_grouping: true
         min_digits: 2
-        font_size: 100
+        font_size: 250
       - type: text
         text: PLAYER (number)
         y: 10
@@ -350,9 +350,13 @@ variable_player:
     score: 1010
   shot_sling_right_hit:
     score: 1010
-  shot_ramp_boot_hit:
+  shot_tgt_ramp_boot_hit:
     score: 10000
   shot_tgt_rimrules_hit:
+    score: 10000
+  shot_diverter_hit:
+    score: 10000
+  shot_ramp_drinko_hit:
     score: 10000
 
 
