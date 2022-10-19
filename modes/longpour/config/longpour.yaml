@@ -132,10 +132,47 @@ shows:
         mode_longpour:
           color: blue
           fade: .1s
-
+  flash_ramp_arrows:
+    - duration: 1
+      lights:
+        arrow_tavern1: red
+        arrow_boot1: white
+        arrow_drinko1: blue
+        arrow_tavern2: off
+        arrow_boot2: off
+        arrow_drinko2: off
+        arrow_tavern3: off
+        arrow_boot3: off
+        arrow_drinko3: off
+    - duration: 1
+      lights:
+        arrow_tavern1: off
+        arrow_boot1: off
+        arrow_drinko1: off
+        arrow_tavern2: white
+        arrow_boot2: blue
+        arrow_drinko2: red
+        arrow_tavern3: off
+        arrow_boot3: off
+        arrow_drinko3: off
+    - duration: 1
+      lights:
+        arrow_tavern1: off
+        arrow_boot1: off
+        arrow_drinko1: off
+        arrow_tavern2: off
+        arrow_boot2: off
+        arrow_drinko2: off
+        arrow_tavern3: blue
+        arrow_boot3: red
+        arrow_drinko3: white
+        
 show_player:
   kicker_mode_eject:
     flash_longpour_insert:
+      speed: 4
+  kicker_mode_eject.1:
+    flash_ramp_arrows:
       speed: 4
 
 # timed round
