@@ -208,9 +208,13 @@ show_player:
   drinko_hammered:
     show_drinko_hammered:
       speed: 4
-  mode_longpour_stopped{current_player.has_longpour}: show_longpour_insert
-  mode_quarters_stopped{current_player.has_quarters}: show_quarters_insert
-  mode_strikeout_stopped{current_player.has_strikeout}: show_strikeout_insert
+  mode_longpour_stopped{current_player.has_longpour==1}: show_longpour_insert
+  mode_base_started{current_player.has_longpour==1}: show_longpour_insert
+  mode_quarters_stopped{current_player.has_quarters==1}: show_quarters_insert
+  mode_base_started{current_player.has_quarters==1}: show_quarters_insert
+  mode_strikeout_stopped{current_player.has_strikeout==1}: show_strikeout_insert
+  mode_base_started{current_player.has_strikeout==1}: show_strikeout_insert
+
   ball_save_ball_save_ball_save_timer_start:
     show_ball_save:
       show_tokens:
