@@ -75,7 +75,7 @@ sound_player:
       events_when_stopped: pongtable_movetocupNone
 
 slides:
-  show_default:
+  show_longpour_slide:
     widgets:
       - type: text
         text: (score)
@@ -113,7 +113,7 @@ slides:
         color: red
 
 slide_player:
-  kicker_mode_eject: show_default
+  kicker_mode_eject: show_longpour_slide
   
 shows:
   flash_longpour_insert:

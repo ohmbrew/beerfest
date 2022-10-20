@@ -12,7 +12,107 @@ sound_player:
   mode_strikeout_started:
     voice_strikeout_intro:
       action: play
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject
+  kicker_mode_eject:
+    music_hardasarock:
+      action: play
+      loops: 0
+  mode_strikeout_will_stop:
+    music_hardasarock:
+      action: stop
+  shot_diverter_hit:
+    2burps:
+      action: play
+  shot_ramp_drinko_hit:
+    2burps:
+      action: play
+  spinner_tavern_spinner_active:
+    voice_tavern:
+      action: play
+  shot_take_hit_hit:
+    takeahit:
+      action: play
+  shot_chug_beer_hit:
+    chugyourbeer:
+      action: play
+  shot_do_shot_hit:
+    doashot:
+      action: play
+  shot_kicker_mode_hit:
+    voice_betterwhendrunk:
+      action: play
       events_when_stopped: kicker_mode_eject
+  shot_kicker_rimrules_hit:
+    rimrules:
+      action: play
+      events_when_stopped: kicker_rimrules_eject
+  shot_trojankeg_left_hit:
+    prosit:
+      action: play
+  shot_trojankeg_middle_hit:
+    prosit:
+      action: play
+  shot_trojankeg_right_hit:
+    prosit:
+      action: play
+  shot_chance_hit:
+    chance:
+      action: play
+  shot_special_hit:
+    unddrinken:
+      action: play    
+  shot_quarters_hit:
+    quarters:
+      action: play
+  shot_pongcup1_hit:
+    voice_sink2left:
+      action: play
+      events_when_stopped: pongtable_movetocup2
+  shot_pongcup2_hit:
+    voice_sink1left:
+      action: play
+      events_when_stopped: pongtable_movetocupNone
+
+slides:
+  show_strikeout_slide:
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 250
+      - type: text
+        text: PLAYER (number)
+        y: 10
+        x: 10
+        font_size: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: text
+        text: BALL (ball)
+        y: 10
+        x: right-10
+        anchor_x: right
+        anchor_y: bottom
+        font_size: 50
+      - type: text
+        text: STRIKEOUT - HIT THE DROP TARGETS!
+        font_size: 100
+        anchor_y: top
+        y: top
+        anchor_x: middle
+        x: middle
+      - type: text
+        text: (player|timer_strikeout_variable)
+        anchor_y: bottom
+        y: bottom
+        anchor_x: middle
+        x: middle
+        font_size: 150
+        color: red
+
+slide_player:
+  kicker_mode_eject: show_strikeout_slide
 
 shows:
   flash_strikeout_insert:
@@ -31,24 +131,59 @@ shows:
         mode_strikeout:
           color: blue
           fade: .1s
-
+  flash_strikeout_inserts:
+    - duration: 1
+      lights:
+        strikeout_shot: red
+        strikeout_beer: white
+        strikeout_bong: blue
+    - duration: 1
+      lights:
+        strikeout_shot: white
+        strikeout_beer: blue
+        strikeout_bong: off
+    - duration: 1
+      lights:
+        strikeout_shot: blue
+        strikeout_beer: off
+        strikeout_bong: red
+    - duration: 1
+      lights:
+        strikeout_shot: off
+        strikeout_beer: red
+        strikeout_bong: white
 show_player:
   kicker_mode_eject:
     flash_strikeout_insert:
+      speed: 4
+  kicker_mode_eject.1:
+    flash_strikeout_inserts:
       speed: 4
 
 # timed round
 timers:
   round_timer_strikeout:
-    start_value: 5
+    start_value: 30
     end_value: 0
     direction: down
     control_events:
       - action: start
         event: kicker_mode_eject
 
+
+
 variable_player:
   mode_strikeout_started:
     has_strikeout:
       action: set
       int: 1
+  timer_round_timer_strikeout_tick:
+    timer_strikeout_variable:
+      int: device.timers.round_timer_strikeout.ticks
+      action: set
+  shot_take_hit_hit:
+    score: 100000
+  shot_chug_beerhit:
+    score: 100000
+  shot_do_shot_hit:
+    score: 100000

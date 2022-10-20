@@ -12,7 +12,108 @@ sound_player:
   mode_quarters_started:
     voice_quarters_intro:
       action: play
+      loops: 0
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject
+  kicker_mode_eject:
+    music_hardasarock:
+      action: play
+      loops: 0
+  mode_quarters_will_stop:
+    music_hardasarock:
+      action: stop
+  shot_diverter_hit:
+    2burps:
+      action: play
+  shot_ramp_drinko_hit:
+    2burps:
+      action: play
+  spinner_tavern_spinner_active:
+    voice_tavern:
+      action: play
+  shot_take_hit_hit:
+    takeahit:
+      action: play
+  shot_chug_beer_hit:
+    chugyourbeer:
+      action: play
+  shot_do_shot_hit:
+    doashot:
+      action: play
+  shot_kicker_mode_hit:
+    voice_betterwhendrunk:
+      action: play
       events_when_stopped: kicker_mode_eject
+  shot_kicker_rimrules_hit:
+    rimrules:
+      action: play
+      events_when_stopped: kicker_rimrules_eject
+  shot_trojankeg_left_hit:
+    prosit:
+      action: play
+  shot_trojankeg_middle_hit:
+    prosit:
+      action: play
+  shot_trojankeg_right_hit:
+    prosit:
+      action: play
+  shot_chance_hit:
+    chance:
+      action: play
+  shot_special_hit:
+    unddrinken:
+      action: play    
+  shot_quarters_hit:
+    quarters:
+      action: play
+  shot_pongcup1_hit:
+    voice_sink2left:
+      action: play
+      events_when_stopped: pongtable_movetocup2
+  shot_pongcup2_hit:
+    voice_sink1left:
+      action: play
+      events_when_stopped: pongtable_movetocupNone    
+
+slides:
+  show_quarters_slide:
+    widgets:
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 250
+      - type: text
+        text: PLAYER (number)
+        y: 10
+        x: 10
+        font_size: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: text
+        text: BALL (ball)
+        y: 10
+        x: right-10
+        anchor_x: right
+        anchor_y: bottom
+        font_size: 50
+      - type: text
+        text: QUARTERS - HIT THAT SHOT GLASS!
+        font_size: 100
+        anchor_y: top
+        y: top
+        anchor_x: middle
+        x: middle
+      - type: text
+        text: (player|timer_quarters_variable)
+        anchor_y: bottom
+        y: bottom
+        anchor_x: middle
+        x: middle
+        font_size: 150
+        color: red
+
+slide_player:
+  kicker_mode_eject: show_quarters_slide
 
 shows:
   flash_quarters_insert:
@@ -31,16 +132,38 @@ shows:
         mode_quarters:
           color: blue
           fade: .1s
+  flash_quarters_prop:
+    - duration: 1
+      lights:
+        quarters: red
+    - duration: 1
+      lights:
+        quarters: off
+    - duration: 1
+      lights:
+        quarters: white
+    - duration: 1
+      lights:
+        quarters: off
+    - duration: 1
+      lights:
+        quarters: blue
+    - duration: 1
+      lights:
+        quarters: off    
 
 show_player:
   kicker_mode_eject:
     flash_quarters_insert:
       speed: 4
+  kicker_mode_eject.1:
+    flash_quarters_prop:
+      speed: 4
 
 # timed round
 timers:
   round_timer_quarters:
-    start_value: 5
+    start_value: 30
     end_value: 0
     direction: down
     control_events:
@@ -52,3 +175,9 @@ variable_player:
     has_quarters:
       action: set
       int: 1
+  timer_round_timer_quarters_tick:
+    timer_quarters_variable:
+      int: device.timers.round_timer_quarters.ticks
+      action: set
+  shot_quarters_hit:
+    score: 150000
