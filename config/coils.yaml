@@ -37,7 +37,9 @@ coils:
   c_strike_out:
     number: A0-B1-3
     default_pulse_ms: 35
+
   # A0-B1-4 unreliable. RimRules coil stopped firing...moved to A0-B1-7. Works again...
+  
   c_kicker_rimrules:
     number: A0-B1-7
     default_pulse_ms: 8
