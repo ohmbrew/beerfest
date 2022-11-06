@@ -2,7 +2,7 @@
 ##! mode: multiball
 
 mode:
-  start_events: game_started
+  start_events: mode_base_started
   stop_events: game_ended
 
 queue_relay_player:

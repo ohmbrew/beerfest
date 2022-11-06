@@ -37,11 +37,11 @@ shots:
   shot_drinko_n: 135
   shot_drinko_o: 138
   shot_drinko_r: 144
-  shot_kicker_mode: 274
+  shot_kicker_mode: 275
   shot_kicker_rimrules: 118
   shot_plunger_lane_exit: 45
-  shot_pongcup1: 142
-  shot_pongcup2: 31
+  shot_pongcup1: 143
+  shot_pongcup2: 32
   shot_popbumper_lower: 261
   shot_popbumper_upper_left: 504
   shot_popbumper_upper_right: 484
@@ -77,7 +77,7 @@ switches:
   s_drinko_r: 270
   s_flipper_left: 1944
   s_flipper_right: 2251
-  s_kicker_mode: 868
+  s_kicker_mode: 869
   s_kicker_rimrules: 607
   s_laneleft_inner: 18
   s_laneleft_outer: 4
@@ -89,8 +89,8 @@ switches:
   s_orbit_exit: 0
   s_plunger_lane: 1267
   s_plunger_lane_exit: 233
-  s_pongcup1: 142
-  s_pongcup2: 31
+  s_pongcup1: 143
+  s_pongcup2: 32
   s_pongtable_exit: 40
   s_pongtable_front_left: 95
   s_pongtable_front_right: 87
