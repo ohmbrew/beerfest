@@ -37,24 +37,16 @@ coils:
   c_strike_out:
     number: A0-B1-3
     default_pulse_ms: 35
+
   # A0-B1-4 unreliable. RimRules coil stopped firing...moved to A0-B1-7. Works again...
-  c_pongcup1:
-    number: A0-B1-5
-    default_pulse_ms: 500
-    default_hold_power: .5
-    pulse_events: release_cup1    # adding this event removes the default pulse_event, which collecting_balls was using to fire the release coils too early.
-  c_pongcup2:
-    number: A0-B1-6
-    default_pulse_ms: 500
-    default_hold_power: .5
-    pulse_events: release_cup2
+  
   c_kicker_rimrules:
     number: A0-B1-7
     default_pulse_ms: 8
 
   # PD-LED is A1
 
-  # 12V Coil Driver PCB: A2
+  # 12V Coil Driver PCB: A2-B0
   l_popbumper_lower:
     number: A2-B0-0
     default_pulse_ms: 50
@@ -76,6 +68,18 @@ coils:
     default_pulse_ms: 40
     default_hold_power: .5
   
+  # 24V Coil Driver PCB: A2-B1
+  c_pongcup1:
+    number: A2-B1-0
+    default_pulse_ms: 500
+    default_hold_power: .5
+    pulse_events: release_cup1    # adding this event removes the default pulse_event, which collecting_balls was using to fire the release coils too early.
+  c_pongcup2:
+    number: A2-B1-1
+    default_pulse_ms: 500
+    default_hold_power: .5
+    pulse_events: release_cup2
+
 autofire_coils:
   slingshot_left:
     coil: c_slingshot_left
