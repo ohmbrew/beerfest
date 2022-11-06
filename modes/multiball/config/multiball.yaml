@@ -5,13 +5,7 @@ mode:
   start_events: mode_base_started
   stop_events: game_ended
 
-queue_relay_player:
-  balldevice_bd_pongcup1_ball_eject_attempt:
-    post: waiting_for_pongtable_releaseall_show_to_end
-    wait_for: pongcups_released
-  balldevice_bd_pongcup2_ball_eject_attempt:
-    post: waiting_for_pongtable_releaseall_show_to_end
-    wait_for: pongcups_released
+
 
 multiballs:
   pt_multiball:
