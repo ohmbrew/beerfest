@@ -231,12 +231,10 @@ ball_devices:
     ball_switches: s_pongcup1
     eject_coil: c_pongcup1
     eject_timeouts: 2s
-    #tags: home
   bd_pongcup2:
     ball_switches: s_pongcup2
     eject_coil: c_pongcup2
     eject_timeouts: 2s
-    #tags: home
 
 ball_holds:
   kicker_mode:
