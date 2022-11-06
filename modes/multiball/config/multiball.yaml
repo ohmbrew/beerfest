@@ -5,8 +5,6 @@ mode:
   start_events: mode_base_started
   stop_events: game_ended
 
-
-
 multiballs:
   pt_multiball:
     debug: true
@@ -21,6 +19,7 @@ multiball_locks:
     debug: true
     lock_devices: bd_pongcup1
     balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
     enable_events: enable_pt_lock
     disable_events: start_multiball
     reset_count_for_current_player_events: multiball_pt_multiball_started
@@ -29,6 +28,7 @@ multiball_locks:
     debug: true
     lock_devices: bd_pongcup2
     balls_to_lock: 1
+    locked_ball_counting_strategy: physical_only
     enable_events: enable_pt_lock
     disable_events: start_multiball
     reset_count_for_current_player_events: multiball_pt_multiball_started
