@@ -28,7 +28,7 @@ modes:
   - longpour
   - quarters
   - strikeout
-  - multiball
+  #- multiball
 
 player_vars:
   current_mode:
