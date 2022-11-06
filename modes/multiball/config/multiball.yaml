@@ -2,7 +2,7 @@
 ##! mode: multiball
 
 mode:
-  start_events: mode_base_started
+  start_events: game_started
   stop_events: game_ended
 
 queue_relay_player:
@@ -48,7 +48,7 @@ multiball_locks:
 
 state_machines:
   multiball:
-    #persist_state: true
+    persist_state: true
     states:
       start:
         label: PongTable lock not enabled   # turn table to 90 deg so balls just fall thru to PF
@@ -102,7 +102,7 @@ state_machines:
         events: pongtable_movetocupNone
       - source: pongtable_cupNone
         target: multiball_running
-        events: kicker_rimrules_eject
+        events: kicker_rimrules_eject, kicker_mode_eject
       - source: multiball_running
         target: pongtable_cup1
         events: multiball_pt_multiball_ended
