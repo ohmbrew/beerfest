@@ -87,7 +87,13 @@ state_machines:
       #  events: mode_multiball_started{device.ball_devices.bd_lock.balls==2}
       - source: start
         target: pongtable_cup1
-        events: mode_multiball_started    # currently multiball is enabled whenever this mode is started. TODO: Add beer mug fill up to act as enabler
+        events: mode_multiball_started{device.ball_devices.bd_pongcup1.balls == 0}
+      - source: start
+        target: pongtable_cup2
+        events: mode_multiball_started{device.ball_devices.bd_pongcup1.balls == 1}
+      - source: start
+        target: pongtable_cupNone
+        events: mode_multiball_started{device.ball_devices.bd_pongcup1.balls == 1 and device.ball_devices.bd_pongcup2.balls == 1}    
       - source: pongtable_cup1
         target: pongtable_cup2
         events: pongtable_movetocup2
