@@ -101,4 +101,7 @@ state_machines:
         target: pongtable_cup1
         events: multiball_pt_multiball_ended
 
+event_player:
+  shot_pongcup1_hit{device.multiballs.pt_multiball.enabled == True}: release_cup1
+
 
