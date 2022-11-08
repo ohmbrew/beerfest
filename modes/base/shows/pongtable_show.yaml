@@ -2,4 +2,4 @@
 - time: 0
   events: pongcup_(cup)
 - time: '+1.5'
-  events: pongcup_(cup)_released
+  events: pongcup_(cup)_moved
