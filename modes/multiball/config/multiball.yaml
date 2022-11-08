@@ -22,7 +22,7 @@ multiball_locks:
     locked_ball_counting_strategy: physical_only
     enable_events: enable_pt_lock
     disable_events: start_multiball
-    reset_count_for_current_player_events: multiball_pt_multiball_started
+    #reset_count_for_current_player_events: multiball_pt_multiball_started
 
   pt_lock2:
     debug: true
@@ -31,7 +31,7 @@ multiball_locks:
     locked_ball_counting_strategy: physical_only
     enable_events: enable_pt_lock
     disable_events: start_multiball
-    reset_count_for_current_player_events: multiball_pt_multiball_started
+    #reset_count_for_current_player_events: multiball_pt_multiball_started
 
   #pt_lock3:
   #  lock_devices: bd_kicker_rimrules
