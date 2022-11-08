@@ -102,6 +102,6 @@ state_machines:
         events: multiball_pt_multiball_ended
 
 event_player:
-  shot_pongcup1_hit{device.multiballs.pt_multiball.enabled == True}: release_cup1
+  shot_pongcup1_hit{device.multiballs.pt_multiball.balls_live_target > 0}: release_cup1
 
 
