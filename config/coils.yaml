@@ -73,12 +73,12 @@ coils:
     number: A2-B1-1
     default_pulse_ms: 500
     default_hold_power: .5
-    pulse_events: release_cup1    # adding this event removes the default pulse_event, which collecting_balls was using to fire the release coils too early.
+    pulse_events: release_cup1 #, None    # adding this event removes the default pulse_event, which collecting_balls was using to fire the release coils too early.
   c_pongcup2:
     number: A2-B1-0
     default_pulse_ms: 500
     default_hold_power: .5
-    pulse_events: release_cup2   # adding this event removes the default pulse_event, which collecting_balls was using to fire the release coils too early.
+    pulse_events: release_cup2 #, None   # adding this event removes the default pulse_event, which collecting_balls was using to fire the release coils too early.
 
 autofire_coils:
   slingshot_left:

@@ -23,11 +23,11 @@ switches:
     tags: playfield_active
   # Bank B (A0-B1)
   s_pongcup1:
-    number: A0-B1-0
+    number: A0-B1-1
     type: NC
     ignore_window_ms: 750
   s_pongcup2:
-    number: A0-B1-1
+    number: A0-B1-0
     type: NC
     ignore_window_ms: 750
   s_popbumper_lower:

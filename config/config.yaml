@@ -248,12 +248,24 @@ ball_holds:
 
 queue_relay_player:
   balldevice_bd_pongcup1_ball_eject_attempt:
-    post: waiting_for_pongtable_releaseall_show_to_end
-    wait_for: pongcups_released
+    post: pongcup_1_release_show
+    wait_for: pongcup_1_released
   balldevice_bd_pongcup2_ball_eject_attempt:
-    post: waiting_for_pongtable_releaseall_show_to_end
-    wait_for: pongcups_released
-    
+    post: pongcup_2_release_show
+    wait_for: pongcup_2_released
+
+show_player:
+  pongcup_1_release_show:
+    pongtable_show:
+      show_tokens:
+        tag: 1
+      loops: 0
+  pongcup_2_release_show:
+    pongtable_show:
+      show_tokens:
+        tag: 2
+      loops: 0
+
 playfields:
   playfield:
     tags: default
