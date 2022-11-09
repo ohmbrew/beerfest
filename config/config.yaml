@@ -258,12 +258,12 @@ show_player:
   pongcup_1_release_show:
     pongtable_show:
       show_tokens:
-        tag: 1
+        cup: 1
       loops: 0
   pongcup_2_release_show:
     pongtable_show:
       show_tokens:
-        tag: 2
+        cup: 2
       loops: 0
 
 playfields:

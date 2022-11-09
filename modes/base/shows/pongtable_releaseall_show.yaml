@@ -4,11 +4,11 @@
 # Not sure what will happen say, if game_ending and we have 0 or 1 balls locked. Might make an extra rotation...
 - time: 0
   events: pongcup_2
-- time: '+1.5'
+- time: '+1'
   events: release_cup2, pongcup_2_released
 - time: '+.5'
   events: pongcup_1
-- time: '+1.5'
+- time: '+1'
   events: release_cup1, pongcup_1_released
 - time: '+.5'
   events: pongcups_released

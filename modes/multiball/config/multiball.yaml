@@ -61,6 +61,7 @@ state_machines:
           loops: 0
       pongtable_cup2:
         label: PongTable Cup 2 Active
+        events_when_started: enable_pt_lock
         show_when_active:
           show: pongtable_show
           show_tokens:
@@ -68,6 +69,7 @@ state_machines:
           loops: 0
       pongtable_cupNone:
         label: PongTable Cup 2 Active
+        events_when_started: enable_pt_lock
         show_when_active:
           show: pongtable_show
           show_tokens:
