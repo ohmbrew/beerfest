@@ -87,13 +87,13 @@ state_machines:
       #  events: mode_multiball_started{device.ball_devices.bd_lock.balls==2}
       - source: start
         target: pongtable_cup1
-        events: mode_multiball_started{device.switches.s_pongcup1 == 0}
+        events: mode_multiball_started{device.switches.s_pongcup1.state == 0}
       - source: start
         target: pongtable_cup2
-        events: mode_multiball_started{device.switches.s_pongcup1 == 1}
+        events: mode_multiball_started{device.switches.s_pongcup1.state == 1}
       - source: start
         target: pongtable_cupNone
-        events: mode_multiball_started{device.switches.s_pongcup1 == 0 and device.switches.s_pongcup2 == 1}    
+        events: mode_multiball_started{device.switches.s_pongcup1.state == 0 and device.switches.s_pongcup2.state == 1}    
       - source: pongtable_cup1
         target: pongtable_cup2
         events: pongtable_movetocup2
@@ -108,6 +108,6 @@ state_machines:
         events: multiball_pt_multiball_ended
 
 event_player:
-  shot_pongcup1_hit{device.multiballs.pt_multiball.enabled}: release_cup1
+  shot_pongcup1_hit{device.multiballs.pt_multiball.balls_live_target > 1}: release_cup1
 
 
