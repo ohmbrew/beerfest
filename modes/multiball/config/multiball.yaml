@@ -95,7 +95,7 @@ state_machines:
         events: mode_multiball_started{device.switches.s_pongcup1.state == 1}
       - source: start
         target: pongtable_cupNone
-        events: mode_multiball_started{device.switches.s_pongcup1.state == 0 and device.switches.s_pongcup2.state == 1}    
+        events: mode_multiball_started{device.switches.s_pongcup1.state == 1 and device.switches.s_pongcup2.state == 1}    
       - source: pongtable_cup1
         target: pongtable_cup2
         events: pongtable_movetocup2
