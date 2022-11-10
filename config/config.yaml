@@ -246,16 +246,20 @@ ball_holds:
     hold_devices: bd_kicker_rimrules
     release_one_events: kicker_rimrules_eject
 
+# cases where MPF will try to eject from pongcups
+# 1. Multiball not running: Both coils are activated simultaneously (e.g. collecting_balls, or on reset)
+# 2. Multiball running: Both coils activated on start_multiball
+# 3. Multiball running: Only pongcup1 coil activated (e.g. player hit pongcup1 during multiball - release immediately)
 queue_relay_player:
-  # check if pongcup2 has a ball. Play releaseall show
+  # check if pongcup2 has a ball. If so, play releaseall show
   balldevice_bd_pongcup1_ball_eject_attempt{device.switches.s_pongcup2.state == 1}:
     post: pongcup_all_release_show
     wait_for: pongcups_released
   # should only be attempting eject if we also are ejecting pongcup1. Which should be handled above
   balldevice_bd_pongcup2_ball_eject_attempt:
-    post: pongcup_2_waiting_for_releaseall_show_to_finish
-    wait_for: pongcups_released
-  # this should happen if we are in multiball and player has hit pongcup1. Release immediately.
+    post: pongcup_2_waiting_for_releaseall_show_to_finish   # dummy event
+    wait_for: pongcups_released   # this waits on pongcup_all_release_show to finish
+  # Check if we are in multiball and pongcup2 does NOT have a ball. Means balls have already been released for multiball and player hit pongcup1. Release immediately.
   balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 0}:
     post: pongcup_1_release_show
     wait_for: pongcup_1_moved
@@ -269,11 +273,6 @@ show_player:
       show_tokens:
         cup: 1
       loops: 0
-  #pongcup_2_release_show:
-  #  pongtable_show:
-  #    show_tokens:
-  #      cup: 2
-  #    loops: 0
 
 playfields:
   playfield:
