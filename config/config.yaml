@@ -247,24 +247,33 @@ ball_holds:
     release_one_events: kicker_rimrules_eject
 
 queue_relay_player:
-  balldevice_bd_pongcup1_ball_eject_attempt:
+  # check if pongcup2 has a ball. Play releaseall show
+  balldevice_bd_pongcup1_ball_eject_attempt{device.switches.s_pongcup2.state == 1}:
+    post: pongcup_all_release_show
+    wait_for: pongcups_released
+  # should only be attempting eject if we also are ejecting pongcup1. Which should be handled above
+  balldevice_bd_pongcup2_ball_eject_attempt:
+    post: pongcup_2_waiting_for_releaseall_show_to_finish
+    wait_for: pongcups_released
+  # this should happen if we are in multiball and player has hit pongcup1. Release immediately.
+  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 0}:
     post: pongcup_1_release_show
     wait_for: pongcup_1_moved
-  balldevice_bd_pongcup2_ball_eject_attempt:
-    post: pongcup_2_release_show
-    wait_for: pongcup_2_moved
 
 show_player:
+  pongcup_all_release_show:
+    pongtable_releaseall_show:
+      loops: 0
   pongcup_1_release_show:
     pongtable_show:
       show_tokens:
         cup: 1
       loops: 0
-  pongcup_2_release_show:
-    pongtable_show:
-      show_tokens:
-        cup: 2
-      loops: 0
+  #pongcup_2_release_show:
+  #  pongtable_show:
+  #    show_tokens:
+  #      cup: 2
+  #    loops: 0
 
 playfields:
   playfield:

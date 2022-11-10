@@ -46,11 +46,11 @@ state_machines:
     states:
       start:
         label: PongTable lock not enabled   # turn table to 90 deg so balls just fall thru to PF
-        show_when_active:
-          show: pongtable_show
-          show_tokens:
-            cup: 0
-          loops: 0
+        #show_when_active:
+        #  show: pongtable_show
+        #  show_tokens:
+        #    cup: 0
+        #  loops: 0
       pongtable_cup1:
         label: PongTable Cup 1 Active
         events_when_started: enable_pt_lock
@@ -109,7 +109,7 @@ state_machines:
         target: pongtable_cup1
         events: multiball_pt_multiball_ended
 
-event_player:
-  shot_pongcup1_hit{device.state_machines.multiball.state == "multiball_running"}: release_cup1
+#event_player:
+#  shot_pongcup1_hit{device.state_machines.multiball.state == "multiball_running"}: release_cup1
 
 
