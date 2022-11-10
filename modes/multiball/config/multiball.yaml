@@ -78,9 +78,9 @@ state_machines:
       multiball_running:
         label: PongTable multiball running
         events_when_started: start_multiball
-        show_when_active:
-          show: pongtable_releaseall_show
-          loops: 0
+        #show_when_active:
+        #  show: pongtable_releaseall_show
+        #  loops: 0
 
     transitions:
       # for reference - conditional event DEVICE. not DEVICES.
