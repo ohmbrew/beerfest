@@ -21,59 +21,7 @@ sound_player:
   mode_quarters_will_stop:
     music_hardasarock:
       action: stop
-  shot_diverter_hit:
-    2burps:
-      action: play
-  shot_ramp_drinko_hit:
-    2burps:
-      action: play
-  spinner_tavern_spinner_active:
-    voice_tavern:
-      action: play
-  shot_take_hit_hit:
-    takeahit:
-      action: play
-  shot_chug_beer_hit:
-    chugyourbeer:
-      action: play
-  shot_do_shot_hit:
-    doashot:
-      action: play
-  shot_kicker_mode_hit:
-    voice_betterwhendrunk:
-      action: play
-      events_when_stopped: kicker_mode_eject
-  shot_kicker_rimrules_hit:
-    rimrules:
-      action: play
-      events_when_stopped: kicker_rimrules_eject
-  # shot_trojankeg_left_hit:
-  #   prosit:
-  #     action: play
-  # shot_trojankeg_middle_hit:
-  #   prosit:
-  #     action: play
-  # shot_trojankeg_right_hit:
-  #   prosit:
-  #     action: play
-  shot_chance_hit:
-    chance:
-      action: play
-  shot_special_hit:
-    unddrinken:
-      action: play    
-  shot_quarters_hit:
-    quarters:
-      action: play
-  shot_pongcup1_hit:
-    voice_sink2left:
-      action: play
-      events_when_stopped: pongtable_movetocup2
-  shot_pongcup2_hit:
-    voice_sink1left:
-      action: play
-      events_when_stopped: pongtable_movetocupNone    
-
+  
 slides:
   show_quarters_slide:
     widgets:
