@@ -263,7 +263,10 @@ queue_relay_player:
     wait_for: pongcups_released   # this waits on pongcup_all_release_show to finish
   balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state != "multiball_running" and device.switches.s_pongcup2.state == 0}:
     post: pongcup_1_release_show
-    wait_for: pongcup_1_moved  
+    wait_for: pongcup_1_moved
+  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 1}:
+    post: pongcup_all_release_show
+    wait_for: pongcups_released  
   # Check if we are in multiball and pongcup2 does NOT have a ball. Means balls have already been released for multiball and player hit pongcup1. Release immediately.
   balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 0}:
     post: pongcup_1_release_show
