@@ -1,0 +1,16 @@
+#show_version=5
+- time: '+1'
+  lights:
+    trojankeg_left: red
+    trojankeg_middle: red
+    trojankeg_right: red
+- time: '+1'
+  lights:
+    trojankeg_left: white
+    trojankeg_middle: white
+    trojankeg_right: white
+- time: '+1'
+  lights:
+    trojankeg_left: blue
+    trojankeg_middle: blue
+    trojankeg_right: blue

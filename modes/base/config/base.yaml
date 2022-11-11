@@ -75,12 +75,21 @@ accruals:
 
 # shows to light lights when drinko sensor has been hit
 shows:
-  init_pop_lights:
+  init_lights:
     - time: 0
       lights:
         l_popbumper_left: on
         l_popbumper_right: on
         l_popbumper_lower: on
+        slingquarters_upper: white
+        slingquarters_lower: white
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        flipper_left: white
+        flipper_right: white
+        
   show_pop_left:
     - time: 0
       lights:
@@ -251,7 +260,7 @@ sound_player:
 
 show_player:
   mode_base_started:
-    init_pop_lights
+    init_lights
   shot_popbumper_lower_hit:
     show_pop_lower:
       loops: 0
