@@ -254,13 +254,16 @@ ball_holds:
 # 3. Multiball running: Only pongcup1 coil activated (e.g. player hit pongcup1 during multiball - release immediately)
 queue_relay_player:
   # Check if we're not in multiball. Doesn't matter if pongcup2 has a ball or not. Must run pongcup_releaseall_show
-  balldevice_bd_pongcup1_ball_eject_attempt:
+  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state != "multiball_running" and device.switches.s_pongcup2.state == 1}:
     post: pongcup_all_release_show
     wait_for: pongcups_released
   # should only be attempting eject if we also are ejecting pongcup1. Which should be handled above
   balldevice_bd_pongcup2_ball_eject_attempt:
     post: pongcup_2_waiting_for_releaseall_show_to_finish   # dummy event
     wait_for: pongcups_released   # this waits on pongcup_all_release_show to finish
+  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state != "multiball_running" and device.switches.s_pongcup2.state == 0}:
+    post: pongcup_1_release_show
+    wait_for: pongcup_1_moved  
   # Check if we are in multiball and pongcup2 does NOT have a ball. Means balls have already been released for multiball and player hit pongcup1. Release immediately.
   balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 0}:
     post: pongcup_1_release_show
