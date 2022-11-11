@@ -6,7 +6,7 @@ mode:
   stop_events: stop_mode_global, ball_will_end
   priority: 200
 
-config:
+#config:
   # add your configs here. For instance:
   # - global_multiball_madness_light_and_lock.yaml
   # - global_pop_bumpers.yaml
