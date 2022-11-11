@@ -75,27 +75,33 @@ accruals:
 
 # shows to light lights when drinko sensor has been hit
 shows:
-  show_pop_left:
+  init_pop_lights:
     - time: 0
       lights:
         l_popbumper_left: on
-    - time: '+.05s'
+        l_popbumper_right: on
+        l_popbumper_lower: on
+  show_pop_left:
+    - time: 0
       lights:
         l_popbumper_left: off
+    - time: '+.1s'
+      lights:
+        l_popbumper_left: on
   show_pop_right:
     - time: 0
       lights:
-        l_popbumper_right: on
-    - time: '+.05s'
-      lights:
         l_popbumper_right: off
+    - time: '+.1s'
+      lights:
+        l_popbumper_right: on
   show_pop_lower:
     - time: 0
       lights:
-        l_popbumper_lower: on
-    - time: '+.05s'
-      lights:
         l_popbumper_lower: off
+    - time: '+.1s'
+      lights:
+        l_popbumper_lower: on
   show_light_d:
     - time: 0
       lights:
@@ -244,6 +250,8 @@ sound_player:
       events_when_stopped: pongtable_movetocupNone
 
 show_player:
+  mode_base_started:
+    init_pop_lights
   shot_popbumper_lower_hit:
     show_pop_lower:
       loops: 0
