@@ -34,5 +34,8 @@ random_event_player:
       - start_mode_longpour
       - start_mode_quarters
       - start_mode_strikeout
-
-# ball save for some # of seconds after ball registers on playfield
+      
+show_player:
+  mode_field_started:
+    qualifying_show:
+      speed: 4

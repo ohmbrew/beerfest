@@ -37,7 +37,7 @@ shots:
   shot_drinko_n: 135
   shot_drinko_o: 138
   shot_drinko_r: 144
-  shot_kicker_mode: 279
+  shot_kicker_mode: 280
   shot_kicker_rimrules: 119
   shot_plunger_lane_exit: 45
   shot_pongcup1: 158
@@ -55,7 +55,7 @@ shots:
   shot_tavern_spinner: 1417
   shot_tgt_ramp_boot: 11
   shot_tgt_rimrules: 8
-  shot_trojankeg_left: 1835
+  shot_trojankeg_left: 1850
   shot_trojankeg_middle: 165
   shot_trojankeg_right: 112
   take_hit: 57
@@ -77,7 +77,7 @@ switches:
   s_drinko_r: 270
   s_flipper_left: 1944
   s_flipper_right: 2251
-  s_kicker_mode: 873
+  s_kicker_mode: 874
   s_kicker_rimrules: 608
   s_laneleft_inner: 18
   s_laneleft_outer: 4
@@ -112,7 +112,7 @@ switches:
   s_tavern_spinner: 2888
   s_tgt_ramp_boot: 55
   s_trogan_keg: 22
-  s_trojankeg_left: 1875
+  s_trojankeg_left: 1890
   s_trojankeg_middle: 193
   s_trojankeg_right: 144
   s_trough1: 383

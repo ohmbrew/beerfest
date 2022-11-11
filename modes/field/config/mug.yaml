@@ -26,14 +26,6 @@ counters:
 # appropriate set of mug lights lit as the count goes higher.
 shows:
   fill_mug:
-    # - lights:
-    #     beermug1_std: off
-    #     beermug2_std: off
-    #     beermug3_std: off
-    #     beermug4_std: off
-    #     beermug5_std: off
-    #     beermug6_std: off
-    #     beermug7_std: off
     - time: 0
       lights:
         (tag): on
@@ -76,62 +68,3 @@ show_player:
       show_tokens:
         tag: mugfill7    
       loops: 0
-
-
-# slide_player:
-#   mode_base_started:
-#     widgets:
-#       - type: text
-#         text: (score)
-#         number_grouping: true
-#         min_digits: 2
-#         font_size: 100
-#       - type: text
-#         text: PLAYER (number)
-#         y: 10
-#         x: 10
-#         font_size: 50
-#         anchor_x: left
-#         anchor_y: bottom
-#       - type: text
-#         text: BALL (ball)
-#         y: 10
-#         x: right-10
-#         anchor_x: right
-#         anchor_y: bottom
-#         font_size: 50
-
-# using a state machine to track diverter servo state. The shot_diverter_hit event (triggered by RampSplit opto) transitions the
-# state machine to the other state. On mode_attract_started, the diverter is pointed right, which will make the ball go down the
-# left ramp first. On first shot_diverter_hit, we move from start to diverter_right_ramp (moving diverter left). And then it
-# toggles back and forth from left and right ramp after that.
-# state_machines:
-#   diverter_state_machine:
-#     persist_state: true
-#     states:
-#       start:
-#         label:
-#       diverter_rightramp:
-#         label: Right Wire Ramp!
-#         show_when_active:
-#           show: diverter_show
-#           show_tokens:
-#             dir: left    # using the diverter_show with a token. send 'left' to send diverter servo to left (right ramp now active)
-#           loops: 0
-#       diverter_leftramp:
-#         label: Left Wire Ramp!
-#         show_when_active:
-#           show: diverter_show
-#           show_tokens:
-#             dir: right    # using the diverter_show with a token. send 'right' to send diverter servo to right (left ramp now active)
-#           loops: 0
-#     transitions:
-#       - source: start
-#         target: diverter_rightramp
-#         events: shot_diverter_hit
-#       - source: diverter_rightramp
-#         target: diverter_leftramp
-#         events: shot_diverter_hit
-#       - source: diverter_leftramp
-#         target: diverter_rightramp
-#         events: shot_diverter_hit
