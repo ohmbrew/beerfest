@@ -47,18 +47,18 @@ coils:
   # PD-LED is A1
 
   # 12V Coil Driver PCB: A2-B0
-  l_popbumper_lower:
+  cl_popbumper_lower:
     number: A2-B0-0
-    default_pulse_ms: 50
-    pulse_events: pop_light_lower
-  l_popbumper_right:
+    #default_pulse_ms: 50
+    #pulse_events: pop_light_lower
+  cl_popbumper_right:
     number: A2-B0-1
-    default_pulse_ms: 50
-    pulse_events: pop_light_right
-  l_popbumper_left:
+    #default_pulse_ms: 50
+    #pulse_events: pop_light_right
+  cl_popbumper_left:
     number: A2-B0-2
-    default_pulse_ms: 50
-    pulse_events: pop_light_left
+    #default_pulse_ms: 50
+    #pulse_events: pop_light_left
   c_trough_eject:
     number: A2-B0-3 # PD-16 Address 0, Bank B, Bit 1 will be drive pin for trough eject solenoid
     default_pulse_ms: 40

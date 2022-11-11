@@ -288,3 +288,22 @@ lights:
     previous: mode_strikeout
     type: grb
     tags: strip
+
+  # lights hooked to coil driver
+  l_popbumper_lower:
+    number: cl_popbumper_lower
+    platform: drivers
+    #default_pulse_ms: 50
+    #pulse_events: pop_light_lower
+  l_popbumper_right:
+    number: cl_popbumper_right
+    platform: drivers
+    #default_pulse_ms: 50
+    #pulse_events: pop_light_right
+  l_popbumper_left:
+    number: cl_popbumper_left
+    platform: drivers
+    #default_pulse_ms: 50
+    #pulse_events: pop_light_left
+
+  l  
