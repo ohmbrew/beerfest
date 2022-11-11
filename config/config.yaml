@@ -248,29 +248,36 @@ ball_holds:
 
 # cases where MPF will try to eject from pongcups
 # 1. Multiball not running:
-#    a. Pongcup1 has ball, Pongcup2 does not -> pongcup_releaseall_show
-#    b. Pongcup1 has ball, Pongcup2 has ball -> pongcup_releaseall_show
-# 2. Multiball running: Both coils activated on start_multiball
-# 3. Multiball running: Only pongcup1 coil activated (e.g. player hit pongcup1 during multiball - release immediately)
+#    a. Pongcup1 has ball, Pongcup2 does not -> pongcup_1_release_show. This only moves the pongtable to place pongcup1 in a releaseable position.
+#       Continued eject_attempt will release the ball from pongcup1.
+#    b. Pongcup1 has ball, Pongcup2 has ball -> pongcup_releaseall_show. Both pongcups will release their balls in the show.
+#       Continued eject_attempt logic will still happen, just balls will already be released. s'ok.
+# 2. Multiball running
+#    a. Pongcup1 has ball, Pongcup2 does not -> pongcup1_release_show. We have already released both balls for multiball, and player has sunk ball in pongcup1.
+#       Ensure pongcup1 is in releasable position (run pongcup1_release_show), then allow eject_attempt logic to continue and ball will be released.
+#    b. Pongcup1 has ball, Pongcup2 has ball -> pongcup_releaseall_show. Both pongcups will release their balls in the show.
+#       Continued eject_attempt logic will still happen, just balls will already be released. s'ok.
 queue_relay_player:
-  # Check if we're not in multiball. Doesn't matter if pongcup2 has a ball or not. Must run pongcup_releaseall_show
-  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state != "multiball_running" and device.switches.s_pongcup2.state == 1}:
-    post: pongcup_all_release_show
-    wait_for: pongcups_released
-  # should only be attempting eject if we also are ejecting pongcup1. Which should be handled above
-  balldevice_bd_pongcup2_ball_eject_attempt:
-    post: pongcup_2_waiting_for_releaseall_show_to_finish   # dummy event
-    wait_for: pongcups_released   # this waits on pongcup_all_release_show to finish
+  # 1.a above
   balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state != "multiball_running" and device.switches.s_pongcup2.state == 0}:
     post: pongcup_1_release_show
     wait_for: pongcup_1_moved
-  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 1}:
+  # 1.b above
+  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state != "multiball_running" and device.switches.s_pongcup2.state == 1}:
     post: pongcup_all_release_show
-    wait_for: pongcups_released  
-  # Check if we are in multiball and pongcup2 does NOT have a ball. Means balls have already been released for multiball and player hit pongcup1. Release immediately.
+    wait_for: pongcups_released
+  # 2.a above
   balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 0}:
     post: pongcup_1_release_show
     wait_for: pongcup_1_moved
+  # 2.b above
+  balldevice_bd_pongcup1_ball_eject_attempt{device.state_machines.multiball.state == "multiball_running" and device.switches.s_pongcup2.state == 1}:
+    post: pongcup_all_release_show
+    wait_for: pongcups_released  
+  # should only get pongcup2 eject_attempt if we also are ejecting pongcup1 due to multiball. This should already be handled above, now we just wait for it to finish.
+  balldevice_bd_pongcup2_ball_eject_attempt:
+    post: pongcup_2_waiting_for_releaseall_show_to_finish   # dummy event
+    wait_for: pongcups_released   # this waits on pongcup_all_release_show above to finish
 
 show_player:
   pongcup_all_release_show:

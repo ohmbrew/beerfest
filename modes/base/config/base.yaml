@@ -178,6 +178,15 @@ sound_player:
   award_drinko_bonus:
     voice_sink1left:
       action: play
+  shot_trojankeg_left_hit:
+    prosit:
+      action: play
+  shot_trojankeg_middle_hit:
+    prosit:
+      action: play
+  shot_trojankeg_right_hit:
+    prosit:
+      action: play    
 
 show_player:
   shot_popbumper_lower_hit:

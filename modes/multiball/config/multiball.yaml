@@ -22,7 +22,6 @@ multiball_locks:
     locked_ball_counting_strategy: physical_only
     enable_events: enable_pt_lock
     disable_events: start_multiball
-    #reset_count_for_current_player_events: multiball_pt_multiball_started
 
   pt_lock2:
     debug: true
@@ -31,25 +30,12 @@ multiball_locks:
     locked_ball_counting_strategy: physical_only
     enable_events: enable_pt_lock
     disable_events: start_multiball
-    #reset_count_for_current_player_events: multiball_pt_multiball_started
-
-  #pt_lock3:
-  #  lock_devices: bd_kicker_rimrules
-  #  balls_to_lock: 1
-  #  enable_events: enable_pt_lock
-  #  disable_events: start_multiball
-  #  reset_count_for_current_player_events: multiball_pt_multiball_started
 
 state_machines:
   multiball:
     states:
       start:
-        label: PongTable lock not enabled   # turn table to 90 deg so balls just fall thru to PF
-        #show_when_active:
-        #  show: pongtable_show
-        #  show_tokens:
-        #    cup: 0
-        #  loops: 0
+        label: PongTable lock not enabled
       pongtable_cup1:
         label: PongTable Cup 1 Active
         events_when_started: enable_pt_lock
@@ -74,12 +60,9 @@ state_machines:
           show_tokens:
             cup: 0
           loops: 0
-      multiball_running:
+      multiball_running:                      # pongcup balls are released automatically via MPF and are coordinated in machine config.yaml
         label: PongTable multiball running
         events_when_started: start_multiball
-        #show_when_active:
-        #  show: pongtable_releaseall_show
-        #  loops: 0
 
     transitions:
       # for reference - conditional event DEVICE. not DEVICES.
@@ -108,7 +91,5 @@ state_machines:
         target: pongtable_cup1
         events: multiball_pt_multiball_ended
 
-#event_player:
-#  shot_pongcup1_hit{device.state_machines.multiball.state == "multiball_running"}: release_cup1
 
 

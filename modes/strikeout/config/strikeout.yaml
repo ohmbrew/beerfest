@@ -12,6 +12,7 @@ sound_player:
   mode_strikeout_started:
     voice_strikeout_intro:
       action: play
+      loops: 0
       events_when_stopped: kicker_mode_eject, kicker_rimrules_eject
   kicker_mode_eject:
     music_hardasarock:
@@ -46,15 +47,15 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  shot_trojankeg_left_hit:
-    prosit:
-      action: play
-  shot_trojankeg_middle_hit:
-    prosit:
-      action: play
-  shot_trojankeg_right_hit:
-    prosit:
-      action: play
+  # shot_trojankeg_left_hit:
+  #   prosit:
+  #     action: play
+  # shot_trojankeg_middle_hit:
+  #   prosit:
+  #     action: play
+  # shot_trojankeg_right_hit:
+  #   prosit:
+  #     action: play
   shot_chance_hit:
     chance:
       action: play

@@ -38,15 +38,15 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  shot_trojankeg_left_hit:
-    prosit:
-      action: play
-  shot_trojankeg_middle_hit:
-    prosit:
-      action: play
-  shot_trojankeg_right_hit:
-    prosit:
-      action: play
+  # shot_trojankeg_left_hit:
+  #   prosit:
+  #     action: play
+  # shot_trojankeg_middle_hit:
+  #   prosit:
+  #     action: play
+  # shot_trojankeg_right_hit:
+  #   prosit:
+  #     action: play
   shot_chance_hit:
     chance:
       action: play
