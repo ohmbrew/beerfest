@@ -41,5 +41,8 @@ show_player:
   mode_attract_started.10:
     pongtable_releaseall_show:
       loops: 0
+  mode_attract_started.11:
+    attract_pops:
+      loops: -1
 
 
