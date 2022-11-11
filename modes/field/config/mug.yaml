@@ -14,8 +14,8 @@ counters:
     count_events: >
       shot_popbumper_lower_hit, shot_popbumper_upper_right_hit, shot_popbumper_upper_left_hit,
       shot_trojankeg_left_hit, shot_trojankeg_middle_hit, shot_trojankeg_right_hit, shot_chance_hit,
-      shot_take_hit_hit, shot_chug_beer_hit, shot_do_shot_hit, shot_quarters_hit, shot_sling_left_hit,
-      shot_sling_right_hit, shot_sling_quarters_hit, shot_tgt_ramp_boot_hit, shot_special_hit, 
+      shot_take_hit_hit, shot_chug_beer_hit, shot_do_shot_hit, shot_quarters_hit, shot_slingleft_hit,
+      shot_slingright_hit, shot_slingquarters_hit, shot_tgt_ramp_boot_hit, shot_special_hit, 
     count_complete_value: 14
     events_when_hit: fill_mug_X
     events_when_complete: start_qualify

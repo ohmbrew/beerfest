@@ -89,7 +89,6 @@ shows:
         slingright_lower: white
         flipper_left: white
         flipper_right: white
-        
   show_pop_left:
     - time: 0
       lights:
@@ -111,6 +110,33 @@ shows:
     - time: '+.1s'
       lights:
         l_popbumper_lower: on
+  show_slingquarters_hit:
+    - time: 0
+      lights:
+        slingquarters_upper: off
+        slingquarters_lower: off
+    - time: '+.1'
+      lights:
+        slingquarters_upper: on
+        slingquarters_lower: on
+  show_slingleft_hit:
+    - time: 0
+      lights:
+        slingleft_upper: off
+        slingleft_lower: off
+    - time: '+.1'
+      lights:
+        slingleft_upper: on
+        slingleft_lower: on
+  show_slingright_hit:
+    - time: 0
+      lights:
+        slingright_upper: off
+        slingright_lower: off
+    - time: '+.1'
+      lights:
+        slingright_upper: on
+        slingright_lower: on
   show_light_d:
     - time: 0
       lights:
@@ -245,7 +271,10 @@ sound_player:
       action: play
   shot_special_hit:
     unddrinken:
-      action: play    
+      action: play
+  shot_tgt_ramp_boot_hit:
+    voice_cheers:
+      action: play
   shot_quarters_hit:
     quarters:
       action: play
@@ -269,6 +298,15 @@ show_player:
       loops: 0
   shot_popbumper_upper_right_hit:
     show_pop_right:
+      loops: 0
+  shot_slingquarters_hit:
+    show_slingquarters_hit:
+      loops: 0
+  shot_slingleft_hit:
+    show_slingleft_hit:
+      loops: 0
+  shot_slingright_hit:
+    show_slingright_hit:
       loops: 0
   sp_drinko_d:
     show_light_d
@@ -429,11 +467,11 @@ variable_player:
     score: 200000   # means we got bonus2
   drinko_hammered:
     score: 1000000
-  shot_sling_quarters_hit:
+  shot_slingquarters_hit:
     score: 1010
-  shot_sling_left_hit:
+  shot_slingleft_hit:
     score: 1010
-  shot_sling_right_hit:
+  shot_slingright_hit:
     score: 1010
   shot_tgt_ramp_boot_hit:
     score: 10000

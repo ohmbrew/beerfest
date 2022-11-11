@@ -55,11 +55,11 @@ shots:
     switch: s_drinko_o
   shot_drinko_bang:
     switch: s_drinko_bang
-  shot_sling_quarters:
+  shot_slingquarters:
     switch: s_slingshot_quarters
-  shot_sling_left:
+  shot_slingleft:
     switch: s_slingshot_left
-  shot_sling_right:
+  shot_slingright:
     switch: s_slingshot_right
   shot_tgt_ramp_boot:
     switch: s_tgt_ramp_boot
