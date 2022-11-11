@@ -81,21 +81,21 @@ shows:
         l_popbumper_left: on
     - time: '+.05s'
       lights:
-        l_popbumpber_left: off
+        l_popbumper_left: off
   show_pop_right:
     - time: 0
       lights:
         l_popbumper_right: on
     - time: '+.05s'
       lights:
-        l_popbumpber_right: off
+        l_popbumper_right: off
   show_pop_lower:
     - time: 0
       lights:
         l_popbumper_lower: on
     - time: '+.05s'
       lights:
-        l_popbumpber_lower: off
+        l_popbumper_lower: off
   show_light_d:
     - time: 0
       lights:

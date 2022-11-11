@@ -305,5 +305,3 @@ lights:
     platform: drivers
     #default_pulse_ms: 50
     #pulse_events: pop_light_left
-
-  l  
