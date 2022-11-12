@@ -30,6 +30,7 @@ sound_player:
       action: play
       events_when_stopped: kicker_rimrules_eject
 
+# Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
 event_player:
   shot_kicker_mode_hit{device.counters.count_mug_lights.value >= 14}: launch_random_game_mode
   shot_kicker_mode_hit{device.counters.count_mug_lights.value < 14}: play_betterwhendrunk_and_eject
