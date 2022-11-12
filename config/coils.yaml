@@ -9,7 +9,7 @@ coils:
     default_hold_power: .125
   c_slingshot_right:
     number: A0-B0-1
-    default_pulse_ms: 20
+    default_pulse_ms: 10
   c_kicker_mode:
     number: A0-B0-2
     default_pulse_ms: 35
@@ -30,10 +30,10 @@ coils:
     default_hold_power: .125
   c_slingshot_left:
     number: A0-B1-1
-    default_pulse_ms: 20
+    default_pulse_ms: 10
   c_slingshot_quarters:
     number: A0-B1-2
-    default_pulse_ms: 35  
+    default_pulse_ms: 10  
   c_strike_out:
     number: A0-B1-3
     default_pulse_ms: 35
