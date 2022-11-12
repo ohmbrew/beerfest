@@ -13,15 +13,15 @@ sound_player:
     voice_strikeout_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject
-  kicker_mode_eject:
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
+  start_background_music:
     music_hardasarock:
       action: play
       loops: 0
   mode_strikeout_will_stop:
     music_hardasarock:
       action: stop
-      
+
   # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
   shot_kicker_mode_hit:
     voice_betterwhendrunk:

@@ -13,8 +13,8 @@ sound_player:
     voice_quarters_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject
-  kicker_mode_eject:
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
+  start_background_music:
     music_hardasarock:
       action: play
       loops: 0
