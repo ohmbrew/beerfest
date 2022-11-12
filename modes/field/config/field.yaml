@@ -21,6 +21,14 @@ sound_player:
   mode_field_will_stop:
     introrepeat:
       action: stop
+  play_betterwhendrunk_and_eject:
+    voice_betterwhendrunk:
+      action: play
+      events_when_stopped: kicker_mode_eject
+  play_rimrules_and_eject:
+    rimrules:
+      action: play
+      events_when_stopped: kicker_rimrules_eject
 
 event_player:
   shot_kicker_mode_hit{device.counters.count_mug_lights.value >= 14}: launch_random_game_mode

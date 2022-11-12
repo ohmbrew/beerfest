@@ -249,14 +249,6 @@ sound_player:
   shot_do_shot_hit:
     doashot:
       action: play
-  shot_kicker_mode_hit:
-    voice_betterwhendrunk:
-      action: play
-      events_when_stopped: kicker_mode_eject
-  shot_kicker_rimrules_hit:
-    rimrules:
-      action: play
-      events_when_stopped: kicker_rimrules_eject    
   shot_trojankeg_left_hit:
     prosit:
       action: play
