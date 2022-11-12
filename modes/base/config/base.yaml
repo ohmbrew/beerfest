@@ -267,6 +267,9 @@ sound_player:
   shot_tgt_ramp_boot_hit:
     voice_cheers:
       action: play
+  shot_tgt_rimrules_hit:
+    voice_eyeofjew:
+      action: play
   shot_quarters_hit:
     quarters:
       action: play
