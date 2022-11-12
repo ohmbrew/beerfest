@@ -12,6 +12,7 @@ event_player:
   mode_base_started:
     - start_mode_global
     - initialize_drinko_bonus
+    - reset_strike_out_bank
   mode_base_will_stop:
     - stop_mode_global
   mode_type_wizard_started:
@@ -32,9 +33,11 @@ event_player:
     sp_drinko_o
   shot_drinko_bang_hit:
     sp_drinko_bang
-  award_drinko_bonus{(not device.achievement_groups.drinko_bonus.enabled) and device.achievements.drinko_bonus3.state=="completed"}:
-    - sp_drinko_bonus   # play show here because it won't be played in the achievements section
-    - drinko_hammered   # award pts here cuz it won't be awarded in achievements section anymore
+  ball_ending{device.achievements.drinko_bonus3.state == "completed"}:
+    reset_drinko_bonus
+  #award_drinko_bonus{(not device.achievement_groups.drinko_bonus.enabled) and device.achievements.drinko_bonus3.state=="completed"}:
+    #- sp_drinko_bonus   # play show here because it won't be played in the achievements section
+    #- drinko_hammered   # award pts here cuz it won't be awarded in achievements section anymore
 
 slide_player:
   mode_base_started:
@@ -59,19 +62,6 @@ slide_player:
         anchor_y: bottom
         font_size: 50
 
-accruals:
-  drinko_bonus_accrual:
-    events:
-      - shot_drinko_d_hit
-      - shot_drinko_r_hit
-      - shot_drinko_i_hit
-      - shot_drinko_n_hit
-      - shot_drinko_k_hit
-      - shot_drinko_o_hit
-      - shot_drinko_bang_hit
-    events_when_complete: award_drinko_bonus
-    reset_on_complete: true
-    disable_on_complete: false
 
 # shows to light lights when drinko sensor has been hit
 shows:
@@ -172,17 +162,13 @@ shows:
       lights:
         drinko_bang: green
     - duration: -1
-  show_drinko_bonus:
+  show_light_drinko_bonus:
     - time: 0
       lights:
         (drinko_bonus): on
-      shows:
-        bonus_drinko_show:
-          speed: 4
-          loops: 0
       events: (enable_drinkoX)
     - duration: -1
-  show_drinko_hammered:
+  show_light_drinko_hammered:
     - time: 0
       lights:
         drinko_bonus3: on
@@ -317,10 +303,12 @@ show_player:
     show_light_o
   sp_drinko_bang:
     show_light_bang
-  sp_drinko_bonus:
-    show_drinko_bonus
+  award_drinko_bonus:
+    bonus_drinko_show:
+      speed: 4
+      loops: 0
   drinko_hammered:
-    show_drinko_hammered:
+    show_light_drinko_hammered:
       speed: 4
   mode_longpour_stopped{current_player.has_longpour==1}: show_longpour_insert
   mode_base_started{current_player.has_longpour==1}: show_longpour_insert
@@ -359,12 +347,26 @@ ball_saves:
     balls_to_save: 1
     debug: true
 
+accruals:
+  drinko_bonus_accrual:
+    events:
+      - shot_drinko_d_hit
+      - shot_drinko_r_hit
+      - shot_drinko_i_hit
+      - shot_drinko_n_hit
+      - shot_drinko_k_hit
+      - shot_drinko_o_hit
+      - shot_drinko_bang_hit
+    events_when_complete: award_drinko_bonus
+    reset_on_complete: true
+    disable_on_complete: false
+    
 achievements:
   drinko_bonus1:
     show_tokens:
       drinko_bonus: drinko_bonus1
       enable_drinkoX: enable_drinko_bonus2
-    show_when_completed: show_drinko_bonus         
+    show_when_completed: show_light_drinko_bonus        
     enable_events: initialize_drinko_bonus
     complete_events: award_drinko_bonus
     reset_events: reset_drinko_bonus
@@ -372,14 +374,12 @@ achievements:
     show_tokens:
       drinko_bonus: drinko_bonus2
       enable_drinkoX: enable_drinko_bonus3
-    show_when_completed: show_drinko_bonus         
+    show_when_completed: show_light_drinko_bonus         
     enable_events: enable_drinko_bonus2
     complete_events: award_drinko_bonus
     reset_events: reset_drinko_bonus
   drinko_bonus3:
-    show_tokens:
-      drinko_bonus: drinko_bonus3
-    show_when_completed: show_drinko_bonus         
+    show_when_completed: show_light_drinko_hammered         
     enable_events: enable_drinko_bonus3
     complete_events: award_drinko_bonus
     reset_events: reset_drinko_bonus
