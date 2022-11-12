@@ -185,7 +185,8 @@ drop_target_banks:
     drop_targets: take_hit, chug_beer, do_shot
     reset_coils: c_strike_out
     reset_on_complete: 1s
-
+    reset_events: strikeout_bank_reset
+      
 flippers:
   flipper_left:
     main_coil: c_flipper_left
