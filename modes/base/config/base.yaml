@@ -35,6 +35,14 @@ event_player:
     sp_drinko_bang
   ball_ending{device.achievements.drinko_bonus3.state == "completed"}:
     reset_drinko_bonus
+  mode_base_started{device.accruals.drinko_bonus_accrual.value[0]}: sp_drinko_d
+  mode_base_started{device.accruals.drinko_bonus_accrual.value[1]}: sp_drinko_r
+  mode_base_started{device.accruals.drinko_bonus_accrual.value[2]}: sp_drinko_i
+  mode_base_started{device.accruals.drinko_bonus_accrual.value[3]}: sp_drinko_n
+  mode_base_started{device.accruals.drinko_bonus_accrual.value[4]}: sp_drinko_k
+  mode_base_started{device.accruals.drinko_bonus_accrual.value[5]}: sp_drinko_o
+  mode_base_started{device.accruals.drinko_bonus_accrual.value[6]}: sp_drinko_bang
+    
   #award_drinko_bonus{(not device.achievement_groups.drinko_bonus.enabled) and device.achievements.drinko_bonus3.state=="completed"}:
     #- sp_drinko_bonus   # play show here because it won't be played in the achievements section
     #- drinko_hammered   # award pts here cuz it won't be awarded in achievements section anymore
@@ -349,6 +357,7 @@ ball_saves:
 
 accruals:
   drinko_bonus_accrual:
+    persist_state: true
     events:
       - shot_drinko_d_hit
       - shot_drinko_r_hit
