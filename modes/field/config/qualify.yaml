@@ -1,7 +1,7 @@
 #config_version=5
 
 shows:
-  flash_lights:
+  flash_qualify_lights:
     - duration: 1
       lights:
         arrow_mode1: red
@@ -29,5 +29,5 @@ shows:
 
 show_player:
   start_qualify:
-    flash_lights:
+    flash_qualify_lights:
       speed: 4
