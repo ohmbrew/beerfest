@@ -117,7 +117,7 @@ servos:
       0.5: pongcup_0
       1.0: pongcup_2
     reset_position: 0.0
-    reset_events: mode_attract_started
+    #reset_events: mode_attract_started
 
 sound_system:
   tracks:

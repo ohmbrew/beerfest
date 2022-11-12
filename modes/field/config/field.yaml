@@ -48,3 +48,6 @@ show_player:
   mode_field_started:
     qualifying_show:
       speed: 4
+  mode_field_stopping:
+    qualifying_show:
+      action: stop
