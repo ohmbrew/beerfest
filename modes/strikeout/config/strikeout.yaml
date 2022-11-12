@@ -4,7 +4,7 @@
 mode:
   start_events: start_mode_strikeout
   stop_events: stop_mode_strikeout, stop_missions, timer_round_timer_strikeout_stopped   # end round when timer stops
-  events_when_started: mode_type_mission_started, strikeout_bank_reset
+  events_when_started: mode_type_mission_started
   events_when_stopped: mode_type_mission_stopped
   priority: 300
 
@@ -13,7 +13,7 @@ sound_player:
     voice_strikeout_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music, strikeout_bank_reset
   start_background_music:
     music_hardasarock:
       action: play
