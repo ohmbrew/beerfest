@@ -30,13 +30,13 @@ shots:
   shot_chug_beer: 78
   shot_diverter: 151
   shot_do_shot: 88
-  shot_drinko_bang: 191
-  shot_drinko_d: 206
-  shot_drinko_i: 199
-  shot_drinko_k: 194
-  shot_drinko_n: 190
-  shot_drinko_o: 194
-  shot_drinko_r: 203
+  shot_drinko_bang: 193
+  shot_drinko_d: 212
+  shot_drinko_i: 202
+  shot_drinko_k: 197
+  shot_drinko_n: 192
+  shot_drinko_o: 195
+  shot_drinko_r: 208
   shot_kicker_mode: 280
   shot_kicker_rimrules: 119
   shot_plunger_lane_exit: 45
@@ -58,7 +58,7 @@ shots:
   shot_tavern_spinner: 1417
   shot_tgt_ramp_boot: 17
   shot_tgt_rimrules: 8
-  shot_trojankeg_left: 1852
+  shot_trojankeg_left: 1905
   shot_trojankeg_middle: 165
   shot_trojankeg_right: 112
   take_hit: 57
@@ -70,14 +70,14 @@ switches:
   s_chug_beer: 155
   s_diverter: 154
   s_do_shot: 161
-  s_drain: 680
-  s_drinko_bang: 215
-  s_drinko_d: 235
-  s_drinko_i: 319
-  s_drinko_k: 213
-  s_drinko_n: 853
-  s_drinko_o: 332
-  s_drinko_r: 329
+  s_drain: 716
+  s_drinko_bang: 217
+  s_drinko_d: 241
+  s_drinko_i: 322
+  s_drinko_k: 216
+  s_drinko_n: 855
+  s_drinko_o: 333
+  s_drinko_r: 334
   s_flipper_left: 1944
   s_flipper_right: 2251
   s_kicker_mode: 874
@@ -90,7 +90,7 @@ switches:
   s_left_slingshot: 32
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1322
+  s_plunger_lane: 1343
   s_plunger_lane_exit: 233
   s_pongcup1: 159
   s_pongcup2: 41
@@ -108,17 +108,17 @@ switches:
   s_slingshot_quarters: 247
   s_slingshot_right: 1036
   s_special: 25
-  s_start: 21
+  s_start: 84
   s_take_hit: 159
   s_target_rimrules: 25
   s_tavern_exit: 2
   s_tavern_spinner: 2888
   s_tgt_ramp_boot: 61
   s_trogan_keg: 22
-  s_trojankeg_left: 1892
+  s_trojankeg_left: 1945
   s_trojankeg_middle: 193
   s_trojankeg_right: 144
-  s_trough1: 383
-  s_trough2: 361
-  s_trough3: 20
-  s_trough_eject: 630
+  s_trough1: 384
+  s_trough2: 362
+  s_trough3: 35
+  s_trough_eject: 655

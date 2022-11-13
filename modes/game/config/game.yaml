@@ -1,0 +1,209 @@
+#config_version=5
+
+slides:
+  base_slide: []
+  multiplayer_slide: []
+
+slide_player:
+  single_player_ball_started: base_slide
+  multi_player_ball_started: multiplayer_slide
+  # If a second player joins during player 1's turn, swap base_slide for multiplayer
+  multiplayer_game:
+    base_slide:
+      action: remove
+    multiplayer_slide:
+      action: play
+  ball_will_end:
+    base_slide:
+      action: remove
+    multiplayer_slide:
+      action: remove
+
+widget_player:
+  # First event, before additional players have a chance to enter
+  game_started:
+    base_score_widget:
+      slide: base_slide
+    base_ball_widget:
+      slide: base_slide
+
+  # player 2 has entered the chat
+  player_added{num==2}:
+    base_score_widget:
+      slide: multiplayer_slide
+    base_ball_widget:
+      slide: multiplayer_slide
+    # Start with player1 name and player2 score
+    mp_score_widget_p1_large:
+      slide: multiplayer_slide
+    mp_score_widget_p2_small:
+      slide: multiplayer_slide   
+  
+  # Player 3 has entered the chat
+  player_added{num==3}:
+    mp_score_widget_p3_small:
+      slide: multiplayer_slide
+
+  # Player 4 has entered the chat
+  player_added{num==4}:
+    mp_score_widget_p4_small:
+      slide: multiplayer_slide
+  
+  # Player Turns: Swap scores -> names when turn starts, revert when turn ends
+  player_turn_started{number==1}:
+    mp_score_widget_p1_small:
+      action: remove
+    mp_score_widget_p1_large:
+      slide: multiplayer_slide
+  player_turn_ended{number==1}:
+    mp_score_widget_p1_small:
+      slide: multiplayer_slide
+    mp_score_widget_p1_large:
+      action: remove
+  
+  player_turn_started{number==2}:
+    mp_score_widget_p2_small:
+      action: remove
+    mp_score_widget_p2_large:
+      slide: multiplayer_slide
+  player_turn_ended{number==2}:
+    mp_score_widget_p2_small:
+      slide: multiplayer_slide
+    mp_score_widget_p2_large:
+      action: remove
+
+  player_turn_started{number==3}:
+    mp_score_widget_p3_small:
+      action: remove
+    mp_score_widget_p3_large:
+      slide: multiplayer_slide
+  player_turn_ended{number==3}:
+    mp_score_widget_p3_small:
+      slide: multiplayer_slide
+    mp_score_widget_p3_large:
+      action: remove
+
+  player_turn_started{number==4}:
+    mp_score_widget_p4_small:
+      action: remove
+    mp_score_widget_p4_large:
+      slide: multiplayer_slide
+  player_turn_ended{number==4}:
+    mp_score_widget_p4_small:
+      slide: multiplayer_slide
+    mp_score_widget_p4_large:
+      action: remove
+
+widgets:
+  base_score_widget:
+    - type: text
+      text: (score)
+      number_grouping: true
+      min_digits: 1
+      font_size: 300
+  base_ball_widget:
+    - type: text
+      text: BALL (ball)
+      y: 10
+      x: middle
+      anchor_x: middle
+      anchor_y: bottom
+      font_size: 75
+
+  # Player 1 score, for when they're not playing
+  mp_score_widget_p1_small:
+    - type: text
+      text: (player1|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: left
+      anchor_y: top
+      x: 10
+      y: top - 10
+      font_size: 75
+      color: red
+  # Player 2 score, for when they're not playing
+  mp_score_widget_p2_small:
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: right
+      anchor_y: top
+      x: right - 10
+      y: top - 10
+      font_size: 75
+      color: red
+  # Player 3 score, for when they're not playing
+  mp_score_widget_p3_small:
+    - type: text
+      text: (player3|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: left
+      anchor_y: bottom
+      x: 10
+      y: 10
+      font_size: 75
+      color: red
+  # Player 4 score, for when they're not playing
+  mp_score_widget_p4_small:
+    - type: text
+      text: (player4|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: right
+      anchor_y: bottom
+      x: right - 10
+      y: 10
+      font_size: 75
+      color: red
+
+  # Player 1 score, for when they're PLAYING
+  mp_score_widget_p1_large:
+    - type: text
+      text: (player1|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: left
+      anchor_y: top
+      x: 10
+      y: top - 10
+      font_size: 125
+      color: white
+  # Player 2 score, for when they're PLAYING
+  mp_score_widget_p2_large:
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: right
+      anchor_y: top
+      x: right - 10
+      y: top - 10
+      font_size: 125
+      color: white
+  # Player 3 score, for when they're PLAYING
+  mp_score_widget_p3_large:
+    - type: text
+      text: (player3|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: left
+      anchor_y: bottom
+      x: 10
+      y: 10
+      font_size: 125
+      color: white
+  # Player 4 score, for when they're PLAYING
+  mp_score_widget_p4_large:
+    - type: text
+      text: (player4|score)
+      number_grouping: true
+      min_digits: 1
+      anchor_x: right
+      anchor_y: bottom
+      x: right - 10
+      y: 10
+      font_size: 125
+      color: white

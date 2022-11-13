@@ -42,33 +42,29 @@ event_player:
   mode_base_started{device.accruals.drinko_bonus_accrual.value[4]}: sp_drinko_k
   mode_base_started{device.accruals.drinko_bonus_accrual.value[5]}: sp_drinko_o
   mode_base_started{device.accruals.drinko_bonus_accrual.value[6]}: sp_drinko_bang
-    
-  #award_drinko_bonus{(not device.achievement_groups.drinko_bonus.enabled) and device.achievements.drinko_bonus3.state=="completed"}:
-    #- sp_drinko_bonus   # play show here because it won't be played in the achievements section
-    #- drinko_hammered   # award pts here cuz it won't be awarded in achievements section anymore
 
-slide_player:
-  mode_base_started:
-    widgets:
-      - type: text
-        text: (score)
-        number_grouping: true
-        min_digits: 2
-        font_size: 250
-      - type: text
-        text: PLAYER (number)
-        y: 10
-        x: 10
-        font_size: 50
-        anchor_x: left
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_size: 50
+# slide_player:
+#   mode_base_started:
+#     widgets:
+#       - type: text
+#         text: (score)
+#         number_grouping: true
+#         min_digits: 2
+#         font_size: 250
+#       - type: text
+#         text: PLAYER (number)
+#         y: 10
+#         x: 10
+#         font_size: 50
+#         anchor_x: left
+#         anchor_y: bottom
+#       - type: text
+#         text: BALL (ball)
+#         y: 10
+#         x: right-10
+#         anchor_x: right
+#         anchor_y: bottom
+#         font_size: 50
 
 
 # shows to light lights when drinko sensor has been hit
