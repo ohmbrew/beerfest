@@ -182,14 +182,10 @@ sound_player:
   mode_attract_will_stop.1:
     introrepeat:
       action: stop
-  #game_started:
-  #  intro:
-  #    action: stop
-  #  introrepeat:
-  #    action: play
-  #    track: music
-  #    loops: -1
-  #    volume: .5
+  drain_gameover:
+    voice_gameover:
+      action: play
+      events_when_stopped: drain_audio_complete
 
 drop_targets:
   take_hit:
@@ -297,6 +293,9 @@ queue_relay_player:
   balldevice_bd_pongcup2_ball_eject_attempt:
     post: pongcup_2_waiting_for_releaseall_show_to_finish   # dummy event
     wait_for: pongcups_released   # this waits on pongcup_all_release_show above to finish
+  game_ending:
+    post: drain_gameover
+    wait_for: drain_audio_complete
 
 show_player:
   pongcup_all_release_show:
