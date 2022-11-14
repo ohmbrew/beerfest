@@ -66,6 +66,24 @@ slides:
       - type: rectangle
         width: 500
         height: 200
+  multiball_slide:
+    - type: text
+      text: MULTIBALL
+      font_size: 200
+      color: red  
+    
+slide_player:
+  start_multiball:
+    multiball_slide:
+      priority: 1000
+      expire: 3s
+      transition:
+        type: rise_in
+        duration: .5s
+      transition_out:
+        type: fade_back
+        duration: .5
+
 
 #slide_player:
 #  init_done: welcome_slide
