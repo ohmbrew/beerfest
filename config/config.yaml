@@ -57,19 +57,11 @@ player_vars:
     value_type: int
 
 slides:
-  welcome_slide:
-    widgets:
-      - type: text
-        text: PINBALL!
-        font_size: 100
-        color: red
-      - type: rectangle
-        width: 500
-        height: 200
   multiball_slide:
     - type: text
       text: MULTIBALL
       font_size: 200
+      font_name: druillet
       color: red  
     
 slide_player:
@@ -83,10 +75,6 @@ slide_player:
       transition_out:
         type: fade_back
         duration: .5
-
-
-#slide_player:
-#  init_done: welcome_slide
 
 keyboard:
   s:
@@ -164,7 +152,6 @@ assets:
   videos:
     beerfest_intro1:
       file: BeerfestIntro.mp4
-
 
 sound_player:
   mode_attract_started:

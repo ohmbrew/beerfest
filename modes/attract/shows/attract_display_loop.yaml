@@ -1,24 +1,6 @@
 #show_version=5
 
-# - duration: 5s
-#   slides:
-#     awesome_slide:
-#       widgets:
-#       - type: text
-#         text: BEERFEST!
-#         font_size: 150
-#       - type: Text
-#         text: OhmBrew
-#         font_size: 50
-#         color: yellow
-#         y: 10
-#         anchor_y: bottom
-#       transition:
-#         type: push
-#         duration: 1s
-#         direction: left
-
-- duration: 15s
+- duration: 3s
   slides:
     beerfest_intro:
       widgets:
@@ -30,7 +12,9 @@
       widgets:
       - type: Text
         text: PRESS START!
-        font_size: 100
+        font_size: 200
+        font_name: druillet
+        color: blue
         animations:
           pre_show_slide:
           - property: opacity
@@ -41,8 +25,9 @@
             duration: .5s
             repeat: false
       - type: Text
-        text: FREE PLAY!
-        font_size: 50
+        text: FREE PLAY
+        font_size: 100
+        font_name: druillet
         color: green
         y: 10
         anchor_y: bottom
@@ -50,17 +35,111 @@
         type: move_in
         duration: 1s
         direction: right
-- duration: 3
+- duration: 3s
   slides:
     last_game_score_slide:
       widgets:
       - type: text
         text: LAST GAME
-        font_size: 50
+        font_size: 100
+        font_name: druillet
         y: 60%
       - type: text
         text: (machine|player1_score)
         number_grouping: true
         min_digits: 2
-        font_size: 50
+        font_size: 100
         y: 40%
+- duration: 3s
+  slides:
+    ohmbrew_slide:
+      widgets:
+      - type: text
+        text: Created By
+        font_size: 75
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top
+      - type: text
+        text: Greg Brault
+        font_size: 125
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 100
+      - type: image
+        image: ohmbrew-logo
+        anchor_x: center
+        anchor_y: bottom
+        x: middle
+        y: 15
+- duration: 3s
+  slides:
+    thanks_slide:
+      widgets:
+      - type: text
+        text: Special Thanks
+        font_size: 75
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top
+      - type: text
+        text: Ernie Silverberg
+        font_size: 125
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 100
+      - type: image
+        image: trident-logo
+        anchor_x: center
+        anchor_y: bottom
+        x: middle
+        y: 15
+- duration: 3s
+  slides:
+    thanks_slide:
+      widgets:
+      - type: image
+        image: beerfest-title
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top-15
+      - type: text
+        text: A Full Custom Home "Brew"
+        font_size: 100
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 250
+      - type: text
+        text: "Total Time: 16 months"
+        font_size: 100
+        anchor_x: left
+        anchor_y: top
+        x: 50
+        y: top - 450
+      - type: text
+        text: "Hourly Time: 960 hours"
+        font_size: 100
+        anchor_x: left
+        anchor_y: top
+        x: 50
+        y: top - 650
+      - type: text
+        text: "Project Cost: $5,500"
+        font_size: 100
+        anchor_x: left
+        anchor_y: top
+        x: 50
+        y: top - 850
+
+
+

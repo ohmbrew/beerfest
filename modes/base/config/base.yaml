@@ -53,6 +53,7 @@ slides:
     - type: text
       text: DRINKO BONUS
       font_size: 200
+      font_name: druillet
       color: red
     
 slide_player:

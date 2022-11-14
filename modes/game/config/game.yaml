@@ -101,6 +101,7 @@ widgets:
       number_grouping: true
       min_digits: 1
       font_size: 300
+      font_name: druillet
   base_ball_widget:
     - type: text
       text: BALL (ball)
@@ -109,6 +110,7 @@ widgets:
       anchor_x: middle
       anchor_y: bottom
       font_size: 75
+      font_name: druillet
 
   # Player 1 score, for when they're not playing
   mp_score_widget_p1_small:
@@ -121,6 +123,7 @@ widgets:
       x: 10
       y: top - 10
       font_size: 75
+      font_name: druillet
       color: red
   # Player 2 score, for when they're not playing
   mp_score_widget_p2_small:
@@ -133,6 +136,7 @@ widgets:
       x: right - 10
       y: top - 10
       font_size: 75
+      font_name: druillet
       color: red
   # Player 3 score, for when they're not playing
   mp_score_widget_p3_small:
@@ -145,6 +149,7 @@ widgets:
       x: 10
       y: 10
       font_size: 75
+      font_name: druillet
       color: red
   # Player 4 score, for when they're not playing
   mp_score_widget_p4_small:
@@ -157,6 +162,7 @@ widgets:
       x: right - 10
       y: 10
       font_size: 75
+      font_name: druillet
       color: red
 
   # Player 1 score, for when they're PLAYING
@@ -170,6 +176,7 @@ widgets:
       x: 10
       y: top - 10
       font_size: 125
+      font_name: druillet
       color: white
   # Player 2 score, for when they're PLAYING
   mp_score_widget_p2_large:
@@ -182,6 +189,7 @@ widgets:
       x: right - 10
       y: top - 10
       font_size: 125
+      font_name: druillet
       color: white
   # Player 3 score, for when they're PLAYING
   mp_score_widget_p3_large:
@@ -194,6 +202,7 @@ widgets:
       x: 10
       y: 10
       font_size: 125
+      font_name: druillet
       color: white
   # Player 4 score, for when they're PLAYING
   mp_score_widget_p4_large:
@@ -206,4 +215,5 @@ widgets:
       x: right - 10
       y: 10
       font_size: 125
+      font_name: druillet
       color: white
