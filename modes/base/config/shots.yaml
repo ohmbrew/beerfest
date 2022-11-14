@@ -65,4 +65,13 @@ shots:
     switch: s_tgt_ramp_boot
   shot_tgt_rimrules:
     switch: s_target_rimrules
+
+  shot_laneright_inner:
+    switch: s_laneright_inner
+  shot_laneright_outer:
+    switch: s_laneright_outer
+  shot_laneleft_inner:
+    switch: s_laneleft_inner
+  shot_laneleft_outer:
+    switch: s_laneleft_outer
   

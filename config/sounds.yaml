@@ -155,4 +155,61 @@ sounds:
     #    attack: 0.3 sec
     #    attenuation: -50db
     #    release_point: .5 sec
-    #    release: 1.5 sec     
+    #    release: 1.5 sec
+
+  # death clips  
+  voice_drain_cantdrinkabeer:
+    file: death-cantdrinkabeer.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_drain_firstbeer:
+    file: death-firstbeer.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_drain_nipple:
+    file: death-nipple.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_gameover:
+    file: death-stableboy.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_ballsave:
+    file: death-save-landfillalive.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
