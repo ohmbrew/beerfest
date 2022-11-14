@@ -42,7 +42,11 @@ event_player:
   mode_base_started{device.accruals.drinko_bonus_accrual.value[4]}: sp_drinko_k
   mode_base_started{device.accruals.drinko_bonus_accrual.value[5]}: sp_drinko_o
   mode_base_started{device.accruals.drinko_bonus_accrual.value[6]}: sp_drinko_bang
-  ball_will_end: play_random_drain_clip
+
+queue_relay_player:
+  ball_ending:
+    post: play_random_drain_clip
+    wait_for: drain_audio_complete
 
 slides:
   drinko_bonus_slide:
@@ -274,12 +278,15 @@ sound_player:
   drain_play_cantdrinkabeer:
     voice_drain_cantdrinkabeer:
       action: play
+      events_when_stopped: drain_audio_complete
   drain_play_firstbeer:
     voice_drain_firstbeer:
       action: play
+      events_when_stopped: drain_audio_complete
   drain_play_nipple:
     voice_drain_nipple:
       action: play
+      events_when_stopped: drain_audio_complete
 
 random_event_player:
   play_random_drain_clip:
