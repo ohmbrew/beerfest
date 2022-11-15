@@ -1,0 +1,16 @@
+score:
+- !!python/tuple
+  - CCF
+  - 4004000
+- !!python/tuple
+  - OHM
+  - 4004000
+- !!python/tuple
+  - EHH
+  - 1502000
+- !!python/tuple
+  - CGG
+  - 1003000
+- !!python/tuple
+  - OHM
+  - 1000000

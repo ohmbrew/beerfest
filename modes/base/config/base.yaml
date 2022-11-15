@@ -487,7 +487,7 @@ variable_player:
   shot_quarters_hit:
     score: 25000
   shot_tavern_spinner_hit:
-    score: 2010
+    score: 500000
   enable_drinko_bonus2:
     score: 100000   # means we got bonus1
   enable_drinko_bonus3:

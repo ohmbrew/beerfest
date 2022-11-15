@@ -1,6 +1,5 @@
 #show_version=5
-
-- duration: 3s
+- duration: 15s
   slides:
     beerfest_intro:
       widgets:
@@ -51,7 +50,7 @@
         font_size: 100
         font_name: druillet
         y: 40%
-- duration: 3s
+- duration: 5s
   slides:
     ohmbrew_slide:
       widgets:
@@ -77,9 +76,9 @@
         anchor_y: bottom
         x: middle
         y: 15
-- duration: 3s
+- duration: 5s
   slides:
-    thanks_slide:
+    thanks_slide_ernie:
       widgets:
       - type: text
         text: Special Thanks
@@ -91,7 +90,7 @@
         y: top
       - type: text
         text: Ernie Silverberg
-        font_size: 125
+        font_size: 100
         font_name: druillet
         anchor_x: center
         anchor_y: top
@@ -103,7 +102,101 @@
         anchor_y: bottom
         x: middle
         y: 15
-- duration: 3s
+- duration: 5s
+  slides:
+    thanks_slide_sam:
+      widgets:
+      - type: text
+        text: Artwork
+        font_size: 75
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top
+      - type: text
+        text: Sam Irizarry
+        font_size: 100
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 100
+      - type: text
+        text: "@sillydoodlesnstuff"
+        font_size: 100
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 250
+      - type: image
+        image: sillydoodles
+        anchor_x: center
+        anchor_y: bottom
+        x: middle
+        y: 15
+- duration: 5s
+  slides:
+    thanks_slide_brokenlizard:
+      widgets:
+      - type: text
+        text: Special Thanks
+        font_size: 100
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top
+      - type: text
+        text: Broken Lizard
+        font_size: 100
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 125
+      - type: text
+        text: For making a pretty rad film
+        font_size: 100
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 250
+      - type: image
+        image: brokenlizard
+        anchor_x: center
+        anchor_y: bottom
+        x: middle
+        y: 15
+- duration: 5s
+  slides:
+    thanks_slide_mpf:
+      widgets:
+      - type: text
+        text: Special Thanks
+        font_size: 100
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top
+      - type: text
+        text: MPF Community
+        font_size: 100
+        font_name: druillet
+        anchor_x: center
+        anchor_y: top
+        x: middle
+        y: top - 125
+      - type: image
+        image: mpf
+        anchor_x: center
+        anchor_y: bottom
+        x: middle
+        y: 15
+- duration: 5s
   slides:
     thanks_slide:
       widgets:
@@ -123,24 +216,102 @@
       - type: text
         text: "Total Time: 16 months"
         font_size: 100
-        anchor_x: left
+        anchor_x: center
         anchor_y: top
-        x: 50
+        x: middle
         y: top - 450
       - type: text
         text: "Hourly Time: 960 hours"
         font_size: 100
-        anchor_x: left
+        anchor_x: center
         anchor_y: top
-        x: 50
+        x: middle
         y: top - 650
       - type: text
         text: "Project Cost: $5,500"
         font_size: 100
-        anchor_x: left
+        anchor_x: center
         anchor_y: top
-        x: 50
+        x: middle
         y: top - 850
+- duration: 8s
+  slides:
+    show_high_scores:
+      widgets:
+      - type: Text
+        text: HIGH SCORES
+        font_size: 100
+        font_name: druillet
+        color: green
+        bold: true
+        anchor_x: center
+        anchor_y: top
+        x: center
+        y: top-15
+      - type: Text
+        text: (machine|score1_label)
+        style: attract_mode_high_score_display_label
+        color: red
+        y: top-250
+      - type: Text
+        text: (machine|score1_name)
+        style: attract_mode_high_score_display_name
+        color: red
+        y: top-250
+      - type: Text
+        text: (machine|score1_value)
+        style: attract_mode_high_score_display_score
+        color: red
+        y: top-250
+      - type: Text
+        text: (machine|score2_label)
+        style: attract_mode_high_score_display_label
+        y: top-375
+      - type: Text
+        text: (machine|score2_name)
+        style: attract_mode_high_score_display_name
+        y: top-375
+      - type: Text
+        text: (machine|score2_value)
+        style: attract_mode_high_score_display_score
+        y: top-375
+      - type: Text
+        text: (machine|score3_label)
+        style: attract_mode_high_score_display_label
+        y: top-500
+      - type: Text
+        text: (machine|score3_name)
+        style: attract_mode_high_score_display_name
+        y: top-500
+      - type: Text
+        text: (machine|score3_value)
+        style: attract_mode_high_score_display_score
+        y: top-500
+      - type: Text
+        text: (machine|score4_label)
+        style: attract_mode_high_score_display_label
+        y: top-625
+      - type: Text
+        text: (machine|score4_name)
+        style: attract_mode_high_score_display_name
+        y: top-625
+      - type: Text
+        text: (machine|score4_value)
+        style: attract_mode_high_score_display_score
+        y: top-625
+      - type: Text
+        text: (machine|score5_label)
+        style: attract_mode_high_score_display_label
+        y: top-750
+      - type: Text
+        text: (machine|score5_name)
+        style: attract_mode_high_score_display_name
+        y: top-750
+      - type: Text
+        text: (machine|score5_value)
+        style: attract_mode_high_score_display_score
+        y: top-750
+
 
 
 
