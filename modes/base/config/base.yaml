@@ -55,7 +55,19 @@ slides:
       font_size: 200
       font_name: druillet
       color: red
-    
+  video_cantdrinkabeer_slide:
+    widgets:
+    - type: video
+      video: cantdrinkabeer
+  video_firstbeer_slide:
+    widgets:
+    - type: video
+      video: firstbeer
+  video_nipple_slide:
+    widgets:
+    - type: video
+      video: nipple 
+      
 slide_player:
   award_drinko_bonus:
     drinko_bonus_slide:
@@ -67,7 +79,7 @@ slide_player:
       transition_out:
         type: fade_back
         duration: .5
-
+  
 # shows to light lights when drinko sensor has been hit
 shows:
   init_lights:
@@ -217,6 +229,21 @@ shows:
     - time: '+1'
       lights:
         (light): (off_color)
+  show_cantdrinkabeer:
+    - time: 0
+      slides: video_cantdrinkabeer_slide
+    - time: '+2.5'
+      events: drain_audio_complete
+  show_firstbeer:
+    - time: 0
+      slides: video_firstbeer_slide
+    - time: '+3'
+      events: drain_audio_complete
+  show_nipple:
+    - time: 0
+      slides: video_nipple_slide
+    - time: '+5.5'
+      events: drain_audio_complete
 
 sound_player:
   award_drinko_bonus:
@@ -276,26 +303,13 @@ sound_player:
   ball_save_ball_save_saving_ball:
     voice_ballsave:
       action: play
-  drain_play_cantdrinkabeer:
-    voice_drain_cantdrinkabeer:
-      action: play
-      events_when_stopped: drain_audio_complete
-  drain_play_firstbeer:
-    voice_drain_firstbeer:
-      action: play
-      events_when_stopped: drain_audio_complete
-  drain_play_nipple:
-    voice_drain_nipple:
-      action: play
-      events_when_stopped: drain_audio_complete
   
-
 random_event_player:
   play_random_drain_clip:
     events:
-      - drain_play_cantdrinkabeer
+      #- drain_play_cantdrinkabeer
       - drain_play_firstbeer
-      - drain_play_nipple
+      #- drain_play_nipple
 
 show_player:
   mode_base_started:
@@ -366,6 +380,9 @@ show_player:
         light: ball_save
         on_color: off
         off_color: off
+  drain_play_cantdrinkabeer: show_cantdrinkabeer
+  drain_play_firstbeer: show_firstbeer
+  drain_play_nipple: show_nipple
 
 ball_saves:
   ball_save:

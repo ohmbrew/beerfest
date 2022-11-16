@@ -5,11 +5,18 @@ hardware:
   driverboards: pdb
   servo_controllers: pololu_maestro
 
+# tilt
+accelerometers:
+  p3_roc_accelerometer:
+    number: 1
+
+# define servo and min/max ranges
 pololu_maestro:
   port: /dev/ttyACM0  # lower ttyACMX is the USB command port, higher one is for TTL serial port. We use lower.
   servo_min: 2300
   servo_max: 9700
 
+# define display
 displays:
   window:
     width: 1800
@@ -30,6 +37,7 @@ modes:
   - strikeout
   - multiball
   - high_score
+  - tilt
 
 player_vars:
   current_mode:
