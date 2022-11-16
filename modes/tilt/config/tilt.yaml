@@ -1,0 +1,6 @@
+#config_version=5
+##! mode: tilt
+
+tilt:    # the following are the defaults only copy those if you want to change them
+  tilt_events: accelerometer_hit2
+  tilt_warning_events: accelerometer_hit1
