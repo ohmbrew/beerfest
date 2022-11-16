@@ -2,5 +2,39 @@
 ##! mode: tilt
 
 tilt:    # the following are the defaults only copy those if you want to change them
-  #tilt_events: accelerometer_hit2
   tilt_warning_events: accelerometer_hit1
+
+slides:
+  _overwrite: true
+  tilt_warning_1:
+    widgets:
+      - type: text
+        text: "TILT WARNING"
+        color: red
+        font_size: 150
+        font_name: druillet
+    expire: 1s
+  tilt_warning_2:
+    widgets:
+      - type: text
+        text: WARNING
+        y: top-10
+        anchor_y: top
+        color: red
+        font_size: 150
+        font_name: druillet
+      - type: text
+        text: "SERIOUSLY STOP IT"
+        y: top-200
+        anchor_y: top
+        color: red
+        font_size: 150
+        font_name: druillet
+        anchor_y: top
+    expire: 2s
+  tilt:
+    - type: text
+      text: TILT
+      color: red
+      font_size: 200
+      font_name: druillet
