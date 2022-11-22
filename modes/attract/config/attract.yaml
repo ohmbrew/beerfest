@@ -44,5 +44,7 @@ show_player:
   mode_attract_started.11:
     attract_pops:
       loops: -1
-
+  mode_attract_started.12:
+    attract_gi:
+      loops: -1
 

@@ -1,9 +1,8 @@
 #config_version=5
 
 lights:
-  # Drinko (7xRGB, J5/J9)
   drinko_n:
-    start_channel: 1-250
+    start_channel: 1-100
     type: grb
     tags: strip
   drinko_i:
@@ -288,6 +287,19 @@ lights:
     previous: mode_strikeout
     type: grb
     tags: strip
+
+  gi_right_1:
+    start_channel: 1-450
+    type: grb
+    tags: strip
+  gi_right_2:
+    previous: gi_right_1
+    type: grb
+    tags: strip
+  gi_right_3:
+    previous: gi_right_2
+    type: grb
+    tags: strip    
 
   # lights hooked to coil driver
   l_popbumper_lower:

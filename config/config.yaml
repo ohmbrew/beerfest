@@ -134,7 +134,12 @@ p_roc:
   pd_led_boards:
     1:
       use_ws281x_1: true
-      ws281x_1_last_address: 599
+      ws281x_1_first_address: 100
+      ws281x_1_last_address: 449
+      use_ws281x_0: true
+      ws281x_0_first_address: 450
+      ws281x_0_last_address: 599
+
 
 # pinball.org/en/latest/hardware/multimorphic/servos.html
 #p_roc:
