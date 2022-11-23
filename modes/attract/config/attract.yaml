@@ -46,5 +46,6 @@ show_player:
       loops: -1
   mode_attract_started.12:
     attract_gi:
+      speed: 3
       loops: -1
 
