@@ -133,7 +133,7 @@ keyboard:
 p_roc:
   pd_led_boards:
     1:
-      use_ws281x_1: true
+      use_ws281x_2: true
       ws281x_2_first_address: 100
       ws281x_2_last_address: 449
       use_ws281x_0: true
