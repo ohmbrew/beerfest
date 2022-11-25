@@ -307,9 +307,9 @@ sound_player:
 random_event_player:
   play_random_drain_clip:
     events:
-      #- drain_play_cantdrinkabeer
+      - drain_play_cantdrinkabeer
       - drain_play_firstbeer
-      #- drain_play_nipple
+      - drain_play_nipple
 
 show_player:
   mode_base_started:

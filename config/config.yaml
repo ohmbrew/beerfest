@@ -13,11 +13,11 @@ accelerometers:
     level_y: 0
     level_z: 0
     hit_limits:
-      0.5: accelerometer_hit1
-      1.5: accelerometer_hit2
+      0.5: accelerometer_hit1x
+      1.5: accelerometer_hit2x
     level_limits:
-      2: accelerometer_level1
-      5: accelerometer_level2
+      2: accelerometer_level1x
+      5: accelerometer_level2x
 
 # define servo and min/max ranges
 pololu_maestro:
