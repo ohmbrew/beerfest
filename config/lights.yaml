@@ -299,7 +299,16 @@ lights:
   gi_right_3:
     previous: gi_right_2
     type: grb
-    tags: strip    
+    tags: strip 
+
+  tavern_lights_1:
+    previous: gi_right_3
+    type: grb
+    tags: strip 
+  tavern_lights_2:
+    previous: tavern_lights_1
+    type: grb
+    tags: strip 
 
   # lights hooked to coil driver
   l_popbumper_lower:

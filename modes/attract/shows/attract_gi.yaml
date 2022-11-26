@@ -4,8 +4,12 @@
     gi_right_1: white
     gi_right_2: white
     gi_right_3: white
+    tavern_lights_1: white
+    tavern_lights_2: white
 - time: '+1'
   lights:
     gi_right_1: off
     gi_right_2: off
     gi_right_3: off
+    tavern_lights_1: off
+    tavern_lights_2: off
