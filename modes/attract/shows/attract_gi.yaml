@@ -1,15 +1,27 @@
 #show_version=5
 - time: '+1'
   lights:
-    gi_right_1: white
-    gi_right_2: white
-    gi_right_3: white
-    tavern_lights_1: white
-    tavern_lights_2: white
+    gi_right1: white
+    gi_right2: white
+    gi_right3: white
+    gi_right4: white
+    tavern_sign1: white
+    tavern_sign2: white
+    tavern_inside: white
+    gi_left1: white
+    gi_left2: white
+    gi_left3: white
+    gi_left4: white
 - time: '+1'
   lights:
-    gi_right_1: off
-    gi_right_2: off
-    gi_right_3: off
-    tavern_lights_1: off
-    tavern_lights_2: off
+    gi_right1: off
+    gi_right2: off
+    gi_right3: off
+    gi_right4: off
+    tavern_sign1: off
+    tavern_sign2: off
+    tavern_inside: off
+    gi_left1: off
+    gi_left2: off
+    gi_left3: off
+    gi_left4: off

@@ -288,27 +288,50 @@ lights:
     type: grb
     tags: strip
 
-  gi_right_1:
+  gi_right1:
     start_channel: 1-450
     type: grb
-    tags: strip
-  gi_right_2:
-    previous: gi_right_1
+    tags: gi
+  gi_right2:
+    previous: gi_right1
     type: grb
-    tags: strip
-  gi_right_3:
-    previous: gi_right_2
+    tags: gi
+  gi_right3:
+    previous: gi_right2
     type: grb
-    tags: strip 
-
-  tavern_lights_1:
-    previous: gi_right_3
+    tags: gi 
+  gi_right4:
+    previous: gi_right3
     type: grb
-    tags: strip 
-  tavern_lights_2:
-    previous: tavern_lights_1
+    tags: gi 
+  tavern_sign1:
+    previous: gi_right4
     type: grb
-    tags: strip 
+    tags: tavern 
+  tavern_sign2:
+    previous: tavern_sign1
+    type: grb
+    tags: tavern
+  tavern_inside:
+    previous: tavern_sign2
+    type: grb
+    tags: tavern  
+  gi_left4:
+    previous: tavern_inside
+    type: grb
+    tags: gi 
+  gi_left3:
+    previous: gi_left4
+    type: grb
+    tags: gi 
+  gi_left2:
+    previous: gi_left3
+    type: grb
+    tags: gi 
+  gi_left1:
+    previous: gi_left2
+    type: grb
+    tags: gi 
 
   # lights hooked to coil driver
   l_popbumper_lower:
