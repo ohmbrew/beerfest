@@ -12,6 +12,7 @@
     gi_left2: white
     gi_left3: white
     gi_left4: white
+    l_backglass: on
 - time: '+1'
   lights:
     gi_right1: off
@@ -25,3 +26,4 @@
     gi_left2: off
     gi_left3: off
     gi_left4: off
+    l_backglass: off

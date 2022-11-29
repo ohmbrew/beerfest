@@ -50,27 +50,24 @@ coils:
   cl_popbumper_lower:
     number: A2-B0-0
     allow_enable: true
-    #default_pulse_ms: 50
-    #pulse_events: pop_light_lower
   cl_popbumper_right:
     number: A2-B0-1
     allow_enable: true
-    #default_pulse_ms: 50
-    #pulse_events: pop_light_right
   cl_popbumper_left:
     number: A2-B0-2
     allow_enable: true
-    #default_pulse_ms: 50
-    #pulse_events: pop_light_left
   c_trough_eject:
-    number: A2-B0-3 # PD-16 Address 0, Bank B, Bit 1 will be drive pin for trough eject solenoid
+    number: A2-B0-3
     default_pulse_ms: 40
     default_hold_power: .5
   c_drain_eject:
-    number: A2-B0-4 # PD-16 Address 0, Bank B, Bit 0 will be drive pin for drain-to-trough solenoid
+    number: A2-B0-4
     default_pulse_ms: 40
     default_hold_power: .5
-  
+  cl_backglass:
+    number: A2-B0-5
+    allow_enable: true
+
   # 24V Coil Driver PCB: A2-B1
   c_pongcup1:
     number: A2-B1-1
