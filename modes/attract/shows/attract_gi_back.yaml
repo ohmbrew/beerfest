@@ -79,7 +79,7 @@
     gi_back4: red
     gi_back5: red
     gi_back6: red
-- time: '+.25'
+- time: '+1'
   lights:
     gi_back1: white
     gi_back2: white
@@ -87,7 +87,7 @@
     gi_back4: white
     gi_back5: white
     gi_back6: white
-- time: '+.25'
+- time: '+1'
   lights:
     gi_back1: blue
     gi_back2: blue
@@ -95,3 +95,11 @@
     gi_back4: blue
     gi_back5: blue
     gi_back6: blue
+- time: '+1'
+  lights:
+    gi_back1: off
+    gi_back2: off
+    gi_back3: off
+    gi_back4: off
+    gi_back5: off
+    gi_back6: off
