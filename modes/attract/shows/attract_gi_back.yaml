@@ -1,5 +1,5 @@
 #show_version=5
-- time: '+1'
+- time: 0
   lights:
     gi_back1: on
     gi_back6: on
@@ -19,7 +19,18 @@
   lights:
     gi_back3: off
     gi_back4: off
+    gi_back2: on
+    gi_back5: on
+- time: '+1'
+  lights:
+    gi_back2: off
+    gi_back5: off
     gi_back1: on
+    gi_back6: on   
+- time: '+1'
+  lights:
+    gi_back1: on
+    gi_back6: off
 - time: '+.25'
   lights:
     gi_back1: off
