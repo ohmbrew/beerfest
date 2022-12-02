@@ -70,3 +70,21 @@
     l_popbumper_left: off
     l_popbumper_right: off
     l_popbumper_lower: off
+    gi_left1: off
+    gi_left2: off
+    gi_left3: off
+    gi_left4: off
+    gi_right1: off
+    gi_right2: off
+    gi_right3: off
+    gi_right4: off
+    gi_back1: off
+    gi_back2: off
+    gi_back3: off
+    gi_back4: off
+    gi_back5: off
+    gi_back6: off
+    tavern_sign1: off
+    tavern_sign2: off
+    tavern_inside: off
+    l_backglass: on
