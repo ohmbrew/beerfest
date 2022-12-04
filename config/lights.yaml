@@ -129,9 +129,6 @@ lights:
     type: grb
     tags: strip
 
-
-  
-
   # BeerMug lights are tagged so that mug mode can efficiently turn on sets of lights corresponding to how many count_events
   # have happened. After some # of hit events, the qualify mode will be available
   beermug7:

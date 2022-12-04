@@ -91,7 +91,7 @@ switches:
   s_left_slingshot: 32
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1448
+  s_plunger_lane: 1449
   s_plunger_lane_exit: 233
   s_pongcup1: 165
   s_pongcup2: 47
@@ -109,7 +109,7 @@ switches:
   s_slingshot_quarters: 247
   s_slingshot_right: 1051
   s_special: 25
-  s_start: 122
+  s_start: 123
   s_take_hit: 159
   s_target_rimrules: 25
   s_tavern_exit: 2
@@ -122,4 +122,4 @@ switches:
   s_trough1: 384
   s_trough2: 362
   s_trough3: 82
-  s_trough_eject: 760
+  s_trough_eject: 761

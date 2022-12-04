@@ -18,7 +18,7 @@ event_player:
   mode_type_wizard_started:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
-    - start_mode_global
+    - start_mode_global    
   shot_drinko_d_hit:
     sp_drinko_d
   shot_drinko_r_hit:
@@ -331,6 +331,10 @@ show_player:
       loops: 0
   shot_slingright_hit:
     show_slingright_hit:
+      loops: 0
+  s_plunger_lane_inactive:
+    launch_show:
+      speed: 8
       loops: 0
   sp_drinko_d:
     show_light_d
