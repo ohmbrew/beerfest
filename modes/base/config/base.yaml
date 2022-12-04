@@ -91,6 +91,7 @@ shows:
         tavern_sign1: white
         tavern_sign2: white
         tavern_inside: white
+    - duration: -1
   show_pop_left:
     - time: 0
       lights:
