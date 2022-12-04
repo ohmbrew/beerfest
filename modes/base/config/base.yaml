@@ -332,10 +332,10 @@ show_player:
   shot_slingright_hit:
     show_slingright_hit:
       loops: 0
-  s_plunger_lane_inactive:
-    launch_show:
-      speed: 8
-      loops: 0
+  #s_plunger_lane_inactive:
+  #  launch_show:
+  #    speed: 8
+  #    loops: 0
   sp_drinko_d:
     show_light_d
   sp_drinko_r:
