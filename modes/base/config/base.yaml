@@ -88,9 +88,9 @@ shows:
         l_popbumper_left: on
         l_popbumper_right: on
         l_popbumper_lower: on
-        tavern_sign1: on
-        tavern_sign2: on
-        tavern_inside: on
+        tavern_sign1: white
+        tavern_sign2: white
+        tavern_inside: white
   show_pop_left:
     - time: 0
       lights:
