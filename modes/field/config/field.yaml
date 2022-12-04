@@ -47,7 +47,7 @@ random_event_player:
 show_player:
   mode_field_started:
     qualifying_show:
-      speed: 4
+      speed: 8
   start_qualify:
     qualifying_show:
       action: stop
