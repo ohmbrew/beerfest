@@ -44,7 +44,7 @@ shots:
   shot_pongcup1: 164
   shot_pongcup2: 47
   shot_popbumper_lower: 261
-  shot_popbumper_upper_left: 512
+  shot_popbumper_upper_left: 514
   shot_popbumper_upper_right: 484
   shot_quarters: 893
   shot_ramp_boot: 10
@@ -56,7 +56,7 @@ shots:
   shot_slingright: 18
   shot_special: 23
   shot_take_hit: 83
-  shot_tavern_spinner: 1554
+  shot_tavern_spinner: 1563
   shot_tgt_ramp_boot: 17
   shot_tgt_rimrules: 8
   shot_trojankeg_left: 2029
@@ -100,7 +100,7 @@ switches:
   s_pongtable_front_right: 87
   s_popbumper_lower: 799
   s_popbumper_upper: 141
-  s_popbumper_upper_left: 572
+  s_popbumper_upper_left: 574
   s_popbumper_upper_right: 548
   s_quarters: 927
   s_ramp_drinko: 67
@@ -113,7 +113,7 @@ switches:
   s_take_hit: 159
   s_target_rimrules: 25
   s_tavern_exit: 2
-  s_tavern_spinner: 3025
+  s_tavern_spinner: 3034
   s_tgt_ramp_boot: 61
   s_trogan_keg: 22
   s_trojankeg_left: 2069
