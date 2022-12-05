@@ -1,17 +1,18 @@
 #show_version=5
-- duration: 5.5s
+- duration: 4s
   shows:
     attract_modes_rainbow:
-      loops: 3
+      loops: 2
       speed: 5
-- duration: 8.5s
+- duration: 4s
   shows:
     attract_modes_build:
       loops: 1
-      speed: 5
-- duration: 3s
+      speed: 10
+- duration: 2s
   shows:
     attract_RWB_sweep:
       loops: 0
+      speed: 30
       priority: 1000
   
