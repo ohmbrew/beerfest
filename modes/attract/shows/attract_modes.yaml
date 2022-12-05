@@ -9,4 +9,9 @@
     attract_modes_build:
       loops: 1
       speed: 5
+- duration: 3s
+  shows:
+    attract_RWB_sweep:
+      loops: 0
+      priority: 1000
   

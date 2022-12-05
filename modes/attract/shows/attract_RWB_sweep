@@ -1,0 +1,720 @@
+#show_version=5
+- time: 0
+  lights:
+    gi_back1: 'FF0000'
+    gi_back2: 'FF0000'
+    gi_back3: 'FF0000'
+    gi_back4: 'FF0000'
+    gi_back5: 'FF0000'
+    gi_back6: 'FF0000'
+    
+- time: '+1'
+  lights:
+    l_popbumper_left: 'FF0000'
+    l_popbumper_right: 'FF0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_popbumper_lower: 'FF0000'
+    
+- time: '+1'
+  lights:
+    drinko_d: 'FF0000'
+    tavern_inside: 'FF0000'
+    tavern_sign1: 'FF0000'
+    tavern_sign2: 'FF0000'
+    
+- time: '+1'
+  lights:
+    arrow_rimrules3: 'FF0000'
+    drinko_i: 'FF0000'
+    drinko_n: 'FF0000'
+    drinko_r: 'FF0000'
+    
+- time: '+1'
+  lights:
+    arrow_orbit3: 'FF0000'
+    arrow_rimrules1: 'FF0000'
+    arrow_rimrules2: 'FF0000'
+    drinko_bang: 'FF0000'
+    drinko_k: 'FF0000'
+    drinko_o: 'FF0000'
+    gi_left4: 'FF0000'
+    gi_right4: 'FF0000'
+    
+- time: '+1'
+  lights:
+    arrow_boot2: 'FF0000'
+    arrow_boot3: 'FF0000'
+    arrow_orbit1: 'FF0000'
+    arrow_orbit2: 'FF0000'
+    arrow_tavern2: 'FF0000'
+    arrow_tavern3: 'FF0000'
+    
+- time: '+1'
+  lights:
+    arrow_boot1: 'FF0000'
+    arrow_tavern1: 'FF0000'
+    
+- time: '+1'
+  lights:
+    strikeout_shot: 'FF0000'
+    
+- time: '+1'
+  lights:
+    strikeout_beer: 'FF0000'
+    
+- time: '+1'
+  lights:
+    balls_locked1: 'FF0000'
+    balls_locked2: 'FF0000'
+    balls_locked3: 'FF0000'
+    strikeout_bong: 'FF0000'
+    
+- time: '+1'
+  lights:
+    gi_left3: 'FF0000'
+    gi_right3: 'FF0000'
+    quarters: 'FF0000'
+    
+- time: '+1'
+  lights:
+    arrow_drinko2: 'FF0000'
+    arrow_drinko3: 'FF0000'
+    drinko_bonus3: 'FF0000'
+    trojankeg_left: 'FF0000'
+    trojankeg_middle: 'FF0000'
+    trojankeg_right: 'FF0000'
+    
+- time: '+1'
+  lights:
+    arrow_drinko1: 'FF0000'
+    arrow_mode3: 'FF0000'
+    drinko_bonus2: 'FF0000'
+    slingquarters_upper: 'FF0000'
+    
+- time: '+1'
+  lights:
+    arrow_mode1: 'FF0000'
+    arrow_mode2: 'FF0000'
+    chance: 'FF0000'
+    drinko_bonus1: 'FF0000'
+    mode_dasboot: 'FF0000'
+    
+- time: '+1'
+  lights:
+    slingquarters_lower: 'FF0000'
+    
+- time: '+1'
+  lights:
+    gi_left2: 'FF0000'
+    gi_right2: 'FF0000'
+    mode_trojankeg: 'FF0000'
+    mode_volumechug: 'FF0000'
+    special: 'FF0000'
+    
+- time: '+1'
+  lights:
+    lane_left_inner: 'FF0000'
+    lane_left_outer: 'FF0000'
+    lane_right_inner: 'FF0000'
+    lane_right_outer: 'FF0000'
+    mode_longpour: 'FF0000'
+    mode_quarters: 'FF0000'
+    mode_strikeout: 'FF0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    beermug7: 'FF0000'
+    slingleft_upper: 'FF0000'
+    slingright_upper: 'FF0000'
+    
+- time: '+1'
+  lights:
+    beermug5: 'FF0000'
+    beermug6: 'FF0000'
+    slingleft_lower: 'FF0000'
+    slingright_lower: 'FF0000'
+    
+- time: '+1'
+  lights:
+    beermug3: 'FF0000'
+    beermug4: 'FF0000'
+    gi_left1: 'FF0000'
+    gi_right1: 'FF0000'
+    
+- time: '+1'
+  lights:
+    beermug1: 'FF0000'
+    beermug2: 'FF0000'
+    flipper_left: 'FF0000'
+    flipper_right: 'FF0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    ball_save: 'FF0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    arrow_boot1: '000000'
+    arrow_boot2: '000000'
+    arrow_boot3: '000000'
+    arrow_drinko1: '000000'
+    arrow_drinko2: '000000'
+    arrow_drinko3: '000000'
+    arrow_mode1: '000000'
+    arrow_mode2: '000000'
+    arrow_mode3: '000000'
+    arrow_orbit1: '000000'
+    arrow_orbit2: '000000'
+    arrow_orbit3: '000000'
+    arrow_rimrules1: '000000'
+    arrow_rimrules2: '000000'
+    arrow_rimrules3: '000000'
+    arrow_tavern1: '000000'
+    arrow_tavern2: '000000'
+    arrow_tavern3: '000000'
+    ball_save: '000000'
+    balls_locked1: '000000'
+    balls_locked2: '000000'
+    balls_locked3: '000000'
+    beermug1: '000000'
+    beermug2: '000000'
+    beermug3: '000000'
+    beermug4: '000000'
+    beermug5: '000000'
+    beermug6: '000000'
+    beermug7: '000000'
+    chance: '000000'
+    drinko_bang: '000000'
+    drinko_bonus1: '000000'
+    drinko_bonus2: '000000'
+    drinko_bonus3: '000000'
+    drinko_d: '000000'
+    drinko_i: '000000'
+    drinko_k: '000000'
+    drinko_n: '000000'
+    drinko_o: '000000'
+    drinko_r: '000000'
+    flipper_left: '000000'
+    flipper_right: '000000'
+    gi_back1: 'FFFFFF'
+    gi_back2: 'FFFFFF'
+    gi_back3: 'FFFFFF'
+    gi_back4: 'FFFFFF'
+    gi_back5: 'FFFFFF'
+    gi_back6: 'FFFFFF'
+    gi_left1: '000000'
+    gi_left2: '000000'
+    gi_left3: '000000'
+    gi_left4: '000000'
+    gi_right1: '000000'
+    gi_right2: '000000'
+    gi_right3: '000000'
+    gi_right4: '000000'
+    l_popbumper_left: '000000'
+    l_popbumper_lower: '000000'
+    l_popbumper_right: '000000'
+    lane_left_inner: '000000'
+    lane_left_outer: '000000'
+    lane_right_inner: '000000'
+    lane_right_outer: '000000'
+    mode_dasboot: '000000'
+    mode_longpour: '000000'
+    mode_quarters: '000000'
+    mode_strikeout: '000000'
+    mode_trojankeg: '000000'
+    mode_volumechug: '000000'
+    quarters: '000000'
+    slingleft_lower: '000000'
+    slingleft_upper: '000000'
+    slingquarters_lower: '000000'
+    slingquarters_upper: '000000'
+    slingright_lower: '000000'
+    slingright_upper: '000000'
+    special: '000000'
+    strikeout_beer: '000000'
+    strikeout_bong: '000000'
+    strikeout_shot: '000000'
+    tavern_inside: '000000'
+    tavern_sign1: '000000'
+    tavern_sign2: '000000'
+    trojankeg_left: '000000'
+    trojankeg_middle: '000000'
+    trojankeg_right: '000000'
+    
+- time: '+1'
+  lights:
+    l_popbumper_left: 'FFFFFF'
+    l_popbumper_right: 'FFFFFF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_popbumper_lower: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    drinko_d: 'FFFFFF'
+    tavern_inside: 'FFFFFF'
+    tavern_sign1: 'FFFFFF'
+    tavern_sign2: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    arrow_rimrules3: 'FFFFFF'
+    drinko_i: 'FFFFFF'
+    drinko_n: 'FFFFFF'
+    drinko_r: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    arrow_orbit3: 'FFFFFF'
+    arrow_rimrules1: 'FFFFFF'
+    arrow_rimrules2: 'FFFFFF'
+    drinko_bang: 'FFFFFF'
+    drinko_k: 'FFFFFF'
+    drinko_o: 'FFFFFF'
+    gi_left4: 'FFFFFF'
+    gi_right4: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    arrow_boot2: 'FFFFFF'
+    arrow_boot3: 'FFFFFF'
+    arrow_orbit1: 'FFFFFF'
+    arrow_orbit2: 'FFFFFF'
+    arrow_tavern3: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    arrow_boot1: 'FFFFFF'
+    arrow_tavern1: 'FFFFFF'
+    arrow_tavern2: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    strikeout_shot: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    strikeout_beer: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    balls_locked1: 'FFFFFF'
+    balls_locked2: 'FFFFFF'
+    balls_locked3: 'FFFFFF'
+    strikeout_bong: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    gi_left3: 'FFFFFF'
+    gi_right3: 'FFFFFF'
+    quarters: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    arrow_drinko2: 'FFFFFF'
+    arrow_drinko3: 'FFFFFF'
+    drinko_bonus3: 'FFFFFF'
+    trojankeg_left: 'FFFFFF'
+    trojankeg_middle: 'FFFFFF'
+    trojankeg_right: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    arrow_drinko1: 'FFFFFF'
+    arrow_mode3: 'FFFFFF'
+    drinko_bonus2: 'FFFFFF'
+    slingquarters_upper: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    arrow_mode1: 'FFFFFF'
+    arrow_mode2: 'FFFFFF'
+    drinko_bonus1: 'FFFFFF'
+    mode_dasboot: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    chance: 'FFFFFF'
+    slingquarters_lower: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    gi_left2: 'FFFFFF'
+    gi_right2: 'FFFFFF'
+    mode_trojankeg: 'FFFFFF'
+    mode_volumechug: 'FFFFFF'
+    special: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    lane_right_inner: 'FFFFFF'
+    mode_longpour: 'FFFFFF'
+    mode_quarters: 'FFFFFF'
+    mode_strikeout: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    lane_left_inner: 'FFFFFF'
+    lane_left_outer: 'FFFFFF'
+    lane_right_outer: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    beermug7: 'FFFFFF'
+    slingleft_upper: 'FFFFFF'
+    slingright_upper: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    beermug5: 'FFFFFF'
+    beermug6: 'FFFFFF'
+    slingleft_lower: 'FFFFFF'
+    slingright_lower: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    beermug3: 'FFFFFF'
+    beermug4: 'FFFFFF'
+    gi_left1: 'FFFFFF'
+    gi_right1: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    beermug1: 'FFFFFF'
+    beermug2: 'FFFFFF'
+    flipper_left: 'FFFFFF'
+    flipper_right: 'FFFFFF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    ball_save: 'FFFFFF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    arrow_boot1: '000000'
+    arrow_boot2: '000000'
+    arrow_boot3: '000000'
+    arrow_drinko1: '000000'
+    arrow_drinko2: '000000'
+    arrow_drinko3: '000000'
+    arrow_mode1: '000000'
+    arrow_mode2: '000000'
+    arrow_mode3: '000000'
+    arrow_orbit1: '000000'
+    arrow_orbit2: '000000'
+    arrow_orbit3: '000000'
+    arrow_rimrules1: '000000'
+    arrow_rimrules2: '000000'
+    arrow_rimrules3: '000000'
+    arrow_tavern1: '000000'
+    arrow_tavern2: '000000'
+    arrow_tavern3: '000000'
+    ball_save: '000000'
+    balls_locked1: '000000'
+    balls_locked2: '000000'
+    balls_locked3: '000000'
+    beermug1: '000000'
+    beermug2: '000000'
+    beermug3: '000000'
+    beermug4: '000000'
+    beermug5: '000000'
+    beermug6: '000000'
+    beermug7: '000000'
+    chance: '000000'
+    drinko_bang: '000000'
+    drinko_bonus1: '000000'
+    drinko_bonus2: '000000'
+    drinko_bonus3: '000000'
+    drinko_d: '000000'
+    drinko_i: '000000'
+    drinko_k: '000000'
+    drinko_n: '000000'
+    drinko_o: '000000'
+    drinko_r: '000000'
+    flipper_left: '000000'
+    flipper_right: '000000'
+    gi_back1: '0000FF'
+    gi_back2: '0000FF'
+    gi_back3: '0000FF'
+    gi_back4: '0000FF'
+    gi_back5: '0000FF'
+    gi_back6: '0000FF'
+    gi_left1: '000000'
+    gi_left2: '000000'
+    gi_left3: '000000'
+    gi_left4: '000000'
+    gi_right1: '000000'
+    gi_right2: '000000'
+    gi_right3: '000000'
+    gi_right4: '000000'
+    l_popbumper_left: '000000'
+    l_popbumper_lower: '000000'
+    l_popbumper_right: '000000'
+    lane_left_inner: '000000'
+    lane_left_outer: '000000'
+    lane_right_inner: '000000'
+    lane_right_outer: '000000'
+    mode_dasboot: '000000'
+    mode_longpour: '000000'
+    mode_quarters: '000000'
+    mode_strikeout: '000000'
+    mode_trojankeg: '000000'
+    mode_volumechug: '000000'
+    quarters: '000000'
+    slingleft_lower: '000000'
+    slingleft_upper: '000000'
+    slingquarters_lower: '000000'
+    slingquarters_upper: '000000'
+    slingright_lower: '000000'
+    slingright_upper: '000000'
+    special: '000000'
+    strikeout_beer: '000000'
+    strikeout_bong: '000000'
+    strikeout_shot: '000000'
+    tavern_inside: '000000'
+    tavern_sign1: '000000'
+    tavern_sign2: '000000'
+    trojankeg_left: '000000'
+    trojankeg_middle: '000000'
+    trojankeg_right: '000000'
+    
+- time: '+1'
+  lights:
+    l_popbumper_left: '0000FF'
+    l_popbumper_right: '0000FF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_popbumper_lower: '0000FF'
+    
+- time: '+1'
+  lights:
+    drinko_d: '0000FF'
+    tavern_inside: '0000FF'
+    tavern_sign1: '0000FF'
+    tavern_sign2: '0000FF'
+    
+- time: '+1'
+  lights:
+    arrow_rimrules3: '0000FF'
+    drinko_i: '0000FF'
+    drinko_n: '0000FF'
+    drinko_r: '0000FF'
+    
+- time: '+1'
+  lights:
+    arrow_orbit3: '0000FF'
+    arrow_rimrules1: '0000FF'
+    arrow_rimrules2: '0000FF'
+    drinko_bang: '0000FF'
+    drinko_k: '0000FF'
+    drinko_o: '0000FF'
+    gi_left4: '0000FF'
+    gi_right4: '0000FF'
+    
+- time: '+1'
+  lights:
+    arrow_boot2: '0000FF'
+    arrow_boot3: '0000FF'
+    arrow_orbit1: '0000FF'
+    arrow_orbit2: '0000FF'
+    arrow_tavern3: '0000FF'
+    
+- time: '+1'
+  lights:
+    arrow_boot1: '0000FF'
+    arrow_tavern1: '0000FF'
+    arrow_tavern2: '0000FF'
+    
+- time: '+1'
+  lights:
+    strikeout_shot: '0000FF'
+    
+- time: '+1'
+  lights:
+    strikeout_beer: '0000FF'
+    
+- time: '+1'
+  lights:
+    balls_locked1: '0000FF'
+    balls_locked2: '0000FF'
+    balls_locked3: '0000FF'
+    strikeout_bong: '0000FF'
+    
+- time: '+1'
+  lights:
+    gi_left3: '0000FF'
+    gi_right3: '0000FF'
+    quarters: '0000FF'
+    
+- time: '+1'
+  lights:
+    arrow_drinko2: '0000FF'
+    arrow_drinko3: '0000FF'
+    drinko_bonus3: '0000FF'
+    trojankeg_left: '0000FF'
+    trojankeg_middle: '0000FF'
+    trojankeg_right: '0000FF'
+    
+- time: '+1'
+  lights:
+    arrow_drinko1: '0000FF'
+    arrow_mode3: '0000FF'
+    drinko_bonus2: '0000FF'
+    slingquarters_upper: '0000FF'
+    
+- time: '+1'
+  lights:
+    arrow_mode1: '0000FF'
+    arrow_mode2: '0000FF'
+    drinko_bonus1: '0000FF'
+    mode_dasboot: '0000FF'
+    
+- time: '+1'
+  lights:
+    chance: '0000FF'
+    slingquarters_lower: '0000FF'
+    
+- time: '+1'
+  lights:
+    gi_left2: '0000FF'
+    gi_right2: '0000FF'
+    mode_trojankeg: '0000FF'
+    mode_volumechug: '0000FF'
+    special: '0000FF'
+    
+- time: '+1'
+  lights:
+    lane_right_inner: '0000FF'
+    mode_longpour: '0000FF'
+    mode_quarters: '0000FF'
+    mode_strikeout: '0000FF'
+    
+- time: '+1'
+  lights:
+    lane_left_inner: '0000FF'
+    lane_left_outer: '0000FF'
+    lane_right_outer: '0000FF'
+    
+- time: '+1'
+  lights:
+    beermug7: '0000FF'
+    slingleft_upper: '0000FF'
+    slingright_upper: '0000FF'
+    
+- time: '+1'
+  lights:
+    beermug5: '0000FF'
+    beermug6: '0000FF'
+    slingleft_lower: '0000FF'
+    slingright_lower: '0000FF'
+    
+- time: '+1'
+  lights:
+    beermug3: '0000FF'
+    beermug4: '0000FF'
+    gi_left1: '0000FF'
+    gi_right1: '0000FF'
+    
+- time: '+1'
+  lights:
+    beermug1: '0000FF'
+    beermug2: '0000FF'
+    flipper_left: '0000FF'
+    flipper_right: '0000FF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    ball_save: '0000FF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
