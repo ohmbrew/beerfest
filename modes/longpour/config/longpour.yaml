@@ -124,17 +124,9 @@ shows:
         arrow_tavern3: blue
         arrow_boot3: red
         arrow_drinko3: white
-  show_flash_gi:
+  show_flash_gi_back:
     - duration: 1
       lights:
-        gi_left1: white
-        gi_left2: white
-        gi_left3: white
-        gi_left4: white
-        gi_right1: white
-        gi_right2: white
-        gi_right3: white
-        gi_right4: white
         gi_back1: white
         gi_back2: white
         gi_back3: white
@@ -143,20 +135,118 @@ shows:
         gi_back6: white
     - duration: 1
       lights:
-        gi_left1: off
-        gi_left2: off
-        gi_left3: off
-        gi_left4: off
-        gi_right1: off
-        gi_right2: off
-        gi_right3: off
-        gi_right4: off
         gi_back1: off
         gi_back2: off
         gi_back3: off
         gi_back4: off
         gi_back5: off
         gi_back6: off
+  show_flash_gi_sides:
+    - duration: 1
+      lights:
+        gi_left1: red
+        gi_left2: off
+        gi_left3: off
+        gi_left4: off
+        gi_right1: red
+        gi_right2: off
+        gi_right3: off
+        gi_right4: off
+    - duration: 1
+      lights:
+        gi_left2: red
+        gi_right2: red
+    - duration: 1
+      lights:
+        gi_left3: red
+        gi_right3: red
+    - duration: 1
+      lights:
+        gi_left4: red
+        gi_right4: red
+
+    - duration: 1
+      lights:
+        gi_left1: off
+        gi_right1: off
+    - duration: 1
+      lights:
+        gi_left2: off
+        gi_right2: off
+    - duration: 1
+      lights:
+        gi_left3: off
+        gi_right3: off
+    - duration: 1
+      lights:
+        gi_left4: off
+        gi_right4: off
+
+    - duration: 1
+      lights:
+        gi_left1: white
+        gi_right1: white
+    - duration: 1
+      lights:
+        gi_left2: white
+        gi_right2: white
+    - duration: 1
+      lights:
+        gi_left3: white
+        gi_right3: white
+    - duration: 1
+      lights:
+        gi_left4: white
+        gi_right4: white
+    - duration: 1
+      lights:
+        gi_left1: off
+        gi_right1: off
+    - duration: 1
+      lights:
+        gi_left2: off
+        gi_right2: off
+    - duration: 1
+      lights:
+        gi_left3: off
+        gi_right3: off
+    - duration: 1
+      lights:
+        gi_left4: off
+        gi_right4: off
+    
+    - duration: 1
+      lights:
+        gi_left1: blue
+        gi_right1: blue
+    - duration: 1
+      lights:
+        gi_left2: blue
+        gi_right2: blue
+    - duration: 1
+      lights:
+        gi_left3: blue
+        gi_right3: blue
+    - duration: 1
+      lights:
+        gi_left4: blue
+        gi_right4: blue
+    - duration: 1
+      lights:
+        gi_left1: off
+        gi_right1: off
+    - duration: 1
+      lights:
+        gi_left2: off
+        gi_right2: off
+    - duration: 1
+      lights:
+        gi_left3: off
+        gi_right3: off
+    - duration: 1
+      lights:
+        gi_left4: off
+        gi_right4: off
 show_player:
   kicker_mode_eject:
     show_flash_longpour:
@@ -165,9 +255,11 @@ show_player:
     show_flash_ramps:
       speed: 4
   kicker_mode_eject.2:
-    show_flash_gi:
+    show_flash_gi_back:
       speed: 15
-
+  kicker_mode_eject.3:
+    show_flash_gi_sides:
+      speed: 6
 # timed round
 timers:
   round_timer_longpour:

@@ -13,6 +13,18 @@ shows:
         trojankeg_right: red
         chance: red
         special: red
+        arrow_tavern1: red
+        arrow_tavern2: off
+        arrow_tavern3: off
+        arrow_boot1: red
+        arrow_boot2: off
+        arrow_boot3: off
+        arrow_drinko1: red
+        arrow_drinko2: off
+        arrow_drinko3: off
+        l_popbumper_left: on
+        l_popbumper_right: off
+        l_popbumper_lower: off
     - time: '+1'
       lights:
         strikeout_shot: white
@@ -24,6 +36,14 @@ shows:
         trojankeg_right: white
         chance: white
         special: white
+        arrow_tavern1: off
+        arrow_tavern2: white
+        arrow_boot1: off
+        arrow_boot2: white
+        arrow_drinko1: off
+        arrow_drinko2: white
+        l_popbumper_left: off
+        l_popbumper_right: on
     - time: '+1'
       lights:
         strikeout_shot: blue
@@ -35,6 +55,14 @@ shows:
         trojankeg_right: blue
         chance: blue
         special: blue
+        arrow_tavern2: off
+        arrow_tavern3: blue
+        arrow_boot2: off
+        arrow_boot3: blue
+        arrow_drinko2: off
+        arrow_drinko3: blue
+        l_popbumper_right: off
+        l_popbumper_lower: on
   show_qualified_arrows:
     - duration: 1
       lights:
