@@ -31,7 +31,7 @@ shots:
     switch: s_kicker_mode
   shot_quarters:
     switch: s_quarters
-  shot_tavern_spinner:
+  shot_tavern:
     switch: s_tavern_spinner
   shot_pongcup1:
     switch: s_pongcup1

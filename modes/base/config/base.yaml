@@ -7,7 +7,7 @@ mode:
 
 config:
   - shots.yaml
-
+  
 event_player:
   mode_base_started:
     - start_mode_global
@@ -91,6 +91,20 @@ shows:
         tavern_sign1: white
         tavern_sign2: white
         tavern_inside: white
+        gi_left1: white
+        gi_left2: white
+        gi_left3: white
+        gi_left4: white
+        gi_right1: white
+        gi_right2: white
+        gi_right3: white
+        gi_right4: white
+        gi_back1: white
+        gi_back2: white
+        gi_back3: white
+        gi_back4: white
+        gi_back5: white
+        gi_back6: white
     - duration: -1
   show_pop_left:
     - time: 0
@@ -338,12 +352,15 @@ show_player:
       loops: 0
   shot_slingquarters_hit:
     show_slingquarters_hit:
+      speed: 4
       loops: 0
   shot_slingleft_hit:
     show_slingleft_hit:
+      speed: 4
       loops: 0
   shot_slingright_hit:
     show_slingright_hit:
+      speed: 4
       loops: 0
   s_plunger_lane_inactive:
     launch_show:
@@ -370,7 +387,7 @@ show_player:
   drinko_hammered:
     show_light_drinko_hammered:
       speed: 4
-  shot_tavern_spinner_hit:
+  shot_tavern_hit:
     show_tavern_hit:
       speed: 4
       loops: 0
@@ -524,7 +541,7 @@ variable_player:
     score: 50000
   shot_quarters_hit:
     score: 25000
-  shot_tavern_spinner_hit:
+  shot_tavern_hit:
     score: 50000
   enable_drinko_bonus2:
     score: 100000   # means we got bonus1

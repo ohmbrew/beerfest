@@ -9,7 +9,6 @@ mode:
 config:
   - mug.yaml
   - qualify.yaml
-  - drinko_bonus.yaml
 
 sound_player:
   mode_field_started:
@@ -41,13 +40,13 @@ random_event_player:
   launch_random_game_mode:
     events:
       - start_mode_longpour
-      - start_mode_quarters
-      - start_mode_strikeout
+      #- start_mode_quarters
+      #- start_mode_strikeout
       
 show_player:
   mode_field_started:
-    qualifying_show:
+    show_qualify_active:
       speed: 8
-  start_qualify:
-    qualifying_show:
+  qualified_for_mode_selection:
+    show_qualify_active:
       action: stop

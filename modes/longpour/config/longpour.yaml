@@ -74,7 +74,7 @@ slide_player:
   kicker_mode_eject: show_longpour_slide
   
 shows:
-  flash_longpour_insert:
+  show_flash_longpour:
     - time: 0
       lights:
         mode_longpour:
@@ -90,7 +90,7 @@ shows:
         mode_longpour:
           color: blue
           fade: .1s
-  flash_ramp_arrows:
+  show_flash_ramps:
     - duration: 1
       lights:
         arrow_tavern1: red
@@ -124,14 +124,49 @@ shows:
         arrow_tavern3: blue
         arrow_boot3: red
         arrow_drinko3: white
-        
+  show_flash_gi:
+    - duration: 1
+      lights:
+        gi_left1: white
+        gi_left2: white
+        gi_left3: white
+        gi_left4: white
+        gi_right1: white
+        gi_right2: white
+        gi_right3: white
+        gi_right4: white
+        gi_back1: white
+        gi_back2: white
+        gi_back3: white
+        gi_back4: white
+        gi_back5: white
+        gi_back6: white
+    - duration: 1
+      lights:
+        gi_left1: off
+        gi_left2: off
+        gi_left3: off
+        gi_left4: off
+        gi_right1: off
+        gi_right2: off
+        gi_right3: off
+        gi_right4: off
+        gi_back1: off
+        gi_back2: off
+        gi_back3: off
+        gi_back4: off
+        gi_back5: off
+        gi_back6: off
 show_player:
   kicker_mode_eject:
-    flash_longpour_insert:
+    show_flash_longpour:
       speed: 4
   kicker_mode_eject.1:
-    flash_ramp_arrows:
+    show_flash_ramps:
       speed: 4
+  kicker_mode_eject.2:
+    show_flash_gi:
+      speed: 15
 
 # timed round
 timers:
@@ -156,8 +191,8 @@ variable_player:
     score: 100000
   shot_ramp_drinko_hit:
     score: 100000
-  shot_tavern_spinner_hit:
-    score: 50000
+  shot_tavern_hit:
+    score: 100000
 
 
 

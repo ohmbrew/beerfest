@@ -1,7 +1,41 @@
 #config_version=5
 
 shows:
-  flash_qualify_lights:
+  show_qualify_active:
+    - time: 0
+      lights:
+        strikeout_shot: red
+        strikeout_beer: red
+        strikeout_bong: red
+        quarters: red
+        trojankeg_left: red
+        trojankeg_middle: red
+        trojankeg_right: red
+        chance: red
+        special: red
+    - time: '+1'
+      lights:
+        strikeout_shot: white
+        strikeout_beer: white
+        strikeout_bong: white
+        quarters: white
+        trojankeg_left: white
+        trojankeg_middle: white
+        trojankeg_right: white
+        chance: white
+        special: white
+    - time: '+1'
+      lights:
+        strikeout_shot: blue
+        strikeout_beer: blue
+        strikeout_bong: blue
+        quarters: blue
+        trojankeg_left: blue
+        trojankeg_middle: blue
+        trojankeg_right: blue
+        chance: blue
+        special: blue
+  show_qualified_arrows:
     - duration: 1
       lights:
         arrow_mode1: red
@@ -28,6 +62,6 @@ shows:
         arrow_rimrules3: blue
 
 show_player:
-  start_qualify:
-    flash_qualify_lights:
+  qualified_for_mode_selection:
+    show_qualified_arrows:
       speed: 4

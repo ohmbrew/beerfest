@@ -28,7 +28,7 @@ shots:
   quarters: 30
   shot_chance: 107
   shot_chug_beer: 78
-  shot_diverter: 151
+  shot_diverter: 153
   shot_do_shot: 88
   shot_drinko_bang: 201
   shot_drinko_d: 222
@@ -37,7 +37,7 @@ shots:
   shot_drinko_n: 200
   shot_drinko_o: 203
   shot_drinko_r: 216
-  shot_kicker_mode: 287
+  shot_kicker_mode: 291
   shot_kicker_rimrules: 119
   shot_laneleft_outer: 4
   shot_plunger_lane_exit: 45
@@ -46,20 +46,21 @@ shots:
   shot_popbumper_lower: 261
   shot_popbumper_upper_left: 514
   shot_popbumper_upper_right: 484
-  shot_quarters: 893
+  shot_quarters: 953
   shot_ramp_boot: 10
-  shot_ramp_drinko: 33
+  shot_ramp_drinko: 35
   shot_sling_left: 1
   shot_sling_quarters: 26
   shot_slingleft: 4
-  shot_slingquarters: 4
-  shot_slingright: 18
+  shot_slingquarters: 5
+  shot_slingright: 20
   shot_special: 23
   shot_take_hit: 83
-  shot_tavern_spinner: 1563
+  shot_tavern: 2
+  shot_tavern_spinner: 1581
   shot_tgt_ramp_boot: 17
   shot_tgt_rimrules: 8
-  shot_trojankeg_left: 2029
+  shot_trojankeg_left: 2038
   shot_trojankeg_middle: 170
   shot_trojankeg_right: 112
   take_hit: 57
@@ -69,7 +70,7 @@ shots:
 switches:
   s_chance: 216
   s_chug_beer: 155
-  s_diverter: 154
+  s_diverter: 156
   s_do_shot: 161
   s_drain: 823
   s_drinko_bang: 225
@@ -81,7 +82,7 @@ switches:
   s_drinko_r: 342
   s_flipper_left: 1964
   s_flipper_right: 2337
-  s_kicker_mode: 881
+  s_kicker_mode: 885
   s_kicker_rimrules: 608
   s_laneleft_inner: 18
   s_laneleft_outer: 8
@@ -91,7 +92,7 @@ switches:
   s_left_slingshot: 32
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1451
+  s_plunger_lane: 1454
   s_plunger_lane_exit: 233
   s_pongcup1: 165
   s_pongcup2: 47
@@ -102,24 +103,24 @@ switches:
   s_popbumper_upper: 141
   s_popbumper_upper_left: 574
   s_popbumper_upper_right: 548
-  s_quarters: 927
-  s_ramp_drinko: 67
+  s_quarters: 987
+  s_ramp_drinko: 69
   s_right_flipper: 183
   s_slingshot_left: 930
-  s_slingshot_quarters: 247
-  s_slingshot_right: 1051
+  s_slingshot_quarters: 248
+  s_slingshot_right: 1053
   s_special: 25
   s_start: 123
   s_take_hit: 159
   s_target_rimrules: 25
   s_tavern_exit: 2
-  s_tavern_spinner: 3034
+  s_tavern_spinner: 3054
   s_tgt_ramp_boot: 61
   s_trogan_keg: 22
-  s_trojankeg_left: 2069
+  s_trojankeg_left: 2078
   s_trojankeg_middle: 198
   s_trojankeg_right: 144
   s_trough1: 384
   s_trough2: 362
   s_trough3: 82
-  s_trough_eject: 763
+  s_trough_eject: 766
