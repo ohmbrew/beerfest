@@ -1,0 +1,105 @@
+#show_version=5
+- duration: 1
+  lights:
+    gi_left1: red
+    gi_left2: off
+    gi_left3: off
+    gi_left4: off
+    gi_right1: red
+    gi_right2: off
+    gi_right3: off
+    gi_right4: off
+- duration: 1
+  lights:
+    gi_left2: red
+    gi_right2: red
+- duration: 1
+  lights:
+    gi_left3: red
+    gi_right3: red
+- duration: 1
+  lights:
+    gi_left4: red
+    gi_right4: red
+
+- duration: 1
+  lights:
+    gi_left1: off
+    gi_right1: off
+- duration: 1
+  lights:
+    gi_left2: off
+    gi_right2: off
+- duration: 1
+  lights:
+    gi_left3: off
+    gi_right3: off
+- duration: 1
+  lights:
+    gi_left4: off
+    gi_right4: off
+
+- duration: 1
+  lights:
+    gi_left1: white
+    gi_right1: white
+- duration: 1
+  lights:
+    gi_left2: white
+    gi_right2: white
+- duration: 1
+  lights:
+    gi_left3: white
+    gi_right3: white
+- duration: 1
+  lights:
+    gi_left4: white
+    gi_right4: white
+- duration: 1
+  lights:
+    gi_left1: off
+    gi_right1: off
+- duration: 1
+  lights:
+    gi_left2: off
+    gi_right2: off
+- duration: 1
+  lights:
+    gi_left3: off
+    gi_right3: off
+- duration: 1
+  lights:
+    gi_left4: off
+    gi_right4: off
+- duration: 1
+  lights:
+    gi_left1: blue
+    gi_right1: blue
+- duration: 1
+  lights:
+    gi_left2: blue
+    gi_right2: blue
+- duration: 1
+  lights:
+    gi_left3: blue
+    gi_right3: blue
+- duration: 1
+  lights:
+    gi_left4: blue
+    gi_right4: blue
+- duration: 1
+  lights:
+    gi_left1: off
+    gi_right1: off
+- duration: 1
+  lights:
+    gi_left2: off
+    gi_right2: off
+- duration: 1
+  lights:
+    gi_left3: off
+    gi_right3: off
+- duration: 1
+  lights:
+    gi_left4: off
+    gi_right4: off

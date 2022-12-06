@@ -16,7 +16,7 @@ counters:
       shot_trojankeg_left_hit, shot_trojankeg_middle_hit, shot_trojankeg_right_hit, shot_chance_hit,
       shot_take_hit_hit, shot_chug_beer_hit, shot_do_shot_hit, shot_quarters_hit, shot_slingleft_hit,
       shot_slingright_hit, shot_slingquarters_hit, shot_tgt_ramp_boot_hit, shot_special_hit, shot_tavern_hit,
-      shot_diverter_hit, shot_ramp_drinko_hit
+      shot_diverter_hit, shot_ramp_drinko_hit, s_target_rimrules_hit
     count_complete_value: 14
     events_when_hit: fill_mug_X
     events_when_complete: qualified_for_mode_selection

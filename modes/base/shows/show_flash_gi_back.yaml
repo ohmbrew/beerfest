@@ -1,0 +1,17 @@
+#show_version=5
+- duration: 1
+  lights:
+    gi_back1: white
+    gi_back2: white
+    gi_back3: white
+    gi_back4: white
+    gi_back5: white
+    gi_back6: white
+- duration: 1
+  lights:
+    gi_back1: off
+    gi_back2: off
+    gi_back3: off
+    gi_back4: off
+    gi_back5: off
+    gi_back6: off

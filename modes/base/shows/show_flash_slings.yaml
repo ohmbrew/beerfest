@@ -1,0 +1,21 @@
+#show_version=5
+- duration: 1
+  lights:
+    slingquarters_upper: white
+    slingquarters_lower: white
+    slingleft_upper: white
+    slingleft_lower: white
+    slingright_upper: white
+    slingright_lower: white
+    flipper_left: white
+    flipper_right: white
+- duration: 1
+  lights:
+    slingquarters_upper: off
+    slingquarters_lower: off
+    slingleft_upper: off
+    slingleft_lower: off
+    slingright_upper: off
+    slingright_lower: off
+    flipper_left: off
+    flipper_right: off
