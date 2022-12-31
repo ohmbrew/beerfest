@@ -3,7 +3,7 @@
 
 mode:
   priority: 500
-  start_events: game_ending, start_high_score
+  start_events: game_ended, start_high_score
   use_wait_queue: true
 
 high_score:

@@ -67,7 +67,8 @@ slides:
     widgets:
     - type: video
       video: nipple 
-      
+  
+
 slide_player:
   award_drinko_bonus:
     drinko_bonus_slide:
@@ -266,6 +267,7 @@ shows:
       slides: video_nipple_slide
     - time: '+5.5'
       events: drain_audio_complete
+  
 
 sound_player:
   award_drinko_bonus:
@@ -421,6 +423,7 @@ show_player:
   drain_play_cantdrinkabeer: show_cantdrinkabeer
   drain_play_firstbeer: show_firstbeer
   drain_play_nipple: show_nipple
+  #drain_gameover: show_gameover
 
 ball_saves:
   ball_save:

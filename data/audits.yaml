@@ -1,9 +1,9 @@
 events:
-  game_ended: 0
+  game_ended: 1
   game_started: 1
 player:
   score:
-    average: 300592.7536231884
+    average: 284395.8904109589
     top:
     - 4004000
     - 4004000
@@ -15,7 +15,7 @@ player:
     - 492700
     - 483900
     - 419700
-    total: 69
+    total: 73
 shots:
   chance: 96
   chug_beer: 60
@@ -60,7 +60,7 @@ shots:
   shot_tavern_spinner: 1581
   shot_tgt_ramp_boot: 17
   shot_tgt_rimrules: 8
-  shot_trojankeg_left: 2038
+  shot_trojankeg_left: 2058
   shot_trojankeg_middle: 170
   shot_trojankeg_right: 112
   take_hit: 57
@@ -72,7 +72,7 @@ switches:
   s_chug_beer: 155
   s_diverter: 159
   s_do_shot: 161
-  s_drain: 827
+  s_drain: 858
   s_drinko_bang: 225
   s_drinko_d: 251
   s_drinko_i: 330
@@ -92,7 +92,7 @@ switches:
   s_left_slingshot: 32
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1469
+  s_plunger_lane: 1483
   s_plunger_lane_exit: 233
   s_pongcup1: 165
   s_pongcup2: 47
@@ -110,17 +110,17 @@ switches:
   s_slingshot_quarters: 248
   s_slingshot_right: 1053
   s_special: 25
-  s_start: 123
+  s_start: 124
   s_take_hit: 159
   s_target_rimrules: 25
   s_tavern_exit: 2
   s_tavern_spinner: 3059
   s_tgt_ramp_boot: 61
   s_trogan_keg: 22
-  s_trojankeg_left: 2078
+  s_trojankeg_left: 2098
   s_trojankeg_middle: 198
   s_trojankeg_right: 144
   s_trough1: 384
-  s_trough2: 362
-  s_trough3: 83
-  s_trough_eject: 780
+  s_trough2: 363
+  s_trough3: 90
+  s_trough_eject: 794

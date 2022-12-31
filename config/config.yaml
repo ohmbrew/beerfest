@@ -103,7 +103,11 @@ slides:
       text: MULTIBALL
       font_size: 200
       font_name: druillet
-      color: red  
+      color: red
+  video_seeyoulater_slide:
+    widgets:
+    - type: video
+      video: seeyoulater
     
 slide_player:
   start_multiball:
@@ -215,10 +219,6 @@ sound_player:
   mode_attract_will_stop.1:
     introrepeat:
       action: stop
-  drain_gameover:
-    voice_gameover:
-      action: play
-      events_when_stopped: drain_audio_complete
 
 drop_targets:
   take_hit:
@@ -328,7 +328,7 @@ queue_relay_player:
     wait_for: pongcups_released   # this waits on pongcup_all_release_show above to finish
   game_ending:
     post: drain_gameover
-    wait_for: drain_audio_complete
+    wait_for: gameover_video_complete
 
 show_player:
   pongcup_all_release_show:
@@ -339,6 +339,16 @@ show_player:
       show_tokens:
         cup: 1
       loops: 0
+  drain_gameover:
+    show_gameover:
+      loops: 0
+    
+shows:
+  show_gameover:
+    - time: 0
+      slides: video_seeyoulater_slide
+    - time: '+4.5'
+      events: gameover_video_complete
 
 playfields:
   playfield:
