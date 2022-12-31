@@ -40,8 +40,8 @@ random_event_player:
   launch_random_game_mode:
     events:
       - start_mode_longpour
-      #- start_mode_quarters
-      #- start_mode_strikeout
+      - start_mode_quarters
+      - start_mode_strikeout
       
 show_player:
   mode_field_started:
