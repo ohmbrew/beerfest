@@ -241,6 +241,9 @@ flippers:
   flipper_right:
     main_coil: c_flipper_right
     activation_switch: s_flipper_right
+  flipper_upper:
+    main_coil: c_flipper_upper
+    activation_switch: s_flipper_right
 
 spinners:
   tavern_spinner:
