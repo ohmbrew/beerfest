@@ -1,5 +1,5 @@
 events:
-  game_ended: 1
+  game_ended: 0
   game_started: 1
 player:
   score:
@@ -110,7 +110,7 @@ switches:
   s_slingshot_quarters: 248
   s_slingshot_right: 1053
   s_special: 25
-  s_start: 124
+  s_start: 126
   s_take_hit: 159
   s_target_rimrules: 25
   s_tavern_exit: 2

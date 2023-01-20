@@ -367,3 +367,6 @@ lights:
   l_backglass:
     number: cl_backglass
     platform: drivers
+  l_start:
+    number: cl_start
+    platform: drivers

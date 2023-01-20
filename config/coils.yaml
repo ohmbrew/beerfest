@@ -44,6 +44,7 @@ coils:
   c_flipper_upper:
     number: A0-B1-5
     default_pulse_ms: 35
+    default_hold_power: .5
 
   c_kicker_rimrules:
     number: A0-B1-7
@@ -71,6 +72,9 @@ coils:
     default_hold_power: .5
   cl_backglass:
     number: A2-B0-5
+    allow_enable: true
+  cl_start:
+    number: A2-B0-6
     allow_enable: true
 
   # 24V Coil Driver PCB: A2-B1
