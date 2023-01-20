@@ -43,7 +43,7 @@ coils:
   # B1-5, B1-6 open?
   c_flipper_upper:
     number: A0-B1-5
-    default_pulse_ms: 35
+    default_pulse_ms: 13
     default_hold_power: .5
 
   c_kicker_rimrules:
