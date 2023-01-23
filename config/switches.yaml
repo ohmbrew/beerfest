@@ -140,20 +140,20 @@ switches:
   
   # Bank B (J6) (A3-B1) 
   s_ramp_upf_entry:
-    number: A3-B1-0
+    number: A3-B1-5
     type: NC
   s_ramp_upf_exit:
-    number: A3-B1-1
+    number: A3-B1-4
     type: NC
   s_horseshoe:
-    number: A3-B1-2
+    number: A3-B1-3
     type: NC
   s_upf_tgt_left:
-    number: A3-B1-3
+    number: A3-B1-2
   s_upf_tgt_right:
-    number: A3-B1-4
+    number: A3-B1-1
   s_diverter:
-    number: A3-B1-5
+    number: A3-B1-0
     type: NC
   
   
