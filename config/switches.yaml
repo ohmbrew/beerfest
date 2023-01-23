@@ -111,9 +111,6 @@ switches:
     number: A2-B0-5
   s_openswitch_2:             # currently not used
     number: A2-B0-6
-  s_openswitch_3:             # currently not used
-    number: A2-B0-7
-
   s_orbit_exit:               # currently not implemented (switch wire is installed tho)
     number: A2-B0-7
   # Bank B (J6) (A2-B1)
