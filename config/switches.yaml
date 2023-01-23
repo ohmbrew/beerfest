@@ -136,25 +136,25 @@ switches:
   
   # UpperPF Switch PCB (A3)
   # Bank A (J2) (A3-B0)  
+  
+  
+  # Bank B (J6) (A3-B1) 
   s_ramp_upf_entry:
-    number: A3-B0-0
+    number: A3-B1-0
     type: NC
   s_ramp_upf_exit:
-    number: A3-B0-1
+    number: A3-B1-1
     type: NC
   s_horseshoe:
-    number: A3-B0-2
+    number: A3-B1-2
     type: NC
   s_upf_tgt_left:
-    number: A3-B0-3
+    number: A3-B1-3
   s_upf_tgt_right:
-    number: A3-B0-4
+    number: A3-B1-4
   s_diverter:
-    number: A3-B0-5
+    number: A3-B1-5
     type: NC
-  
-  # Bank B (J6) (A3-B0) 
-  
   
   
   
