@@ -40,7 +40,7 @@ shots:
   shot_diverter:
     switch: s_diverter
   shot_ramp_drinko:
-    switch: s_ramp_drinko
+    switch: s_ramp_upf_entry
   shot_drinko_d:
     switch: s_drinko_d
   shot_drinko_r:
