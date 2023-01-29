@@ -13,15 +13,15 @@ lights:
     previous: drinko_k
     type: grb
     tags: strip
-  drinko_i:
+  drinko_d:
     previous: drinko_n
     type: grb
     tags: strip
   drinko_r:
-    previous: drinko_i
+    previous: drinko_d
     type: grb
     tags: strip
-  drinko_d:
+  drinko_i:
     previous: drinko_r
     type: grb
     tags: strip
@@ -31,7 +31,7 @@ lights:
   #  tags: strip
   
   arrow_orbit1:
-    previous: drinko_d
+    previous: drinko_i
     type: grb
     tags: strip
   arrow_orbit2:
