@@ -31,8 +31,6 @@ event_player:
     sp_drinko_k
   shot_drinko_o_hit:
     sp_drinko_o
-  shot_drinko_bang_hit:
-    sp_drinko_bang
   ball_ending{device.achievements.drinko_bonus3.state == "completed"}:
     reset_drinko_bonus
   mode_base_started{device.accruals.drinko_bonus_accrual.value[0]}: sp_drinko_d
@@ -41,7 +39,6 @@ event_player:
   mode_base_started{device.accruals.drinko_bonus_accrual.value[3]}: sp_drinko_n
   mode_base_started{device.accruals.drinko_bonus_accrual.value[4]}: sp_drinko_k
   mode_base_started{device.accruals.drinko_bonus_accrual.value[5]}: sp_drinko_o
-  mode_base_started{device.accruals.drinko_bonus_accrual.value[6]}: sp_drinko_bang
 
 queue_relay_player:
   ball_ending:
@@ -184,11 +181,6 @@ shows:
     - time: 0
       lights:
         drinko_o: green
-    - duration: -1
-  show_light_bang:
-    - time: 0
-      lights:
-        drinko_bang: green
     - duration: -1
   show_light_drinko_bonus:
     - time: 0
@@ -380,8 +372,6 @@ show_player:
     show_light_k
   sp_drinko_o:
     show_light_o
-  sp_drinko_bang:
-    show_light_bang
   award_drinko_bonus:
     bonus_drinko_show:
       speed: 4
@@ -446,7 +436,6 @@ accruals:
       - shot_drinko_n_hit
       - shot_drinko_k_hit
       - shot_drinko_o_hit
-      - shot_drinko_bang_hit
     events_when_complete: award_drinko_bonus
     reset_on_complete: true
     disable_on_complete: false

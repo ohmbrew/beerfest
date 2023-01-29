@@ -42,19 +42,17 @@ shots:
   shot_ramp_drinko:
     switch: s_ramp_upf_entry
   shot_drinko_d:
-    switch: s_drinko_d
+    switch: s_upf_tgt_left
   shot_drinko_r:
-    switch: s_drinko_r
+    switch: s_upf_tgt_right
   shot_drinko_i:
-    switch: s_drinko_i
+    switch: s_horseshoe
   shot_drinko_n:
     switch: s_drinko_n
   shot_drinko_k:
     switch: s_drinko_k
   shot_drinko_o:
     switch: s_drinko_o
-  shot_drinko_bang:
-    switch: s_drinko_bang
   shot_slingquarters:
     switch: s_slingshot_quarters
   shot_slingleft:

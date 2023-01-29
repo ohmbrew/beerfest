@@ -1,8 +1,16 @@
 #config_version=5
 
 lights:
-  drinko_n:
+  drinko_o:
     start_channel: 1-100
+    type: grb
+    tags: strip
+  drinko_k:
+    previous: drinko_o
+    type: grb
+    tags: strip
+  drinko_n:
+    previous: drinko_k
     type: grb
     tags: strip
   drinko_i:
@@ -17,21 +25,13 @@ lights:
     previous: drinko_r
     type: grb
     tags: strip
-  drinko_k:
-    previous: drinko_d
-    type: grb
-    tags: strip
-  drinko_o:
-    previous: drinko_k
-    type: grb
-    tags: strip
-  drinko_bang:
-    previous: drinko_o
-    type: grb
-    tags: strip
+  #drinko_bang:     # removed when I redesigned upper playfield - only has six lights now. No matter, that spells drinko better :-)
+  #  previous: drinko_o
+  #  type: grb
+  #  tags: strip
   
   arrow_orbit1:
-    previous: drinko_bang
+    previous: drinko_d
     type: grb
     tags: strip
   arrow_orbit2:
