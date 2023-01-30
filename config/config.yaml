@@ -220,6 +220,10 @@ sound_player:
     introrepeat:
       action: stop
 
+coil_player:
+  enable_knocker:
+    c_knocker: enable
+
 drop_targets:
   take_hit:
     switch: s_take_hit

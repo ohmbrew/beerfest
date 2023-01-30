@@ -25,11 +25,6 @@ lights:
     previous: drinko_r
     type: grb
     tags: strip
-  #drinko_bang:     # removed when I redesigned upper playfield - only has six lights now. No matter, that spells drinko better :-)
-  #  previous: drinko_o
-  #  type: grb
-  #  tags: strip
-  
   arrow_orbit1:
     previous: drinko_i
     type: grb

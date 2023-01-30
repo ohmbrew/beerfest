@@ -13,6 +13,7 @@ event_player:
     - start_mode_global
     - initialize_drinko_bonus
     - strikeout_bank_reset
+    - enable_knocker
   mode_base_will_stop:
     - stop_mode_global
   mode_type_wizard_started:
