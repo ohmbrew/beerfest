@@ -1,0 +1,202 @@
+#config_version=5
+##! mode: skillshot
+
+mode:
+  start_events: ball_started
+  stop_events:
+    - skillshot_stop
+    - skill_failed
+  priority: 500
+
+variable_player:
+  skill_success_full:
+    score: 500000
+  skill_success_partial:
+    score: 100000
+
+sound_player:
+  skill_success_full:
+    voice_soberasabird:
+      action: play
+  skill_success_partial:
+    voice_soberasabird:
+      action: play
+
+slides:
+  slide_skillshot_success_full:
+    widgets:
+    - type: text
+      text: Skill Shot
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 100
+      color: green
+    - type: text
+      text: SUCCESS
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 400
+      color: green
+    - type: text
+      text: 500,000
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 700
+      color: green  
+  slide_skillshot_success_partial:
+    widgets:
+    - type: text
+      text: Skill Shot
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 100
+      color: green
+    - type: text
+      text: SUCCESS
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 400
+      color: green
+    - type: text
+      text: 100,000
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 700
+      color: green  
+
+slide_player:
+  skill_success_full:
+    slide_skillshot_success_full:
+      priority: 1000
+      expire: 2s
+      transition:
+        type: rise_in
+        duration: .5s
+      transition_out:
+        type: fade_back
+        duration: .5
+  skill_success_partial:
+    slide_skillshot_success_partial:
+      priority: 1000
+      expire: 2s
+      transition:
+        type: rise_in
+        duration: .5s
+      transition_out:
+        type: fade_back
+        duration: .5
+
+event_player:
+  slide_slide_skillshot_success_full_removed: skillshot_stop
+  slide_slide_skillshot_success_partial_removed: skillshot_stop
+
+shows:
+  show_gi_back_chase:
+    - duration: .5
+      lights:
+        gi_back1: white
+        gi_back2: off
+        gi_back3: off
+        gi_back4: off
+        gi_back5: off
+        gi_back6: off
+    - duration: .5
+      lights:
+        gi_back1: off
+        gi_back2: white
+        gi_back3: off
+        gi_back4: off
+        gi_back5: off
+        gi_back6: off
+    - duration: .5
+      lights:
+        gi_back1: off
+        gi_back2: off
+        gi_back3: white
+        gi_back4: off
+        gi_back5: off
+        gi_back6: off
+    - duration: .5
+      lights:
+        gi_back1: off
+        gi_back2: off
+        gi_back3: off
+        gi_back4: white
+        gi_back5: off
+        gi_back6: off
+    - duration: 2
+      lights:
+        gi_back1: off
+        gi_back2: off
+        gi_back3: off
+        gi_back4: off
+        gi_back5: white
+        gi_back6: off
+    - duration: 2
+      lights:
+        gi_back1: off
+        gi_back2: off
+        gi_back3: off
+        gi_back4: off
+        gi_back5: off
+        gi_back6: white
+
+show_player:
+  mode_skillshot_started:
+    show_gi_back_chase:
+      loops: -1
+
+timers:
+  skillshot_timeout:
+    start_value: 0
+    end_value: 5     # set the timeout of your skill shot here
+    direction: up
+    tick_interval: 1s
+    start_running: false
+    control_events:
+      - action: start
+        event: balldevice_bd_plunger_lane_ball_eject_success  # replace "plunger_lane" with the name of your plunger device
+
+state_machines:
+  skillshot_success:
+    debug: true
+    states:
+      start:
+        label: Skill shot ready
+      success_full:
+        label: Skill successful
+        events_when_started: skill_success_full
+      success_partial:
+        label: Skill Partial successful
+        events_when_started: skill_success_partial
+      failed:
+        label: Skill failed
+        events_when_started: skill_failed
+    transitions:
+      - source: start
+        target: success_full
+        events: shot_plunger_lane_exit_hit{device.lights.gi_back6.color[0] > 0}
+      - source: start
+        target: success_partial
+        events: shot_plunger_lane_exit_hit{device.lights.gi_back5.color[0] > 0}
+      - source: start
+        target: failed
+        events: shot_plunger_lane_exit_hit{device.lights.gi_back6.color[0]==0 and device.lights.gi_back5.color[0]==0}

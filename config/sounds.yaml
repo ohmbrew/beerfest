@@ -145,6 +145,18 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
+  voice_soberasabird:
+    file: soberasabird.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+
   voice_tavern:
     file: tavern1.wav
     track: voice

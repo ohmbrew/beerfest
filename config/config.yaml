@@ -47,6 +47,7 @@ modes:
   - multiball
   - high_score
   - tilt
+  - skillshot
 
 player_vars:
   current_mode:

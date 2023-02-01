@@ -41,10 +41,7 @@ coils:
     default_pulse_ms: 35
 
   # A0-B1-4 unreliable. RimRules coil stopped firing...moved to A0-B1-7. Works again...
-  c_knocker:
-    number: A0-B1-4
-    default_pulse_ms: 10
-    default_hold_power: 0.125
+  
 
   # B1-5, B1-6 open?
   c_flipper_upper:
@@ -100,6 +97,11 @@ coils:
   c_shaker:
     number: A2-B1-2
     default_pulse_ms: 1
+    default_hold_power: 0.125
+
+  c_knocker:
+    number: A2-B1-3
+    default_pulse_ms: 10
     default_hold_power: 0.125
 
 autofire_coils:
