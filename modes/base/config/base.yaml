@@ -14,6 +14,7 @@ event_player:
     - initialize_drinko_bonus
     - strikeout_bank_reset
     - enable_knocker
+    - start_mode_lanechange
   mode_base_will_stop:
     - stop_mode_global
   mode_type_wizard_started:
@@ -47,12 +48,93 @@ queue_relay_player:
     wait_for: drain_audio_complete
 
 slides:
-  drinko_bonus_slide:
+  slide_bonus_drinko1:
+    widgets:
     - type: text
-      text: DRINKO BONUS
+      text: D-R-I-N-K-O
       font_size: 200
       font_name: druillet
-      color: red
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 100
+      color: green
+    - type: text
+      text: BONUS
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 400
+      color: green
+    - type: text
+      text: 500,000
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 700
+      color: green
+  slide_bonus_drinko2:
+    widgets:
+    - type: text
+      text: D-R-I-N-K-O
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 100
+      color: green
+    - type: text
+      text: BONUS
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 400
+      color: green
+    - type: text
+      text: 1,000,000
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 700
+      color: green
+  slide_bonus_drinko3:
+    widgets:
+    - type: text
+      text: D-R-I-N-K-O
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 100
+      color: green
+    - type: text
+      text: BONUS
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 400
+      color: green
+    - type: text
+      text: 5,000,000
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 700
+      color: green  
   video_cantdrinkabeer_slide:
     widgets:
     - type: video
@@ -65,11 +147,41 @@ slides:
     widgets:
     - type: video
       video: nipple 
+  slide_bonus_monkeychug:
+    widgets:
+    - type: text
+      text: MONKEY CHUG
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 100
+      color: green
+    - type: text
+      text: BONUS
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 400
+      color: green
+    - type: text
+      text: 1,000,000
+      font_size: 200
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 700
+      color: green  
+    
   
 
 slide_player:
-  award_drinko_bonus:
-    drinko_bonus_slide:
+  enable_drinko_bonus2:
+    slide_bonus_drinko1:
       priority: 1000
       expire: 2s
       transition:
@@ -78,7 +190,37 @@ slide_player:
       transition_out:
         type: fade_back
         duration: .5
-  
+  enable_drinko_bonus3:
+    slide_bonus_drinko2:
+      priority: 1000
+      expire: 2s
+      transition:
+        type: rise_in
+        duration: .5s
+      transition_out:
+        type: fade_back
+        duration: .5
+  drinko_hammered:
+    slide_bonus_drinko3:
+      priority: 1000
+      expire: 2s
+      transition:
+        type: rise_in
+        duration: .5s
+      transition_out:
+        type: fade_back
+        duration: .5
+  shot_drinko_i_hit:
+    slide_bonus_monkeychug:
+      priority: 1000
+      expire: 2s
+      transition:
+        type: rise_in
+        duration: .5s
+      transition_out:
+        type: fade_back
+        duration: .5
+
 # shows to light lights when drinko sensor has been hit
 shows:
   show_init_base:
@@ -327,7 +469,10 @@ sound_player:
   ball_save_ball_save_saving_ball:
     voice_ballsave:
       action: play
-  
+  shot_drinko_i_hit:
+    voice_ohyea:
+      action: play
+
 random_event_player:
   play_random_drain_clip:
     events:
@@ -553,11 +698,11 @@ variable_player:
   shot_tavern_hit:
     score: 50000
   enable_drinko_bonus2:
-    score: 100000   # means we got bonus1
+    score: 500000   # means we got bonus1
   enable_drinko_bonus3:
-    score: 200000   # means we got bonus2
+    score: 1000000   # means we got bonus2
   drinko_hammered:
-    score: 1000000
+    score: 5000000
   shot_slingquarters_hit:
     score: 1010
   shot_slingleft_hit:
@@ -572,6 +717,8 @@ variable_player:
     score: 10000
   shot_ramp_drinko_hit:
     score: 10000
+  shot_drinko_i_hit:
+    score: 1000000
 
 
 

@@ -48,6 +48,7 @@ modes:
   - high_score
   - tilt
   - skillshot
+  - lanechange
 
 player_vars:
   current_mode:

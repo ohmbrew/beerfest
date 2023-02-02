@@ -24,6 +24,16 @@ sounds:
   music_wasted:
     file: soundtrack-wasted.wav
     volume: 1.0
+  voice_ohyea:
+    file: buckcherry-ohyea.wav
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -18db
+        release_point: 1.0 sec
+        release: 3.0 sec
   voice_sink2left:
     file: notthatdrunk1.wav
     track: voice

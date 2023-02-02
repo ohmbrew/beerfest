@@ -30,19 +30,21 @@ shots:
   shot_chug_beer: 78
   shot_diverter: 156
   shot_do_shot: 88
-  shot_drinko_d: 222
-  shot_drinko_i: 210
-  shot_drinko_k: 205
-  shot_drinko_n: 200
-  shot_drinko_o: 203
-  shot_drinko_r: 216
+  shot_drinko_d: 226
+  shot_drinko_i: 219
+  shot_drinko_k: 209
+  shot_drinko_n: 204
+  shot_drinko_o: 207
+  shot_drinko_r: 220
   shot_kicker_mode: 304
   shot_kicker_rimrules: 119
-  shot_laneleft_outer: 4
-  shot_plunger_lane_exit: 97
+  shot_laneleft_inner: 8
+  shot_laneleft_outer: 5
+  shot_laneright_inner: 4
+  shot_plunger_lane_exit: 105
   shot_pongcup1: 164
   shot_pongcup2: 47
-  shot_popbumper_lower: 261
+  shot_popbumper_lower: 264
   shot_popbumper_upper_left: 514
   shot_popbumper_upper_right: 484
   shot_quarters: 1131
@@ -74,33 +76,33 @@ switches:
   s_drain: 858
   s_drinko_d: 251
   s_drinko_i: 330
-  s_drinko_k: 224
-  s_drinko_n: 863
-  s_drinko_o: 341
+  s_drinko_k: 228
+  s_drinko_n: 867
+  s_drinko_o: 345
   s_drinko_r: 342
-  s_flipper_left: 1964
-  s_flipper_right: 2337
-  s_horseshoe: 0
+  s_flipper_left: 1968
+  s_flipper_right: 2362
+  s_horseshoe: 9
   s_kicker_mode: 898
   s_kicker_rimrules: 608
-  s_laneleft_inner: 18
-  s_laneleft_outer: 8
-  s_laneright_inner: 19
-  s_laneright_outer: 14
+  s_laneleft_inner: 29
+  s_laneleft_outer: 15
+  s_laneright_inner: 28
+  s_laneright_outer: 18
   s_left_flipper: 154
   s_left_slingshot: 32
   s_openswitch_1: 0
   s_openswitch_2: 0
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1515
-  s_plunger_lane_exit: 286
+  s_plunger_lane: 1524
+  s_plunger_lane_exit: 294
   s_pongcup1: 165
   s_pongcup2: 47
   s_pongtable_exit: 40
   s_pongtable_front_left: 95
   s_pongtable_front_right: 87
-  s_popbumper_lower: 799
+  s_popbumper_lower: 802
   s_popbumper_upper: 141
   s_popbumper_upper_left: 574
   s_popbumper_upper_right: 548
@@ -125,6 +127,6 @@ switches:
   s_trough1: 384
   s_trough2: 363
   s_trough3: 90
-  s_trough_eject: 825
-  s_upf_tgt_left: 0
-  s_upf_tgt_right: 0
+  s_trough_eject: 833
+  s_upf_tgt_left: 4
+  s_upf_tgt_right: 4

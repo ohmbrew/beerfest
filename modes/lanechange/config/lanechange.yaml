@@ -1,0 +1,51 @@
+#config_version=5
+##! mode: lanechange
+
+mode:
+  start_events: start_mode_lanechange
+  stop_events: stop_mode_lanechange, ball_will_end
+
+shot_profiles:
+  lanechange_profile:
+    states:
+      - name:
+        show: off
+      - name: hit
+        show: on
+
+shots:
+  shot_laneright_inner:
+    switch: s_laneright_inner
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_right_inner
+  shot_laneright_outer:
+    switch: s_laneright_outer
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_right_outer
+  shot_laneleft_inner:
+    switch: s_laneleft_inner
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_left_inner
+  shot_laneleft_outer:
+    switch: s_laneleft_outer
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_left_outer
+
+shot_groups:
+  lanechange_group:
+    shots: shot_laneleft_outer, shot_laneleft_inner, shot_laneright_inner, shot_laneright_outer
+    reset_events: lanechange_group_hit_complete
+    rotate_left_events: s_flipper_left_active
+    rotate_right_events: s_flipper_right_active
+
+variable_player:
+  lanechange_group_hit_complete:
+    score: 100000
+    bonus_multiplier: 1
+
+
+
