@@ -42,6 +42,20 @@ shot_groups:
     rotate_left_events: s_flipper_left_active
     rotate_right_events: s_flipper_right_active
 
+sound_player:
+  shot_laneleft_outer_hit:
+    canopening:
+      action: play   
+  shot_laneleft_inner_hit:
+    canopening:
+      action: play  
+  shot_laneright_inner_hit:
+    canopening:
+      action: play  
+  shot_laneright_outer_hit:
+    canopening:
+      action: play  
+
 variable_player:
   lanechange_group_hit_complete:
     score: 100000
