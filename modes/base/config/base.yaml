@@ -261,7 +261,7 @@ shows:
     - time: '+5.5'
       events: drain_audio_complete
   
-  show_shaker_basestarted:
+  show_shaker_1s:
     - duration: 1s
       coils:
         c_shaker: enable
@@ -343,9 +343,6 @@ show_player:
     base_show:
       speed: 2
       loops: -1
-  mode_base_started.2:
-    show_shaker_basestarted:
-      loops: 0
   shot_popbumper_lower_hit:
     show_pop_lower:
       loops: 0
@@ -394,6 +391,15 @@ show_player:
     show_tavern_hit:
       speed: 4
       loops: 0
+    show_shaker_1s:
+      loops: 0
+  shot_diverter_hit:
+    show_shaker_1s:
+      loops: 0
+  shot_ramp_drinko_hit:
+    show_shaker_1s:
+      loops: 0
+
   mode_longpour_stopped{current_player.has_longpour==1}: show_longpour_insert
   mode_base_started{current_player.has_longpour==1}: show_longpour_insert
   mode_quarters_stopped{current_player.has_quarters==1}: show_quarters_insert
