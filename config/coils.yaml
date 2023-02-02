@@ -48,9 +48,6 @@ coils:
     number: A0-B1-5
     default_pulse_ms: 13
     default_hold_power: .125
-
-  
-
   c_kicker_rimrules:
     number: A0-B1-7
     default_pulse_ms: 10

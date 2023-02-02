@@ -224,6 +224,8 @@ sound_player:
 coil_player:
   enable_knocker:
     c_knocker: enable
+  disable_knocker:
+    c_knocker: disable
 
 drop_targets:
   take_hit:

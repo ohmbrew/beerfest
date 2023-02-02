@@ -261,6 +261,13 @@ shows:
     - time: '+5.5'
       events: drain_audio_complete
   
+  show_shaker_basestarted:
+    - duration: 1s
+      coils:
+        c_shaker: enable
+    - duration: 1s
+      coils:
+        c_shaker: disable
 
 sound_player:
   award_drinko_bonus:
@@ -336,6 +343,9 @@ show_player:
     base_show:
       speed: 2
       loops: -1
+  mode_base_started.2:
+    show_shaker_basestarted:
+      loops: 0
   shot_popbumper_lower_hit:
     show_pop_lower:
       loops: 0
