@@ -110,7 +110,7 @@ event_player:
 
 shows:
   show_gi_back_chase:
-    - duration: .5
+    - duration: .1
       lights:
         gi_back1: white
         gi_back2: off
@@ -118,7 +118,7 @@ shows:
         gi_back4: off
         gi_back5: off
         gi_back6: off
-    - duration: .5
+    - duration: .1
       lights:
         gi_back1: off
         gi_back2: white
@@ -126,7 +126,7 @@ shows:
         gi_back4: off
         gi_back5: off
         gi_back6: off
-    - duration: .5
+    - duration: .1
       lights:
         gi_back1: off
         gi_back2: off
@@ -134,7 +134,7 @@ shows:
         gi_back4: off
         gi_back5: off
         gi_back6: off
-    - duration: .5
+    - duration: .1
       lights:
         gi_back1: off
         gi_back2: off
@@ -142,7 +142,7 @@ shows:
         gi_back4: white
         gi_back5: off
         gi_back6: off
-    - duration: 2
+    - duration: .1
       lights:
         gi_back1: off
         gi_back2: off
@@ -150,7 +150,7 @@ shows:
         gi_back4: off
         gi_back5: white
         gi_back6: off
-    - duration: 2
+    - duration: .1
       lights:
         gi_back1: off
         gi_back2: off
