@@ -27,21 +27,21 @@ slides:
     widgets:
     - type: text
       text: Skill Shot
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 100
+      y: top - 50
       color: green
     - type: text
       text: SUCCESS
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 400
+      y: top - 250
       color: green
     - type: text
       text: 500,000
@@ -50,27 +50,27 @@ slides:
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 700
+      y: top - 500
       color: green  
   slide_skillshot_success_partial:
     widgets:
     - type: text
       text: Skill Shot
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 100
+      y: top - 50
       color: green
     - type: text
       text: SUCCESS
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 400
+      y: top - 250
       color: green
     - type: text
       text: 100,000
@@ -79,7 +79,7 @@ slides:
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 700
+      y: top - 500
       color: green  
 
 slide_player:

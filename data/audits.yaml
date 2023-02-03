@@ -41,7 +41,7 @@ shots:
   shot_laneleft_inner: 25
   shot_laneleft_outer: 5
   shot_laneright_inner: 6
-  shot_plunger_lane_exit: 106
+  shot_plunger_lane_exit: 107
   shot_pongcup1: 164
   shot_pongcup2: 47
   shot_popbumper_lower: 264
@@ -95,8 +95,8 @@ switches:
   s_openswitch_2: 0
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1525
-  s_plunger_lane_exit: 295
+  s_plunger_lane: 1526
+  s_plunger_lane_exit: 296
   s_pongcup1: 165
   s_pongcup2: 47
   s_pongtable_exit: 40
@@ -127,6 +127,6 @@ switches:
   s_trough1: 384
   s_trough2: 363
   s_trough3: 90
-  s_trough_eject: 834
+  s_trough_eject: 835
   s_upf_tgt_left: 4
   s_upf_tgt_right: 4
