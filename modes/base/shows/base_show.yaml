@@ -1,15 +1,19 @@
 #show_version=5
-- time: 0
+- duration: 1
   lights:
-    slingquarters_upper: red
-    slingquarters_lower: off
+    slingquarters_upper:
+      color: red
+      fade: .25s
+    slingquarters_lower:
+      color: off
+      fade: .25s
     slingleft_upper: white
     slingleft_lower: off
     slingright_upper: off
     slingright_lower: blue
     flipper_left: red
     flipper_right: red
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: off
     slingquarters_lower: red
@@ -19,7 +23,7 @@
     slingright_lower: off
     flipper_left: white
     flipper_right: white
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: white
     slingquarters_lower: off
@@ -29,7 +33,7 @@
     slingright_lower: red
     flipper_left: blue
     flipper_right: blue
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: off
     slingquarters_lower: white
@@ -39,7 +43,7 @@
     slingright_lower: off
     flipper_left: red
     flipper_right: red
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: blue
     slingquarters_lower: off
@@ -49,7 +53,7 @@
     slingright_lower: white
     flipper_left: white
     flipper_right: white
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: off
     slingquarters_lower: blue
@@ -59,7 +63,7 @@
     slingright_lower: off
     flipper_left: blue
     flipper_right: blue
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: red
     slingquarters_lower: off
@@ -69,7 +73,7 @@
     slingright_lower: blue
     flipper_left: red
     flipper_right: red
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: off
     slingquarters_lower: red
@@ -79,7 +83,7 @@
     slingright_lower: off
     flipper_left: white
     flipper_right: white
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: white
     slingquarters_lower: off
@@ -89,7 +93,7 @@
     slingright_lower: red
     flipper_left: blue
     flipper_right: blue
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: off
     slingquarters_lower: white
@@ -99,7 +103,7 @@
     slingright_lower: off
     flipper_left: red
     flipper_right: red
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: blue
     slingquarters_lower: off
@@ -109,7 +113,7 @@
     slingright_lower: white
     flipper_left: white
     flipper_right: white
-- time: '+1'
+- duration: 1
   lights:
     slingquarters_upper: off
     slingquarters_lower: blue

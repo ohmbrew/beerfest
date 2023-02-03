@@ -486,7 +486,7 @@ show_player:
       loops: 0
   mode_base_started.1:
     base_show:
-      speed: 2
+      speed: 1
       loops: -1
   shot_popbumper_lower_hit:
     show_pop_lower:
