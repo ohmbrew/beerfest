@@ -28,8 +28,14 @@ pololu_maestro:
 # define display
 displays:
   window:
-    width: 1800
-    height: 1024
+    height: 768
+    width: 1366
+window:
+  height: 768
+  width: 1366
+  fullscreen: false
+  borderless: false
+  exit_on_escape: True
 
 config:
   - lights.yaml
