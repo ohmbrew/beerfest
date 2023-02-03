@@ -52,21 +52,21 @@ slides:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 100
+      y: top - 50
       color: green
     - type: text
       text: BONUS
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 400
+      y: top - 250
       color: green
     - type: text
       text: 500,000
@@ -75,27 +75,27 @@ slides:
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 700
+      y: top - 500
       color: green
   slide_bonus_drinko2:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 100
+      y: top - 50
       color: green
     - type: text
       text: BONUS
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 400
+      y: top - 250
       color: green
     - type: text
       text: 1,000,000
@@ -104,27 +104,27 @@ slides:
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 700
+      y: top - 500
       color: green
   slide_bonus_drinko3:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 100
+      y: top - 50
       color: green
     - type: text
       text: BONUS
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 400
+      y: top - 250
       color: green
     - type: text
       text: 5,000,000
@@ -133,7 +133,7 @@ slides:
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 700
+      y: top - 500
       color: green  
   video_cantdrinkabeer_slide:
     widgets:
@@ -151,21 +151,21 @@ slides:
     widgets:
     - type: text
       text: MONKEY CHUG
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 100
+      y: top - 50
       color: green
     - type: text
       text: BONUS
-      font_size: 200
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 400
+      y: top - 250
       color: green
     - type: text
       text: 1,000,000
@@ -174,11 +174,9 @@ slides:
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 700
+      y: top - 500
       color: green  
     
-  
-
 slide_player:
   enable_drinko_bonus2:
     slide_bonus_drinko1:

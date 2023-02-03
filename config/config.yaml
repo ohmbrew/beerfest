@@ -111,7 +111,7 @@ slides:
       text: MULTIBALL
       font_size: 200
       font_name: druillet
-      color: red
+      color: green
   video_seeyoulater_slide:
     widgets:
     - type: video
