@@ -84,26 +84,36 @@ player_vars:
 
 widget_styles:
   attract_mode_high_score_display_label:
-    font_size: 100
+    font_size: 60
     font_name: druillet
     anchor_x: left
     anchor_y: top
-    x: left + 25
+    x: left + 15
     bold: true
+    color: 008ce5ff
   attract_mode_high_score_display_name:
-    font_size: 100
+    font_size: 60
     font_name: druillet
-    anchor_x: left
+    anchor_x: center
     anchor_y: top
-    x: center - 50
+    x: center
+    bold: true
+    color: 008ce5ff
   attract_mode_high_score_display_score:
-    font_size: 100
+    font_size: 60
     font_name: druillet
-    anchor_x: left
+    anchor_x: right
     anchor_y: top
-    x: center + 200
+    x: right - 15
     number_grouping: true
     min_digits: 1
+    color: 008ce5ff
+  bf_blue:
+    font_size: 100
+    font_name: druillet
+    anchor_x: center
+    anchor_y: top
+    color: 008ce5ff
 
 slides:
   multiball_slide:
