@@ -451,49 +451,49 @@ shows:
         c_shaker:
           action: enable
           pulse_ms: 1
-          hold_power: 0.125
-    - duration: .1s
+          hold_power: 0.1
+    - duration: .15s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 2
-          hold_power: 0.125
-    - duration: .1s
+          hold_power: 0.15
+    - duration: .2s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 3
-          hold_power: 0.125
-    - duration: .1s
+          hold_power: 0.2
+    - duration: .25s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 4
-          hold_power: 0.125
-    - duration: .1s
+          hold_power: 0.25
+    - duration: .3s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 5
-          hold_power: 0.125
-    - duration: .1s
+          hold_power: 0.3
+    - duration: .25s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 4
-          hold_power: 0.125
-    - duration: .1s
+          hold_power: 0.25
+    - duration: .2s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 3
-          hold_power: 0.125
-    - duration: .1s  
+          hold_power: 0.2
+    - duration: .15s  
       coils:
         c_shaker:
           action: enable
           pulse_ms: 2
-          hold_power: 0.125
+          hold_power: 0.15
     - duration: .1s  
       coils:
         c_shaker:
