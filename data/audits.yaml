@@ -49,7 +49,7 @@ shots:
   shot_popbumper_upper_right: 484
   shot_quarters: 1131
   shot_ramp_boot: 10
-  shot_ramp_drinko: 36
+  shot_ramp_drinko: 37
   shot_sling_left: 1
   shot_sling_quarters: 26
   shot_slingleft: 4
@@ -107,7 +107,7 @@ switches:
   s_popbumper_upper_left: 574
   s_popbumper_upper_right: 548
   s_quarters: 1165
-  s_ramp_upf_entry: 70
+  s_ramp_upf_entry: 71
   s_ramp_upf_exit: 0
   s_right_flipper: 183
   s_slingshot_left: 930

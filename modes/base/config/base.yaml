@@ -446,10 +446,61 @@ shows:
       events: drain_audio_complete
   
   show_shaker_1s:
-    - duration: 1s
+    - duration: .1s
       coils:
-        c_shaker: enable
-    - duration: 1s
+        c_shaker:
+          action: enable
+          pulse_ms: 1
+          hold_power: 0.125
+    - duration: .1s
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 2
+          hold_power: 0.125
+    - duration: .1s
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 3
+          hold_power: 0.125
+    - duration: .1s
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 4
+          hold_power: 0.125
+    - duration: .1s
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 5
+          hold_power: 0.125
+    - duration: .1s
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 4
+          hold_power: 0.125
+    - duration: .1s
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 3
+          hold_power: 0.125
+    - duration: .1s  
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 2
+          hold_power: 0.125
+    - duration: .1s  
+      coils:
+        c_shaker:
+          action: enable
+          pulse_ms: 1
+          hold_power: 0.125                
+    - duration: .1s
       coils:
         c_shaker: disable
 
