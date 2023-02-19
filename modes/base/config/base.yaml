@@ -52,89 +52,140 @@ slides:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 50
-      color: green
+      y: top - 35
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: BONUS
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 250
-      color: green
+      y: top - 210
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: 500,000
-      font_size: 200
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 500
-      color: green
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
   slide_bonus_drinko2:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 50
-      color: green
+      y: top - 35
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: BONUS
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 250
-      color: green
+      y: top - 210
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: 1,000,000
-      font_size: 200
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 500
-      color: green
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
   slide_bonus_drinko3:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 50
-      color: green
+      y: top - 35
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: BONUS
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 250
-      color: green
+      y: top - 210
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: 5,000,000
-      font_size: 200
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 500
-      color: green  
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
   video_cantdrinkabeer_slide:
     widgets:
     - type: video
@@ -151,73 +202,66 @@ slides:
     widgets:
     - type: text
       text: MONKEY CHUG
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 50
-      color: green
+      y: top - 35
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: BONUS
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 250
-      color: green
+      y: top - 210
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
-      text: 1,000,000
-      font_size: 200
+      text: 2,000,000
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 500
-      color: green  
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
     
 slide_player:
   enable_drinko_bonus2:
     slide_bonus_drinko1:
       priority: 1000
-      expire: 2s
-      transition:
-        type: rise_in
-        duration: .5s
-      transition_out:
-        type: fade_back
-        duration: .5
+      expire: 3s
   enable_drinko_bonus3:
     slide_bonus_drinko2:
       priority: 1000
-      expire: 2s
-      transition:
-        type: rise_in
-        duration: .5s
-      transition_out:
-        type: fade_back
-        duration: .5
+      expire: 3s
   drinko_hammered:
     slide_bonus_drinko3:
       priority: 1000
-      expire: 2s
-      transition:
-        type: rise_in
-        duration: .5s
-      transition_out:
-        type: fade_back
-        duration: .5
+      expire: 3s
   shot_drinko_i_hit:
     slide_bonus_monkeychug:
       priority: 1000
-      expire: 2s
-      transition:
-        type: rise_in
-        duration: .5s
-      transition_out:
-        type: fade_back
-        duration: .5
+      expire: 3s
 
 # shows to light lights when drinko sensor has been hit
 shows:
@@ -716,7 +760,7 @@ variable_player:
   shot_ramp_drinko_hit:
     score: 10000
   shot_drinko_i_hit:
-    score: 1000000
+    score: 2000000
 
 
 

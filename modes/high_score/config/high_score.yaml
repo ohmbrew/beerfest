@@ -3,22 +3,22 @@
 
 mode:
   priority: 500
-  start_events: game_ended, start_high_score
+  start_events: game_ending, start_high_score
   use_wait_queue: true
 
 high_score:
   _overwrite: true
   enter_initials_timeout: 60
-  award_slide_display_time: 4s
+  award_slide_display_time: 10s
 
   # define your high score categories and the awards
   categories: !!omap
     - score:
         - GRAND CHAMPION
-        - HIGH SCORE 1
-        - HIGH SCORE 2
-        - HIGH SCORE 3
-        - HIGH SCORE 4
+        - High Score 1
+        - High Score 2
+        - High Score 3
+        - High Score 4
 
   # set the defaults
   defaults:
@@ -39,100 +39,99 @@ slides:
   _overwrite: true
   high_score_enter_initials:
     - type: text
-      font_size: 100
-      font_name: druillet
+      style: bf_blue
       text: PLAYER (player_num)
-      color: white
-      anchor_x: middle
-      anchor_y: top
-      x: middle
-      y: top - 25
+      y: top - 35
     - type: text
       font_size: 100
       font_name: druillet
-      text: (award)
       color: red
+      text: (award)
+      anchor_x: middle
       anchor_y: top
       x: middle
-      y: top - 250
+      y: top - 160
+    - type: text
+      text: ''
+      key: high_score
+      font_size: 125
+      font_name: druillet
+      color: 008ce5ff
+      anchor_y: top
+      anchor_x: middle
+      x: middle
+      y: top - 350
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 0.5s
+            easing: in_out_quint
+          - property: opacity
+            value: 0
+            duration: 0.5s
+            repeat: true
+            easing: in_out_quint
     - type: text_input
       initial_char: A
       dynamic_x: false
       key: high_score
       font_size: 100
       font_name: druillet
+      color: 008ce5ff
       max_chars: 3
-      anchor_y: top
-      x: middle
-      y: top - 650
-      shift_left_event: s_flipper_left_active
-      shift_right_event: s_flipper_right_active
-      select_event: s_start_active
-      color: red
-    - type: text
-      text: '<       >'
-      font_size: 100
-      font_name: druillet
-      anchor_y: top
-      x: middle
-      y: top - 650
-      color: red
-    - type: text
-      text: ''
-      key: high_score
-      font_size: 100
-      font_name: druillet
-      anchor_y: top
-      x: middle
-      y: top - 475
-      color: green
-      animations:
-        show_slide:
-          - property: opacity
-            value: 1
-            duration: 0.5s
-            easing: in_out_quint
-          - property: opacity
-            value: 0
-            duration: 0.5s
-            repeat: true
-            easing: in_out_quint
-  high_score_award_display:
-    - type: text
-      text: (award)
-      font_size: 125
-      font_name: druillet
-      anchor_x: middle
-      anchor_y: top
-      x: middle
-      y: top - 15
-      color: blue
-    - type: text
-      text: (player_name)
-      font_size: 100
-      font_name: druillet
       anchor_y: middle
       anchor_x: middle
       x: middle
-      y: middle
+      y: top - 620
+      shift_left_event: s_flipper_left_active
+      shift_right_event: s_flipper_right_active
+      select_event: s_start_active
+    - type: image
+      image: background-highscore
+  high_score_award_display:
+    - type: text
+      font_size: 100
+      font_name: druillet
       color: red
+      text: (award)
+      anchor_x: middle
+      anchor_y: top
+      x: middle
+      y: top - 35
+    
+    - type: text
+      text: (player_name)
+      anchor_x: middle
+      anchor_y: top
+      x: middle
+      y: top - 160
+      color: 008ce5ff
+      font_size: 125
+      font_name: druillet
       animations:
         show_slide:
           - property: opacity
             value: 1
-            duration: 0.05s
+            duration: 0.5s
+            easing: in_out_quint
           - property: opacity
             value: 0
-            duration: 0.05s
+            duration: 0.5s
             repeat: true
+            easing: in_out_quint
+
     - type: text
       text: (value)
-      anchor_x: middle
-      anchor_y: bottom
-      x: middle
-      y: 15
-      color: white
-      font_size: 100
+      font_size: 125
       font_name: druillet
+      color: 008ce5ff
+      anchor_y: top
+      anchor_x: middle
+      x: middle
+      y: top - 325
       number_grouping: true
       min_digits: 1
+      
+    - type: image
+      image: background-highscore-done

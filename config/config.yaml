@@ -119,9 +119,8 @@ slides:
   multiball_slide:
     - type: text
       text: MULTIBALL
+      style: bf_blue
       font_size: 200
-      font_name: druillet
-      color: green
   video_seeyoulater_slide:
     widgets:
     - type: video

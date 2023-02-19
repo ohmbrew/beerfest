@@ -13,6 +13,7 @@ slide_player:
       action: remove
     multiplayer_slide:
       action: play
+    
   ball_will_end:
     base_slide:
       action: remove
@@ -26,6 +27,8 @@ widget_player:
       slide: base_slide
     base_ball_widget:
       slide: base_slide
+    background_widget:
+      slide: base_slide
 
   # player 2 has entered the chat
   player_added{num==2}:
@@ -37,7 +40,9 @@ widget_player:
     mp_score_widget_p1_large:
       slide: multiplayer_slide
     mp_score_widget_p2_small:
-      slide: multiplayer_slide   
+      slide: multiplayer_slide
+    background_widget:
+      slide: multiplayer_slide
   
   # Player 3 has entered the chat
   player_added{num==3}:
@@ -95,23 +100,34 @@ widget_player:
       action: remove
 
 widgets:
+  background_widget:
+    - type: image
+      image: background
+      z: 0
   base_score_widget:
     - type: text
       text: (score)
       number_grouping: true
       min_digits: 1
-      font_size: 300
       font_name: druillet
+      color: 008ce5ff
+      font_size: 200
+      anchor_x: middle
+      anchor_y: middle
+      x: middle
+      y: middle
+      z: 1
   base_ball_widget:
     - type: text
-      text: BALL (ball)
-      y: 10
+      text: Ball (ball)
       x: middle
+      y: bottom + 35
+      font_name: druillet
+      color: 008ce5ff
+      font_size: 65
       anchor_x: middle
       anchor_y: bottom
-      font_size: 75
-      font_name: druillet
-
+      z: 1
   # Player 1 score, for when they're not playing
   mp_score_widget_p1_small:
     - type: text
@@ -121,10 +137,11 @@ widgets:
       anchor_x: left
       anchor_y: top
       x: 10
-      y: top - 10
-      font_size: 75
+      y: top - 35
+      font_size: 50
       font_name: druillet
       color: red
+      z: 1
   # Player 2 score, for when they're not playing
   mp_score_widget_p2_small:
     - type: text
@@ -134,10 +151,11 @@ widgets:
       anchor_x: right
       anchor_y: top
       x: right - 10
-      y: top - 10
-      font_size: 75
+      y: top - 35
+      font_size: 50
       font_name: druillet
       color: red
+      z: 1
   # Player 3 score, for when they're not playing
   mp_score_widget_p3_small:
     - type: text
@@ -147,10 +165,11 @@ widgets:
       anchor_x: left
       anchor_y: bottom
       x: 10
-      y: 10
-      font_size: 75
+      y: 35
+      font_size: 50
       font_name: druillet
       color: red
+      z: 1
   # Player 4 score, for when they're not playing
   mp_score_widget_p4_small:
     - type: text
@@ -159,12 +178,12 @@ widgets:
       min_digits: 1
       anchor_x: right
       anchor_y: bottom
-      x: right - 10
-      y: 10
-      font_size: 75
+      x: right-10
+      y: 35
+      font_size: 50
       font_name: druillet
       color: red
-
+      z: 1
   # Player 1 score, for when they're PLAYING
   mp_score_widget_p1_large:
     - type: text
@@ -174,10 +193,11 @@ widgets:
       anchor_x: left
       anchor_y: top
       x: 10
-      y: top - 10
-      font_size: 125
+      y: top - 35
+      font_size: 100
       font_name: druillet
-      color: white
+      color: 008ce5ff
+      z: 1
   # Player 2 score, for when they're PLAYING
   mp_score_widget_p2_large:
     - type: text
@@ -187,10 +207,11 @@ widgets:
       anchor_x: right
       anchor_y: top
       x: right - 10
-      y: top - 10
-      font_size: 125
+      y: top - 35
+      font_size: 100
       font_name: druillet
-      color: white
+      color: 008ce5ff
+      z: 1
   # Player 3 score, for when they're PLAYING
   mp_score_widget_p3_large:
     - type: text
@@ -200,10 +221,11 @@ widgets:
       anchor_x: left
       anchor_y: bottom
       x: 10
-      y: 10
-      font_size: 125
+      y: 35
+      font_size: 100
       font_name: druillet
-      color: white
+      color: 008ce5ff
+      z: 1
   # Player 4 score, for when they're PLAYING
   mp_score_widget_p4_large:
     - type: text
@@ -213,7 +235,8 @@ widgets:
       anchor_x: right
       anchor_y: bottom
       x: right - 10
-      y: 10
-      font_size: 125
+      y: 35
+      font_size: 100
       font_name: druillet
-      color: white
+      color: 008ce5ff
+      z: 1

@@ -3,19 +3,19 @@ events:
   game_started: 1
 player:
   score:
-    average: 284395.8904109589
+    average: 141303434.47435898
     top:
+    - 4000002996
+    - 3999999996
+    - 2000599998
+    - 1000201999
     - 4004000
     - 4004000
     - 3003000
     - 2503000
     - 1502000
     - 1003000
-    - 601400
-    - 492700
-    - 483900
-    - 419700
-    total: 73
+    total: 78
 shots:
   chance: 96
   chug_beer: 60
@@ -30,21 +30,21 @@ shots:
   shot_chug_beer: 78
   shot_diverter: 156
   shot_do_shot: 88
-  shot_drinko_d: 226
-  shot_drinko_i: 219
-  shot_drinko_k: 209
-  shot_drinko_n: 204
-  shot_drinko_o: 207
-  shot_drinko_r: 220
+  shot_drinko_d: 233
+  shot_drinko_i: 247
+  shot_drinko_k: 216
+  shot_drinko_n: 211
+  shot_drinko_o: 214
+  shot_drinko_r: 227
   shot_kicker_mode: 304
   shot_kicker_rimrules: 119
   shot_laneleft_inner: 25
   shot_laneleft_outer: 5
   shot_laneright_inner: 6
-  shot_plunger_lane_exit: 107
+  shot_plunger_lane_exit: 157
   shot_pongcup1: 164
   shot_pongcup2: 47
-  shot_popbumper_lower: 264
+  shot_popbumper_lower: 267
   shot_popbumper_upper_left: 514
   shot_popbumper_upper_right: 484
   shot_quarters: 1131
@@ -61,7 +61,7 @@ shots:
   shot_tavern_spinner: 1581
   shot_tgt_ramp_boot: 17
   shot_tgt_rimrules: 8
-  shot_trojankeg_left: 2058
+  shot_trojankeg_left: 2132
   shot_trojankeg_middle: 170
   shot_trojankeg_right: 112
   take_hit: 57
@@ -73,16 +73,16 @@ switches:
   s_chug_beer: 155
   s_diverter: 159
   s_do_shot: 161
-  s_drain: 858
+  s_drain: 915
   s_drinko_d: 251
   s_drinko_i: 330
-  s_drinko_k: 228
-  s_drinko_n: 867
-  s_drinko_o: 345
+  s_drinko_k: 235
+  s_drinko_n: 874
+  s_drinko_o: 352
   s_drinko_r: 342
-  s_flipper_left: 1968
-  s_flipper_right: 2362
-  s_horseshoe: 9
+  s_flipper_left: 2001
+  s_flipper_right: 2376
+  s_horseshoe: 37
   s_kicker_mode: 898
   s_kicker_rimrules: 608
   s_laneleft_inner: 46
@@ -95,14 +95,14 @@ switches:
   s_openswitch_2: 0
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1526
-  s_plunger_lane_exit: 296
+  s_plunger_lane: 1577
+  s_plunger_lane_exit: 346
   s_pongcup1: 165
   s_pongcup2: 47
   s_pongtable_exit: 40
   s_pongtable_front_left: 95
   s_pongtable_front_right: 87
-  s_popbumper_lower: 802
+  s_popbumper_lower: 805
   s_popbumper_upper: 141
   s_popbumper_upper_left: 574
   s_popbumper_upper_right: 548
@@ -114,19 +114,19 @@ switches:
   s_slingshot_quarters: 248
   s_slingshot_right: 1053
   s_special: 25
-  s_start: 126
+  s_start: 174
   s_take_hit: 159
   s_target_rimrules: 25
   s_tavern_exit: 2
   s_tavern_spinner: 3059
   s_tgt_ramp_boot: 61
   s_trogan_keg: 22
-  s_trojankeg_left: 2098
+  s_trojankeg_left: 2172
   s_trojankeg_middle: 198
   s_trojankeg_right: 144
   s_trough1: 384
   s_trough2: 363
-  s_trough3: 90
-  s_trough_eject: 835
-  s_upf_tgt_left: 4
-  s_upf_tgt_right: 4
+  s_trough3: 123
+  s_trough_eject: 883
+  s_upf_tgt_left: 11
+  s_upf_tgt_right: 11

@@ -1,16 +1,16 @@
 score:
 - !!python/tuple
-  - CCF
-  - 4004000
+  - CCA
+  - 4000002996
+- !!python/tuple
+  - AAA
+  - 3999999996
+- !!python/tuple
+  - CCC
+  - 2000599998
+- !!python/tuple
+  - AGG
+  - 1000201999
 - !!python/tuple
   - OHM
-  - 4004000
-- !!python/tuple
-  - EHH
-  - 1502000
-- !!python/tuple
-  - CGG
-  - 1003000
-- !!python/tuple
-  - OHM
-  - 1000000
+  - 500

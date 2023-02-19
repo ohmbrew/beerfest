@@ -27,82 +27,105 @@ slides:
     widgets:
     - type: text
       text: Skill Shot
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 50
-      color: green
+      y: top - 35
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: SUCCESS
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 250
+      y: top - 210
       color: green
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: 500,000
-      font_size: 200
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 500
-      color: green  
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+
   slide_skillshot_success_partial:
     widgets:
     - type: text
       text: Skill Shot
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 50
-      color: green
+      y: top - 35
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: SUCCESS
-      font_size: 150
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 250
+      y: top - 210
       color: green
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
     - type: text
       text: 100,000
-      font_size: 200
+      font_size: 10
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
-      y: top - 500
-      color: green  
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
 
 slide_player:
   skill_success_full:
     slide_skillshot_success_full:
       priority: 1000
-      expire: 2s
-      transition:
-        type: rise_in
-        duration: .5s
-      transition_out:
-        type: fade_back
-        duration: .5
+      expire: 3s
   skill_success_partial:
     slide_skillshot_success_partial:
       priority: 1000
-      expire: 2s
-      transition:
-        type: rise_in
-        duration: .5s
-      transition_out:
-        type: fade_back
-        duration: .5
+      expire: 3s
 
 event_player:
   slide_slide_skillshot_success_full_removed: skillshot_stop
