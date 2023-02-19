@@ -94,7 +94,7 @@ coils:
   c_shaker:
     number: A2-B1-2
     default_pulse_ms: 5
-    default_hold_power: 0.125
+    default_hold_power: 0.3
 
   c_knocker:
     number: A2-B1-3
