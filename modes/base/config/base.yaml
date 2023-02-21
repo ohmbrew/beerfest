@@ -572,6 +572,72 @@ random_event_player:
       - drain_play_cantdrinkabeer
       - drain_play_firstbeer
       - drain_play_nipple
+  shot_slingleft_hit:
+    events:
+      - random_pts_10010
+      - random_pts_10020
+      - random_pts_10030
+      - random_pts_10040
+      - random_pts_10050
+      - random_pts_10060
+      - random_pts_10070
+      - random_pts_10080
+      - random_pts_10090
+  shot_slingright_hit:
+    events:
+      - random_pts_10010
+      - random_pts_10020
+      - random_pts_10030
+      - random_pts_10040
+      - random_pts_10050
+      - random_pts_10060
+      - random_pts_10070
+      - random_pts_10080
+      - random_pts_10090
+  shot_popbumper_lower_hit:
+    events:
+      - random_pts_10010
+      - random_pts_10020
+      - random_pts_10030
+      - random_pts_10040
+      - random_pts_10050
+      - random_pts_10060
+      - random_pts_10070
+      - random_pts_10080
+      - random_pts_10090
+  shot_popbumper_upper_right_hit:
+    events:
+      - random_pts_10010
+      - random_pts_10020
+      - random_pts_10030
+      - random_pts_10040
+      - random_pts_10050
+      - random_pts_10060
+      - random_pts_10070
+      - random_pts_10080
+      - random_pts_10090
+  shot_popbumper_upper_left_hit:
+    events:
+      - random_pts_10010
+      - random_pts_10020
+      - random_pts_10030
+      - random_pts_10040
+      - random_pts_10050
+      - random_pts_10060
+      - random_pts_10070
+      - random_pts_10080
+      - random_pts_10090
+  shot_slingquarters_hit:
+    events:
+      - random_pts_10010
+      - random_pts_10020
+      - random_pts_10030
+      - random_pts_10040
+      - random_pts_10050
+      - random_pts_10060
+      - random_pts_10070
+      - random_pts_10080
+      - random_pts_10090
 
 show_player:
   mode_base_started:
@@ -772,12 +838,6 @@ variable_player:
     score: 1000
   shot_trojankeg_right_hit:
     score: 1000  
-  shot_popbumper_lower_hit:
-    score: 1000
-  shot_popbumper_upper_right_hit:
-    score: 1000
-  shot_popbumper_upper_left_hit:
-    score: 1000
   shot_chance_hit:
     score: 20000
   shot_take_hit_hit:
@@ -787,32 +847,44 @@ variable_player:
   shot_do_shot_hit:
     score: 50000
   shot_quarters_hit:
-    score: 25000
+    score: 75000
   shot_tavern_hit:
-    score: 50000
+    score: 25000
   enable_drinko_bonus2:
-    score: 500000   # means we got bonus1
+    score: 1000000   # means we got bonus1
   enable_drinko_bonus3:
-    score: 1000000   # means we got bonus2
+    score: 3500000   # means we got bonus2
   drinko_hammered:
     score: 5000000
-  shot_slingquarters_hit:
-    score: 1010
-  shot_slingleft_hit:
-    score: 1010
-  shot_slingright_hit:
-    score: 1010
+
+  # the random_pts_X are used for slings and pops to adjust the 10's place for end-of-game match
+  random_pts_10010:
+    score: 10010
+  random_pts_10020:
+    score: 10020
+  random_pts_10030:
+    score: 10030
+  random_pts_10040:
+    score: 10040
+  random_pts_10050:
+    score: 10050
+  random_pts_10060:
+    score: 10060
+  random_pts_10070:
+    score: 10070
+  random_pts_10080:
+    score: 10080
+  random_pts_10090:
+    score: 10090
   shot_tgt_ramp_boot_hit:
-    score: 10000
+    score: 100000
   shot_tgt_rimrules_hit:
-    score: 10000
+    score: 100000
   shot_diverter_hit:
-    score: 10000
+    score: 250000
   shot_ramp_drinko_hit:
-    score: 10000
+    score: 250000
   shot_drinko_i_hit:
-    score: 2000000
-
-
+    score: 7500000
 
 

@@ -101,8 +101,9 @@ widget_player:
 
 widgets:
   background_widget:
-    - type: image
-      image: background
+    - type: video
+      video: bubbles
+      end_behavior: loop
       z: 0
   base_score_widget:
     - type: text
