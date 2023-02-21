@@ -161,15 +161,6 @@ p_roc:
       ws281x_0_first_address: 450
       ws281x_0_last_address: 599
 
-
-# pinball.org/en/latest/hardware/multimorphic/servos.html
-#p_roc:
-#  pd_led_boards:
-#    2:
-#      max_servo_value: 290  # roughly maps to 2ms
-#      use_servo_10: trudmesge
-      #use_servo_11: true
-
 servos:
   servo_diverter:
     number: 5
@@ -190,7 +181,7 @@ servos:
       0.5: pongcup_0
       1.0: pongcup_2
     reset_position: 0.0
-    #reset_events: mode_attract_started
+    reset_events: machine_reset_phase_3, service_mode_entered
 
 sound_system:
   tracks:
