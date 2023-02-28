@@ -1,0 +1,172 @@
+#config_version=5
+##! mode: bonusv2
+
+mode:
+  start_events: start_mode_bonus
+  stop_events: stop_mode_bonus
+  priority: 300
+
+variable_player:
+  # when bonus mode starts, compute all subtotal bonuses and total bonus
+  mode_bonusv2_started:
+    bonus_subtotal_quarters:
+      action: set
+      int: current_player.bonus_quarters * 10000
+    bonus_subtotal_chance:
+      action: set
+      int: current_player.bonus_chance * 20000
+    bonus_total:
+      action: set
+      int: (current_player.bonus_quarters * 10000) + (current_player.bonus_chance * 20000)
+  # when bonus mode is about to stop, update our total score and reset all bonus counters
+  mode_bonusv2_will_stop:
+    score:
+      action: set
+      int: current_player.score + current_player.bonus_total
+    bonus_quarters:
+      action: set
+      int: 0
+    bonus_chance:
+      action: set
+      int: 0
+    
+shows:
+  # show_bonuses shows individual bonus slides that show how many of whatever bonuses we got, and points
+  show_bonuses:
+    - time: 0
+      slides: slide_bonus_quarters
+    - time: +1.5
+      slides: slide_bonus_chance
+    - time: +1.5
+      slides: slide_bonus_total
+    - time: +2
+      events: stop_mode_bonus
+  # one of the below shows is chosen at random when bonus mode starts
+  show_cantdrinkabeer:
+    - time: 0
+      slides: video_cantdrinkabeer_slide
+    - time: '+2.5'
+      events: drain_audio_complete
+  show_firstbeer:
+    - time: 0
+      slides: video_firstbeer_slide
+    - time: '+3'
+      events: drain_audio_complete
+  show_nipple:
+    - time: 0
+      slides: video_nipple_slide
+    - time: '+5.5'
+      events: drain_audio_complete
+
+# one of these is chosen at random by random_event_player below
+show_player:
+  drain_play_cantdrinkabeer:
+    show_cantdrinkabeer:
+      loops: 0
+  drain_play_firstbeer:
+    show_firstbeer:
+      loops: 0
+  drain_play_nipple:
+    show_nipple:
+      loops: 0
+  drain_audio_complete:   # all the above shows end with drain_audio_complete. This event will start the bonus slideshows
+    show_bonuses:
+      loops: 0
+# chooses a random clip to show when bonus mode is started
+random_event_player:
+  mode_bonusv2_started:
+    events:
+      - drain_play_cantdrinkabeer
+      - drain_play_firstbeer
+      - drain_play_nipple
+
+# These slides are called from our bonus show above. They get data from current player variables data that is set when this bonus mode starts
+slides:
+  slide_bonus_quarters:
+    widgets:
+      - type: text
+        text: "Quarters Bonus: (player|bonus_quarters) x 10,000"
+        font_size: 100
+        font_name: druillet
+        color: 008ce5ff
+        anchor_y: top
+        anchor_x: middle
+        x: middle
+        y: top - 100
+      - type: text
+        text: (player|bonus_subtotal_quarters)
+        number_grouping: true
+        min_digits: 1
+        font_size: 10
+        font_name: druillet
+        color: 008ce5ff
+        anchor_y: top
+        anchor_x: middle
+        x: middle
+        y: top - 300
+        animations:
+          show_slide:
+            - property: font_size
+              value: 125
+              duration: .25s
+      - type: image
+        image: background
+  slide_bonus_chance:
+    widgets:
+      - type: text
+        text: "Chance Bonus: (player|bonus_chance) x 20,000"
+        font_size: 100
+        font_name: druillet
+        color: 008ce5ff
+        anchor_y: top
+        anchor_x: middle
+        x: middle
+        y: top - 100
+      - type: text
+        text: (player|bonus_subtotal_chance)
+        number_grouping: true
+        min_digits: 1
+        font_size: 10
+        font_name: druillet
+        color: 008ce5ff
+        anchor_y: top
+        anchor_x: middle
+        x: middle
+        y: top - 300
+        animations:
+          show_slide:
+            - property: font_size
+              value: 125
+              duration: .25s
+      - type: image
+        image: background
+  slide_bonus_total:
+    widgets:
+      - type: text
+        text: "Total Bonus"
+        font_size: 100
+        font_name: druillet
+        color: 008ce5ff
+        anchor_y: top
+        anchor_x: middle
+        x: middle
+        y: top - 100
+      - type: text
+        text: (player|bonus_total)
+        number_grouping: true
+        min_digits: 1
+        font_size: 10
+        font_name: druillet
+        color: 008ce5ff
+        anchor_y: top
+        anchor_x: middle
+        x: middle
+        y: top - 300
+        animations:
+          show_slide:
+            - property: font_size
+              value: 125
+              duration: .25s
+      - type: image
+        image: background
+

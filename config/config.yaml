@@ -55,6 +55,7 @@ modes:
   - tilt
   - skillshot
   - lanechange
+  - bonusv2
 
 player_vars:
   current_mode:
@@ -79,6 +80,22 @@ player_vars:
     initial_value: 0
     value_type: int
   has_dasboot:
+    initial_value: 0
+    value_type: int
+
+  bonus_chance:
+    initial_value: 0
+    value_type: int
+  bonus_quarters:
+    initial_value: 0
+    value_type: int
+  bonus_subtotal_chance:
+    initial_value: 0
+    value_type: int
+  bonus_subtotal_quarters:
+    initial_value: 0
+    value_type: int
+  bonus_total:
     initial_value: 0
     value_type: int
 
@@ -116,27 +133,10 @@ widget_styles:
     color: 008ce5ff
 
 slides:
-  multiball_slide:
-    - type: text
-      text: MULTIBALL
-      style: bf_blue
-      font_size: 200
   video_seeyoulater_slide:
     widgets:
     - type: video
       video: seeyoulater
-    
-slide_player:
-  start_multiball:
-    multiball_slide:
-      priority: 1000
-      expire: 3s
-      transition:
-        type: rise_in
-        duration: .5s
-      transition_out:
-        type: fade_back
-        duration: .5
 
 keyboard:
   s:

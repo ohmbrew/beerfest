@@ -5,6 +5,36 @@ mode:
   start_events: mode_base_started
   stop_events: game_ended
 
+slides:
+  multiball_slide:
+    widgets:
+    - type: text
+      text: MULTIBALL
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
+    - type: image
+      image: background
+  video_seeyoulater_slide:
+    widgets:
+    - type: video
+      video: seeyoulater
+    
+slide_player:
+  start_multiball:
+    multiball_slide:
+      priority: 1000
+      expire: 3s
+
 multiballs:
   pt_multiball:
     debug: true

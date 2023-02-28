@@ -48,44 +48,6 @@
       widgets:
       - type: image
         image: thanks
-# - duration: 5s
-#   slides:
-#     thanks_slide:
-#       widgets:
-#       - type: image
-#         image: beerfest-title
-#         anchor_x: center
-#         anchor_y: top
-#         x: middle
-#         y: top-15
-#       - type: text
-#         text: A Full Custom Home "Brew"
-#         font_size: 100
-#         anchor_x: center
-#         anchor_y: top
-#         x: middle
-#         y: top - 250
-#       - type: text
-#         text: "Total Time: 16 months"
-#         font_size: 100
-#         anchor_x: center
-#         anchor_y: top
-#         x: middle
-#         y: top - 450
-#       - type: text
-#         text: "Hourly Time: 960 hours"
-#         font_size: 100
-#         anchor_x: center
-#         anchor_y: top
-#         x: middle
-#         y: top - 650
-#       - type: text
-#         text: "Project Cost: $5,500"
-#         font_size: 100
-#         anchor_x: center
-#         anchor_y: top
-#         x: middle
-#         y: top - 850
 - duration: 8s
   slides:
     show_high_scores:
