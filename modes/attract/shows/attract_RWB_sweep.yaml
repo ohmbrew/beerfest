@@ -85,9 +85,9 @@
     arrow_drinko2: 'FF0000'
     arrow_drinko3: 'FF0000'
     drinko_bonus3: 'FF0000'
-    trojankeg_left: 'FF0000'
-    trojankeg_middle: 'FF0000'
-    trojankeg_right: 'FF0000'
+    hj: 'FF0000'
+    bj: 'FF0000'
+    zj: 'FF0000'
     
 - time: '+1'
   lights:
@@ -269,9 +269,9 @@
     tavern_inside: '000000'
     tavern_sign1: '000000'
     tavern_sign2: '000000'
-    trojankeg_left: '000000'
-    trojankeg_middle: '000000'
-    trojankeg_right: '000000'
+    hj: '000000'
+    bj: '000000'
+    zj: '000000'
     
 - time: '+1'
   lights:
@@ -350,9 +350,9 @@
     arrow_drinko2: 'FFFFFF'
     arrow_drinko3: 'FFFFFF'
     drinko_bonus3: 'FFFFFF'
-    trojankeg_left: 'FFFFFF'
-    trojankeg_middle: 'FFFFFF'
-    trojankeg_right: 'FFFFFF'
+    hj: 'FFFFFF'
+    bj: 'FFFFFF'
+    zj: 'FFFFFF'
     
 - time: '+1'
   lights:
@@ -533,9 +533,9 @@
     tavern_inside: '000000'
     tavern_sign1: '000000'
     tavern_sign2: '000000'
-    trojankeg_left: '000000'
-    trojankeg_middle: '000000'
-    trojankeg_right: '000000'
+    hj: '000000'
+    bj: '000000'
+    zj: '000000'
     
 - time: '+1'
   lights:
@@ -614,9 +614,9 @@
     arrow_drinko2: '0000FF'
     arrow_drinko3: '0000FF'
     drinko_bonus3: '0000FF'
-    trojankeg_left: '0000FF'
-    trojankeg_middle: '0000FF'
-    trojankeg_right: '0000FF'
+    hj: '0000FF'
+    bj: '0000FF'
+    zj: '0000FF'
     
 - time: '+1'
   lights:

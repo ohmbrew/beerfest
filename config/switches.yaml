@@ -103,13 +103,13 @@ switches:
 
   # Right Switch PCB (A2)
   # Bank A (J2) (A2-B0)
-  s_trojankeg_left:
+  s_hj:
     number: A2-B0-0
     tags: playfield_active
-  s_trojankeg_middle:
+  s_bj:
     number: A2-B0-1
     tags: playfield_active
-  s_trojankeg_right:
+  s_zj:
     number: A2-B0-2
     tags: playfield_active
   s_kicker_mode:

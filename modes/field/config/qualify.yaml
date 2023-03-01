@@ -16,13 +16,13 @@ shows:
         quarters: 
           color: red
           fade: .1s
-        trojankeg_left: 
+        hj: 
           color: red
           fade: .1s
-        trojankeg_middle: 
+        bj: 
           color: red
           fade: .1s
-        trojankeg_right: 
+        zj: 
           color: red
           fade: .1s
         chance: 
@@ -81,13 +81,13 @@ shows:
         quarters: 
           color: white
           fade: .1s
-        trojankeg_left: 
+        hj: 
           color: white
           fade: .1s
-        trojankeg_middle: 
+        bj: 
           color: white
           fade: .1s
-        trojankeg_right: 
+        zj: 
           color: white
           fade: .1s
         chance: 
@@ -134,13 +134,13 @@ shows:
         quarters: 
           color: blue
           fade: .1s
-        trojankeg_left: 
+        hj: 
           color: blue
           fade: .1s
-        trojankeg_middle: 
+        bj: 
           color: blue
           fade: .1s
-        trojankeg_right: 
+        zj: 
           color: blue
           fade: .1s
         chance: 

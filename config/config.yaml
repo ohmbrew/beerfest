@@ -83,18 +83,48 @@ player_vars:
     initial_value: 0
     value_type: int
 
-  bonus_chance:
+  # end-of-ball bonuses
+  bonus_numquarters:
     initial_value: 0
     value_type: int
-  bonus_quarters:
+  bonus_numhjs:
     initial_value: 0
     value_type: int
-  bonus_subtotal_chance:
+  bonus_numbjs:
     initial_value: 0
     value_type: int
-  bonus_subtotal_quarters:
+  bonus_numzjs:
     initial_value: 0
     value_type: int
+  bonus_numstrikeouts:
+    initial_value: 0
+    value_type: int
+  bonus_numramps:
+    initial_value: 0
+    value_type: int
+  bonus_numchance:    # this is used as the overall multiplier for bonus
+    initial_value: 1
+    value_type: int
+
+  # placeholders for bonus mode. it calculates subtotals and total bonus when mode starts
+  bonus_sub_quarters:
+    initial_value: 0
+    value_type: int
+  bonus_sub_hjs:
+    initial_value: 0
+    value_type: int
+  bonus_sub_bjs:
+    initial_value: 0
+    value_type: int
+  bonus_sub_zjs:
+    initial_value: 0
+    value_type: int
+  bonus_sub_strikeouts:
+    initial_value: 0
+    value_type: int
+  bonus_sub_ramps:
+    initial_value: 0
+    value_type: int    
   bonus_total:
     initial_value: 0
     value_type: int

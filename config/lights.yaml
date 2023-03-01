@@ -216,21 +216,21 @@ lights:
     type: grb
     tags: strip
 
-  trojankeg_right:
+  zj:
     previous: arrow_drinko3
     type: grb
     tags: strip
-  trojankeg_middle:
-    previous: trojankeg_right
+  bj:
+    previous: zj
     type: grb
     tags: strip
-  trojankeg_left:
-    previous: trojankeg_middle
+  hj:
+    previous: bj
     type: grb
     tags: strip
 
   balls_locked3:
-    previous: trojankeg_left
+    previous: hj
     type: grb
     tags: strip
   balls_locked2:

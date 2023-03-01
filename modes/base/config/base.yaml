@@ -512,14 +512,14 @@ sound_player:
   shot_do_shot_hit:
     doashot:
       action: play
-  shot_trojankeg_left_hit:
-    prosit:
+  shot_hj_hit:
+    hj12:
       action: play
-  shot_trojankeg_middle_hit:
-    prosit:
+  shot_bj_hit:
+    bj10:
       action: play
-  shot_trojankeg_right_hit:
-    prosit:
+  shot_zj_hit:
+    zj15:
       action: play    
   shot_chance_hit:
     chance:
@@ -818,26 +818,45 @@ state_machines:
         events: shot_diverter_hit
 
 variable_player:
-  shot_trojankeg_left_hit:
-    score: 1000
-  shot_trojankeg_middle_hit:
-    score: 1000
-  shot_trojankeg_right_hit:
-    score: 1000  
+  shot_hj_hit:
+    score: 12000
+    bonus_numhjs: 1       # bonus tracker (HJs)
+  shot_bj_hit:
+    score: 10000
+    bonus_numbjs: 1       # bonus tracker (BJs)
+  shot_zj_hit:
+    score: 15000
+    bonus_numzjs: 1       # bonus tracker (ZJs)
   shot_chance_hit:
-    score: 20000
-    bonus_chance: 1
+    score: 25000
+    bonus_numchance: 1    # bonus tracker (chance multiplier)
   shot_take_hit_hit:
-    score: 50000
+    score: 69000
   shot_chug_beer_hit:
-    score: 50000
+    score: 69000
   shot_do_shot_hit:
-    score: 50000
+    score: 69000
+  bank_strikeout_complete:
+    bonus_numstrikeouts: 1    # bonus tracker (strikeouts)
   shot_quarters_hit:
     score: 75000
-    bonus_quarters: 1
+    bonus_numquarters: 1  # bonus tracker (quarters)
   shot_tavern_hit:
     score: 25000
+    bonus_numramps: 1    # bonus tracker (ramps)
+  shot_tgt_ramp_boot_hit:
+    score: 50000
+  shot_tgt_rimrules_hit:
+    score: 50000
+  shot_diverter_hit:
+    score: 75000
+    bonus_numramps: 1    # bonus tracker (ramps)
+  shot_ramp_drinko_hit:
+    score: 75000
+    bonus_numramps: 1    # bonus tracker (ramps)
+  shot_drinko_i_hit:
+    score: 1000000
+
   enable_drinko_bonus2:
     score: 1000000   # means we got bonus1
   enable_drinko_bonus3:
@@ -864,16 +883,7 @@ variable_player:
     score: 10080
   random_pts_10090:
     score: 10090
-  shot_tgt_ramp_boot_hit:
-    score: 100000
-  shot_tgt_rimrules_hit:
-    score: 100000
-  shot_diverter_hit:
-    score: 250000
-  shot_ramp_drinko_hit:
-    score: 250000
-  shot_drinko_i_hit:
-    score: 7500000
+  
 
     
 

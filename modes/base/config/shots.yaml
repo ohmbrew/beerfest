@@ -1,5 +1,20 @@
 #config_version=5
 
+shot_groups:
+  bank_strikeout:
+    shots: shot_take_hit, shot_chug_beer, shot_do_shot
+    reset_events: strikeout_bank_reset
+    enable_events: ball_started
+    disable_events: ball_ending
+
+shot_profiles:
+  lanechange_profile:
+    states:
+      - name:
+        show: off
+      - name: hit
+        show: on
+
 shots:
   shot_plunger_lane_exit:
     switch: s_plunger_lane_exit
@@ -9,12 +24,12 @@ shots:
     switch: s_popbumper_upper_right
   shot_popbumper_upper_left:
     switch: s_popbumper_upper_left
-  shot_trojankeg_left:
-    switch: s_trojankeg_left
-  shot_trojankeg_middle:
-    switch: s_trojankeg_middle
-  shot_trojankeg_right:
-    switch: s_trojankeg_right
+  shot_hj:
+    switch: s_hj
+  shot_bj:
+    switch: s_bj
+  shot_zj:
+    switch: s_zj
   shot_special:
     switch: s_special
   shot_chance:
@@ -63,5 +78,24 @@ shots:
     switch: s_tgt_ramp_boot
   shot_tgt_rimrules:
     switch: s_target_rimrules
-
+  shot_laneright_inner:
+    switch: s_laneright_inner
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_right_inner
+  shot_laneright_outer:
+    switch: s_laneright_outer
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_right_outer
+  shot_laneleft_inner:
+    switch: s_laneleft_inner
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_left_inner
+  shot_laneleft_outer:
+    switch: s_laneleft_outer
+    profile: lanechange_profile
+    show_tokens:
+      led: lane_left_outer
   
