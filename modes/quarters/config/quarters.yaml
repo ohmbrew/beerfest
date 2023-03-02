@@ -30,97 +30,384 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  
+
 slides:
-  show_quarters_slide:
+  slide_quarters_intro:
     widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: QUARTERS
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 2s
+      - type: text
+        text: Hit That Shot Glass
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 500
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_quarters_main:
+    widgets:
+      - type: text
+        text: QUARTERS
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: (player|timer_quarters_variable)
+        font_name: druillet
+        color: red
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 250
       - type: text
         text: (score)
         number_grouping: true
-        min_digits: 2
-        font_size: 250
-      - type: text
-        text: PLAYER (number)
-        y: 10
-        x: 10
-        font_size: 50
-        anchor_x: left
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_size: 50
-      - type: text
-        text: QUARTERS - HIT THAT SHOT GLASS!
-        font_size: 100
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 125
+        anchor_x: middle
         anchor_y: top
-        y: top
-        anchor_x: middle
         x: middle
+        y: top - 450
       - type: text
-        text: (player|timer_quarters_variable)
-        anchor_y: bottom
-        y: bottom
+        text: Ball (ball)
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 65
         anchor_x: middle
+        anchor_y: bottom
         x: middle
-        font_size: 150
+        y: bottom + 35
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_event_success:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: 10,000,000
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+    expire: 2s
+  slide_event_fail:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: FAIL
+        font_name: druillet
         color: red
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 1s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+    expire: 2s
 
 slide_player:
-  kicker_mode_eject: show_quarters_slide
+  mode_quarters_started: slide_quarters_intro
+  kicker_mode_eject: slide_quarters_main
+  event_success: slide_event_success
+  event_fail: slide_event_fail
+
+queue_relay_player:
+  mode_quarters_stopping{current_player.has_quarters==1}:
+    post: event_success
+    wait_for: slide_slide_event_success_removed
+  mode_quarters_stopping{current_player.has_quarters==0}:
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed
+  ball_ending{current_player.has_quarters==1}:
+    post: nothing
+    wait_for: slide_slide_event_success_removed
+  ball_ending{current_player.has_quarters==0}:
+    post: nothing
+    wait_for: slide_slide_event_fail_removed
 
 shows:
-  flash_quarters_insert:
+  init_lights:
     - time: 0
       lights:
+        gi_left1: white
+        gi_right1: white
+        gi_left2: white
+        gi_right2: white
+        gi_left3: white
+        gi_right3: white
+        gi_left4: white
+        gi_right4: white
+        gi_back1: white
+        gi_back2: white
+        gi_back3: white
+        gi_back4: white
+        gi_back5: white
+        gi_back6: white
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
+  flash_quarters_insert:
+    - duration: 1
+      lights:
         mode_quarters:
-          color: red
-          fade: .1s
-    - time: '+1'
+          color: yellow
+          fade: .5s
+    - duration: 1
       lights:
         mode_quarters: 
-          color: white
-          fade: .1s
-    - time: '+1'
-      lights:
-        mode_quarters:
-          color: blue
-          fade: .1s
+          color: off
+          fade: .5s
   flash_quarters_prop:
-    - duration: 1
+    - duration: 2
       lights:
-        quarters: red
-    - duration: 1
+        quarters:
+          color: red
+          fade: .5
+    - duration: 2
       lights:
-        quarters: off
-    - duration: 1
+        quarters:
+          color: off
+          fade: .5
+    - duration: 2
       lights:
-        quarters: white
-    - duration: 1
+        quarters:
+          color: white
+          fade: .5
+    - duration: 2
       lights:
-        quarters: off
-    - duration: 1
+        quarters:
+          color: off
+          fade: .5
+    - duration: 2
       lights:
-        quarters: blue
-    - duration: 1
+        quarters:
+          color: blue
+          fade: .5
+    - duration: 2
       lights:
-        quarters: off    
+        quarters:
+          color: off
+          fade: .5
+  flash_gi:
+    - duration: 1s
+      lights:
+        gi_back3:
+          color: off
+          fade: .25s
+        gi_back4:
+          color: off
+          fade: .25s  
+        gi_left1:
+          color: white
+          fade: .25s
+        gi_right1:
+          color: white
+          fade: .25s      
+    - duration: 1s
+      lights:
+        gi_left1:
+          color: off
+          fade: .25s
+        gi_right1:
+          color: off
+          fade: .25s    
+        gi_left2:
+          color: white
+          fade: .25s
+        gi_right2:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s    
+        gi_left3:
+          color: white
+          fade: .25s
+        gi_right3:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s    
+        gi_left4:
+          color: white
+          fade: .25s
+        gi_right4:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s    
+        gi_back1:
+          color: white
+          fade: .25s
+        gi_back6:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back1:
+          color: off
+          fade: .25s
+        gi_back6:
+          color: off
+          fade: .25s    
+        gi_back2:
+          color: white
+          fade: .25s
+        gi_back5:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back2:
+          color: off
+          fade: .25s
+        gi_back5:
+          color: off
+          fade: .25s    
+        gi_back3:
+          color: white
+          fade: .25s
+        gi_back4:
+          color: white
+          fade: .25s
+  solid_on:
+    - time: 0
+      lights:
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
 
 show_player:
+  mode_quarters_started:
+    init_lights:
+      loops: 0
   kicker_mode_eject:
     flash_quarters_insert:
-      speed: 4
+      speed: 2
   kicker_mode_eject.1:
     flash_quarters_prop:
       speed: 4
+  kicker_mode_eject.2:
+    flash_gi:
+      speed: 4
+      loops: -1
+  kicker_mode_eject.3:
+    solid_on:
+      loops: 0
 
 # timed round
 timers:
   round_timer_quarters:
-    start_value: 30
+    start_value: 10
     end_value: 0
     direction: down
     control_events:
@@ -128,13 +415,14 @@ timers:
         event: kicker_mode_eject
 
 variable_player:
-  mode_quarters_started:
-    has_quarters:
-      action: set
-      int: 1
   timer_round_timer_quarters_tick:
     timer_quarters_variable:
       int: device.timers.round_timer_quarters.ticks
       action: set
   shot_quarters_hit:
-    score: 150000
+    score: 250000
+    has_quarters:
+      action: set
+      int: 1
+  event_success:
+    score: 10000000

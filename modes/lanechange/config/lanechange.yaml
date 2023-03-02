@@ -26,11 +26,11 @@ sound_player:
       action: play  
   shot_laneright_outer_hit:
     canopening:
-      action: play  
+      action: play
 
 variable_player:
   lanechange_group_hit_complete:
-    score: 100000
+    score: 1000000
     bonus_multiplier: 1
 
 

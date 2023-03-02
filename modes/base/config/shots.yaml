@@ -5,6 +5,7 @@ shot_groups:
     shots: shot_take_hit, shot_chug_beer, shot_do_shot
     reset_events: strikeout_bank_reset
     enable_events: ball_started
+    restart_events: bank_strikeout_complete, strikeout_bank_reset
     disable_events: ball_ending
 
 shot_profiles:

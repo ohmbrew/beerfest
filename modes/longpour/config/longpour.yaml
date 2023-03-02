@@ -141,11 +141,11 @@ variable_player:
       int: device.timers.round_timer_longpour.ticks
       action: set
   shot_diverter_hit:
-    score: 100000
+    score: 500000
   shot_ramp_drinko_hit:
-    score: 100000
+    score: 500000
   shot_tavern_hit:
-    score: 100000
+    score: 500000
 
 
 

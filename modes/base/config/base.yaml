@@ -44,42 +44,30 @@ event_player:
 
 queue_relay_player:
   ball_ending:
-    #post: play_random_drain_clip
     post: start_mode_bonus
     wait_for: mode_bonusv2_stopped
-    #wait_for: drain_audio_complete
 
 slides:
   slide_bonus_drinko1:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 35
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: BONUS
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 210
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: 500,000
       font_size: 10
@@ -100,32 +88,22 @@ slides:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 35
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: BONUS
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 210
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: 1,000,000
       font_size: 10
@@ -146,32 +124,22 @@ slides:
     widgets:
     - type: text
       text: D-R-I-N-K-O
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 35
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: BONUS
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 210
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: 5,000,000
       font_size: 10
@@ -204,32 +172,22 @@ slides:
     widgets:
     - type: text
       text: MONKEY CHUG
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 35
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: BONUS
-      font_size: 10
+      font_size: 150
       font_name: druillet
       anchor_x: center
       anchor_y: top
       x: middle
       y: top - 210
       color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
     - type: text
       text: 2,000,000
       font_size: 10
@@ -246,24 +204,104 @@ slides:
             duration: .25s
     - type: image
       image: background
-    
+  slide_bonus_spellbeer:
+    widgets:
+    - type: text
+      text: Spell B-E-E-R
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: 1,000,000
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+  slide_bonus_strikeout:
+    widgets:
+    - type: text
+      text: Strikeout
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: 150,000
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+
 slide_player:
   enable_drinko_bonus2:
     slide_bonus_drinko1:
       priority: 1000
-      expire: 3s
+      expire: 2s
   enable_drinko_bonus3:
     slide_bonus_drinko2:
       priority: 1000
-      expire: 3s
+      expire: 2s
   drinko_hammered:
     slide_bonus_drinko3:
       priority: 1000
-      expire: 3s
+      expire: 2s
   shot_drinko_i_hit:
     slide_bonus_monkeychug:
       priority: 1000
-      expire: 3s
+      expire: 2s
+  lanechange_group_hit_complete:
+    slide_bonus_spellbeer:
+      priority: 1000
+      expire: 2s
+  bank_strikeout_complete:
+    slide_bonus_strikeout:
+      priority: 1000
+      expire: 2s
 
 # shows to light lights when drinko sensor has been hit
 shows:
@@ -551,6 +589,9 @@ sound_player:
   shot_drinko_i_hit:
     voice_ohyea:
       action: play
+  bank_strikeout_complete:
+    strikeoutcomplete:
+      action: play
 
 random_event_player:
   # play_random_drain_clip:
@@ -837,6 +878,7 @@ variable_player:
   shot_do_shot_hit:
     score: 69000
   bank_strikeout_complete:
+    score: 150000
     bonus_numstrikeouts: 1    # bonus tracker (strikeouts)
   shot_quarters_hit:
     score: 75000
@@ -849,13 +891,11 @@ variable_player:
   shot_tgt_rimrules_hit:
     score: 50000
   shot_diverter_hit:
-    score: 75000
+    score: 100000
     bonus_numramps: 1    # bonus tracker (ramps)
   shot_ramp_drinko_hit:
-    score: 75000
+    score: 100000
     bonus_numramps: 1    # bonus tracker (ramps)
-  shot_drinko_i_hit:
-    score: 1000000
 
   enable_drinko_bonus2:
     score: 1000000   # means we got bonus1
@@ -863,6 +903,18 @@ variable_player:
     score: 3500000   # means we got bonus2
   drinko_hammered:
     score: 5000000
+  shot_drinko_d_hit:
+    score: 40000
+  shot_drinko_r_hit:
+    score: 40000
+  shot_drinko_i_hit:  # horseshoe - hard shot!
+    score: 1000000
+  shot_drinko_n_hit:
+    score: 40000
+  shot_drinko_k_hit:
+    score: 40000  
+  shot_drinko_0_hit:
+    score: 40000
 
   # the random_pts_X are used for slings and pops to adjust the 10's place for end-of-game match
   random_pts_10010:

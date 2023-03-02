@@ -142,11 +142,11 @@ variable_player:
       int: device.timers.round_timer_strikeout.ticks
       action: set
   shot_take_hit_hit:
-    score: 100000
+    score: 150000
   shot_chug_beerhit:
-    score: 100000
+    score: 150000
   shot_do_shot_hit:
-    score: 100000
+    score: 150000
   drop_target_bank_strike_out_bank_down:
     score: 1000000
   
