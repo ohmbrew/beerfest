@@ -42,6 +42,7 @@ config:
   - coils.yaml
   - switches.yaml
   - sounds.yaml
+  - playervars.yaml
 
 modes:
   - base
@@ -56,79 +57,8 @@ modes:
   - skillshot
   - lanechange
   - bonusv2
-
-player_vars:
-  current_mode:
-    initial_value: Normal
-    value_type: str
-  num_drinko_bonus:
-    initial_value: 0
-    value_type: int
-  has_longpour:
-    initial_value: 0
-    value_type: int
-  has_quarters:
-    initial_value: 0
-    value_type: int
-  has_strikeout:
-    initial_value: 0
-    value_type: int
-  has_volumechug:
-    initial_value: 0
-    value_type: int
-  has_trojankeg:
-    initial_value: 0
-    value_type: int
-  has_dasboot:
-    initial_value: 0
-    value_type: int
-
-  # end-of-ball bonuses
-  bonus_numquarters:
-    initial_value: 0
-    value_type: int
-  bonus_numhjs:
-    initial_value: 0
-    value_type: int
-  bonus_numbjs:
-    initial_value: 0
-    value_type: int
-  bonus_numzjs:
-    initial_value: 0
-    value_type: int
-  bonus_numstrikeouts:
-    initial_value: 0
-    value_type: int
-  bonus_numramps:
-    initial_value: 0
-    value_type: int
-  bonus_numchance:    # this is used as the overall multiplier for bonus
-    initial_value: 1
-    value_type: int
-
-  # placeholders for bonus mode. it calculates subtotals and total bonus when mode starts
-  bonus_sub_quarters:
-    initial_value: 0
-    value_type: int
-  bonus_sub_hjs:
-    initial_value: 0
-    value_type: int
-  bonus_sub_bjs:
-    initial_value: 0
-    value_type: int
-  bonus_sub_zjs:
-    initial_value: 0
-    value_type: int
-  bonus_sub_strikeouts:
-    initial_value: 0
-    value_type: int
-  bonus_sub_ramps:
-    initial_value: 0
-    value_type: int    
-  bonus_total:
-    initial_value: 0
-    value_type: int
-
+  - volumechug
+  
 widget_styles:
   attract_mode_high_score_display_label:
     font_size: 60

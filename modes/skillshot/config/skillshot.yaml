@@ -10,9 +10,9 @@ mode:
 
 variable_player:
   skill_success_full:
-    score: 500000
+    score: current_player.pts_skillshot_full
   skill_success_partial:
-    score: 100000
+    score: current_player.pts_skillshot_partial
 
 sound_player:
   skill_success_full:
@@ -44,7 +44,9 @@ slides:
       y: top - 210
       color: green
     - type: text
-      text: 500,000
+      text: (player|pts_skillshot_full)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center
@@ -81,7 +83,9 @@ slides:
       y: top - 210
       color: green
     - type: text
-      text: 100,000
+      text: (player|pts_skillshot_partial)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center

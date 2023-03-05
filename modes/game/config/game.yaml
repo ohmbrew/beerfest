@@ -29,6 +29,36 @@ widget_player:
       slide: base_slide
     background_widget:
       slide: base_slide
+  mode_longpour_stopped{game.num_players == 1}:
+    background_widget:
+      slide: base_slide
+  mode_longpour_stopped{game.num_players > 1}:
+    background_widget:
+      slide: multiplayer_slide
+  mode_quarters_stopped{game.num_players == 1}:
+    background_widget:
+      slide: base_slide
+  mode_quarters_stopped{game.num_players > 1}:
+    background_widget:
+      slide: multiplayer_slide
+  mode_strikeout_stopped{game.num_players == 1}:
+    background_widget:
+      slide: base_slide
+  mode_strikeout_stopped{game.num_players > 1}:
+    background_widget:
+      slide: multiplayer_slide
+  mode_volumechug_stopped{game.num_players == 1}:
+    background_widget:
+      slide: base_slide
+  mode_volumechug_stopped{game.num_players > 1}:
+    background_widget:
+      slide: multiplayer_slide
+  mode_trojankeg_stopped{game.num_players == 1}:
+    background_widget:
+      slide: base_slide
+  mode_trojankeg_stopped{game.num_players > 1}:
+    background_widget:
+      slide: multiplayer_slide
 
   # player 2 has entered the chat
   player_added{num==2}:

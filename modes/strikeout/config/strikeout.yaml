@@ -4,7 +4,7 @@
 mode:
   start_events: start_mode_strikeout
   stop_events: stop_mode_strikeout, stop_missions, timer_round_timer_strikeout_stopped   # end round when timer stops
-  events_when_started: mode_type_mission_started
+  events_when_started: mode_type_mission_started, strikeout_bank_reset
   events_when_stopped: mode_type_mission_stopped
   priority: 300
 
@@ -13,7 +13,7 @@ sound_player:
     voice_strikeout_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music, strikeout_bank_reset
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
   start_background_music:
     music_hardasarock:
       action: play
@@ -21,7 +21,6 @@ sound_player:
   mode_strikeout_will_stop:
     music_hardasarock:
       action: stop
-
   # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
   shot_kicker_mode_hit:
     voice_betterwhendrunk:
@@ -31,122 +30,538 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  
+  event_success:
+    sureasschnitzel:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_fail:
+    goddamnbrewery:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_partial:
+    prettyclose:
+      action: play
+      events_when_stopped: slide_event_result_complete
+
+  bank_strikeout_complete:
+    strikeoutcomplete:
+      action: play
 
 slides:
-  show_strikeout_slide:
+  slide_strikeout_intro:
     widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: STRIKEOUT
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 2s
+      - type: text
+        text: Hit Those Drop Targets
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 500
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_strikeout_main:
+    widgets:
+      - type: text
+        text: STRIKEOUT
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: (player|theme_mode_timer_variable)
+        font_name: druillet
+        color: red
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 250
       - type: text
         text: (score)
         number_grouping: true
-        min_digits: 2
-        font_size: 250
-      - type: text
-        text: PLAYER (number)
-        y: 10
-        x: 10
-        font_size: 50
-        anchor_x: left
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_size: 50
-      - type: text
-        text: STRIKEOUT - HIT THE DROP TARGETS!
-        font_size: 100
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 125
+        anchor_x: middle
         anchor_y: top
-        y: top
-        anchor_x: middle
         x: middle
+        y: top - 450
       - type: text
-        text: (player|timer_strikeout_variable)
-        anchor_y: bottom
-        y: bottom
+        text: Ball (ball)
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 65
         anchor_x: middle
+        anchor_y: bottom
         x: middle
-        font_size: 150
+        y: bottom + 35
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_event_success:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_strikeout_success)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_event_fail:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: FAIL
+        font_name: druillet
         color: red
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 1s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_just_background:
+    - type: image
+      image: background 
+  slide_event_partial:        # if they hit one or more ramps, but drained before round timer expires
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_strikeout_partial)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
 
 slide_player:
-  kicker_mode_eject: show_strikeout_slide
+  mode_strikeout_started: slide_strikeout_intro
+  kicker_mode_eject:
+    slide_strikeout_intro:
+      action: remove
+    slide_strikeout_main:
+      action: play
+  event_success:
+    slide_strikeout_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_success:
+      action: play
+  event_fail:
+    slide_strikeout_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_fail:
+      action: play
+  event_partial:
+    slide_strikeout_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_partial:
+      action: play
+  slide_event_result_complete:
+    slide_event_success:
+      action: remove
+    slide_event_fail:
+      action: remove
+    slide_event_partial:
+      action: remove
+    slide_just_background:
+      action: remove
+    
+
+queue_relay_player:
+  mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
+    post: event_success
+    wait_for: slide_slide_event_success_removed
+  mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed
+  mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
+    post: event_partial
+    wait_for: slide_slide_event_partial_removed
+  mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed  
+  ball_ending:  # delay ball_ending until whicher slide is shown above finishes
+    post: nothing
+    wait_for: slide_event_done
+
+event_player:
+  slide_slide_event_success_removed: slide_event_done
+  slide_slide_event_fail_removed: slide_event_done
+  slide_slide_event_partial_removed: slide_event_done
 
 shows:
-  flash_strikeout_insert:
+  init_lights_strikeout:
     - time: 0
       lights:
+        gi_left1: white
+        gi_right1: white
+        gi_left2: white
+        gi_right2: white
+        gi_left3: white
+        gi_right3: white
+        gi_left4: white
+        gi_right4: white
+        gi_back1: white
+        gi_back2: white
+        gi_back3: white
+        gi_back4: white
+        gi_back5: white
+        gi_back6: white
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
+  flash_strikeout_insert:
+    - duration: 1
+      lights:
         mode_strikeout:
-          color: red
-          fade: .1s
-    - time: '+1'
+          color: yellow
+          fade: .5s
+    - duration: 1
       lights:
         mode_strikeout: 
+          color: off
+          fade: .5s
+
+  flash_strikeout_prop:
+    - duration: 1
+      lights:
+        strikeout_shot:
+          color: red
+          fade: .5s
+        strikeout_beer:
           color: white
-          fade: .1s
-    - time: '+1'
-      lights:
-        mode_strikeout:
+          fade: .5s
+        strikeout_bong:
           color: blue
-          fade: .1s
-  flash_strikeout_inserts:
+          fade: .5s
     - duration: 1
       lights:
-        strikeout_shot: red
-        strikeout_beer: white
-        strikeout_bong: blue
+        strikeout_shot:
+          color: white
+          fade: .5s
+        strikeout_beer:
+          color: blue
+          fade: .5s
+        strikeout_bong:
+          color: off
+          fade: .5s
     - duration: 1
       lights:
-        strikeout_shot: white
-        strikeout_beer: blue
-        strikeout_bong: off
+        strikeout_shot:
+          color: blue
+          fade: .5s
+        strikeout_beer:
+          color: off
+          fade: .5s
+        strikeout_bong:
+          color: red
+          fade: .5s
     - duration: 1
       lights:
-        strikeout_shot: blue
-        strikeout_beer: off
-        strikeout_bong: red
-    - duration: 1
+        strikeout_shot:
+          color: off
+          fade: .5s
+        strikeout_beer:
+          color: red
+          fade: .5s
+        strikeout_bong:
+          color: white
+          fade: .5s
+
+  flash_gi_strikeout:
+    - duration: 1s
       lights:
-        strikeout_shot: off
-        strikeout_beer: red
-        strikeout_bong: white
+        gi_back3:
+          color: off
+          fade: .25s
+        gi_back4:
+          color: off
+          fade: .25s  
+        gi_left1:
+          color: white
+          fade: .25s
+        gi_right1:
+          color: white
+          fade: .25s      
+    - duration: 1s
+      lights:
+        gi_left1:
+          color: off
+          fade: .25s
+        gi_right1:
+          color: off
+          fade: .25s    
+        gi_left2:
+          color: white
+          fade: .25s
+        gi_right2:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s    
+        gi_left3:
+          color: white
+          fade: .25s
+        gi_right3:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s    
+        gi_left4:
+          color: white
+          fade: .25s
+        gi_right4:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s    
+        gi_back1:
+          color: white
+          fade: .25s
+        gi_back6:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back1:
+          color: off
+          fade: .25s
+        gi_back6:
+          color: off
+          fade: .25s    
+        gi_back2:
+          color: white
+          fade: .25s
+        gi_back5:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back2:
+          color: off
+          fade: .25s
+        gi_back5:
+          color: off
+          fade: .25s    
+        gi_back3:
+          color: white
+          fade: .25s
+        gi_back4:
+          color: white
+          fade: .25s
+  solid_on_strikeout:
+    - time: 0
+      lights:
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
+
 show_player:
+  mode_strikeout_started:
+    init_lights_strikeout:
+      loops: 0
   kicker_mode_eject:
     flash_strikeout_insert:
-      speed: 4
+      speed: 2
   kicker_mode_eject.1:
-    flash_strikeout_inserts:
+    flash_strikeout_prop:
       speed: 4
+  kicker_mode_eject.2:
+    flash_gi_strikeout:
+      speed: 4
+      loops: -1
+  kicker_mode_eject.3:
+    solid_on_strikeout:
+      loops: 0
 
 # timed round
 timers:
   round_timer_strikeout:
-    start_value: 30
+    start_value: 10
     end_value: 0
     direction: down
     control_events:
       - action: start
         event: kicker_mode_eject
 
-
-
 variable_player:
-  mode_strikeout_started:
-    has_strikeout:
+  mode_strikeout_started:    # init whether we completed this current bonus
+    has_current_thememode:
+      int: 0
       action: set
-      int: 1
   timer_round_timer_strikeout_tick:
-    timer_strikeout_variable:
+    theme_mode_timer_variable:
       int: device.timers.round_timer_strikeout.ticks
       action: set
   shot_take_hit_hit:
-    score: 150000
-  shot_chug_beerhit:
-    score: 150000
+    score: current_player.pts_take_hit_themed
+  shot_chug_beer_hit:
+    score: current_player.pts_chug_beer_themed
   shot_do_shot_hit:
-    score: 150000
-  drop_target_bank_strike_out_bank_down:
-    score: 1000000
-  
+    score: current_player.pts_do_shot_themed
+  bank_strikeout_complete:
+    has_current_thememode:        # track that player has completed requirements for this themed mode
+      action: set
+      int: 1
+    score: current_player.pts_strikeout_complete_themed
+    bonus_numstrikeouts: 1    # bonus tracker (strikeouts)
+  event_success:
+    score: current_player.pts_strikeout_success
+    has_strikeout:
+      action: set
+      int: 1
+  event_partial:
+    score: current_player.pts_strikeout_partial
+    has_strikeout:
+      action: set
+      int: 1

@@ -82,26 +82,31 @@ sound_player:
   slide_slide_bonus_chance_active:
     prosit:
       loops: 0
-  slide_slide_bonus_total_active:
-    lookinggood:
-      loops: 0
-
+  slide_slide_bonus_total_active{current_player.bonus_total < 800}:
+    frustrating:
+      action: play
+      events_when_stopped: slide_total_audio_complete
+  slide_slide_bonus_total_active{current_player.bonus_total >= 800}:
+    letsgetbombed:
+      action: play
+      events_when_stopped: slide_total_audio_complete
+    
 shows:
   # one of the below shows is chosen at random when bonus mode starts
   show_cantdrinkabeer:
     - time: 0
       slides: video_cantdrinkabeer_slide
-    - time: '+2.5'
+    - time: '+2.55'
       events: drain_audio_complete
   show_firstbeer:
     - time: 0
       slides: video_firstbeer_slide
-    - time: '+3'
+    - time: '+3.5'
       events: drain_audio_complete
   show_nipple:
     - time: 0
       slides: video_nipple_slide
-    - time: '+5.5'
+    - time: '+5.25'
       events: drain_audio_complete
 
 # one of these is chosen at random by random_event_player below
@@ -163,6 +168,10 @@ slide_player:
 
   slide_slide_bonus_chance_removed: slide_bonus_total
 
+  slide_total_audio_complete:
+    slide_bonus_total:
+      action: remove
+
 event_player:
   slide_slide_bonus_total_removed: stop_mode_bonus
 
@@ -193,7 +202,7 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 150
               duration: .25s
       - type: image
         image: background
@@ -223,7 +232,7 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 150
               duration: .25s
       - type: image
         image: background
@@ -253,7 +262,7 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 150
               duration: .25s
       - type: image
         image: background
@@ -283,7 +292,7 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 150
               duration: .25s
       - type: image
         image: background
@@ -313,7 +322,7 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 150
               duration: .25s
       - type: image
         image: background 
@@ -343,7 +352,7 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 150
               duration: .25s
       - type: image
         image: background
@@ -373,7 +382,7 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 150
               duration: .25s
       - type: image
         image: background
@@ -403,9 +412,8 @@ slides:
         animations:
           show_slide:
             - property: font_size
-              value: 125
+              value: 175
               duration: .25s
       - type: image
         image: background
-    expire: 2s
 

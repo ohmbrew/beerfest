@@ -123,5 +123,5 @@ state_machines:
 
 variable_player:
   start_multiball:
-    score: 3000000
+    score: current_player.pts_multiball
 

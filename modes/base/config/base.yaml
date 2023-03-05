@@ -69,7 +69,9 @@ slides:
       y: top - 210
       color: 008ce5ff
     - type: text
-      text: 500,000
+      text: (player|pts_drinko_bonus1)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center
@@ -105,7 +107,9 @@ slides:
       y: top - 210
       color: 008ce5ff
     - type: text
-      text: 1,000,000
+      text: (player|pts_drinko_bonus2)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center
@@ -141,7 +145,9 @@ slides:
       y: top - 210
       color: 008ce5ff
     - type: text
-      text: 5,000,000
+      text: (player|pts_drinko_hammered)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center
@@ -189,7 +195,9 @@ slides:
       y: top - 210
       color: 008ce5ff
     - type: text
-      text: 2,000,000
+      text: (player|pts_i)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center
@@ -225,7 +233,9 @@ slides:
       y: top - 210
       color: 008ce5ff
     - type: text
-      text: 1,000,000
+      text: (player|pts_spell_beer)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center
@@ -261,7 +271,9 @@ slides:
       y: top - 210
       color: 008ce5ff
     - type: text
-      text: 150,000
+      text: (player|pts_strikeout_complete)
+      number_grouping: true
+      min_digits: 1
       font_size: 10
       font_name: druillet
       anchor_x: center
@@ -276,6 +288,72 @@ slides:
             duration: .5s
     - type: image
       image: background
+  slide_bonus_strikeout_themed:
+    widgets:
+    - type: text
+      text: Strikeout
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: MEGA BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|pts_strikeout_complete_themed)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+  slide_ballsave:
+    widgets:
+    - type: text
+      text: Landfill is alive!
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: BALL SAVED
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 400
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 150
+            duration: .5s
+    - type: image
+      image: background
+    expire: 4.5s
 
 slide_player:
   enable_drinko_bonus2:
@@ -298,10 +376,16 @@ slide_player:
     slide_bonus_spellbeer:
       priority: 1000
       expire: 2s
-  bank_strikeout_complete:
+  bank_strikeout_complete{mode.strikeout.active == False}:
     slide_bonus_strikeout:
       priority: 1000
       expire: 2s
+  bank_strikeout_complete{mode.strikeout.active == True}:
+    slide_bonus_strikeout_themed:
+      priority: 1000
+      expire: 2s
+      
+  ball_save_ball_save_saving_ball: slide_ballsave
 
 # shows to light lights when drinko sensor has been hit
 shows:
@@ -589,82 +673,83 @@ sound_player:
   shot_drinko_i_hit:
     voice_ohyea:
       action: play
-  bank_strikeout_complete:
+  bank_strikeout_complete{modes.strikeout.active == False}:
     strikeoutcomplete:
       action: play
 
 random_event_player:
-  # play_random_drain_clip:
-  #   events:
-  #     - drain_play_cantdrinkabeer
-  #     - drain_play_firstbeer
-  #     - drain_play_nipple
   shot_slingleft_hit:
     events:
-      - random_pts_10010
-      - random_pts_10020
-      - random_pts_10030
-      - random_pts_10040
-      - random_pts_10050
-      - random_pts_10060
-      - random_pts_10070
-      - random_pts_10080
-      - random_pts_10090
+      - random_pts_00
+      - random_pts_10
+      - random_pts_20
+      - random_pts_30
+      - random_pts_40
+      - random_pts_50
+      - random_pts_60
+      - random_pts_70
+      - random_pts_80
+      - random_pts_90
   shot_slingright_hit:
     events:
-      - random_pts_10010
-      - random_pts_10020
-      - random_pts_10030
-      - random_pts_10040
-      - random_pts_10050
-      - random_pts_10060
-      - random_pts_10070
-      - random_pts_10080
-      - random_pts_10090
+      - random_pts_00
+      - random_pts_10
+      - random_pts_20
+      - random_pts_30
+      - random_pts_40
+      - random_pts_50
+      - random_pts_60
+      - random_pts_70
+      - random_pts_80
+      - random_pts_90
   shot_popbumper_lower_hit:
     events:
-      - random_pts_10010
-      - random_pts_10020
-      - random_pts_10030
-      - random_pts_10040
-      - random_pts_10050
-      - random_pts_10060
-      - random_pts_10070
-      - random_pts_10080
-      - random_pts_10090
+      - random_pts_00
+      - random_pts_10
+      - random_pts_20
+      - random_pts_30
+      - random_pts_40
+      - random_pts_50
+      - random_pts_60
+      - random_pts_70
+      - random_pts_80
+      - random_pts_90
   shot_popbumper_upper_right_hit:
     events:
-      - random_pts_10010
-      - random_pts_10020
-      - random_pts_10030
-      - random_pts_10040
-      - random_pts_10050
-      - random_pts_10060
-      - random_pts_10070
-      - random_pts_10080
-      - random_pts_10090
+      - random_pts_00
+      - random_pts_10
+      - random_pts_20
+      - random_pts_30
+      - random_pts_40
+      - random_pts_50
+      - random_pts_60
+      - random_pts_70
+      - random_pts_80
+      - random_pts_90
   shot_popbumper_upper_left_hit:
     events:
-      - random_pts_10010
-      - random_pts_10020
-      - random_pts_10030
-      - random_pts_10040
-      - random_pts_10050
-      - random_pts_10060
-      - random_pts_10070
-      - random_pts_10080
-      - random_pts_10090
+      - random_pts_00
+      - random_pts_10
+      - random_pts_20
+      - random_pts_30
+      - random_pts_40
+      - random_pts_50
+      - random_pts_60
+      - random_pts_70
+      - random_pts_80
+      - random_pts_90
   shot_slingquarters_hit:
     events:
-      - random_pts_10010
-      - random_pts_10020
-      - random_pts_10030
-      - random_pts_10040
-      - random_pts_10050
-      - random_pts_10060
-      - random_pts_10070
-      - random_pts_10080
-      - random_pts_10090
+      - random_pts_00
+      - random_pts_10
+      - random_pts_20
+      - random_pts_30
+      - random_pts_40
+      - random_pts_50
+      - random_pts_60
+      - random_pts_70
+      - random_pts_80
+      - random_pts_90
 
 show_player:
   mode_base_started:
@@ -737,6 +822,10 @@ show_player:
   mode_base_started{current_player.has_quarters==1}: show_quarters_insert
   mode_strikeout_stopped{current_player.has_strikeout==1}: show_strikeout_insert
   mode_base_started{current_player.has_strikeout==1}: show_strikeout_insert
+  mode_volumechug_stopped{current_player.has_volumechug==1}: show_volumechug_insert
+  mode_base_started{current_player.has_volumechug==1}: show_volumechug_insert
+  mode_trojankeg_stopped{current_player.has_trojankeg==1}: show_trojankeg_insert
+  mode_base_started{current_player.has_trojankeg==1}: show_trojankeg_insert
 
   ball_save_ball_save_timer_start:
     show_ball_save:
@@ -758,10 +847,6 @@ show_player:
         light: ball_save
         on_color: off
         off_color: off
-  #drain_play_cantdrinkabeer: show_cantdrinkabeer
-  #drain_play_firstbeer: show_firstbeer
-  #drain_play_nipple: show_nipple
-  #drain_gameover: show_gameover
 
 ball_saves:
   ball_save:
@@ -860,82 +945,91 @@ state_machines:
 
 variable_player:
   shot_hj_hit:
-    score: 12000
+    score: current_player.pts_hj
     bonus_numhjs: 1       # bonus tracker (HJs)
   shot_bj_hit:
-    score: 10000
+    score: current_player.pts_bj
     bonus_numbjs: 1       # bonus tracker (BJs)
   shot_zj_hit:
-    score: 15000
+    score: current_player.pts_zj
     bonus_numzjs: 1       # bonus tracker (ZJs)
   shot_chance_hit:
-    score: 25000
+    score: current_player.pts_chance
     bonus_numchance: 1    # bonus tracker (chance multiplier)
-  shot_take_hit_hit:
-    score: 69000
-  shot_chug_beer_hit:
-    score: 69000
-  shot_do_shot_hit:
-    score: 69000
-  bank_strikeout_complete:
-    score: 150000
-    bonus_numstrikeouts: 1    # bonus tracker (strikeouts)
-  shot_quarters_hit:
-    score: 75000
-    bonus_numquarters: 1  # bonus tracker (quarters)
-  shot_tavern_hit:
-    score: 25000
-    bonus_numramps: 1    # bonus tracker (ramps)
-  shot_tgt_ramp_boot_hit:
-    score: 50000
-  shot_tgt_rimrules_hit:
-    score: 50000
-  shot_diverter_hit:
-    score: 100000
-    bonus_numramps: 1    # bonus tracker (ramps)
-  shot_ramp_drinko_hit:
-    score: 100000
-    bonus_numramps: 1    # bonus tracker (ramps)
+  shot_special_hit:
+    score: current_player.pts_special
 
+  # strikeout
+  shot_take_hit_hit{mode.strikeout.active == False}:
+    score: current_player.pts_take_hit
+  shot_chug_beer_hit{mode.strikeout.active == False}:
+    score: current_player.pts_chug_beer
+  shot_do_shot_hit{mode.strikeout.active == False}:
+    score: current_player.pts_do_shot
+  bank_strikeout_complete{mode.strikeout.active == False}:
+    score: current_player.pts_strikeout_complete
+    bonus_numstrikeouts: 1    # bonus tracker (strikeouts)
+
+  # quarters
+  shot_quarters_hit{mode.quarters.active == False}:
+    score: current_player.pts_quarters
+    bonus_numquarters: 1      # bonus tracker (quarters)
+  
+  # longpour
+  shot_tavern_hit{mode.longpour.active == False}:
+    score: current_player.pts_tavern
+    bonus_numramps: 1         # bonus tracker (ramps)
+  shot_diverter_hit{mode.longpour.active == False}:
+    score: current_player.pts_ramp_boot
+    bonus_numramps: 1         # bonus tracker (ramps)
+  shot_ramp_drinko_hit{mode.longpour.active == False}:
+    score: current_player.pts_ramp_drinko
+    bonus_numramps: 1         # bonus tracker (ramps)
+
+  shot_tgt_ramp_boot_hit:
+    score: current_player.pts_tgt_ramp_boot
+  shot_tgt_rimrules_hit:
+    score: current_player.pts_tgt_rimrules
   enable_drinko_bonus2:
-    score: 1000000   # means we got bonus1
+    score: current_player.pts_drinko_bonus1         # means we got bonus1
   enable_drinko_bonus3:
-    score: 3500000   # means we got bonus2
+    score: current_player.pts_drinko_bonus2            # means we got bonus2
   drinko_hammered:
-    score: 5000000
+    score: current_player.pts_drinko_hammered
   shot_drinko_d_hit:
-    score: 40000
+    score: current_player.pts_d
   shot_drinko_r_hit:
-    score: 40000
-  shot_drinko_i_hit:  # horseshoe - hard shot!
-    score: 1000000
+    score: current_player.pts_r
+  shot_drinko_i_hit:          # horseshoe - hard shot!
+    score: current_player.pts_i
   shot_drinko_n_hit:
-    score: 40000
+    score: current_player.pts_n
   shot_drinko_k_hit:
-    score: 40000  
+    score: current_player.pts_k 
   shot_drinko_0_hit:
-    score: 40000
+    score: current_player.pts_o
 
   # the random_pts_X are used for slings and pops to adjust the 10's place for end-of-game match
-  random_pts_10010:
-    score: 10010
-  random_pts_10020:
-    score: 10020
-  random_pts_10030:
-    score: 10030
-  random_pts_10040:
-    score: 10040
-  random_pts_10050:
-    score: 10050
-  random_pts_10060:
-    score: 10060
-  random_pts_10070:
-    score: 10070
-  random_pts_10080:
-    score: 10080
-  random_pts_10090:
-    score: 10090
-  
+  random_pts_00:
+    score: current_player.pts_rnd
+  random_pts_10:
+    score: current_player.pts_rnd + 10
+  random_pts_20:
+    score: current_player.pts_rnd + 20
+  random_pts_30:
+    score: current_player.pts_rnd + 30
+  random_pts_40:
+    score: current_player.pts_rnd + 40
+  random_pts_50:
+    score: current_player.pts_rnd + 50
+  random_pts_60:
+    score: current_player.pts_rnd + 60
+  random_pts_70:
+    score: current_player.pts_rnd + 70
+  random_pts_80:
+    score: current_player.pts_rnd + 80
+  random_pts_90:
+    score: current_player.pts_rnd + 90
 
     
 

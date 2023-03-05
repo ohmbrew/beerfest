@@ -20,8 +20,7 @@ sound_player:
       loops: 0
   mode_longpour_will_stop:
     music_hardasarock:
-      action: stop  
-  
+      action: stop
   # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
   shot_kicker_mode_hit:
     voice_betterwhendrunk:
@@ -31,100 +30,720 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
+  event_success:
+    sureasschnitzel:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_fail:
+    goddamnbrewery:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_partial:
+    prettyclose:
+      action: play
+      events_when_stopped: slide_event_result_complete
 
 slides:
-  show_longpour_slide:
+  slide_longpour_intro:
     widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: LONG POUR
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 2s
+      - type: text
+        text: Hit Those Ramps
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 500
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_longpour_main:
+    widgets:
+      - type: text
+        text: LONG POUR
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: (player|theme_mode_timer_variable)
+        font_name: druillet
+        color: red
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 250
       - type: text
         text: (score)
         number_grouping: true
-        min_digits: 2
-        font_size: 250
-      - type: text
-        text: PLAYER (number)
-        y: 10
-        x: 10
-        font_size: 50
-        anchor_x: left
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_size: 50
-      - type: text
-        text: LONGPOUR - HIT THOSE RAMPS!
-        font_size: 100
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 125
+        anchor_x: middle
         anchor_y: top
-        y: top
-        anchor_x: middle
         x: middle
+        y: top - 450
       - type: text
-        text: (player|timer_longpour_variable)
-        anchor_y: bottom
-        y: bottom
+        text: Ball (ball)
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 65
         anchor_x: middle
+        anchor_y: bottom
         x: middle
-        font_size: 150
+        y: bottom + 35
+      - type: video
+        video: bubbles
+        end_behavior: loop
+      - type: image
+        image: background
+  slide_event_success:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_longpour_success)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_event_fail:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: FAIL
+        font_name: druillet
         color: red
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 1s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_just_background:
+    - type: image
+      image: background 
+  slide_event_partial:        # if they hit one or more ramps, but drained before round timer expires
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_longpour_partial)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
 
 slide_player:
-  kicker_mode_eject: show_longpour_slide
-  
+  mode_longpour_started: slide_longpour_intro
+  kicker_mode_eject:
+    slide_longpour_intro:
+      action: remove
+    slide_longpour_main:
+      action: play
+  event_success:
+    slide_longpour_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_success:
+      action: play
+  event_fail:
+    slide_longpour_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_fail:
+      action: play
+  event_partial:
+    slide_longpour_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_partial:
+      action: play
+  slide_event_result_complete:
+    slide_event_success:
+      action: remove
+    slide_event_fail:
+      action: remove
+    slide_event_partial:
+      action: remove
+    slide_just_background:
+      action: remove
+    
+
+queue_relay_player:
+  mode_longpour_stopping{device.timers.round_timer_longpour.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
+    post: event_success
+    wait_for: slide_slide_event_success_removed
+  mode_longpour_stopping{device.timers.round_timer_longpour.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed
+  mode_longpour_stopping{device.timers.round_timer_longpour.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
+    post: event_partial
+    wait_for: slide_slide_event_partial_removed
+  mode_longpour_stopping{device.timers.round_timer_longpour.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed  
+  ball_ending:  # delay ball_ending until whicher slide is shown above finishes
+    post: nothing
+    wait_for: slide_event_done
+
+event_player:
+  slide_slide_event_success_removed: slide_event_done
+  slide_slide_event_fail_removed: slide_event_done
+  slide_slide_event_partial_removed: slide_event_done
+
 shows:
-  show_flash_longpour:
+  init_lights_longpour:
     - time: 0
       lights:
-        mode_longpour:
-          color: red
-          fade: .1s
-    - time: '+1'
-      lights:
-        mode_longpour: 
-          color: white
-          fade: .1s
-    - time: '+1'
-      lights:
-        mode_longpour:
-          color: blue
-          fade: .1s
-  show_init_longpour:
-    - time: 0
-      lights:
-        slingquarters_upper: white
-        slingquarters_lower: white
+        gi_left1: white
+        gi_right1: white
+        gi_left2: white
+        gi_right2: white
+        gi_left3: white
+        gi_right3: white
+        gi_left4: white
+        gi_right4: white
+        gi_back1: white
+        gi_back2: white
+        gi_back3: white
+        gi_back4: white
+        gi_back5: white
+        gi_back6: white
         slingleft_upper: white
         slingleft_lower: white
         slingright_upper: white
         slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
+  flash_longpour_insert:
+    - duration: 1
+      lights:
+        mode_longpour:
+          color: yellow
+          fade: .5s
+    - duration: 1
+      lights:
+        mode_longpour: 
+          color: off
+          fade: .5s
+
+  flash_ramp_arrows:
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: red
+          fade: .5
+        arrow_tavern2:
+          color: off
+          fade: .5
+        arrow_tavern3:
+          color: off
+          fade: .5
+        arrow_boot1:
+          color: red
+          fade: .5
+        arrow_boot2:
+          color: off
+          fade: .5
+        arrow_boot3:
+          color: off
+          fade: .5
+        arrow_drinko1:
+          color: red
+          fade: .5
+        arrow_drinko2:
+          color: off
+          fade: .5
+        arrow_drinko3:
+          color: off
+          fade: .5  
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: off
+          fade: .5
+        arrow_tavern2:
+          color: red
+          fade: .5
+        arrow_tavern3:
+          color: off
+          fade: .5
+        arrow_boot1:
+          color: off
+          fade: .5
+        arrow_boot2:
+          color: red
+          fade: .5
+        arrow_boot3:
+          color: off
+          fade: .5
+        arrow_drinko1:
+          color: off
+          fade: .5
+        arrow_drinko2:
+          color: red
+          fade: .5
+        arrow_drinko3:
+          color: off
+          fade: .5  
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: off
+          fade: .5
+        arrow_tavern2:
+          color: off
+          fade: .5
+        arrow_tavern3:
+          color: red
+          fade: .5
+        arrow_boot1:
+          color: off
+          fade: .5
+        arrow_boot2:
+          color: off
+          fade: .5
+        arrow_boot3:
+          color: red
+          fade: .5
+        arrow_drinko1:
+          color: off
+          fade: .5
+        arrow_drinko2:
+          color: off
+          fade: .5
+        arrow_drinko3:
+          color: red
+          fade: .5
+
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: white
+          fade: .5
+        arrow_tavern2:
+          color: off
+          fade: .5
+        arrow_tavern3:
+          color: off
+          fade: .5
+        arrow_boot1:
+          color: white
+          fade: .5
+        arrow_boot2:
+          color: off
+          fade: .5
+        arrow_boot3:
+          color: off
+          fade: .5
+        arrow_drinko1:
+          color: white
+          fade: .5
+        arrow_drinko2:
+          color: off
+          fade: .5
+        arrow_drinko3:
+          color: off
+          fade: .5  
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: off
+          fade: .5
+        arrow_tavern2:
+          color: white
+          fade: .5
+        arrow_tavern3:
+          color: off
+          fade: .5
+        arrow_boot1:
+          color: off
+          fade: .5
+        arrow_boot2:
+          color: white
+          fade: .5
+        arrow_boot3:
+          color: off
+          fade: .5
+        arrow_drinko1:
+          color: off
+          fade: .5
+        arrow_drinko2:
+          color: white
+          fade: .5
+        arrow_drinko3:
+          color: off
+          fade: .5  
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: off
+          fade: .5
+        arrow_tavern2:
+          color: off
+          fade: .5
+        arrow_tavern3:
+          color: white
+          fade: .5
+        arrow_boot1:
+          color: off
+          fade: .5
+        arrow_boot2:
+          color: off
+          fade: .5
+        arrow_boot3:
+          color: white
+          fade: .5
+        arrow_drinko1:
+          color: off
+          fade: .5
+        arrow_drinko2:
+          color: off
+          fade: .5
+        arrow_drinko3:
+          color: white
+          fade: .5
+
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: blue
+          fade: .5
+        arrow_tavern2:
+          color: off
+          fade: .5
+        arrow_tavern3:
+          color: off
+          fade: .5
+        arrow_boot1:
+          color: blue
+          fade: .5
+        arrow_boot2:
+          color: off
+          fade: .5
+        arrow_boot3:
+          color: off
+          fade: .5
+        arrow_drinko1:
+          color: blue
+          fade: .5
+        arrow_drinko2:
+          color: off
+          fade: .5
+        arrow_drinko3:
+          color: off
+          fade: .5  
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: off
+          fade: .5
+        arrow_tavern2:
+          color: blue
+          fade: .5
+        arrow_tavern3:
+          color: off
+          fade: .5
+        arrow_boot1:
+          color: off
+          fade: .5
+        arrow_boot2:
+          color: blue
+          fade: .5
+        arrow_boot3:
+          color: off
+          fade: .5
+        arrow_drinko1:
+          color: off
+          fade: .5
+        arrow_drinko2:
+          color: blue
+          fade: .5
+        arrow_drinko3:
+          color: off
+          fade: .5  
+    - duration: 1
+      lights:
+        arrow_tavern1:
+          color: off
+          fade: .5
+        arrow_tavern2:
+          color: off
+          fade: .5
+        arrow_tavern3:
+          color: blue
+          fade: .5
+        arrow_boot1:
+          color: off
+          fade: .5
+        arrow_boot2:
+          color: off
+          fade: .5
+        arrow_boot3:
+          color: blue
+          fade: .5
+        arrow_drinko1:
+          color: off
+          fade: .5
+        arrow_drinko2:
+          color: off
+          fade: .5
+        arrow_drinko3:
+          color: blue
+          fade: .5
+  flash_gi_longpour:
+    - duration: 1s
+      lights:
+        gi_back3:
+          color: off
+          fade: .25s
+        gi_back4:
+          color: off
+          fade: .25s  
+        gi_left1:
+          color: white
+          fade: .25s
+        gi_right1:
+          color: white
+          fade: .25s      
+    - duration: 1s
+      lights:
+        gi_left1:
+          color: off
+          fade: .25s
+        gi_right1:
+          color: off
+          fade: .25s    
+        gi_left2:
+          color: white
+          fade: .25s
+        gi_right2:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s    
+        gi_left3:
+          color: white
+          fade: .25s
+        gi_right3:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s    
+        gi_left4:
+          color: white
+          fade: .25s
+        gi_right4:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s    
+        gi_back1:
+          color: white
+          fade: .25s
+        gi_back6:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back1:
+          color: off
+          fade: .25s
+        gi_back6:
+          color: off
+          fade: .25s    
+        gi_back2:
+          color: white
+          fade: .25s
+        gi_back5:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back2:
+          color: off
+          fade: .25s
+        gi_back5:
+          color: off
+          fade: .25s    
+        gi_back3:
+          color: white
+          fade: .25s
+        gi_back4:
+          color: white
+          fade: .25s
+  solid_on_longpour:
+    - time: 0
+      lights:
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
         flipper_left: white
         flipper_right: white
     - duration: -1
 
 show_player:
-  mode_longpour_started: show_init_longpour
+  mode_longpour_started:
+    init_lights_longpour:
+      loops: 0
   kicker_mode_eject:
-    show_flash_longpour:
-      speed: 4
+    flash_longpour_insert:
+      speed: 2
   kicker_mode_eject.1:
-    show_flash_ramps:
+    flash_ramp_arrows:
       speed: 4
   kicker_mode_eject.2:
-    show_flash_gi_back:
-      speed: 15
+    flash_gi_longpour:
+      speed: 4
+      loops: -1
   kicker_mode_eject.3:
-    show_flash_gi_sides:
-      speed: 6
-  kicker_mode_eject.4:
-    show_flash_slings:
-      speed: 6
+    solid_on_longpour:
+      loops: 0
 
 # timed round
 timers:
   round_timer_longpour:
-    start_value: 30
+    start_value: 10
     end_value: 0
     direction: down
     control_events:
@@ -132,20 +751,39 @@ timers:
         event: kicker_mode_eject
 
 variable_player:
-  mode_longpour_started:
+  mode_longpour_started:    # init whether we completed this current bonus
+    has_current_thememode:
+      int: 0
+      action: set
+  timer_round_timer_longpour_tick:
+    theme_mode_timer_variable:
+      int: device.timers.round_timer_longpour.ticks
+      action: set
+  shot_tavern_hit:
+    score: current_player.pts_tavern_themed
+    has_current_thememode:        # track that player has completed requirements for bonus
+      action: set
+      int: 1
+    bonus_numramps: 1         # bonus tracker (ramps)
+  shot_diverter_hit:
+    score: current_player.pts_ramp_boot_themed
+    has_current_thememode:        # track that player has completed requirements for bonus
+      action: set
+      int: 1
+    bonus_numramps: 1         # bonus tracker (ramps)
+  shot_ramp_drinko_hit:
+    score: current_player.pts_ramp_drinko_themed
+    has_current_thememode:        # track that player has completed requirements for bonus
+      action: set
+      int: 1
+    bonus_numramps: 1         # bonus tracker (ramps)
+  event_success:
+    score: current_player.pts_longpour_success
     has_longpour:
       action: set
       int: 1
-  timer_round_timer_longpour_tick:
-    timer_longpour_variable:
-      int: device.timers.round_timer_longpour.ticks
+  event_partial:
+    score: current_player.pts_longpour_partial
+    has_longpour:
       action: set
-  shot_diverter_hit:
-    score: 500000
-  shot_ramp_drinko_hit:
-    score: 500000
-  shot_tavern_hit:
-    score: 500000
-
-
-
+      int: 1

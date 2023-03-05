@@ -37,12 +37,16 @@ event_player:
   shot_kicker_rimrules_hit{device.counters.count_mug_lights.value < 14}: play_rimrules_and_eject
 
 random_event_player:
-  launch_random_game_mode:
+  launch_random_game_mode{current_player.has_longpour==0 or current_player.has_quarters==0 or current_player.has_strikeout==0}:
     events:
-      #- start_mode_longpour
+      - start_mode_longpour
       - start_mode_quarters
-      #- start_mode_strikeout
-      
+      - start_mode_strikeout
+  launch_random_game_mode{(current_player.has_longpour==1 and current_player.has_quarters==1 and current_player.has_strikeout==1) and (current_player.has_volumechug==0 or current_player.has_trojankeg==0)}:
+    events:
+      - start_mode_volumechug
+      #- start_mode_trojankeg
+
 show_player:
   mode_field_started:
     show_qualify_active:

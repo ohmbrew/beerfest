@@ -30,7 +30,7 @@ sound_player:
 
 variable_player:
   lanechange_group_hit_complete:
-    score: 1000000
+    score: current_player.pts_spell_beer
     bonus_multiplier: 1
 
 

@@ -1,0 +1,231 @@
+#config_version=5
+
+player_vars:
+  theme_mode_timer_variable:
+    initial_value: 0
+    value_type: int
+
+  has_current_thememode:      # tracks if/when player is successful completing themed mode
+    initial_value: 0
+    value_type: int
+  
+  # track all themed mode statuses
+  # TODO: setting longpour, quarters, strikeout to 1 so I can test volumechug and trojankeg modes quicker
+  has_longpour:
+    initial_value: 1
+    value_type: int
+  has_quarters:
+    initial_value: 1
+    value_type: int
+  has_strikeout:
+    initial_value: 1
+    value_type: int
+  has_volumechug:
+    initial_value: 0
+    value_type: int
+  has_trojankeg:
+    initial_value: 0
+    value_type: int
+  has_dasboot:
+    initial_value: 0
+    value_type: int
+
+  # end-of-ball bonuses
+  bonus_numquarters:
+    initial_value: 0
+    value_type: int
+  bonus_numhjs:
+    initial_value: 0
+    value_type: int
+  bonus_numbjs:
+    initial_value: 0
+    value_type: int
+  bonus_numzjs:
+    initial_value: 0
+    value_type: int
+  bonus_numstrikeouts:
+    initial_value: 0
+    value_type: int
+  bonus_numramps:
+    initial_value: 0
+    value_type: int
+  bonus_numchance:    # this is used as the overall multiplier for bonus
+    initial_value: 1
+    value_type: int
+
+  # end-of-ball subtotals
+  bonus_sub_quarters:
+    initial_value: 0
+    value_type: int
+  bonus_sub_hjs:
+    initial_value: 0
+    value_type: int
+  bonus_sub_bjs:
+    initial_value: 0
+    value_type: int
+  bonus_sub_zjs:
+    initial_value: 0
+    value_type: int
+  bonus_sub_strikeouts:
+    initial_value: 0
+    value_type: int
+  bonus_sub_ramps:
+    initial_value: 0
+    value_type: int    
+  bonus_total:
+    initial_value: 0
+    value_type: int
+
+  pts_hj:
+    initial_value: 12000
+    value_type: int
+  pts_bj:
+    initial_value: 10000
+    value_type: int
+  pts_zj:
+    initial_value: 15000
+    value_type: int
+  pts_chance:
+    initial_value: 25000
+    value_type: int
+  pts_special:
+    initial_value: 50000
+    value_type: int
+  pts_take_hit:
+    initial_value: 69000
+    value_type: int
+  pts_chug_beer:
+    initial_value: 69000
+    value_type: int
+  pts_do_shot:
+    initial_value: 69000
+    value_type: int
+  pts_quarters:
+    initial_value: 75000
+    value_type: int
+  pts_tgt_ramp_boot:
+    initial_value: 50000
+    value_type: int
+  pts_tgt_rimrules:
+    initial_value: 50000
+    value_type: int
+  pts_ramp_boot:
+    initial_value: 100000
+    value_type: int
+  pts_ramp_drinko:
+    initial_value: 100000
+    value_type: int
+  pts_tavern:
+    initial_value: 25000
+    value_type: int
+  pts_d:
+    initial_value: 40000
+    value_type: int
+  pts_r:
+    initial_value: 40000
+    value_type: int
+  pts_i:
+    initial_value: 1000000
+    value_type: int
+  pts_n:
+    initial_value: 40000
+    value_type: int
+  pts_k:
+    initial_value: 40000
+    value_type: int
+  pts_o:
+    initial_value: 40000
+    value_type: int
+  pts_rnd:
+    initial_value: 10000    # used for pops and slings - these will have some multiple of 10 points (up to 9x) added. To randomize lower two digits of score
+    value_type: int
+  
+  # bonuses & awards
+  
+  pts_drinko_bonus1:
+    initial_value: 1000000
+    value_type: int
+  pts_drinko_bonus2:
+    initial_value: 3500000
+    value_type: int
+  pts_drinko_hammered:
+    initial_value: 5000000
+    value_type: int
+  pts_spell_beer:
+    initial_value: 125000
+    value_type: int
+  pts_skillshot_full:
+    initial_value: 500000
+    value_type: int
+  pts_skillshot_partial:
+    initial_value: 100000
+    value_type: int
+  pts_multiball:
+    initial_value: 3000000
+    value_type: int
+
+  pts_ramp_boot_themed:
+    initial_value: 500000
+    value_type: int
+  pts_ramp_drinko_themed:
+    initial_value: 500000
+    value_type: int
+  pts_tavern_themed:
+    initial_value: 500000
+    value_type: int  
+  pts_longpour_success:
+    initial_value: 10000000
+    value_type: int
+  pts_longpour_partial:
+    initial_value: 5000000
+    value_type: int
+
+  pts_quarters_themed:
+    initial_value: 250000
+    value_type: int
+  pts_quarters_success:
+    initial_value: 10000000
+    value_type: int
+  pts_quarters_partial:
+    initial_value: 5000000
+    value_type: int
+
+  pts_take_hit_themed:
+    initial_value: 150000
+    value_type: int
+  pts_chug_beer_themed:
+    initial_value: 150000
+    value_type: int
+  pts_do_shot_themed:
+    initial_value: 150000
+    value_type: int
+  pts_strikeout_complete:
+    initial_value: 150000
+    value_type: int
+  pts_strikeout_complete_themed:
+    initial_value: 1000000
+    value_type: int
+  pts_strikeout_success:
+    initial_value: 10000000
+    value_type: int
+  pts_strikeout_partial:
+    initial_value: 5000000
+    value_type: int
+
+
+  pts_volumechug_bonus:
+    initial_value: 10000000
+    value_type: int
+  pts_volumechug_success:
+    initial_value: 25000000
+    value_type: int
+  pts_volumechug_partial:
+    initial_value: 12500000
+    value_type: int
+
+  pts_trojankeg_success:
+    initial_value: 30000000
+    value_type: int
+  pts_trojankeg_partial:
+    initial_value: 15000000
+    value_type: int

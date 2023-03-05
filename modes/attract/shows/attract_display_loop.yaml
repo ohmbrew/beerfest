@@ -28,8 +28,8 @@
         font_size: 75
         style: bf_blue
         y: top - 550
-      - type: image
-        image: background
+      - type: video
+        video: bubbles
 
       transition:
         type: move_in
@@ -121,8 +121,8 @@
         text: (machine|score5_value)
         style: attract_mode_high_score_display_score
         y: top - 655
-      - type: image
-        image: background
+      - type: video
+        video: bubbles
 
 
 

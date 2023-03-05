@@ -30,6 +30,18 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
+  event_success:
+    sureasschnitzel:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_fail:
+    goddamnbrewery:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_partial:
+    prettyclose:
+      action: play
+      events_when_stopped: slide_event_result_complete
 
 slides:
   slide_quarters_intro:
@@ -81,7 +93,7 @@ slides:
         x: middle
         y: top - 35
       - type: text
-        text: (player|timer_quarters_variable)
+        text: (player|theme_mode_timer_variable)
         font_name: druillet
         color: red
         font_size: 150
@@ -138,7 +150,9 @@ slides:
               value: 100
               duration: .5s
       - type: text
-        text: 10,000,000
+        text: (player|pts_quarters_success)
+        number_grouping: true
+        min_digits: 1
         font_name: druillet
         color: 008ce5ff
         font_size: 10
@@ -154,7 +168,6 @@ slides:
       - type: video
         video: bubbles
         end_behavior: loop
-    expire: 2s
   slide_event_fail:
     widgets:
       - type: text
@@ -183,30 +196,117 @@ slides:
       - type: video
         video: bubbles
         end_behavior: loop
-    expire: 2s
+  slide_just_background:
+    - type: image
+      image: background 
+  slide_event_partial:        # if they hit quarters, but drained before round timer expires
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_quarters_partial)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
 
 slide_player:
   mode_quarters_started: slide_quarters_intro
-  kicker_mode_eject: slide_quarters_main
-  event_success: slide_event_success
-  event_fail: slide_event_fail
+  kicker_mode_eject:
+    slide_quarters_intro:
+      action: remove
+    slide_quarters_main:
+      action: play
+  event_success:
+    slide_quarters_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_success:
+      action: play
+  event_fail:
+    slide_quarters_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_fail:
+      action: play
+  event_partial:
+    slide_quarters_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_partial:
+      action: play
+  slide_event_result_complete:
+    slide_event_success:
+      action: remove
+    slide_event_fail:
+      action: remove
+    slide_event_partial:
+      action: remove
+    slide_just_background:
+      action: remove
+    
 
 queue_relay_player:
-  mode_quarters_stopping{current_player.has_quarters==1}:
+  mode_quarters_stopping{device.timers.round_timer_quarters.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
     post: event_success
     wait_for: slide_slide_event_success_removed
-  mode_quarters_stopping{current_player.has_quarters==0}:
+  mode_quarters_stopping{device.timers.round_timer_quarters.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
     post: event_fail
     wait_for: slide_slide_event_fail_removed
-  ball_ending{current_player.has_quarters==1}:
+  mode_quarters_stopping{device.timers.round_timer_quarters.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
+    post: event_partial
+    wait_for: slide_slide_event_partial_removed
+  mode_quarters_stopping{device.timers.round_timer_quarters.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed  
+  ball_ending:  # delay ball_ending until whicher slide is shown above finishes
     post: nothing
-    wait_for: slide_slide_event_success_removed
-  ball_ending{current_player.has_quarters==0}:
-    post: nothing
-    wait_for: slide_slide_event_fail_removed
+    wait_for: slide_event_done
+
+event_player:
+  slide_slide_event_success_removed: slide_event_done
+  slide_slide_event_fail_removed: slide_event_done
+  slide_slide_event_partial_removed: slide_event_done
 
 shows:
-  init_lights:
+  init_lights_quarters:
     - time: 0
       lights:
         gi_left1: white
@@ -274,7 +374,7 @@ shows:
         quarters:
           color: off
           fade: .5
-  flash_gi:
+  flash_gi_quarters:
     - duration: 1s
       lights:
         gi_back3:
@@ -373,7 +473,7 @@ shows:
         gi_back4:
           color: white
           fade: .25s
-  solid_on:
+  solid_on_quarters:
     - time: 0
       lights:
         slingleft_upper: white
@@ -388,7 +488,7 @@ shows:
 
 show_player:
   mode_quarters_started:
-    init_lights:
+    init_lights_quarters:
       loops: 0
   kicker_mode_eject:
     flash_quarters_insert:
@@ -397,11 +497,11 @@ show_player:
     flash_quarters_prop:
       speed: 4
   kicker_mode_eject.2:
-    flash_gi:
+    flash_gi_quarters:
       speed: 4
       loops: -1
   kicker_mode_eject.3:
-    solid_on:
+    solid_on_quarters:
       loops: 0
 
 # timed round
@@ -415,14 +515,27 @@ timers:
         event: kicker_mode_eject
 
 variable_player:
+  mode_quarters_started:    # init whether we completed this current bonus
+    has_current_thememode:
+      int: 0
+      action: set
   timer_round_timer_quarters_tick:
-    timer_quarters_variable:
+    theme_mode_timer_variable:
       int: device.timers.round_timer_quarters.ticks
       action: set
   shot_quarters_hit:
-    score: 250000
+    score: current_player.pts_quarters_themed
+    has_current_thememode:        # track that player has completed requirements for bonus
+      action: set
+      int: 1
+    bonus_numquarters: 1      # bonus tracker (quarters)
+  event_success:
+    score: current_player.pts_quarters_success
     has_quarters:
       action: set
       int: 1
-  event_success:
-    score: 10000000
+  event_partial:
+    score: current_player.pts_quarters_partial
+    has_quarters:
+      action: set
+      int: 1

@@ -31,10 +31,10 @@ shots:
     switch: s_bj
   shot_zj:
     switch: s_zj
-  shot_special:
-    switch: s_special
   shot_chance:
     switch: s_chance
+  shot_special:
+    switch: s_special
   shot_take_hit:
     switch: s_take_hit
   shot_chug_beer:
