@@ -2,33 +2,75 @@
 - duration: 1
   lights:
     arrow_tavern1: red
-    arrow_boot1: white
-    arrow_drinko1: blue
+    arrow_boot1: red
+    arrow_drinko1: red
     arrow_tavern2: off
     arrow_boot2: off
     arrow_drinko2: off
     arrow_tavern3: off
     arrow_boot3: off
     arrow_drinko3: off
+- duration: 1
+  lights:
+    arrow_tavern1: off
+    arrow_boot1: off
+    arrow_drinko1: off
+    arrow_tavern2: red
+    arrow_boot2: red
+    arrow_drinko2: red
+- duration: 1
+  lights:
+    arrow_tavern2: off
+    arrow_boot2: off
+    arrow_drinko2: off
+    arrow_tavern3: red
+    arrow_boot3: red
+    arrow_drinko3: red
+- duration: 1
+  lights:
+    arrow_tavern3: off
+    arrow_boot3: off
+    arrow_drinko3: off
+    arrow_tavern1: white
+    arrow_boot1: white
+    arrow_drinko1: white
 - duration: 1
   lights:
     arrow_tavern1: off
     arrow_boot1: off
     arrow_drinko1: off
     arrow_tavern2: white
-    arrow_boot2: blue
-    arrow_drinko2: red
+    arrow_boot2: white
+    arrow_drinko2: white
+- duration: 1
+  lights:
+    arrow_tavern2: off
+    arrow_boot2: off
+    arrow_drinko2: off
+    arrow_tavern3: white
+    arrow_boot3: white
+    arrow_drinko3: white
+- duration: 1
+  lights:
     arrow_tavern3: off
     arrow_boot3: off
     arrow_drinko3: off
+    arrow_tavern1: blue
+    arrow_boot1: blue
+    arrow_drinko1: blue
 - duration: 1
   lights:
     arrow_tavern1: off
     arrow_boot1: off
     arrow_drinko1: off
+    arrow_tavern2: blue
+    arrow_boot2: blue
+    arrow_drinko2: blue
+- duration: 1
+  lights:
     arrow_tavern2: off
     arrow_boot2: off
     arrow_drinko2: off
     arrow_tavern3: blue
-    arrow_boot3: red
-    arrow_drinko3: white
+    arrow_boot3: blue
+    arrow_drinko3: blue

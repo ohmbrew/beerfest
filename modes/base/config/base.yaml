@@ -384,7 +384,7 @@ slide_player:
     slide_bonus_strikeout_themed:
       priority: 1000
       expire: 2s
-      
+
   ball_save_ball_save_saving_ball: slide_ballsave
 
 # shows to light lights when drinko sensor has been hit
@@ -417,21 +417,21 @@ shows:
     - time: 0
       lights:
         l_popbumper_left: off
-    - time: '+.1s'
+    - time: '+.5s'
       lights:
         l_popbumper_left: on
   show_pop_right:
     - time: 0
       lights:
         l_popbumper_right: off
-    - time: '+.1s'
+    - time: '+.5s'
       lights:
         l_popbumper_right: on
   show_pop_lower:
     - time: 0
       lights:
         l_popbumper_lower: off
-    - time: '+.1s'
+    - time: '+.5s'
       lights:
         l_popbumper_lower: on
   show_slingquarters_hit:

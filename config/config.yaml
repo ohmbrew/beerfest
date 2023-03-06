@@ -58,6 +58,7 @@ modes:
   - lanechange
   - bonusv2
   - volumechug
+  - trojankeg
   
 widget_styles:
   attract_mode_high_score_display_label:

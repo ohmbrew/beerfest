@@ -44,8 +44,8 @@ random_event_player:
       - start_mode_strikeout
   launch_random_game_mode{(current_player.has_longpour==1 and current_player.has_quarters==1 and current_player.has_strikeout==1) and (current_player.has_volumechug==0 or current_player.has_trojankeg==0)}:
     events:
-      - start_mode_volumechug
-      #- start_mode_trojankeg
+      #- start_mode_volumechug
+      - start_mode_trojankeg
 
 show_player:
   mode_field_started:

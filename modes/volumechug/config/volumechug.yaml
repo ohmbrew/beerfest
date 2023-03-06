@@ -45,10 +45,10 @@ state_machines:
           show: flash_volumechug_wait_ramp_boot
           speed: 4
           loops: -1
-      volume_chug_completed:
+      volumechug_completed:
         label: Volume Chug Completed
         events_when_started: award_volumechug_bonus
-      volume_chug_inactive:
+      volumechug_inactive:
         label: Volume Chug Inactive
 
     transitions:
@@ -62,16 +62,17 @@ state_machines:
         target: wait_for_ramp_boot
         events: volumechug_pops_complete
       - source: wait_for_ramp_boot
-        target: volume_chug_completed
+        target: volumechug_completed
         events: shot_diverter_hit
-      - source: volume_chug_completed
+      - source: volumechug_completed
         target: wait_for_tavern
-        events: shot_diverter_hit
+        events: slide_slide_bonus_volumechug_themed_removed
+      # putting these in here to prevent player from getting bonus again if we see event_success, _fail, or _partial
       - source: wait_for_pops
-        target: volume_chug_inactive
+        target: volumechug_inactive
         events: event_success, event_fail, event_partial
       - source: wait_for_ramp_boot
-        target: volume_chug_inactive
+        target: volumechug_inactive
         events: event_success, event_fail, event_partial
 
 sound_player:

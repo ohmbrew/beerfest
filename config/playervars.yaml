@@ -223,6 +223,9 @@ player_vars:
     initial_value: 12500000
     value_type: int
 
+  pts_trojankeg_bonus:
+    initial_value: 10000000
+    value_type: int
   pts_trojankeg_success:
     initial_value: 30000000
     value_type: int

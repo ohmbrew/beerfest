@@ -1,0 +1,748 @@
+#config_version=5
+##! mode: trojankeg
+
+mode:
+  start_events: start_mode_trojankeg
+  stop_events: stop_mode_trojankeg, stop_missions, timer_round_timer_trojankeg_stopped   # end round when timer stops
+  events_when_started: mode_type_mission_started
+  events_when_stopped: mode_type_mission_stopped
+  priority: 300
+
+shot_groups:
+  xjs:
+    shots: shot_trojankeg_hj, shot_trojankeg_bj, shot_trojankeg_zj
+    reset_events: award_trojankeg_bonus
+    enable_events: mode_trojankeg_started
+    
+shot_profiles:
+  xjs_profile:
+    states:
+      - name:
+        show: flash_xjs_unhit
+      - name: hit
+        show: flash_xjs_hit
+
+shots:      
+  shot_trojankeg_hj:
+    switch: s_hj
+    profile: xjs_profile
+    show_tokens:
+      led: hj
+  shot_trojankeg_bj:
+    switch: s_bj
+    profile: xjs_profile
+    show_tokens:
+      led: bj
+  shot_trojankeg_zj:
+    switch: s_zj
+    profile: xjs_profile
+    show_tokens:
+      led: zj
+
+
+accruals:
+  trojankeg_xjs_accrual:
+    persist_state: false
+    events:
+      - shot_hj_hit
+      - shot_bj_hit
+      - shot_zj_hit
+    events_when_complete: trojankeg_xjs_complete
+    restart_events: award_trojankeg_bonus
+    reset_on_complete: true
+    disable_on_complete: false
+
+# config trojankeg successful completion state machine
+state_machines:
+  trojankeg_state_machine:
+    persist_state: False
+    states:
+      start:
+        label: Trojan Keg SM Starting
+      wait_for_xjs:
+        label: Waiting for HJ, BJ, and ZJ shots
+        #show_when_active:
+        #  show: flash_trojankeg_wait_xjs
+        #  speed: 4
+        #  loops: -1
+      wait_for_saucer_keg:
+        label: Waiting for Saucer Keg hit
+        show_when_active:
+          show: flash_trojankeg_wait_saucer
+          speed: 4
+          loops: -1
+      trojankeg_completed:
+        label: Trojan Keg Completed
+        events_when_started: award_trojankeg_bonus
+      trojankeg_inactive:
+        label: Trojan Keg Inactive
+
+    transitions:
+      - source: start
+        target: wait_for_xjs
+        events: mode_trojankeg_started
+      - source: wait_for_xjs
+        target: wait_for_saucer_keg
+        events: trojankeg_xjs_complete
+      - source: wait_for_saucer_keg
+        target: trojankeg_completed
+        events: shot_kicker_mode_hit
+      - source: trojankeg_completed
+        target: wait_for_xjs
+        events: slide_slide_bonus_trojankeg_themed_removed
+      # putting these in here to prevent player from getting bonus again if we see event_success, _fail, or _partial  
+      - source: wait_for_xjs
+        target: trojankeg_inactive
+        events: event_success, event_fail, event_partial
+      - source: wait_for_saucer_keg
+        target: trojankeg_inactive
+        events: event_success, event_fail, event_partial
+
+sound_player:
+  mode_trojankeg_started:
+    voice_trojankeg_intro:
+      action: play
+      loops: 0
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
+  start_background_music:
+    music_hardasarock:
+      action: play
+      loops: 0
+  mode_trojankeg_will_stop:
+    music_hardasarock:
+      action: stop
+  # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
+  shot_kicker_mode_hit{device.state_machines.trojankeg_state_machine.state != "wait_for_saucer_keg" and device.state_machines.trojankeg_state_machine.state != "trojankeg_completed"}:
+    voice_betterwhendrunk:
+      action: play
+      events_when_stopped: kicker_mode_eject
+  shot_kicker_rimrules_hit:
+    rimrules:
+      action: play
+      events_when_stopped: kicker_rimrules_eject
+  event_success:
+    sureasschnitzel:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_fail:
+    goddamnbrewery:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_partial:
+    prettyclose:
+      action: play
+      events_when_stopped: slide_event_result_complete
+
+slides:
+  slide_trojankeg_intro:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: TROJAN KEG
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 2s
+      - type: text
+        text: Hit HJ + BJ + ZJ
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 75
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 475
+      - type: text
+        text: Then Hit Trojan Keg Saucer
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 75
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 575
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_trojankeg_main:
+    widgets:
+      - type: text
+        text: TROJAN KEG
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: (player|theme_mode_timer_variable)
+        font_name: druillet
+        color: red
+        font_size: 150
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 250
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 125
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 450
+      - type: text
+        text: Ball (ball)
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 65
+        anchor_x: middle
+        anchor_y: bottom
+        x: middle
+        y: bottom + 35
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_event_success:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_trojankeg_success)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_event_fail:
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: FAIL
+        font_name: druillet
+        color: red
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 325
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: 1s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_just_background:
+    - type: image
+      image: background 
+  slide_event_partial:        # if they hit quarters, but drained before round timer expires
+    widgets:
+      - type: text
+        text: Beerfest Event
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_trojankeg_partial)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
+  slide_bonus_trojankeg_themed:
+    widgets:
+    - type: text
+      text: Trojan Keg
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: MEGA BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|pts_trojankeg_bonus)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+
+slide_player:
+  mode_trojankeg_started: slide_trojankeg_intro
+  start_background_music:
+    slide_trojankeg_intro:
+      action: remove
+    slide_trojankeg_main:
+      action: play
+  award_trojankeg_bonus:
+    slide_bonus_trojankeg_themed:
+      action: play
+      priority: 1000
+      expire: 2s
+  event_success:
+    slide_trojankeg_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_success:
+      action: play
+  event_fail:
+    slide_trojankeg_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_fail:
+      action: play
+  event_partial:
+    slide_trojankeg_main:
+      action: remove
+    slide_just_background:
+      action: play
+    slide_event_partial:
+      action: play
+  slide_event_result_complete:
+    slide_event_success:
+      action: remove
+    slide_event_fail:
+      action: remove
+    slide_event_partial:
+      action: remove
+    slide_just_background:
+      action: remove
+    
+
+queue_relay_player:
+  mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
+    post: event_success
+    wait_for: slide_slide_event_success_removed
+  mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed
+  mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
+    post: event_partial
+    wait_for: slide_slide_event_partial_removed
+  mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
+    post: event_fail
+    wait_for: slide_slide_event_fail_removed  
+  ball_ending:  # delay ball_ending until whicher slide is shown above finishes
+    post: nothing
+    wait_for: slide_event_done
+
+event_player:
+  slide_slide_event_success_removed: slide_event_done
+  slide_slide_event_fail_removed: slide_event_done
+  slide_slide_event_partial_removed: slide_event_done
+  slide_slide_bonus_trojankeg_themed_removed: kicker_mode_eject
+
+shows:
+  flash_xjs_unhit:
+    - duration: .5s
+      lights:
+        (led):
+          color: red
+          fade: .25s
+    - duration: .5s
+      lights:
+        (led):
+          color: off
+          fade: .25s
+  flash_xjs_hit:
+    - duration: -1
+      lights:
+        (led): green
+  init_lights_trojankeg:
+    - time: 0
+      lights:
+        gi_left1: white
+        gi_right1: white
+        gi_left2: white
+        gi_right2: white
+        gi_left3: white
+        gi_right3: white
+        gi_left4: white
+        gi_right4: white
+        gi_back1: white
+        gi_back2: white
+        gi_back3: white
+        gi_back4: white
+        gi_back5: white
+        gi_back6: white
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
+  flash_trojankeg_insert:
+    - duration: 1
+      lights:
+        mode_trojankeg:
+          color: yellow
+          fade: .5s
+    - duration: 1
+      lights:
+        mode_trojankeg: 
+          color: off
+          fade: .5s
+
+  flash_trojankeg_wait_saucer:
+    - duration: 1
+      lights:
+        arrow_mode1:
+          color: red
+          fade: .5
+        arrow_mode2:
+          color: off
+          fade: .5
+        arrow_mode3:
+          color: off
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode1:
+          color: off
+          fade: .5
+        arrow_mode2:
+          color: red
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode2:
+          color: off
+          fade: .5
+        arrow_mode3:
+          color: red
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode1:
+          color: white
+          fade: .5
+        arrow_mode2:
+          color: off
+          fade: .5
+        arrow_mode3:
+          color: off
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode1:
+          color: off
+          fade: .5
+        arrow_mode2:
+          color: white
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode2:
+          color: off
+          fade: .5
+        arrow_mode3:
+          color: white
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode1:
+          color: blue
+          fade: .5
+        arrow_mode2:
+          color: off
+          fade: .5
+        arrow_mode3:
+          color: off
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode1:
+          color: off
+          fade: .5
+        arrow_mode2:
+          color: blue
+          fade: .5
+    - duration: 1
+      lights:
+        arrow_mode2:
+          color: off
+          fade: .5
+        arrow_mode3:
+          color: blue
+          fade: .5
+
+  flash_gi_trojankeg:
+    - duration: 1s
+      lights:
+        gi_back3:
+          color: off
+          fade: .25s
+        gi_back4:
+          color: off
+          fade: .25s  
+        gi_left1:
+          color: white
+          fade: .25s
+        gi_right1:
+          color: white
+          fade: .25s      
+    - duration: 1s
+      lights:
+        gi_left1:
+          color: off
+          fade: .25s
+        gi_right1:
+          color: off
+          fade: .25s    
+        gi_left2:
+          color: white
+          fade: .25s
+        gi_right2:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s    
+        gi_left3:
+          color: white
+          fade: .25s
+        gi_right3:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s    
+        gi_left4:
+          color: white
+          fade: .25s
+        gi_right4:
+          color: white
+          fade: .25s    
+    - duration: 1s
+      lights:
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s    
+        gi_back1:
+          color: white
+          fade: .25s
+        gi_back6:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back1:
+          color: off
+          fade: .25s
+        gi_back6:
+          color: off
+          fade: .25s    
+        gi_back2:
+          color: white
+          fade: .25s
+        gi_back5:
+          color: white
+          fade: .25s
+    - duration: 1s
+      lights:
+        gi_back2:
+          color: off
+          fade: .25s
+        gi_back5:
+          color: off
+          fade: .25s    
+        gi_back3:
+          color: white
+          fade: .25s
+        gi_back4:
+          color: white
+          fade: .25s
+  solid_on_trojankeg:
+    - time: 0
+      lights:
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
+
+show_player:
+  mode_trojankeg_started:
+    init_lights_trojankeg:
+      loops: 0
+  start_background_music:
+    flash_trojankeg_insert:
+      speed: 2
+  start_background_music.1:
+    flash_gi_trojankeg:
+      speed: 4
+      loops: -1
+  start_background_music.2:
+    solid_on_trojankeg:
+      loops: 0
+
+# timed round
+timers:
+  round_timer_trojankeg:
+    start_value: 20
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: start_background_music
+
+variable_player:
+  mode_trojankeg_started:    # init whether we completed this current bonus
+    has_current_thememode:
+      int: 0
+      action: set
+  timer_round_timer_trojankeg_tick:
+    theme_mode_timer_variable:
+      int: device.timers.round_timer_trojankeg.ticks
+      action: set
+  award_trojankeg_bonus:
+    score: current_player.pts_trojankeg_bonus
+    has_current_thememode:        # track that player has completed requirements for bonus
+      action: set
+      int: 1
+  event_success:
+    score: current_player.pts_trojankeg_success
+    has_volumechug:
+      action: set
+      int: 1
+  event_partial:
+    score: current_player.pts_trojankeg_partial
+    has_volumechug:
+      action: set
+      int: 1
