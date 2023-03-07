@@ -1,16 +1,16 @@
 score:
 - !!python/tuple
-  - CCA
-  - 4000002996
+  - AAA
+  - 25791360
 - !!python/tuple
   - AAA
-  - 3999999996
+  - 25411490
+- !!python/tuple
+  - AAA
+  - 25391350
 - !!python/tuple
   - CCC
-  - 2000599998
+  - 25291290
 - !!python/tuple
-  - AGG
-  - 1000201999
-- !!python/tuple
-  - AAA
-  - 17795780
+  - DDD
+  - 25201370

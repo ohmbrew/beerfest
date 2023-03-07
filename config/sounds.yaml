@@ -178,6 +178,11 @@ sounds:
     #    attenuation: -50db
     #    release_point: .5 sec
     #    release: 1.5 sec
+  
+  voice_yodel:
+    file: yodel1.wav
+    track: voice
+    volume: .5
 
   # death clips  
   voice_drain_cantdrinkabeer:

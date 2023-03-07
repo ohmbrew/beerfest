@@ -24,10 +24,6 @@ slides:
             duration: .5s
     - type: image
       image: background
-  video_seeyoulater_slide:
-    widgets:
-    - type: video
-      video: seeyoulater
     
 slide_player:
   start_multiball:

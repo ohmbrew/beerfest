@@ -5,6 +5,7 @@ mode:
   priority: 500
   start_events: game_ending, start_high_score
   use_wait_queue: true
+  #game_mode: True
 
 high_score:
   _overwrite: true
@@ -28,6 +29,21 @@ high_score:
       - MPF: 800000
       - LRG: 700000
       - MRG: 600000
+
+event_player:
+  mode_high_score_started: got_highscore   # attempt to have a counter in config count up. That's the only "thing" left running at this point
+
+sound_player:
+  mode_high_score_started:
+    voice_yodel:
+      action: play
+      loops: -1
+  high_score_award_display:
+    voice_yodel:
+      action: stop
+    lookinggoodmf-clean:    # TODO make this dirty when I add the adult switch
+      action: play
+      loops: 0
 
 # optional: change the slides (you can omit all the following)
 slide_player:
@@ -135,3 +151,9 @@ slides:
       
     - type: image
       image: background-highscore-done
+
+# variable_player:
+#   mode_highscore_started:    # init whether we completed this current bonus
+#     has_a_highscore:
+#       int: 1
+#       action: set

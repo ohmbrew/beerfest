@@ -8,7 +8,10 @@ player_vars:
   has_current_thememode:      # tracks if/when player is successful completing themed mode
     initial_value: 0
     value_type: int
-  
+  has_a_highscore:
+    initial_value: 0
+    value_type: int
+
   # track all themed mode statuses
   # TODO: setting longpour, quarters, strikeout to 1 so I can test volumechug and trojankeg modes quicker
   has_longpour:
@@ -29,7 +32,7 @@ player_vars:
   has_dasboot:
     initial_value: 0
     value_type: int
-
+  
   # end-of-ball bonuses
   bonus_numquarters:
     initial_value: 0

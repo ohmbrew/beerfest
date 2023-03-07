@@ -59,7 +59,8 @@ modes:
   - bonusv2
   - volumechug
   - trojankeg
-  
+  - dasboot
+
 widget_styles:
   attract_mode_high_score_display_label:
     font_size: 60
@@ -98,6 +99,10 @@ slides:
     widgets:
     - type: video
       video: seeyoulater
+  video_champions_slide:
+    widgets:
+    - type: video
+      video: champions
 
 keyboard:
   s:
@@ -304,9 +309,12 @@ queue_relay_player:
   balldevice_bd_pongcup2_ball_eject_attempt:
     post: pongcup_2_waiting_for_releaseall_show_to_finish   # dummy event
     wait_for: pongcups_released   # this waits on pongcup_all_release_show above to finish
-  game_ending:
-    post: drain_gameover
+  game_ending{device.counters.has_highscore.completed == False}:
+    post: drain_gameover_nohighscore
     wait_for: gameover_video_complete
+  game_ending{device.counters.has_highscore.completed == True}:
+    post: drain_gameover_highscore
+    wait_for: gameover_video_complete 
 
 show_player:
   pongcup_all_release_show:
@@ -317,15 +325,30 @@ show_player:
       show_tokens:
         cup: 1
       loops: 0
-  drain_gameover:
-    show_gameover:
+  drain_gameover_nohighscore:
+    show_gameover_nohighscore:
       loops: 0
+  drain_gameover_highscore:
+    show_gameover_highscore:
+      loops: 0
+  game_will_end:
+    attract_RWB_sweep:
+      loops: -1
+      speed: 10
+  game_ended:
+    attract_RWB_sweep:
+      action: stop
     
 shows:
-  show_gameover:
+  show_gameover_nohighscore:
     - time: 0
       slides: video_seeyoulater_slide
     - time: '+4.5'
+      events: gameover_video_complete
+  show_gameover_highscore:
+    - time: 0
+      slides: video_champions_slide
+    - time: '+6.5'
       events: gameover_video_complete
 
 playfields:
@@ -333,6 +356,12 @@ playfields:
     tags: default
     default_source_device: bd_plunger_lane
 
-
+counters:
+  has_highscore:
+    count_events: got_highscore
+    count_complete_value: 1
+    starting_count: 0
+    reset_on_complete: False
+    reset_events: game_started
 
 virtual_platform_start_active_switches: s_trough_eject, s_trough1, s_trough2, s_trough3

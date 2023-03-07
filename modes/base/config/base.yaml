@@ -944,6 +944,11 @@ state_machines:
         events: shot_diverter_hit
 
 variable_player:
+  mode_base_started:    # this will only be set when highscore mode starts. So we can always just set to 0 when base
+    has_a_highscore:
+      int: 0
+      action: set
+
   shot_hj_hit:
     score: current_player.pts_hj
     bonus_numhjs: 1       # bonus tracker (HJs)
@@ -1032,5 +1037,4 @@ variable_player:
     score: current_player.pts_rnd + 90
 
     
-
 
