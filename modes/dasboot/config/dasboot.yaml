@@ -306,9 +306,9 @@ shows:
         l_popbumper_right: off
         l_popbumper_left: off
     - duration: -1
-    
+
   flash_dasboot_intro:
-    - duration: 5
+    - duration: 5s
       lights:
         gi_left1:
           color: 008ce5
@@ -568,7 +568,7 @@ shows:
           color: green
           fade: 5s
 
-    - duration: 5
+    - duration: 5s
       lights:
         gi_left1:
           color: off
