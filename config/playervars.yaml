@@ -24,10 +24,10 @@ player_vars:
     initial_value: 1
     value_type: int
   has_volumechug:
-    initial_value: 0
+    initial_value: 1
     value_type: int
   has_trojankeg:
-    initial_value: 0
+    initial_value: 1
     value_type: int
   has_dasboot:
     initial_value: 0
