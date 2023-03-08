@@ -308,7 +308,7 @@ shows:
     - duration: -1
 
   flash_dasboot_intro:
-    - duration: 5s
+    - duration: 7s
       lights:
         gi_left1:
           color: 008ce5
@@ -489,25 +489,25 @@ shows:
           fade: 5s
 
         beermug7:  
-          color: green
+          color: 008ce5
           fade: 5s
         beermug6:  
-          color: green
+          color: 008ce5
           fade: 5s
         beermug5:  
-          color: green
+          color: 008ce5
           fade: 5s
         beermug4:  
-          color: green
+          color: 008ce5
           fade: 5s
         beermug3:  
-          color: green
+          color: 008ce5
           fade: 5s
         beermug2:  
-          color: green
+          color: 008ce5
           fade: 5s
         beermug1:  
-          color: green
+          color: 008ce5
           fade: 5s
 
         ball_save:  
@@ -551,24 +551,24 @@ shows:
 
         mode_dasboot:  
           color: green
-          fade: 5s
+          fade: 7s
         mode_volumechug:  
-          color: green
+          color: 008ce5
           fade: 5s
         mode_longpour:  
-          color: green
+          color: 008ce5
           fade: 5s
         mode_quarters:  
-          color: green
+          color: 008ce5
           fade: 5s
         mode_strikeout:  
-          color: green
+          color: 008ce5
           fade: 5s
         mode_trojankeg:  
-          color: green
+          color: 008ce5
           fade: 5s
 
-    - duration: 5s
+    - duration: 7s
       lights:
         gi_left1:
           color: off
