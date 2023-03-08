@@ -10,6 +10,36 @@ mode:
   events_when_stopped: mode_type_mission_stopped
   priority: 400
 
+sound_player:
+  start_background_music:
+    music_hardasarock:
+      action: play
+      loops: 0
+  mode_dasboot_will_stop:
+    music_hardasarock:
+      action: stop
+  # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
+  shot_kicker_mode_hit:
+    voice_betterwhendrunk:
+      action: play
+      events_when_stopped: kicker_mode_eject
+  shot_kicker_rimrules_hit:
+    rimrules:
+      action: play
+      events_when_stopped: kicker_rimrules_eject
+  event_success:
+    sureasschnitzel:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_fail:
+    goddamnbrewery:
+      action: play
+      events_when_stopped: slide_event_result_complete
+  event_partial:
+    prettyclose:
+      action: play
+      events_when_stopped: slide_event_result_complete
+
 # timer used to animate das boot intro slide text. Counts up by 1 every 5 secs. Used to start text animations in slide_dasboot_intro
 timers:
   dasboot_intro_timer:
@@ -845,6 +875,10 @@ show_player:
   slide_slide_dasboot_intro_active:
     flash_dasboot_intro:
       loops: 2
+    init_lights_dasboot:
+      action: stop
   kicker_mode_eject:
+    flash_dasboot_intro:
+      action: stop
     flash_dasboot_insert:
       speed: 2

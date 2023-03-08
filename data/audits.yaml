@@ -38,17 +38,17 @@ shots:
   shot_drinko_o: 224
   shot_drinko_r: 237
   shot_hj: 78
-  shot_kicker_mode: 589
+  shot_kicker_mode: 592
   shot_kicker_rimrules: 122
   shot_laneleft_inner: 29
   shot_laneleft_outer: 8
   shot_laneright_inner: 10
   shot_laneright_outer: 4
-  shot_plunger_lane_exit: 560
+  shot_plunger_lane_exit: 563
   shot_pongcup1: 174
   shot_pongcup2: 52
   shot_popbumper_lower: 277
-  shot_popbumper_upper_left: 3577
+  shot_popbumper_upper_left: 3621
   shot_popbumper_upper_right: 496
   shot_quarters: 2023
   shot_ramp_boot: 10
@@ -81,7 +81,7 @@ switches:
   s_chug_beer: 223
   s_diverter: 182
   s_do_shot: 217
-  s_drain: 1177
+  s_drain: 1179
   s_drinko_d: 251
   s_drinko_i: 330
   s_drinko_k: 244
@@ -92,7 +92,7 @@ switches:
   s_flipper_right: 2381
   s_hj: 79
   s_horseshoe: 48
-  s_kicker_mode: 1183
+  s_kicker_mode: 1186
   s_kicker_rimrules: 611
   s_laneleft_inner: 50
   s_laneleft_outer: 18
@@ -104,8 +104,8 @@ switches:
   s_openswitch_2: 0
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 1994
-  s_plunger_lane_exit: 749
+  s_plunger_lane: 1997
+  s_plunger_lane_exit: 752
   s_pongcup1: 175
   s_pongcup2: 52
   s_pongtable_exit: 40
@@ -113,7 +113,7 @@ switches:
   s_pongtable_front_right: 87
   s_popbumper_lower: 815
   s_popbumper_upper: 141
-  s_popbumper_upper_left: 3637
+  s_popbumper_upper_left: 3681
   s_popbumper_upper_right: 560
   s_quarters: 2057
   s_ramp_upf_entry: 90
@@ -135,8 +135,8 @@ switches:
   s_trojankeg_right: 145
   s_trough1: 384
   s_trough2: 366
-  s_trough3: 258
-  s_trough_eject: 1283
+  s_trough3: 260
+  s_trough_eject: 1286
   s_upf_tgt_left: 21
   s_upf_tgt_right: 21
   s_zj: 53
