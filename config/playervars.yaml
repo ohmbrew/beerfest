@@ -167,6 +167,7 @@ player_vars:
     initial_value: 3000000
     value_type: int
 
+  # Longpour
   pts_ramp_boot_themed:
     initial_value: 500000
     value_type: int
@@ -183,6 +184,7 @@ player_vars:
     initial_value: 5000000
     value_type: int
 
+  # Quarters
   pts_quarters_themed:
     initial_value: 250000
     value_type: int
@@ -193,6 +195,7 @@ player_vars:
     initial_value: 5000000
     value_type: int
 
+  # Strikeout
   pts_take_hit_themed:
     initial_value: 150000
     value_type: int
@@ -215,7 +218,7 @@ player_vars:
     initial_value: 5000000
     value_type: int
 
-
+  # Volume Chug
   pts_volumechug_bonus:
     initial_value: 10000000
     value_type: int
@@ -226,6 +229,7 @@ player_vars:
     initial_value: 12500000
     value_type: int
 
+  # Trojan Keg
   pts_trojankeg_bonus:
     initial_value: 10000000
     value_type: int
@@ -234,4 +238,37 @@ player_vars:
     value_type: int
   pts_trojankeg_partial:
     initial_value: 15000000
+    value_type: int
+
+  # Das Boot
+  pts_dasboot_boot_bonus:
+    initial_value: 50000000
+    value_type: int
+  pts_dasboot_target_bonus:
+    initial_value: 10000000
+    value_type: int
+
+  dasboot_bonus_multiplier:
+    initial_value: 5
+    value_type: int
+    
+
+  # bonus calculations for text on slides
+  dasboot_bonustext_monkeychug:
+    initial_value: 0
+    value_type: int
+  dasboot_bonustext_drinkbonus1:
+    initial_value: 0
+    value_type: int
+  dasboot_bonustext_drinkbonus2:
+    initial_value: 0
+    value_type: int
+  dasboot_bonustext_hammered:
+    initial_value: 0
+    value_type: int
+  dasboot_bonustext_spellbeer:
+    initial_value: 0
+    value_type: int
+  dasboot_bonustext_strikeoutcomplete:
+    initial_value: 0
     value_type: int
