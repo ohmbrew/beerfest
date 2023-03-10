@@ -21,26 +21,6 @@ event_player:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
     - start_mode_global    
-  shot_drinko_d_hit:
-    sp_drinko_d
-  shot_drinko_r_hit:
-    sp_drinko_r
-  shot_drinko_i_hit:
-    sp_drinko_i
-  shot_drinko_n_hit:
-    sp_drinko_n
-  shot_drinko_k_hit:
-    sp_drinko_k
-  shot_drinko_o_hit:
-    sp_drinko_o
-  ball_ending{device.achievements.drinko_bonus3.state == "completed"}:
-    reset_drinko_bonus
-  mode_base_started{device.accruals.drinko_bonus_accrual.value[0]}: sp_drinko_d
-  mode_base_started{device.accruals.drinko_bonus_accrual.value[1]}: sp_drinko_r
-  mode_base_started{device.accruals.drinko_bonus_accrual.value[2]}: sp_drinko_i
-  mode_base_started{device.accruals.drinko_bonus_accrual.value[3]}: sp_drinko_n
-  mode_base_started{device.accruals.drinko_bonus_accrual.value[4]}: sp_drinko_k
-  mode_base_started{device.accruals.drinko_bonus_accrual.value[5]}: sp_drinko_o
 
 queue_relay_player:
   ball_ending:
@@ -48,120 +28,6 @@ queue_relay_player:
     wait_for: mode_bonusv2_stopped
 
 slides:
-  slide_bonus_drinko1:
-    widgets:
-    - type: text
-      text: D-R-I-N-K-O
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 35
-      color: 008ce5ff
-    - type: text
-      text: BONUS
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 210
-      color: 008ce5ff
-    - type: text
-      text: (player|pts_drinko_bonus1)
-      number_grouping: true
-      min_digits: 1
-      font_size: 10
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 425
-      color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 200
-            duration: .5s
-    - type: image
-      image: background
-  slide_bonus_drinko2:
-    widgets:
-    - type: text
-      text: D-R-I-N-K-O
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 35
-      color: 008ce5ff
-    - type: text
-      text: BONUS
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 210
-      color: 008ce5ff
-    - type: text
-      text: (player|pts_drinko_bonus2)
-      number_grouping: true
-      min_digits: 1
-      font_size: 10
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 425
-      color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 200
-            duration: .5s
-    - type: image
-      image: background
-  slide_bonus_drinko3:
-    widgets:
-    - type: text
-      text: D-R-I-N-K-O
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 35
-      color: 008ce5ff
-    - type: text
-      text: BONUS
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 210
-      color: 008ce5ff
-    - type: text
-      text: (player|pts_drinko_hammered)
-      number_grouping: true
-      min_digits: 1
-      font_size: 10
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 425
-      color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 200
-            duration: .5s
-    - type: image
-      image: background
   video_cantdrinkabeer_slide:
     widgets:
     - type: video
@@ -212,44 +78,7 @@ slides:
             duration: .25s
     - type: image
       image: background
-  slide_bonus_spellbeer:
-    widgets:
-    - type: text
-      text: Spell B-E-E-R
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 35
-      color: 008ce5ff
-    - type: text
-      text: BONUS
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 210
-      color: 008ce5ff
-    - type: text
-      text: (player|pts_spell_beer)
-      number_grouping: true
-      min_digits: 1
-      font_size: 10
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 425
-      color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 200
-            duration: .5s
-    - type: image
-      image: background
+  
   slide_bonus_strikeout:
     widgets:
     - type: text
@@ -272,44 +101,6 @@ slides:
       color: 008ce5ff
     - type: text
       text: (player|pts_strikeout_complete)
-      number_grouping: true
-      min_digits: 1
-      font_size: 10
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 425
-      color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 200
-            duration: .5s
-    - type: image
-      image: background
-  slide_bonus_strikeout_themed:
-    widgets:
-    - type: text
-      text: Strikeout
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 35
-      color: 008ce5ff
-    - type: text
-      text: MEGA BONUS
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 210
-      color: 008ce5ff
-    - type: text
-      text: (player|pts_strikeout_complete_themed)
       number_grouping: true
       min_digits: 1
       font_size: 10
@@ -356,32 +147,12 @@ slides:
     expire: 4.5s
 
 slide_player:
-  enable_drinko_bonus2{mode.dasboot.active == False}:
-    slide_bonus_drinko1:
-      priority: 1000
-      expire: 2s
-  enable_drinko_bonus3{mode.dasboot.active == False}:
-    slide_bonus_drinko2:
-      priority: 1000
-      expire: 2s
-  drinko_hammered{mode.dasboot.active == False}:
-    slide_bonus_drinko3:
-      priority: 1000
-      expire: 2s
   shot_drinko_i_hit{mode.dasboot.active == False}:
     slide_bonus_monkeychug:
       priority: 1000
       expire: 2s
-  spellbeer_group_hit_complete{mode.dasboot.active == False}:
-    slide_bonus_spellbeer:
-      priority: 1000
-      expire: 2s
   bank_strikeout_complete{mode.strikeout.active == False and mode.dasboot.active == False}:
     slide_bonus_strikeout:
-      priority: 1000
-      expire: 2s
-  bank_strikeout_complete{mode.strikeout.active == True}:
-    slide_bonus_strikeout_themed:
       priority: 1000
       expire: 2s
 
@@ -461,49 +232,6 @@ shows:
       lights:
         slingright_upper: on
         slingright_lower: on
-  show_light_d:
-    - time: 0
-      lights:
-        drinko_d: green
-    - duration: -1
-  show_light_r:
-    - time: 0
-      lights:
-        drinko_r: green
-    - duration: -1
-  show_light_i:
-    - time: 0
-      lights:
-        drinko_i: green
-    - duration: -1
-  show_light_n:
-    - time: 0
-      lights:
-        drinko_n: green
-    - duration: -1
-  show_light_k:
-    - time: 0
-      lights:
-        drinko_k: green
-    - duration: -1
-  show_light_o:
-    - time: 0
-      lights:
-        drinko_o: green
-    - duration: -1
-  show_light_drinko_bonus:
-    - time: 0
-      lights:
-        (drinko_bonus): on
-      events: (enable_drinkoX)
-    - duration: -1
-  show_light_drinko_hammered:
-    - time: 0
-      lights:
-        drinko_bonus3: on
-    - time: '+1'
-      lights:
-        drinko_bonus3: off
   show_longpour_insert:
     - time: 0
       lights:
@@ -613,9 +341,6 @@ shows:
         c_shaker: disable
 
 sound_player:
-  award_drinko_bonus:
-    voice_sink1left:
-      action: play
   shot_diverter_hit:
     2burps:
       action: play
@@ -625,37 +350,37 @@ sound_player:
   spinner_tavern_spinner_active:
     voice_tavern:
       action: play
-  shot_take_hit_hit:
+  shot_take_hit_hit{mode.dasboot.active == False}:
     takeahit:
       action: play
-  shot_chug_beer_hit:
+  shot_chug_beer_hit{mode.dasboot.active == False}:
     chugyourbeer:
       action: play
-  shot_do_shot_hit:
+  shot_do_shot_hit{mode.dasboot.active == False}:
     doashot:
       action: play
-  shot_hj_hit:
+  shot_hj_hit{mode.dasboot.active == False}:
     hj12:
       action: play
-  shot_bj_hit:
+  shot_bj_hit{mode.dasboot.active == False}:
     bj10:
       action: play
-  shot_zj_hit:
+  shot_zj_hit{mode.dasboot.active == False}:
     zj15:
       action: play    
-  shot_chance_hit:
+  shot_chance_hit{mode.dasboot.active == False}:
     chance:
       action: play
-  shot_special_hit:
+  shot_special_hit{mode.dasboot.active == False}:
     unddrinken:
       action: play
-  shot_tgt_ramp_boot_hit:
+  shot_tgt_ramp_boot_hit{mode.dasboot.active == False}:
     voice_cheers:
       action: play
-  shot_tgt_rimrules_hit:
+  shot_tgt_rimrules_hit{mode.dasboot.active == False}:
     voice_eyeofjew:
       action: play
-  shot_quarters_hit:
+  shot_quarters_hit{mode.dasboot.active == False}:
     quarters:
       action: play
   shot_pongcup1_hit:
@@ -673,7 +398,7 @@ sound_player:
   shot_drinko_i_hit:
     voice_ohyea:
       action: play
-  bank_strikeout_complete{mode.strikeout.active == False}:
+  bank_strikeout_complete:
     strikeoutcomplete:
       action: play
 
@@ -784,25 +509,6 @@ show_player:
     launch_show:
       speed: 8
       loops: 0
-  sp_drinko_d:
-    show_light_d
-  sp_drinko_r:
-    show_light_r
-  sp_drinko_i:
-    show_light_i
-  sp_drinko_n:
-    show_light_n
-  sp_drinko_k:
-    show_light_k
-  sp_drinko_o:
-    show_light_o
-  award_drinko_bonus:
-    bonus_drinko_show:
-      speed: 4
-      loops: 0
-  drinko_hammered:
-    show_light_drinko_hammered:
-      speed: 4
   shot_tavern_hit:
     show_tavern_hit:
       speed: 4
@@ -858,55 +564,6 @@ ball_saves:
     auto_launch: false
     balls_to_save: 1
     debug: true
-
-accruals:
-  drinko_bonus_accrual:
-    persist_state: true
-    events:
-      - shot_drinko_d_hit
-      - shot_drinko_r_hit
-      - shot_drinko_i_hit
-      - shot_drinko_n_hit
-      - shot_drinko_k_hit
-      - shot_drinko_o_hit
-    events_when_complete: award_drinko_bonus
-    reset_on_complete: true
-    disable_on_complete: false
-    
-achievements:
-  drinko_bonus1:
-    show_tokens:
-      drinko_bonus: drinko_bonus1
-      enable_drinkoX: enable_drinko_bonus2
-    show_when_completed: show_light_drinko_bonus        
-    enable_events: initialize_drinko_bonus
-    complete_events: award_drinko_bonus
-    reset_events: reset_drinko_bonus
-  drinko_bonus2:
-    show_tokens:
-      drinko_bonus: drinko_bonus2
-      enable_drinkoX: enable_drinko_bonus3
-    show_when_completed: show_light_drinko_bonus         
-    enable_events: enable_drinko_bonus2
-    complete_events: award_drinko_bonus
-    reset_events: reset_drinko_bonus
-  drinko_bonus3:
-    show_when_completed: show_light_drinko_hammered         
-    enable_events: enable_drinko_bonus3
-    complete_events: award_drinko_bonus
-    reset_events: reset_drinko_bonus
-
-achievement_groups:
-  drinko_bonus:
-    achievements:
-      - drinko_bonus1
-      - drinko_bonus2
-      - drinko_bonus3
-    auto_select: yes
-    start_selected_events: award_drinko_bonus
-    enable_while_no_achievement_started: false
-    enable_events: initialize_drinko_bonus
-    events_when_all_completed: drinko_hammered
 
 # using a state machine to track diverter servo state. The shot_diverter_hit event (triggered by RampSplit opto) transitions the
 # state machine to the other state. On mode_attract_started, the diverter is pointed right, which will make the ball go down the
@@ -995,24 +652,6 @@ variable_player:
     score: current_player.pts_tgt_ramp_boot
   shot_tgt_rimrules_hit{mode.dasboot.active == False}:
     score: current_player.pts_tgt_rimrules
-  enable_drinko_bonus2{mode.dasboot.active == False}:
-    score: current_player.pts_drinko_bonus1         # means we got bonus1
-  enable_drinko_bonus3{mode.dasboot.active == False}:
-    score: current_player.pts_drinko_bonus2            # means we got bonus2
-  drinko_hammered{mode.dasboot.active == False}:
-    score: current_player.pts_drinko_hammered
-  shot_drinko_d_hit{mode.dasboot.active == False}:
-    score: current_player.pts_d
-  shot_drinko_r_hit{mode.dasboot.active == False}:
-    score: current_player.pts_r
-  shot_drinko_i_hit{mode.dasboot.active == False}:          # horseshoe - hard shot!
-    score: current_player.pts_i
-  shot_drinko_n_hit{mode.dasboot.active == False}:
-    score: current_player.pts_n
-  shot_drinko_k_hit{mode.dasboot.active == False}:
-    score: current_player.pts_k 
-  shot_drinko_o_hit{mode.dasboot.active == False}:
-    score: current_player.pts_o
 
   # the random_pts_X are used for slings and pops to adjust the 10's place for end-of-game match
   random_pts_00:

@@ -79,4 +79,4 @@
     drinko_n: off
     drinko_k: off
     drinko_o: off
-- duration: -1
+  events: award_drinko_bonus_show_complete

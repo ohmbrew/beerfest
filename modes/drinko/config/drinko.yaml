@@ -1,0 +1,362 @@
+#config_version=5
+##! mode: drinko
+
+mode:
+  start_events: mode_base_started
+  stop_events: game_ended
+
+sound_player:
+  award_drinko_bonus:
+    # TODO make this only play if our last shot wasn't the monkey chug
+    voice_sink1left:
+      action: play
+    # TODO: add e=mc hammered clip on hammered
+
+accruals:
+  drinko_bonus_accrual:
+    persist_state: true
+    events:
+      - shot_drinko_d_hit
+      - shot_drinko_r_hit
+      - shot_drinko_i_hit
+      - shot_drinko_n_hit
+      - shot_drinko_k_hit
+      - shot_drinko_o_hit
+    events_when_complete: award_drinko_bonus
+    reset_on_complete: true
+    disable_on_complete: false
+
+state_machines:
+  drinko:
+    persist_state: true
+    states:
+      start:
+        label: Drinko Started
+      wait_for_drinko1:
+        label: Waiting for Drinko Accrual 1
+      wait_for_drinko2:
+        label: Waiting for Drinko Accrual 2
+        events_when_started: drinko_bonus1_award
+      wait_for_hammered:
+        label: Waiting for Drinko Hammered
+        events_when_started: drinko_bonus2_award
+      hammered_loop:
+        label: Waiting for another Drinko Hammered
+        events_when_started: drinko_hammered_award
+
+    transitions:
+      # for reference - conditional event DEVICE. not DEVICES.
+      #  events: mode_multiball_started{device.ball_devices.bd_lock.balls==2}
+      - source: start
+        target: wait_for_drinko1      # init
+        events: mode_drinko_started
+
+      - source: wait_for_drinko1      
+        target: wait_for_drinko2
+        events: award_drinko_bonus    # got drinko_bonus1
+
+      - source: wait_for_drinko2      
+        target: wait_for_hammered
+        events: award_drinko_bonus    # got drinko_bonus2
+
+      - source: wait_for_hammered
+        target: hammered_loop
+        events: award_drinko_bonus    # got drinko_hammered
+
+      - source: hammered_loop         # keep awarding for hammered
+        target: hammered_loop
+        events: award_drinko_bonus    # got drinko_hammered
+
+
+#event_player:
+  #ball_ending{device.achievements.drinko_bonus3.state == "completed"}:   # commented this out - want drinko bonus to persist
+  #  reset_drinko_bonus
+  
+
+slides:
+  slide_bonus_drinko1:
+    widgets:
+    - type: text
+      text: D-R-I-N-K-O
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|pts_drinko_bonus1)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+  slide_bonus_drinko2:
+    widgets:
+    - type: text
+      text: D-R-I-N-K-O
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|pts_drinko_bonus2)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+  slide_bonus_hammered:
+    widgets:
+    - type: text
+      text: D-R-I-N-K-O
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: HAMMERED BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|pts_drinko_hammered)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+
+slide_player:
+  drinko_bonus1_award{mode.dasboot.active == False}:
+    slide_bonus_drinko1:
+      priority: 1000
+      expire: 2s
+  drinko_bonus2_award{mode.dasboot.active == False}:
+    slide_bonus_drinko2:
+      priority: 1000
+      expire: 2s
+  drinko_hammered_award{mode.dasboot.active == False}:
+    slide_bonus_hammered:
+      priority: 1000
+      expire: 2s
+
+shows:
+  show_light_d:
+    - time: 0
+      lights:
+        drinko_d: green
+    - duration: -1
+  show_light_r:
+    - time: 0
+      lights:
+        drinko_r: green
+    - duration: -1
+  show_light_i:
+    - time: 0
+      lights:
+        drinko_i: green
+    - duration: -1
+  show_light_n:
+    - time: 0
+      lights:
+        drinko_n: green
+    - duration: -1
+  show_light_k:
+    - time: 0
+      lights:
+        drinko_k: green
+    - duration: -1
+  show_light_o:
+    - time: 0
+      lights:
+        drinko_o: green
+    - duration: -1
+  show_light_drinko_bonus1:
+    - time: 0
+      lights:
+        drinko_bonus1: on
+    - duration: -1
+  show_light_drinko_bonus2:
+    - time: 0
+      lights:
+        drinko_bonus2: on
+    - duration: -1 
+  show_light_drinko_hammered:
+    - duration: 1s
+      lights:
+        drinko_bonus3: on
+    - duration: 1s
+      lights:
+        drinko_bonus3: off
+
+show_player:
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[0]}: show_light_d
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[0] == 0}:
+    show_light_d:
+      action: stop
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[1]}: show_light_r
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[1] == 0}:
+    show_light_r:
+      action: stop
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[2]}: show_light_i
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[2] == 0}:
+    show_light_i:
+      action: stop
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[3]}: show_light_n
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[3] == 0}:
+    show_light_n:
+      action: stop
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[4]}: show_light_k
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[4] == 0}:
+    show_light_k:
+      action: stop
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[5]}: show_light_o
+  mode_drinko_started{device.accruals.drinko_bonus_accrual.value[5] == 0}:
+    show_light_o:
+      action: stop
+
+  mode_drinko_started{device.state_machines.drinko.state == "wait_for_drinko1"}:
+    show_light_drinko_bonus1:
+      action: stop
+    show_light_drinko_bonus2:
+      action: stop
+    show_light_drinko_hammered:
+      action: stop  
+  mode_drinko_started{device.state_machines.drinko.state == "wait_for_drinko2"}: show_light_drinko_bonus1
+  mode_drinko_started{device.state_machines.drinko.state == "wait_for_hammered"}:
+    show_light_drinko_bonus1:
+      action: play
+    show_light_drinko_bonus2:
+      action: play  
+  mode_drinko_started{device.state_machines.drinko.state == "hammered_loop"}:
+    show_light_drinko_bonus1:
+      action: play
+    show_light_drinko_bonus2:
+      action: play 
+    show_light_drinko_hammered:
+      speed: 4
+
+  show_light_drinko_bonus1:
+    action: stop
+  show_light_drinko_bonus2:
+    action: stop
+  show_light_drinko_hammered:
+    action: stop
+  shot_drinko_d_hit:
+    show_light_d
+  shot_drinko_r_hit:
+    show_light_r
+  shot_drinko_i_hit:
+    show_light_i
+  shot_drinko_n_hit:
+    show_light_n
+  shot_drinko_k_hit:
+    show_light_k
+  shot_drinko_o_hit:
+    show_light_o
+  award_drinko_bonus:   # located in /drinko/shows folder
+    bonus_drinko_show:
+      speed: 4
+      loops: 0
+  drinko_bonus1_award: show_light_drinko_bonus1
+  drinko_bonus2_award: show_light_drinko_bonus2
+  award_drinko_bonus_show_complete:   # reset drinko lights
+    show_light_d:
+      action: stop
+    show_light_r:
+      action: stop
+    show_light_i:
+      action: stop
+    show_light_n:
+      action: stop
+    show_light_k:
+      action: stop
+    show_light_o:
+      action: stop
+  drinko_hammered_award:
+    show_light_drinko_hammered:
+      speed: 4
+
+variable_player:
+  drinko_bonus1_award{mode.dasboot.active == False}:
+    score: current_player.pts_drinko_bonus1         # means we got bonus1
+  drinko_bonus2_award{mode.dasboot.active == False}:
+    score: current_player.pts_drinko_bonus2            # means we got bonus2
+  drinko_hammered_award{mode.dasboot.active == False}:
+    score: current_player.pts_drinko_hammered
+  shot_drinko_d_hit{mode.dasboot.active == False}:
+    score: current_player.pts_d
+  shot_drinko_r_hit{mode.dasboot.active == False}:
+    score: current_player.pts_r
+  shot_drinko_i_hit{mode.dasboot.active == False}:          # horseshoe - hard shot!
+    score: current_player.pts_i
+  shot_drinko_n_hit{mode.dasboot.active == False}:
+    score: current_player.pts_n
+  shot_drinko_k_hit{mode.dasboot.active == False}:
+    score: current_player.pts_k 
+  shot_drinko_o_hit{mode.dasboot.active == False}:
+    score: current_player.pts_o
+

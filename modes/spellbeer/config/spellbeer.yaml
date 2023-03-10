@@ -5,7 +5,51 @@ mode:
   start_events: start_mode_spellbeer
   stop_events: stop_mode_spellbeer, ball_will_end
 
+slides:
+  slide_bonus_spellbeer:
+    widgets:
+    - type: text
+      text: Spell B-E-E-R
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|pts_spell_beer)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
 
+slide_player:
+  spellbeer_group_hit_complete{mode.dasboot.active == False}:
+    slide_bonus_spellbeer:
+      priority: 1000
+      expire: 2s
 
 shot_groups:
   spellbeer_group:
@@ -27,7 +71,9 @@ sound_player:
   shot_laneright_outer_hit:
     canopening:
       action: play
-
+  # TODO: add sound for this
+  #spellbeer_group_hit_complete:
+  
 variable_player:
   spellbeer_group_hit_complete{mode.dasboot.active == False}:
     score: current_player.pts_spell_beer

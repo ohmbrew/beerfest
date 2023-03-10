@@ -15,13 +15,13 @@ player_vars:
   # track all themed mode statuses
   # TODO: setting longpour, quarters, strikeout to 1 so I can test volumechug and trojankeg modes quicker
   has_longpour:
-    initial_value: 1
+    initial_value: 0
     value_type: int
   has_quarters:
-    initial_value: 1
+    initial_value: 0
     value_type: int
   has_strikeout:
-    initial_value: 1
+    initial_value: 0
     value_type: int
   has_volumechug:
     initial_value: 1
@@ -247,7 +247,9 @@ player_vars:
   pts_dasboot_target_bonus:
     initial_value: 10000000
     value_type: int
-
+  pts_dasboot_success:
+    initial_value: 50000000
+    value_type: int
   dasboot_bonus_multiplier:
     initial_value: 5
     value_type: int

@@ -27,30 +27,87 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  event_success:
+  event_dasboot_success:
     sureasschnitzel:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_fail:
-    goddamnbrewery:
+  
+  # das boot specific audio
+  
+  shot_hj_hit:
+    voice_beerfest:
       action: play
-      events_when_stopped: slide_event_result_complete
-  event_partial:
-    prettyclose:
+  shot_bj_hit:
+    voice_beerfest:
       action: play
-      events_when_stopped: slide_event_result_complete
+  shot_zj_hit:
+    voice_beerfest:
+      action: play
+  shot_chance_hit:
+    voice_beerfest:
+      action: play
+  shot_special_hit:
+    voice_beerfest:
+      action: play
+  shot_take_hit_hit:
+    voice_beerfest:
+      action: play
+  shot_chug_beer_hit:
+    voice_beerfest:
+      action: play
+  shot_do_shot_hit:
+    voice_beerfest:
+      action: play
+  shot_quarters_hit:
+    voice_beerfest:
+      action: play
+  shot_tgt_ramp_boot_hit:
+    voice_beerfest:
+      action: play
+  shot_tgt_rimrules_hit:
+    voice_beerfest:
+      action: play
+  shot_drinko_d_hit:
+    voice_beerfest:
+      action: play
+  shot_drinko_r_hit:
+    voice_beerfest:
+      action: play
+  #shot_drinko_i_hit:   # let base mode take care of this
+  #  voice_beerfest:
+  #    action: play
+  shot_drinko_n_hit:
+    voice_beerfest:
+      action: play
+  shot_drinko_k_hit:
+    voice_beerfest:
+      action: play
+  shot_drinko_o_hit:
+    voice_beerfest:
+      action: play
+
+  # let base mode take care of these 
+  #shot_tavern_hit:          
+  #shot_ramp_drinko_hit:
+  #shot_diverter_hit:  # use burp sound for that still
+  #enable_drinko_bonus2:
+  #enable_drinko_bonus3:
+  #drinko_hammered:
+  #bank_strikeout_complete:   # let base made take care of this
+  #spellbeer_group_hit_complete:
+    
 
 # timer used to animate das boot intro slide text. Counts up by 1 every 5 secs. Used to start text animations in slide_dasboot_intro
 timers:
   dasboot_intro_timer:
     start_value: 0
-    end_value: 5
+    end_value: 4
     direction: up
     tick_interval: 7s
     control_events:
       - action: start
         event: slide_slide_dasboot_intro_active
-
+  
 slides:
   slide_dasboot_background:
     - type: image
@@ -143,7 +200,7 @@ slides:
               timing: after_previous
       - type: video
         video: dasboot-intro
-    expire: 30.1s
+
   slide_dasboot_main:
     widgets:
       - type: text
@@ -178,7 +235,50 @@ slides:
       - type: video
         video: bubbles
         end_behavior: loop
-
+  slide_dasboot_success:
+    widgets:
+      - type: text
+        text: DAS BOOT
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 100
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 35
+      - type: text
+        text: SUCCESS
+        font_name: druillet
+        color: green
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 250
+        animations:
+          show_slide:
+            - property: font_size
+              value: 100
+              duration: .5s
+      - type: text
+        text: (player|pts_dasboot_success)
+        number_grouping: true
+        min_digits: 1
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 10
+        anchor_x: middle
+        anchor_y: middle
+        x: middle
+        y: top - 450
+        animations:
+          show_slide:
+            - property: font_size
+              value: 225
+              duration: .5s
+      - type: video
+        video: bubbles
+        end_behavior: loop
   # Bonus slides
   dasboot_slide_bonus_boot:
     widgets:
@@ -449,43 +549,23 @@ slides:
 
 slide_player:
   mode_dasboot_started:
-    slide_dasboot_background:
-      action: play
-      priority: 600
     slide_dasboot_intro:
       action: play
+      expire: 30.1s
       priority: 700
-  start_background_music:
+  timer_dasboot_intro_timer_complete:   # there was like a 1 sec lag from loading main slide from intro. Used timer completion instead, which ends slightly sooner than video in intro slide
     slide_dasboot_main:
       priority: 700
       action: play
-  event_success:
+  event_dasboot_success:
     slide_dasboot_main:
       action: remove
     slide_just_background:
       action: play
-    slide_event_success:
-      action: play
-  event_fail:
-    slide_dasboot_main:
-      action: remove
-    slide_just_background:
-      action: play
-    slide_event_fail:
-      action: play
-  event_partial:
-    slide_dasboot_main:
-      action: remove
-    slide_just_background:
-      action: play
-    slide_event_partial:
+    slide_dasboot_success:
       action: play
   slide_event_result_complete:
-    slide_event_success:
-      action: remove
-    slide_event_fail:
-      action: remove
-    slide_event_partial:
+    slide_dasboot_success:
       action: remove
     slide_just_background:
       action: remove
@@ -495,20 +575,24 @@ slide_player:
     dasboot_slide_bonus_boot:
       priority: 1000
       expire: 2s
-  enable_drinko_bonus2:
+  drinko_bonus1_award:
     dasboot_slide_bonus_drinko1:
       priority: 1000
       expire: 2s
-  enable_drinko_bonus3:
+  drinko_bonus2_award:
     dasboot_slide_bonus_drinko2:
       priority: 1000
       expire: 2s
-  drinko_hammered:
+  drinko_hammered_award:
     dasboot_slide_bonus_hammered:
       priority: 1000
       expire: 2s
   shot_drinko_i_hit:
     dasboot_slide_bonus_monkeychug:
+      priority: 1000
+      expire: 2s
+  bank_strikeout_complete:
+    dasboot_slide_bonus_strikeout:
       priority: 1000
       expire: 2s
   spellbeer_group_hit_complete:
@@ -517,21 +601,18 @@ slide_player:
       expire: 2s 
 
 queue_relay_player:
-  mode_dasboot_stopping{current_player.has_current_thememode==1}:  # assume ball drained, player completed bonus
-    post: event_success
-    wait_for: slide_slide_event_success_removed
-  mode_dasboot_stopping{current_player.has_current_thememode==0}:  # assume ball drained, player did not complete bonus
-    post: event_fail
-    wait_for: slide_slide_event_fail_removed
+  mode_dasboot_stopping:  # not a timed round, the ball drained
+    post: event_dasboot_success
+    wait_for: slide_slide_dasboot_success_removed
   ball_ending:  # delay ball_ending until whichever slide is shown above finishes
     post: nothing
     wait_for: slide_event_done
 
 event_player:
-  slide_slide_dasboot_intro_removed: kicker_mode_eject, kicker_rimrules_eject, start_background_music
-  slide_slide_event_success_removed: slide_event_done
-  slide_slide_event_fail_removed: slide_event_done
-  slide_slide_event_partial_removed: slide_event_done
+  timer_dasboot_intro_timer_complete: start_background_music
+  slide_slide_dasboot_main_active: kicker_mode_eject, kicker_rimrules_eject
+  slide_slide_dasboot_success_removed: slide_event_done
+  # used for slide animations
   timer_dasboot_intro_timer_tick{device.timers.dasboot_intro_timer.ticks == 1}: dasboot_intro_slide_text1
   timer_dasboot_intro_timer_tick{device.timers.dasboot_intro_timer.ticks == 2}: dasboot_intro_slide_text2
   timer_dasboot_intro_timer_tick{device.timers.dasboot_intro_timer.ticks == 3}: dasboot_intro_slide_text3
@@ -641,7 +722,7 @@ shows:
     - duration: -1
 
   flash_dasboot_intro:
-    - duration: 3.5s
+    - duration: 3.75s
       lights:
         gi_left1:
           color: 008ce5
@@ -901,7 +982,7 @@ shows:
           color: 008ce5
           fade: 3s
 
-    - duration: 3.5
+    - duration: 3.75s
       lights:
         gi_left1:
           color: off
@@ -1240,17 +1321,17 @@ variable_player:
     score: current_player.pts_dasboot_target_bonus
   shot_tgt_rimrules_hit:
     score: current_player.pts_dasboot_target_bonus
-  enable_drinko_bonus2:
+  drinko_bonus1_award:
     score: current_player.pts_drinko_bonus1 * current_player.dasboot_bonus_multiplier        # means we got bonus1
     dasboot_bonustext_drinkbonus1:   # set text string for our bonus value
       int: current_player.pts_drinko_bonus1 * current_player.dasboot_bonus_multiplier
       action: set
-  enable_drinko_bonus3:
+  drinko_bonus2_award:
     score: current_player.pts_drinko_bonus2 * current_player.dasboot_bonus_multiplier           # means we got bonus2
     dasboot_bonustext_drinkbonus2:   # set text string for our bonus value
       int: current_player.pts_drinko_bonus2 * current_player.dasboot_bonus_multiplier
       action: set
-  drinko_hammered:
+  drinko_hammered_award:
     score: current_player.pts_drinko_hammered * current_player.dasboot_bonus_multiplier
     dasboot_bonustext_hammered:   # set text string for our bonus value
       int: current_player.pts_drinko_hammered * current_player.dasboot_bonus_multiplier
@@ -1259,7 +1340,6 @@ variable_player:
     score: current_player.pts_dasboot_target_bonus
   shot_drinko_r_hit:
     score: current_player.pts_dasboot_target_bonus
-  # TODO: not being blocked from giving points in base
   shot_drinko_i_hit:          # horseshoe - hard shot!
     score: current_player.pts_dasboot_target_bonus * current_player.dasboot_bonus_multiplier
     dasboot_bonustext_monkeychug:   # set text string for our bonus value

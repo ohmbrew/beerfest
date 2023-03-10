@@ -151,9 +151,3 @@ slides:
       
     - type: image
       image: background-highscore-done
-
-# variable_player:
-#   mode_highscore_started:    # init whether we completed this current bonus
-#     has_a_highscore:
-#       int: 1
-#       action: set
