@@ -528,9 +528,9 @@ show_player:
   shot_diverter_hit:
     show_shaker_1s:
       loops: 0
-  shot_ramp_drinko_hit:
-    show_shaker_1s:
-      loops: 0
+  #shot_ramp_drinko_hit:
+  #  show_shaker_1s:
+  #    loops: 0
 
   mode_longpour_stopped{current_player.has_longpour==1}: show_longpour_insert
   mode_base_started{current_player.has_longpour==1}: show_longpour_insert
