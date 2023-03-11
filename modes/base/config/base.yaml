@@ -20,7 +20,8 @@ event_player:
   mode_type_wizard_started:
     - stop_mode_global
   mode_type_wizard_stopped{not mode["base"].stopping}:
-    - start_mode_global    
+    - start_mode_global
+  timer_monkeychug_slide_timer_complete: show_queued_drinko_bonus   # tell Drinko Bonus mode that we're done showing Monkeychug slide, if it has queued Drinko Bonus slide
 
 queue_relay_player:
   ball_ending:
@@ -149,7 +150,7 @@ slides:
 slide_player:
   shot_drinko_i_hit{mode.dasboot.active == False}:
     slide_bonus_monkeychug:
-      priority: 1000
+      priority: 1500
       expire: 2s
   bank_strikeout_complete{mode.strikeout.active == False and mode.dasboot.active == False}:
     slide_bonus_strikeout:
@@ -344,9 +345,17 @@ sound_player:
   shot_diverter_hit:
     2burps:
       action: play
-  shot_ramp_drinko_hit:
-    2burps:
+  shot_ramp_drinko_hit{device.switches.s_adult.state == 0}:
+    #2burps:        # TODO: commenting out to test adult switch functionality
+      #action: play
+    voice_handsomemf_clean:    # adult mode OFF
       action: play
+      loops: 0
+  shot_ramp_drinko_hit{device.switches.s_adult.state == 1}:
+    voice_handsomemf_adult:    # adult mode ON
+      action: play
+      loops: 0
+
   spinner_tavern_spinner_active:
     voice_tavern:
       action: play
@@ -398,12 +407,13 @@ sound_player:
   shot_drinko_i_hit:
     voice_ohyea:
       action: play
+    
   bank_strikeout_complete:
     strikeoutcomplete:
       action: play
 
 random_event_player:
-  shot_slingleft_hit:
+  shot_slingleft_hit:    
     events:
       - random_pts_00
       - random_pts_10
@@ -427,7 +437,7 @@ random_event_player:
       - random_pts_70
       - random_pts_80
       - random_pts_90
-  shot_popbumper_lower_hit:
+  shot_popbumper_lower_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
     events:
       - random_pts_00
       - random_pts_10
@@ -439,7 +449,7 @@ random_event_player:
       - random_pts_70
       - random_pts_80
       - random_pts_90
-  shot_popbumper_upper_right_hit:
+  shot_popbumper_upper_right_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
     events:
       - random_pts_00
       - random_pts_10
@@ -451,7 +461,7 @@ random_event_player:
       - random_pts_70
       - random_pts_80
       - random_pts_90
-  shot_popbumper_upper_left_hit:
+  shot_popbumper_upper_left_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
     events:
       - random_pts_00
       - random_pts_10
@@ -600,19 +610,29 @@ state_machines:
         target: diverter_rightramp
         events: shot_diverter_hit
 
+timers:
+  monkeychug_slide_timer:   # to change is_slide_monkeychug_active player var and fire event for drinko mode to show a Drinko Bonus if one is queued
+    start_value: 2
+    end_value: 0
+    direction: down
+    tick_interval: 1
+    control_events:
+      - action: restart
+        event: slide_slide_bonus_monkeychug_active
+
 variable_player:
   mode_base_started:    # this will only be set when highscore mode starts. So we can always just set to 0 when base
     has_a_highscore:
       int: 0
       action: set
 
-  shot_hj_hit{mode.dasboot.active == False}:
+  shot_hj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
     score: current_player.pts_hj
     bonus_numhjs: 1       # bonus tracker (HJs)
-  shot_bj_hit{mode.dasboot.active == False}:
+  shot_bj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
     score: current_player.pts_bj
     bonus_numbjs: 1       # bonus tracker (BJs)
-  shot_zj_hit{mode.dasboot.active == False}:
+  shot_zj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
     score: current_player.pts_zj
     bonus_numzjs: 1       # bonus tracker (ZJs)
   shot_chance_hit{mode.dasboot.active == False}:
@@ -638,10 +658,10 @@ variable_player:
     bonus_numquarters: 1      # bonus tracker (quarters)
   
   # longpour
-  shot_tavern_hit{mode.longpour.active == False and mode.dasboot.active == False}:
+  shot_tavern_hit{mode.longpour.active == False and mode.volumechug.active == False and mode.dasboot.active == False}:    # longpour AND volumechug use this shot
     score: current_player.pts_tavern
     bonus_numramps: 1         # bonus tracker (ramps)
-  shot_diverter_hit{mode.longpour.active == False and mode.dasboot.active == False}:
+  shot_diverter_hit{mode.longpour.active == False and mode.volumechug.active == False and mode.dasboot.active == False}:  # longpour AND volumechug use this shot
     score: current_player.pts_ramp_boot
     bonus_numramps: 1         # bonus tracker (ramps)
   shot_ramp_drinko_hit{mode.longpour.active == False and mode.dasboot.active == False}:
@@ -675,5 +695,16 @@ variable_player:
   random_pts_90:
     score: current_player.pts_rnd + 90
 
-    
-
+  # monkeychug/drinko slide arbitration. Set is_slide_monkeychug_active immediately so we prevent a Drinko Bonus slide from showing first.
+  # set higher priority to make sure this processes first
+  shot_drinko_i_hit:
+    priority: 10000
+    is_slide_monkeychug_active:
+        int: 1
+        action: set          # set player var to show we are showing drinko bonus slide
+  
+  # when monkeychug slide timer (set to complete same length as showing Monkeychug bonus slide), clear the is_slide_monkeychug_active player var
+  timer_monkeychug_slide_timer_complete:
+    is_slide_monkeychug_active:
+        int: 0
+        action: set          # set player var to show we are showing drinko bonus slide

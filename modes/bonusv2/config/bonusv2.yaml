@@ -11,26 +11,26 @@ variable_player:
   mode_bonusv2_started:
     bonus_sub_quarters:
       action: set
-      int: current_player.bonus_numquarters * 1500
+      int: current_player.bonus_numquarters * current_player.pts_quarters_bonus
     bonus_sub_hjs:
       action: set
-      int: current_player.bonus_numhjs * 1200
+      int: current_player.bonus_numhjs * current_player.pts_hjs_bonus
     bonus_sub_bjs:
       action: set
-      int: current_player.bonus_numbjs * 1000
+      int: current_player.bonus_numbjs * current_player.pts_bjs_bonus
     bonus_sub_zjs:
       action: set
-      int: current_player.bonus_numzjs * 1500
+      int: current_player.bonus_numzjs * current_player.pts_zjs_bonus
     bonus_sub_strikeouts:
       action: set
-      int: current_player.bonus_numstrikeouts * 2000
+      int: current_player.bonus_numstrikeouts * current_player.pts_strikeouts_bonus
     bonus_sub_ramps:
       action: set
-      int: current_player.bonus_numramps * 800
+      int: current_player.bonus_numramps * current_player.pts_ramps_bonus
     bonus_total:
       action: set
       # below calculates a total based on total multiplier (bonus_numchance) times the multiplicative sum of the other bonuses based on above subtotal calculations
-      int: current_player.bonus_numchance * ((current_player.bonus_numquarters * 1500) + (current_player.bonus_numhjs * 1200) + (current_player.bonus_numbjs * 1000) + (current_player.bonus_numzjs * 1500) + (current_player.bonus_numstrikeouts * 2000) + (current_player.bonus_numramps * 800))
+      int: current_player.bonus_numchance * ((current_player.bonus_numquarters * current_player.pts_quarters_bonus) + (current_player.bonus_numhjs * current_player.pts_hjs_bonus) + (current_player.bonus_numbjs * current_player.pts_bjs_bonus) + (current_player.bonus_numzjs * current_player.pts_zjs_bonus) + (current_player.bonus_numstrikeouts * current_player.pts_strikeouts_bonus) + (current_player.bonus_numramps * current_player.pts_ramps_bonus))
 
   # when bonus mode is about to stop, update our total score and reset all bonus counters
   mode_bonusv2_will_stop:
@@ -82,11 +82,11 @@ sound_player:
   slide_slide_bonus_chance_active:
     prosit:
       loops: 0
-  slide_slide_bonus_total_active{current_player.bonus_total < 800}:
+  slide_slide_bonus_total_active{current_player.bonus_total == 0}:
     frustrating:
       action: play
       events_when_stopped: slide_total_audio_complete
-  slide_slide_bonus_total_active{current_player.bonus_total >= 800}:
+  slide_slide_bonus_total_active{current_player.bonus_total > 0}:
     letsgetbombed:
       action: play
       events_when_stopped: slide_total_audio_complete
@@ -180,7 +180,7 @@ slides:
   slide_bonus_quarters:
     widgets:
       - type: text
-        text: "Quarters Bonus: (player|bonus_numquarters) x 1,500"
+        text: "Quarters Bonus: (player|bonus_numquarters) x (player|pts_quarters_bonus)"
         font_size: 100
         font_name: druillet
         color: 008ce5ff
@@ -210,7 +210,7 @@ slides:
   slide_bonus_hjs:
     widgets:
       - type: text
-        text: "HJ Bonus: (player|bonus_numhjs) x 1,200"
+        text: "HJ Bonus: (player|bonus_numhjs) x (player|pts_hjs_bonus)"
         font_size: 100
         font_name: druillet
         color: 008ce5ff
@@ -240,7 +240,7 @@ slides:
   slide_bonus_bjs:
     widgets:
       - type: text
-        text: "BJ Bonus: (player|bonus_numbjs) x 1,000"
+        text: "BJ Bonus: (player|bonus_numbjs) x (player|pts_bjs_bonus)"
         font_size: 100
         font_name: druillet
         color: 008ce5ff
@@ -270,7 +270,7 @@ slides:
   slide_bonus_zjs:
     widgets:
       - type: text
-        text: "ZJ Bonus: (player|bonus_numzjs) x 1,500"
+        text: "ZJ Bonus: (player|bonus_numzjs) x (player|pts_zjs_bonus)"
         font_size: 100
         font_name: druillet
         color: 008ce5ff
@@ -300,7 +300,7 @@ slides:
   slide_bonus_strikeouts:
     widgets:
       - type: text
-        text: "Strikeout Bonus: (player|bonus_numstrikeouts) x 2,000"
+        text: "Strikeout Bonus: (player|bonus_numstrikeouts) x (player|pts_strikeouts_bonus)"
         font_size: 100
         font_name: druillet
         color: 008ce5ff
@@ -330,7 +330,7 @@ slides:
   slide_bonus_ramps:
     widgets:
       - type: text
-        text: "Ramp Bonus: (player|bonus_numramps) x 800"
+        text: "Ramp Bonus: (player|bonus_numramps) x (player|pts_ramps_bonus)"
         font_size: 100
         font_name: druillet
         color: 008ce5ff

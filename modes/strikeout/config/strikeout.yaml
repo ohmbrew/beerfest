@@ -30,15 +30,15 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  event_success:
+  strikeout_success:
     sureasschnitzel:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_fail:
+  strikeout_fail:
     goddamnbrewery:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_partial:
+  strikeout_partial:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
@@ -127,7 +127,7 @@ slides:
   slide_strikout_success:
     widgets:
       - type: text
-        text: Strikeout
+        text: STRIKEOUT
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -171,7 +171,7 @@ slides:
   slide_strikeout_fail:
     widgets:
       - type: text
-        text: Beerfest Event
+        text: STRIKEOUT
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -202,7 +202,7 @@ slides:
   slide_strikeout_partial:        # if they hit one or more ramps, but drained before round timer expires
     widgets:
       - type: text
-        text: Beerfest Event
+        text: STRIKEOUT
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -288,21 +288,21 @@ slide_player:
       action: remove
     slide_strikeout_main:
       action: play
-  event_success:
+  strikeout_success:
     slide_strikeout_main:
       action: remove
     slide_just_background:
       action: play
     slide_strikout_success:
       action: play
-  event_fail:
+  strikeout_fail:
     slide_strikeout_main:
       action: remove
     slide_just_background:
       action: play
     slide_strikeout_fail:
       action: play
-  event_partial:
+  strikeout_partial:
     slide_strikeout_main:
       action: remove
     slide_just_background:
@@ -325,16 +325,16 @@ slide_player:
 
 queue_relay_player:
   mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
-    post: event_success
+    post: strikeout_success
     wait_for: slide_slide_strikout_success_removed
   mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
-    post: event_fail
+    post: strikeout_fail
     wait_for: slide_slide_strikeout_fail_removed
   mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
-    post: event_partial
+    post: strikeout_partial
     wait_for: slide_slide_strikeout_partial_removed
   mode_strikeout_stopping{device.timers.round_timer_strikeout.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
-    post: event_fail
+    post: strikeout_fail
     wait_for: slide_slide_strikeout_fail_removed  
   ball_ending:  # delay ball_ending until whicher slide is shown above finishes
     post: nothing
@@ -591,12 +591,12 @@ variable_player:
       int: 1
     score: current_player.pts_strikeout_complete_themed
     bonus_numstrikeouts: 1    # bonus tracker (strikeouts)
-  event_success:
+  strikeout_success:
     score: current_player.pts_strikeout_success
     has_strikeout:
       action: set
       int: 1
-  event_partial:
+  strikeout_partial:
     score: current_player.pts_strikeout_partial
     has_strikeout:
       action: set

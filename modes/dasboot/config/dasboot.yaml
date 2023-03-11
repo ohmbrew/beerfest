@@ -1,8 +1,6 @@
 #config_version=5
 ##! mode: dasboot
 
-#TODO Finish Wizard Mode
-
 mode:
   start_events: start_mode_dasboot
   stop_events: stop_mode_dasboot, stop_missions   # NOT a timed round

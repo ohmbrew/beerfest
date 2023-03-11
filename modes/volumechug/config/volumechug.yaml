@@ -70,10 +70,10 @@ state_machines:
       # putting these in here to prevent player from getting bonus again if we see event_success, _fail, or _partial
       - source: wait_for_pops
         target: volumechug_inactive
-        events: event_success, event_fail, event_partial
+        events: volumechug_success, volumechug_fail, volumechug_partial
       - source: wait_for_ramp_boot
         target: volumechug_inactive
-        events: event_success, event_fail, event_partial
+        events: volumechug_success, volumechug_fail, volumechug_partial
 
 sound_player:
   mode_volumechug_started:
@@ -97,15 +97,15 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  event_success:
+  volumechug_success:
     sureasschnitzel:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_fail:
+  volumechug_fail:
     goddamnbrewery:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_partial:
+  volumechug_partial:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
@@ -194,7 +194,7 @@ slides:
   slide_volumechug_success:
     widgets:
       - type: text
-        text: Beerfest Event
+        text: VOLUME CHUG
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -238,7 +238,7 @@ slides:
   slide_volumechug_fail:
     widgets:
       - type: text
-        text: Beerfest Event
+        text: VOLUME CHUG
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -269,7 +269,7 @@ slides:
   slide_volumechug_partial:        # if they hit quarters, but drained before round timer expires
     widgets:
       - type: text
-        text: Beerfest Event
+        text: VOLUME CHUG
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -361,21 +361,21 @@ slide_player:
       action: play
       priority: 1000
       expire: 2s
-  event_success:
+  volumechug_success:
     slide_volumechug_main:
       action: remove
     slide_just_background:
       action: play
     slide_volumechug_success:
       action: play
-  event_fail:
+  volumechug_fail:
     slide_volumechug_main:
       action: remove
     slide_just_background:
       action: play
     slide_volumechug_fail:
       action: play
-  event_partial:
+  volumechug_partial:
     slide_volumechug_main:
       action: remove
     slide_just_background:
@@ -395,16 +395,16 @@ slide_player:
 
 queue_relay_player:
   mode_volumechug_stopping{device.timers.round_timer_volumechug.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
-    post: event_success
+    post: volumechug_success
     wait_for: slide_slide_volumechug_success_removed
   mode_volumechug_stopping{device.timers.round_timer_volumechug.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
-    post: event_fail
+    post: volumechug_fail
     wait_for: slide_slide_volumechug_fail_removed
   mode_volumechug_stopping{device.timers.round_timer_volumechug.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
-    post: event_partial
+    post: volumechug_partial
     wait_for: slide_slide_volumechug_partial_removed
   mode_volumechug_stopping{device.timers.round_timer_volumechug.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
-    post: event_fail
+    post: volumechug_fail
     wait_for: slide_slide_volumechug_fail_removed  
   ball_ending:  # delay ball_ending until whicher slide is shown above finishes
     post: nothing
@@ -939,17 +939,29 @@ variable_player:
     theme_mode_timer_variable:
       int: device.timers.round_timer_volumechug.ticks
       action: set
+  shot_tavern_hit:
+    score: current_player.pts_tavern_themed
+    bonus_numramps: 1         # bonus tracker (ramps)
+  shot_popbumper_upper_left_hit:
+    score: current_player.pts_pops_themed
+  shot_popbumper_upper_right_hit:
+    score: current_player.pts_pops_themed
+  shot_popbumper_lower_hit:
+    score: current_player.pts_pops_themed
+  shot_diverter_hit:
+    score: current_player.pts_ramp_boot_themed
+    bonus_numramps: 1         # bonus tracker (ramps)
   award_volumechug_bonus:
     score: current_player.pts_volumechug_bonus
     has_current_thememode:        # track that player has completed requirements for bonus
       action: set
       int: 1
-  event_success:
+  volumechug_success:
     score: current_player.pts_volumechug_success
     has_volumechug:
       action: set
       int: 1
-  event_partial:
+  volumechug_partial:
     score: current_player.pts_volumechug_partial
     has_volumechug:
       action: set

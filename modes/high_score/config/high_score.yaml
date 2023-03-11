@@ -41,7 +41,10 @@ sound_player:
   high_score_award_display:
     voice_yodel:
       action: stop
-    lookinggoodmf-clean:    # TODO make this dirty when I add the adult switch
+    voice_handsomemf_clean{device.switches.s_adult.active == 0}:    # adult mode OFF
+      action: play
+      loops: 0
+    voice_handsomemf_adult{device.switches.s_adult.active == 1}:    # adult mode ON
       action: play
       loops: 0
 

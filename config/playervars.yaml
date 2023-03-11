@@ -15,19 +15,19 @@ player_vars:
   # track all themed mode statuses
   # TODO: setting longpour, quarters, strikeout to 1 so I can test volumechug and trojankeg modes quicker
   has_longpour:
-    initial_value: 0
+    initial_value: 1
     value_type: int
   has_quarters:
-    initial_value: 0
+    initial_value: 1
     value_type: int
   has_strikeout:
-    initial_value: 0
+    initial_value: 1
     value_type: int
   has_volumechug:
-    initial_value: 1
+    initial_value: 0
     value_type: int
   has_trojankeg:
-    initial_value: 1
+    initial_value: 0
     value_type: int
   has_dasboot:
     initial_value: 0
@@ -219,6 +219,12 @@ player_vars:
     value_type: int
 
   # Volume Chug
+  # pts_tavern_themed already declared above
+  pts_pops_themed:
+    initial_value: 250000
+    value_type: int
+  # pts_ramp_boot_themed already declared above
+
   pts_volumechug_bonus:
     initial_value: 10000000
     value_type: int
@@ -230,6 +236,15 @@ player_vars:
     value_type: int
 
   # Trojan Keg
+  pts_hj_themed:
+    initial_value: 120000
+    value_type: int
+  pts_bj_themed:
+    initial_value: 100000
+    value_type: int
+  pts_zj_themed:
+    initial_value: 150000
+    value_type: int
   pts_trojankeg_bonus:
     initial_value: 10000000
     value_type: int
@@ -254,6 +269,19 @@ player_vars:
     initial_value: 5
     value_type: int
     
+  # bonus calculation values
+  pts_quarters_bonus:
+    initial_value: 7500
+  pts_hjs_bonus:
+    initial_value: 1200
+  pts_bjs_bonus:
+    initial_value: 1000
+  pts_zjs_bonus:
+    initial_value: 1500
+  pts_strikeouts_bonus:
+    initial_value: 15000
+  pts_ramps_bonus:
+    initial_value: 10000
 
   # bonus calculations for text on slides
   dasboot_bonustext_monkeychug:
@@ -272,5 +300,19 @@ player_vars:
     initial_value: 0
     value_type: int
   dasboot_bonustext_strikeoutcomplete:
+    initial_value: 0
+    value_type: int
+
+  # track if we are displaying drinko bonus slide. This is used to enforce order of Monkeychug bonus slide/sound and Drinko bonus slide/sound
+  is_slide_drinko1_queued:
+    initial_value: 0
+    value_type: int
+  is_slide_drinko2_queued:
+    initial_value: 0
+    value_type: int
+  is_slide_hammered_queued:
+    initial_value: 0
+    value_type: int
+  is_slide_monkeychug_active:
     initial_value: 0
     value_type: int

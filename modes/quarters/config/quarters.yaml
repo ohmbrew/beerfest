@@ -30,15 +30,15 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  event_success:
+  quarters_success:
     sureasschnitzel:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_fail:
+  quarters_fail:
     goddamnbrewery:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_partial:
+  quarters_partial:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
@@ -127,7 +127,7 @@ slides:
   slide_quarters_success:
     widgets:
       - type: text
-        text: Quarters
+        text: QUARTERS
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -171,7 +171,7 @@ slides:
   slide_quarters_fail:
     widgets:
       - type: text
-        text: Beerfest Event
+        text: QUARTERS
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -202,7 +202,7 @@ slides:
   slide_quarters_partial:        # if they hit quarters, but drained before round timer expires
     widgets:
       - type: text
-        text: Beerfest Event
+        text: QUARTERS
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -251,21 +251,21 @@ slide_player:
       action: remove
     slide_quarters_main:
       action: play
-  event_success:
+  quarters_success:
     slide_quarters_main:
       action: remove
     slide_just_background:
       action: play
     slide_quarters_success:
       action: play
-  event_fail:
+  quarters_fail:
     slide_quarters_main:
       action: remove
     slide_just_background:
       action: play
     slide_quarters_fail:
       action: play
-  event_partial:
+  quarters_partial:
     slide_quarters_main:
       action: remove
     slide_just_background:
@@ -285,16 +285,16 @@ slide_player:
 
 queue_relay_player:
   mode_quarters_stopping{device.timers.round_timer_quarters.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
-    post: event_success
+    post: quarters_success
     wait_for: slide_slide_quarters_success_removed
   mode_quarters_stopping{device.timers.round_timer_quarters.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
-    post: event_fail
+    post: quarters_fail
     wait_for: slide_slide_quarters_fail_removed
   mode_quarters_stopping{device.timers.round_timer_quarters.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
-    post: event_partial
+    post: quarters_partial
     wait_for: slide_slide_quarters_partial_removed
   mode_quarters_stopping{device.timers.round_timer_quarters.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
-    post: event_fail
+    post: quarters_fail
     wait_for: slide_slide_quarters_fail_removed  
   ball_ending:  # delay ball_ending until whicher slide is shown above finishes
     post: nothing
@@ -529,12 +529,12 @@ variable_player:
       action: set
       int: 1
     bonus_numquarters: 1      # bonus tracker (quarters)
-  event_success:
+  quarters_success:
     score: current_player.pts_quarters_success
     has_quarters:
       action: set
       int: 1
-  event_partial:
+  quarters_partial:
     score: current_player.pts_quarters_partial
     has_quarters:
       action: set

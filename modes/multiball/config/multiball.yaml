@@ -5,7 +5,7 @@ mode:
   start_events: mode_base_started
   stop_events: game_ended
 
-# TODO: Add multiball sound to go with slide
+# TODO: Add sound for multiball
 #sound_player:
   
 slides:

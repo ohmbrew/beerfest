@@ -30,15 +30,15 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  event_success:
+  longpour_success:
     sureasschnitzel:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_fail:
+  longpour_fail:
     goddamnbrewery:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_partial:
+  longpour_partial:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
@@ -129,7 +129,7 @@ slides:
   slide_longpour_success:
     widgets:
       - type: text
-        text: Long Pour
+        text: LONG POUR
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -173,7 +173,7 @@ slides:
   slide_longpour_fail:
     widgets:
       - type: text
-        text: Beerfest Event
+        text: LONG POUR
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -204,7 +204,7 @@ slides:
   slide_longpour_partial:        # if they hit one or more ramps, but drained before round timer expires
     widgets:
       - type: text
-        text: Beerfest Event
+        text: LONG POUR
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -253,21 +253,21 @@ slide_player:
       action: remove
     slide_longpour_main:
       action: play
-  event_success:
+  longpour_success:
     slide_longpour_main:
       action: remove
     slide_just_background:
       action: play
     slide_longpour_success:
       action: play
-  event_fail:
+  longpour_fail:
     slide_longpour_main:
       action: remove
     slide_just_background:
       action: play
     slide_longpour_fail:
       action: play
-  event_partial:
+  longpour_partial:
     slide_longpour_main:
       action: remove
     slide_just_background:
@@ -287,16 +287,16 @@ slide_player:
 
 queue_relay_player:
   mode_longpour_stopping{device.timers.round_timer_longpour.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
-    post: event_success
+    post: longpour_success
     wait_for: slide_slide_longpour_success_removed
   mode_longpour_stopping{device.timers.round_timer_longpour.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
-    post: event_fail
+    post: longpour_fail
     wait_for: slide_slide_longpour_fail_removed
   mode_longpour_stopping{device.timers.round_timer_longpour.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
-    post: event_partial
+    post: longpour_partial
     wait_for: slide_slide_longpour_partial_removed
   mode_longpour_stopping{device.timers.round_timer_longpour.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
-    post: event_fail
+    post: longpour_fail
     wait_for: slide_slide_longpour_fail_removed  
   ball_ending:  # delay ball_ending until whicher slide is shown above finishes
     post: nothing
@@ -777,12 +777,12 @@ variable_player:
       action: set
       int: 1
     bonus_numramps: 1         # bonus tracker (ramps)
-  event_success:
+  longpour_success:
     score: current_player.pts_longpour_success
     has_longpour:
       action: set
       int: 1
-  event_partial:
+  longpour_partial:
     score: current_player.pts_longpour_partial
     has_longpour:
       action: set

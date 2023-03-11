@@ -1,16 +1,34 @@
 #config_version=5
 ##! mode: drinko
 
+# The slides in this show are coordinated with base mode's monkeychug slide and audio activity.
+# Monkeychug bonus slide (and audio) take priority. This is accomplished using player vars and timers to track if Monkeychug Bonus slide is active
+# Monkeychug bonus slide active is set immediately when shot_drinko_i is hit. If we also completed a Drinko Bonus, that logic block (accrual and state machine)
+# will be processed *after* the Monkeychug bonus is recorded.
+# If Monkeychug target was not hit last in the drinko bonus accrual, the Drinko Bonus slides will show immediately (is_monkeychug_active will not be set)
+#   - so the is_slide_x_queued will still be set, but will be cleared when drinko bonus slide is removed. We'll also never get the show_queued_drinko_bonus event
+# If Monkeychug target was hit last in the drinko bonus accrual, the Monkeychug process will start first, and Drinko Bonus slides will *not* show immediately, because
+#   is_monkeychug_active will be set.
+#   - so the is_slide_x_queued will still be set while monkeychug bonus slide is active. When a timer in base mode completes (it is started when monkeychug slide is active),
+#     it will fire the show_queued_drinko_bonus event, and this drinko mode has conditional events on that event and if any drinko bonus slide is queued (there should only be one),
+#     it will show that slide. Upon slide removal, its is_slide_x_queued player var will be cleared.
+
 mode:
   start_events: mode_base_started
   stop_events: game_ended
 
 sound_player:
-  award_drinko_bonus:
-    # TODO make this only play if our last shot wasn't the monkey chug
+  # these will play only when drinko bonus slides are active. There's arbitration that happens between Monkeychug and Drinko Bonus slides.
+  # Monkeychug bonus slide takes priority
+  slide_slide_bonus_drinko1_active:
     voice_sink1left:
       action: play
-    # TODO: add e=mc hammered clip on hammered
+  slide_slide_bonus_drinko2_active:
+    voice_sink1left:
+      action: play
+  slide_slide_bonus_hammered_active:
+    emchammered:
+      action: play
 
 accruals:
   drinko_bonus_accrual:
@@ -68,9 +86,6 @@ state_machines:
         events: award_drinko_bonus    # got drinko_hammered
 
 
-#event_player:
-  #ball_ending{device.achievements.drinko_bonus3.state == "completed"}:   # commented this out - want drinko bonus to persist
-  #  reset_drinko_bonus
   
 
 slides:
@@ -190,18 +205,44 @@ slides:
       image: background
 
 slide_player:
-  drinko_bonus1_award{mode.dasboot.active == False}:
+  # drinko_x_award events are fired when drinko bonus state machine changes states - meaning we should get a bonus.
+  # only show slide_bonus_x if not in das boot mode AND the monkeychug slide is not showing. Monkeychug slide gets preference
+  # is_slide_monkeychug_active player var is set right when monkeychug switch (drinko_i) is hit.
+  # Monkeychug bonus slide takes priority over Drinko bonus slides.
+  drinko_bonus1_award{mode.dasboot.active == False and current_player.is_slide_monkeychug_active == 0}:
     slide_bonus_drinko1:
       priority: 1000
       expire: 2s
-  drinko_bonus2_award{mode.dasboot.active == False}:
+  drinko_bonus2_award{mode.dasboot.active == False and current_player.is_slide_monkeychug_active == 0}:
     slide_bonus_drinko2:
       priority: 1000
       expire: 2s
-  drinko_hammered_award{mode.dasboot.active == False}:
+  drinko_hammered_award{mode.dasboot.active == False and current_player.is_slide_monkeychug_active == 0}:
     slide_bonus_hammered:
       priority: 1000
       expire: 2s
+  # not sure I need this, but if monkeychug slide goes active, remove all slide_bonus_x if they were created.
+  # initial testing shows that the conditional event on is_slide_monkeychug_active prevents the drinko_x_award slides from showing
+  slide_slide_bonus_monkeychug_active:
+    slide_bonus_drinko1:
+      action: remove
+    slide_bonus_drinko2:
+      action: remove  
+    slide_bonus_hammered:
+      action: remove
+  # show appropriate slide_bonus_x Drinko bonus slides if they were queued for showing
+  show_queued_drinko_bonus{current_player.is_slide_drinko1_queued}:
+      slide_bonus_drinko1:
+        priority: 1000
+        expire: 2s
+  show_queued_drinko_bonus{current_player.is_slide_drinko2_queued}:
+      slide_bonus_drinko2:
+        priority: 1000
+        expire: 2s
+  show_queued_drinko_bonus{current_player.is_slide_hammered_queued}:
+      slide_bonus_hammered:
+        priority: 1000
+        expire: 2s
 
 shows:
   show_light_d:
@@ -341,12 +382,6 @@ show_player:
       speed: 4
 
 variable_player:
-  drinko_bonus1_award{mode.dasboot.active == False}:
-    score: current_player.pts_drinko_bonus1         # means we got bonus1
-  drinko_bonus2_award{mode.dasboot.active == False}:
-    score: current_player.pts_drinko_bonus2            # means we got bonus2
-  drinko_hammered_award{mode.dasboot.active == False}:
-    score: current_player.pts_drinko_hammered
   shot_drinko_d_hit{mode.dasboot.active == False}:
     score: current_player.pts_d
   shot_drinko_r_hit{mode.dasboot.active == False}:
@@ -360,3 +395,38 @@ variable_player:
   shot_drinko_o_hit{mode.dasboot.active == False}:
     score: current_player.pts_o
 
+  # drinko_x_award events are fired when drinko bonus state machine changes states - meaning we should get a bonus
+  # give player the points immediately and set player var that we should queue drinko bonus slide for showing
+  drinko_bonus1_award{mode.dasboot.active == False}:  
+    score: current_player.pts_drinko_bonus1
+    is_slide_drinko1_queued:
+      int: 1
+      action: set
+  drinko_bonus2_award{mode.dasboot.active == False}:
+    score: current_player.pts_drinko_bonus2
+    is_slide_drinko2_queued:
+      int: 1
+      action: set
+  drinko_hammered_award{mode.dasboot.active == False}:
+    score: current_player.pts_drinko_hammered
+    is_slide_hammered_queued:
+      int: 1
+      action: set
+
+  # de-queue drinko bonus slide once it has been removed
+  slide_slide_bonus_drinko1_removed:
+    is_slide_drinko1_queued:
+      int: 0
+      action: set 
+  slide_slide_bonus_drinko2_removed:    
+    is_slide_drinko2_queued:
+      int: 0
+      action: set
+  slide_slide_bonus_hammered_removed:
+    is_slide_hammered_queued:
+      int: 0
+      action: set
+
+  
+
+  

@@ -167,6 +167,8 @@ switches:
   s_diverter:
     number: A3-B1-5
     type: NC
+  s_adult:
+    number: A3-B1-6
   
   
   

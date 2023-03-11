@@ -71,9 +71,9 @@ sound_player:
   shot_laneright_outer_hit:
     canopening:
       action: play
-  # TODO: add sound for this
+  # TODO: add sound for spellbeer
   #spellbeer_group_hit_complete:
-  
+
 variable_player:
   spellbeer_group_hit_complete{mode.dasboot.active == False}:
     score: current_player.pts_spell_beer

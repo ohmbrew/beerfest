@@ -93,10 +93,10 @@ state_machines:
       # putting these in here to prevent player from getting bonus again if we see event_success, _fail, or _partial  
       - source: wait_for_xjs
         target: trojankeg_inactive
-        events: event_success, event_fail, event_partial
+        events: trojankeg_success, trojankeg_fail, trojankeg_partial
       - source: wait_for_saucer_keg
         target: trojankeg_inactive
-        events: event_success, event_fail, event_partial
+        events: trojankeg_success, trojankeg_fail, trojankeg_partial
 
 sound_player:
   mode_trojankeg_started:
@@ -120,15 +120,15 @@ sound_player:
     rimrules:
       action: play
       events_when_stopped: kicker_rimrules_eject
-  event_success:
+  trojankeg_success:
     sureasschnitzel:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_fail:
+  trojankeg_fail:
     goddamnbrewery:
       action: play
       events_when_stopped: slide_event_result_complete
-  event_partial:
+  trojankeg_partial:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
@@ -226,7 +226,7 @@ slides:
   slide_trojankeg_success:
     widgets:
       - type: text
-        text: Beerfest Event
+        text: TROJAN KEG
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -270,7 +270,7 @@ slides:
   slide_trojankegfail:
     widgets:
       - type: text
-        text: Beerfest Event
+        text: TROJAN KEG
         font_name: druillet
         color: 008ce5ff
         font_size: 100
@@ -393,21 +393,21 @@ slide_player:
       action: play
       priority: 1000
       expire: 2s
-  event_success:
+  trojankeg_success:
     slide_trojankeg_main:
       action: remove
     slide_just_background:
       action: play
     slide_trojankeg_success:
       action: play
-  event_fail:
+  trojankeg_fail:
     slide_trojankeg_main:
       action: remove
     slide_just_background:
       action: play
     slide_trojankegfail:
       action: play
-  event_partial:
+  trojankeg_partial:
     slide_trojankeg_main:
       action: remove
     slide_just_background:
@@ -427,16 +427,16 @@ slide_player:
 
 queue_relay_player:
   mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks == 0 and current_player.has_current_thememode==1}:  # timer expired, player completed bonus
-    post: event_success
+    post: trojankeg_success
     wait_for: slide_slide_trojankeg_success_removed
   mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks == 0 and current_player.has_current_thememode==0}:  # timer expired, player did not complete bonus
-    post: event_fail
+    post: trojankeg_fail
     wait_for: slide_slide_trojankegfail_removed
   mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks > 0 and current_player.has_current_thememode==1}:   # timer did not expire (we drained?), but player completed bonus
-    post: event_partial
+    post: trojankeg_partial
     wait_for: slide_slide_trojankeg_partial_removed
   mode_trojankeg_stopping{device.timers.round_timer_trojankeg.ticks > 0 and current_player.has_current_thememode==0}:   # timer did not expire (we drained?), and player did not complete bonus
-    post: event_fail
+    post: trojankeg_fail
     wait_for: slide_slide_trojankegfail_removed  
   ball_ending:  # delay ball_ending until whicher slide is shown above finishes
     post: nothing
@@ -727,6 +727,15 @@ variable_player:
     has_current_thememode:
       int: 0
       action: set
+  shot_hj_hit:
+    score: current_player.pts_hj_themed
+    bonus_numhjs: 1       # bonus tracker (HJs)
+  shot_bj_hit:
+    score: current_player.pts_bj_themed
+    bonus_numbjs: 1       # bonus tracker (BJs)
+  shot_zj_hit:
+    score: current_player.pts_zj_themed  
+    bonus_numzjs: 1       # bonus tracker (ZJs) 
   timer_round_timer_trojankeg_tick:
     theme_mode_timer_variable:
       int: device.timers.round_timer_trojankeg.ticks
@@ -736,13 +745,13 @@ variable_player:
     has_current_thememode:        # track that player has completed requirements for bonus
       action: set
       int: 1
-  event_success:
+  trojankeg_success:
     score: current_player.pts_trojankeg_success
-    has_volumechug:
+    has_trojankeg:
       action: set
       int: 1
-  event_partial:
+  trojankeg_partial:
     score: current_player.pts_trojankeg_partial
-    has_volumechug:
+    has_trojankeg:
       action: set
       int: 1
