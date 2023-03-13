@@ -314,7 +314,7 @@ sounds:
         target: music
         delay: 0
         attack: 0.3 sec
-        attenuation: -50db
+        attenuation: -10db
         release_point: .5 sec
         release: 1.5 sec
 

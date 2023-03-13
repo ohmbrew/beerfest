@@ -742,7 +742,10 @@ variable_player:
     bonus_numbjs: 1       # bonus tracker (BJs)
   shot_zj_hit:
     score: current_player.pts_zj_themed  
-    bonus_numzjs: 1       # bonus tracker (ZJs) 
+    bonus_numzjs: 1       # bonus tracker (ZJs)
+  shot_kicker_mode_hit:
+    score: current_player.pts_kicker_mode_themed
+    
   timer_round_timer_trojankeg_tick:
     theme_mode_timer_variable:
       int: device.timers.round_timer_trojankeg.ticks

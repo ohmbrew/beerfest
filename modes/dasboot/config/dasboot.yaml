@@ -71,9 +71,6 @@ sound_player:
   shot_drinko_r_hit:
     voice_beerfest:
       action: play
-  #shot_drinko_i_hit:   # let base mode take care of this
-  #  voice_beerfest:
-  #    action: play
   shot_drinko_n_hit:
     voice_beerfest:
       action: play
@@ -84,7 +81,8 @@ sound_player:
     voice_beerfest:
       action: play
 
-  # let base mode take care of these 
+  # let base mode take care of these
+  #shot_drinko_i_hit:   # let base mode take care of this
   #shot_tavern_hit:          
   #shot_ramp_drinko_hit:
   #shot_diverter_hit:  # use burp sound for that still
@@ -1266,7 +1264,6 @@ show_player:
       speed: 2
 
 variable_player:
-  # BOOT RAMP BONUS
   shot_diverter_hit:
     score: current_player.pts_dasboot_boot_bonus
     bonus_numramps: 1         # bonus tracker (ramps)

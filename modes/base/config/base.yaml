@@ -306,15 +306,6 @@ sound_player:
   shot_ramp_drinko_hit: 
     2burps:
       action: play
-  # shot_ramp_drinko_hit{device.switches.s_adult.state == 0}:
-  #   voice_handsomemf_clean:    # adult mode OFF
-  #     action: play
-  #     loops: 0
-  # shot_ramp_drinko_hit{device.switches.s_adult.state == 1}:
-  #   voice_handsomemf_adult:    # adult mode ON
-  #     action: play
-  #     loops: 0
-
   spinner_tavern_spinner_active:
     voice_tavern:
       action: play
@@ -603,20 +594,17 @@ variable_player:
       int: 0
       action: set
 
-  shot_hj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
-    score: current_player.pts_hj
-    bonus_numhjs: 1       # bonus tracker (HJs)
-  shot_bj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
-    score: current_player.pts_bj
-    bonus_numbjs: 1       # bonus tracker (BJs)
-  shot_zj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
-    score: current_player.pts_zj
-    bonus_numzjs: 1       # bonus tracker (ZJs)
   shot_chance_hit{mode.dasboot.active == False}:
     score: current_player.pts_chance
     bonus_numchance: 1    # bonus tracker (chance multiplier)
   shot_special_hit{mode.dasboot.active == False}:
     score: current_player.pts_special
+
+  shot_kicker_mode_hit{mode.trojankeg.active == False and mode.dasboot.active == False}:
+    score: current_player.pts_kicker_mode
+
+  shot_kicker_rimrules_hit{mode.dasboot.active == False}:
+    score: current_player.pts_kicker_rimrules
 
   # strikeout
   shot_take_hit_hit{mode.strikeout.active == False and mode.dasboot.active == False}:
@@ -644,6 +632,17 @@ variable_player:
   shot_ramp_drinko_hit{mode.longpour.active == False and mode.dasboot.active == False}:
     score: current_player.pts_ramp_drinko
     bonus_numramps: 1         # bonus tracker (ramps)
+
+  # Trojan Keg
+  shot_hj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
+    score: current_player.pts_hj
+    bonus_numhjs: 1       # bonus tracker (HJs)
+  shot_bj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
+    score: current_player.pts_bj
+    bonus_numbjs: 1       # bonus tracker (BJs)
+  shot_zj_hit{mode.dasboot.active == False and mode.trojankeg.active == False}:
+    score: current_player.pts_zj
+    bonus_numzjs: 1       # bonus tracker (ZJs)
 
   shot_tgt_ramp_boot_hit{mode.dasboot.active == False}:
     score: current_player.pts_tgt_ramp_boot

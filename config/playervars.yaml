@@ -79,6 +79,16 @@ player_vars:
     initial_value: 0
     value_type: int
 
+  bonus_canceled:
+    initial_value: 0
+    value_type: int
+    
+  pts_kicker_mode:
+    initial_value: 200000
+    value_type: int
+  pts_kicker_rimrules:
+    initial_value: 100000
+    value_type: int
   pts_hj:
     initial_value: 12000
     value_type: int
@@ -244,6 +254,9 @@ player_vars:
     value_type: int
   pts_zj_themed:
     initial_value: 150000
+    value_type: int
+  pts_kicker_mode_themed:
+    initial_value: 500000
     value_type: int
   pts_trojankeg_bonus:
     initial_value: 10000000

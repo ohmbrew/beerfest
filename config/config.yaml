@@ -116,6 +116,10 @@ keyboard:
     event: release_cup1
   4:
     event: release_cup2
+  b:
+    switch: s_flipper_left
+  n:
+    switch: s_flipper_right
 
 # documentation: https://docs.missionpinball.org/en/latest/hardware/multimorphic/leds.html
 p_roc:
