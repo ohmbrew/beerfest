@@ -1,16 +1,16 @@
 #show_version=5
 - time: '+1'
   lights:
-    l_popbumper_left: on
-    l_popbumper_right: off
-    l_popbumper_lower: off
+    l_pop_left: on
+    l_pop_right: off
+    l_pop_lower: off
 - time: '+1'
   lights:
-    l_popbumper_left: off
-    l_popbumper_right: on
-    l_popbumper_lower: off
+    l_pop_left: off
+    l_pop_right: on
+    l_pop_lower: off
 - time: '+1'
   lights:
-    l_popbumper_left: off
-    l_popbumper_right: off
-    l_popbumper_lower: on
+    l_pop_left: off
+    l_pop_right: off
+    l_pop_lower: on

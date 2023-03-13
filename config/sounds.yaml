@@ -262,6 +262,28 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
+  voice_gonnadrinkbeer:
+    file: gonnadrinkbeer.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_greatestbeer:
+    file: greatestbeer.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
   voice_ballsave:
     file: death-save-landfillalive.wav
     track: voice
@@ -273,3 +295,56 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
+  voice_volumechug_megabonus:
+    file: volumechugmegabonus.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_trojankeg_megabonus:
+    file: trojankegmegabonus.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+
+  # no ducking on DRINKO letters. Sounds better.
+  voice_drinko_d:
+    file: drinko-d.wav
+    track: voice
+    volume: 1.0
+  voice_drinko_r:
+    file: drinko-r.wav
+    track: voice
+    volume: 1.0
+  voice_drinko_n:
+    file: drinko-n.wav
+    track: voice
+    volume: 1.0
+  voice_drinko_k:
+    file: drinko-k.wav
+    track: voice
+    volume: 1.0
+  voice_drinko_o:
+    file: drinko-o.wav
+    track: voice
+    volume: 1.0
+      
+  sfx_pongcup:
+    file: pongcup.wav
+    track: sfx
+    volume: 1.0
+  sfx_cancrush:
+    file: cancrush.wav
+    track: sfx
+    volume: 1.0

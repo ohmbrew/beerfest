@@ -19,12 +19,12 @@ shot_profiles:
 shots:
   shot_plunger_lane_exit:
     switch: s_plunger_lane_exit
-  shot_popbumper_lower:
-    switch: s_popbumper_lower
-  shot_popbumper_upper_right:
-    switch: s_popbumper_upper_right
-  shot_popbumper_upper_left:
-    switch: s_popbumper_upper_left
+  shot_pop_lower:
+    switch: s_pop_lower
+  shot_pop_upper_right:
+    switch: s_pop_upper_right
+  shot_pop_upper_left:
+    switch: s_pop_upper_left
   shot_hj:
     switch: s_hj
   shot_bj:

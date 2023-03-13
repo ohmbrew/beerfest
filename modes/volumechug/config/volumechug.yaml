@@ -12,9 +12,9 @@ accruals:
   volumechug_pops_accrual:
     persist_state: false
     events:
-      - shot_popbumper_upper_right_hit
-      - shot_popbumper_upper_left_hit
-      - shot_popbumper_lower_hit
+      - shot_pop_upper_right_hit
+      - shot_pop_upper_left_hit
+      - shot_pop_lower_hit
     events_when_complete: volumechug_pops_complete
     restart_events: shot_tavern_hit
     reset_on_complete: true
@@ -109,6 +109,9 @@ sound_player:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
+  award_volumechug_bonus:
+    voice_volumechug_megabonus:
+      action: play
 
 slides:
   slide_volumechug_intro:
@@ -484,9 +487,9 @@ shows:
         arrow_orbit3:
           color: off
           fade: .5
-        l_popbumper_lower: off
-        l_popbumper_right: off
-        l_popbumper_left: off
+        l_pop_lower: off
+        l_pop_right: off
+        l_pop_left: off
     - duration: 1
       lights:
         arrow_tavern1:
@@ -588,9 +591,9 @@ shows:
         arrow_orbit3:
           color: off
           fade: .5
-        l_popbumper_lower: on
-        l_popbumper_right: on
-        l_popbumper_left: on
+        l_pop_lower: on
+        l_pop_right: on
+        l_pop_left: on
     - duration: 1
       lights:
         arrow_orbit1:
@@ -602,9 +605,9 @@ shows:
         arrow_orbit3:
           color: off
           fade: .5
-        l_popbumper_lower: off
-        l_popbumper_right: off
-        l_popbumper_left: off
+        l_pop_lower: off
+        l_pop_right: off
+        l_pop_left: off
     - duration: 1
       lights:
         arrow_orbit2:
@@ -613,9 +616,9 @@ shows:
         arrow_orbit3:
           color: red
           fade: .5
-        l_popbumper_lower: on
-        l_popbumper_right: on
-        l_popbumper_left: on
+        l_pop_lower: on
+        l_pop_right: on
+        l_pop_left: on
     - duration: 1
       lights:
         arrow_orbit1:
@@ -627,9 +630,9 @@ shows:
         arrow_orbit3:
           color: off
           fade: .5
-        l_popbumper_lower: off
-        l_popbumper_right: off
-        l_popbumper_left: off
+        l_pop_lower: off
+        l_pop_right: off
+        l_pop_left: off
     - duration: 1
       lights:
         arrow_orbit1:
@@ -638,9 +641,9 @@ shows:
         arrow_orbit2:
           color: white
           fade: .5
-        l_popbumper_lower: on
-        l_popbumper_right: on
-        l_popbumper_left: on
+        l_pop_lower: on
+        l_pop_right: on
+        l_pop_left: on
     - duration: 1
       lights:
         arrow_orbit2:
@@ -649,9 +652,9 @@ shows:
         arrow_orbit3:
           color: white
           fade: .5
-        l_popbumper_lower: off
-        l_popbumper_right: off
-        l_popbumper_left: off
+        l_pop_lower: off
+        l_pop_right: off
+        l_pop_left: off
     - duration: 1
       lights:
         arrow_orbit1:
@@ -663,9 +666,9 @@ shows:
         arrow_orbit3:
           color: off
           fade: .5
-        l_popbumper_lower: on
-        l_popbumper_right: on
-        l_popbumper_left: on
+        l_pop_lower: on
+        l_pop_right: on
+        l_pop_left: on
     - duration: 1
       lights:
         arrow_orbit1:
@@ -674,9 +677,9 @@ shows:
         arrow_orbit2:
           color: blue
           fade: .5
-        l_popbumper_lower: off
-        l_popbumper_right: off
-        l_popbumper_left: off
+        l_pop_lower: off
+        l_pop_right: off
+        l_pop_left: off
     - duration: 1
       lights:
         arrow_orbit2:
@@ -685,9 +688,9 @@ shows:
         arrow_orbit3:
           color: blue
           fade: .5
-        l_popbumper_lower: on
-        l_popbumper_right: on
-        l_popbumper_left: on
+        l_pop_lower: on
+        l_pop_right: on
+        l_pop_left: on
 
   flash_volumechug_wait_ramp_boot:
     - duration: 1
@@ -719,9 +722,9 @@ shows:
         arrow_orbit3:
           color: off
           fade: .5
-        l_popbumper_lower: off
-        l_popbumper_right: off
-        l_popbumper_left: off
+        l_pop_lower: off
+        l_pop_right: off
+        l_pop_left: off
     - duration: 1
       lights:
         arrow_boot1:
@@ -942,11 +945,11 @@ variable_player:
   shot_tavern_hit:
     score: current_player.pts_tavern_themed
     bonus_numramps: 1         # bonus tracker (ramps)
-  shot_popbumper_upper_left_hit:
+  shot_pop_upper_left_hit:
     score: current_player.pts_pops_themed
-  shot_popbumper_upper_right_hit:
+  shot_pop_upper_right_hit:
     score: current_player.pts_pops_themed
-  shot_popbumper_lower_hit:
+  shot_pop_lower_hit:
     score: current_player.pts_pops_themed
   shot_diverter_hit:
     score: current_player.pts_ramp_boot_themed

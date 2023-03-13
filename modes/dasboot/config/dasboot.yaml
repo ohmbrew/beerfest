@@ -714,9 +714,9 @@ shows:
         mode_strikeout: off
         mode_trojankeg: off
 
-        l_popbumper_lower: off
-        l_popbumper_right: off
-        l_popbumper_left: off
+        l_pop_lower: off
+        l_pop_right: off
+        l_pop_left: off
     - duration: -1
 
   flash_dasboot_intro:

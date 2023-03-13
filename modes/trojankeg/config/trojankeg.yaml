@@ -132,7 +132,10 @@ sound_player:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
-
+  award_trojankeg_bonus:
+    voice_trojankeg_megabonus:
+      action: play
+      
 slides:
   slide_trojankeg_intro:
     widgets:

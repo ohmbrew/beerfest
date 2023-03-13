@@ -10,8 +10,8 @@
     
 - time: '+1'
   lights:
-    l_popbumper_left: 'FF0000'
-    l_popbumper_right: 'FF0000'
+    l_pop_left: 'FF0000'
+    l_pop_right: 'FF0000'
     
 #No change this frame - take another step
 #  lights:
@@ -19,7 +19,7 @@
     
 - time: '+1'
   lights:
-    l_popbumper_lower: 'FF0000'
+    l_pop_lower: 'FF0000'
     
 - time: '+1'
   lights:
@@ -242,9 +242,9 @@
     gi_right2: '000000'
     gi_right3: '000000'
     gi_right4: '000000'
-    l_popbumper_left: '000000'
-    l_popbumper_lower: '000000'
-    l_popbumper_right: '000000'
+    l_pop_left: '000000'
+    l_pop_lower: '000000'
+    l_pop_right: '000000'
     lane_left_inner: '000000'
     lane_left_outer: '000000'
     lane_right_inner: '000000'
@@ -275,8 +275,8 @@
     
 - time: '+1'
   lights:
-    l_popbumper_left: 'FFFFFF'
-    l_popbumper_right: 'FFFFFF'
+    l_pop_left: 'FFFFFF'
+    l_pop_right: 'FFFFFF'
     
 #No change this frame - take another step
 #  lights:
@@ -284,7 +284,7 @@
     
 - time: '+1'
   lights:
-    l_popbumper_lower: 'FFFFFF'
+    l_pop_lower: 'FFFFFF'
     
 - time: '+1'
   lights:
@@ -506,9 +506,9 @@
     gi_right2: '000000'
     gi_right3: '000000'
     gi_right4: '000000'
-    l_popbumper_left: '000000'
-    l_popbumper_lower: '000000'
-    l_popbumper_right: '000000'
+    l_pop_left: '000000'
+    l_pop_lower: '000000'
+    l_pop_right: '000000'
     lane_left_inner: '000000'
     lane_left_outer: '000000'
     lane_right_inner: '000000'
@@ -539,8 +539,8 @@
     
 - time: '+1'
   lights:
-    l_popbumper_left: '0000FF'
-    l_popbumper_right: '0000FF'
+    l_pop_left: '0000FF'
+    l_pop_right: '0000FF'
     
 #No change this frame - take another step
 #  lights:
@@ -548,7 +548,7 @@
     
 - time: '+1'
   lights:
-    l_popbumper_lower: '0000FF'
+    l_pop_lower: '0000FF'
     
 - time: '+1'
   lights:

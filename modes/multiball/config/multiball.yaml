@@ -120,6 +120,11 @@ state_machines:
         target: pongtable_cup1
         events: multiball_pt_multiball_ended
 
+sound_player:
+  slide_multiball_slide_active:
+    voice_gonnadrinkbeer:
+      action: play
+      
 variable_player:
   start_multiball:
     score: current_player.pts_multiball

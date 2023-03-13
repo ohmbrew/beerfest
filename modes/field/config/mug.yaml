@@ -12,7 +12,7 @@
 counters:
   count_mug_lights:
     count_events: >
-      shot_popbumper_lower_hit, shot_popbumper_upper_right_hit, shot_popbumper_upper_left_hit,
+      shot_pop_lower_hit, shot_pop_upper_right_hit, shot_pop_upper_left_hit,
       shot_hj_hit, shot_bj_hit, shot_zj_hit, shot_chance_hit,
       shot_take_hit_hit, shot_chug_beer_hit, shot_do_shot_hit, shot_quarters_hit, shot_slingleft_hit,
       shot_slingright_hit, shot_slingquarters_hit, shot_tgt_ramp_boot_hit, shot_special_hit, shot_tavern_hit,

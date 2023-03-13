@@ -164,9 +164,9 @@ shows:
   show_init_base:
     - time: 0
       lights:
-        l_popbumper_left: on
-        l_popbumper_right: on
-        l_popbumper_lower: on
+        l_pop_left: on
+        l_pop_right: on
+        l_pop_lower: on
         tavern_sign1: white
         tavern_sign2: white
         tavern_inside: white
@@ -188,24 +188,24 @@ shows:
   show_pop_left:
     - time: 0
       lights:
-        l_popbumper_left: off
+        l_pop_left: off
     - time: '+.5s'
       lights:
-        l_popbumper_left: on
+        l_pop_left: on
   show_pop_right:
     - time: 0
       lights:
-        l_popbumper_right: off
+        l_pop_right: off
     - time: '+.5s'
       lights:
-        l_popbumper_right: on
+        l_pop_right: on
   show_pop_lower:
     - time: 0
       lights:
-        l_popbumper_lower: off
+        l_pop_lower: off
     - time: '+.5s'
       lights:
-        l_popbumper_lower: on
+        l_pop_lower: on
   show_slingquarters_hit:
     - time: 0
       lights:
@@ -283,60 +283,18 @@ shows:
         tavern_inside: white
   
   show_shaker_1s:
-    - duration: .1s
+    - duration: .5s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 1
           hold_power: 0.1
-    - duration: .15s
+    - duration: .5s
       coils:
         c_shaker:
           action: enable
           pulse_ms: 2
-          hold_power: 0.15
-    - duration: .2s
-      coils:
-        c_shaker:
-          action: enable
-          pulse_ms: 3
-          hold_power: 0.2
-    - duration: .25s
-      coils:
-        c_shaker:
-          action: enable
-          pulse_ms: 4
-          hold_power: 0.25
-    - duration: .3s
-      coils:
-        c_shaker:
-          action: enable
-          pulse_ms: 5
-          hold_power: 0.3
-    - duration: .25s
-      coils:
-        c_shaker:
-          action: enable
-          pulse_ms: 4
-          hold_power: 0.25
-    - duration: .2s
-      coils:
-        c_shaker:
-          action: enable
-          pulse_ms: 3
-          hold_power: 0.2
-    - duration: .15s  
-      coils:
-        c_shaker:
-          action: enable
-          pulse_ms: 2
-          hold_power: 0.15
-    - duration: .1s  
-      coils:
-        c_shaker:
-          action: enable
-          pulse_ms: 1
-          hold_power: 0.125                
+          hold_power: 0.15                
     - duration: .1s
       coils:
         c_shaker: disable
@@ -345,16 +303,17 @@ sound_player:
   shot_diverter_hit:
     2burps:
       action: play
-  shot_ramp_drinko_hit{device.switches.s_adult.state == 0}:
-    #2burps:        # TODO: commenting out to test adult switch functionality
-      #action: play
-    voice_handsomemf_clean:    # adult mode OFF
+  shot_ramp_drinko_hit: 
+    2burps:
       action: play
-      loops: 0
-  shot_ramp_drinko_hit{device.switches.s_adult.state == 1}:
-    voice_handsomemf_adult:    # adult mode ON
-      action: play
-      loops: 0
+  # shot_ramp_drinko_hit{device.switches.s_adult.state == 0}:
+  #   voice_handsomemf_clean:    # adult mode OFF
+  #     action: play
+  #     loops: 0
+  # shot_ramp_drinko_hit{device.switches.s_adult.state == 1}:
+  #   voice_handsomemf_adult:    # adult mode ON
+  #     action: play
+  #     loops: 0
 
   spinner_tavern_spinner_active:
     voice_tavern:
@@ -407,7 +366,25 @@ sound_player:
   shot_drinko_i_hit:
     voice_ohyea:
       action: play
-    
+  shot_slingquarters_hit:
+    sfx_pongcup:
+      action: play
+  shot_slingleft_hit:
+    sfx_pongcup:
+      action: play
+  shot_slingright_hit:
+    sfx_pongcup:
+      action: play
+
+  shot_pop_lower_hit:
+    sfx_cancrush:
+      action: play
+  shot_pop_upper_right_hit:
+    sfx_cancrush:
+      action: play
+  shot_pop_upper_left_hit:
+    sfx_cancrush:
+      action: play
   bank_strikeout_complete:
     strikeoutcomplete:
       action: play
@@ -437,7 +414,7 @@ random_event_player:
       - random_pts_70
       - random_pts_80
       - random_pts_90
-  shot_popbumper_lower_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
+  shot_pop_lower_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
     events:
       - random_pts_00
       - random_pts_10
@@ -449,7 +426,7 @@ random_event_player:
       - random_pts_70
       - random_pts_80
       - random_pts_90
-  shot_popbumper_upper_right_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
+  shot_pop_upper_right_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
     events:
       - random_pts_00
       - random_pts_10
@@ -461,7 +438,7 @@ random_event_player:
       - random_pts_70
       - random_pts_80
       - random_pts_90
-  shot_popbumper_upper_left_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
+  shot_pop_upper_left_hit{mode.volumechug.active == False}:    # pops special points in volumechug round
     events:
       - random_pts_00
       - random_pts_10
@@ -494,13 +471,13 @@ show_player:
     base_show:
       speed: 1
       loops: -1
-  shot_popbumper_lower_hit:
+  shot_pop_lower_hit:
     show_pop_lower:
       loops: 0
-  shot_popbumper_upper_left_hit:
+  shot_pop_upper_left_hit:
     show_pop_left:
       loops: 0
-  shot_popbumper_upper_right_hit:
+  shot_pop_upper_right_hit:
     show_pop_right:
       loops: 0
   shot_slingquarters_hit:

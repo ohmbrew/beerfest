@@ -58,13 +58,13 @@ shows:
         arrow_drinko3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: on
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
     - duration: 1
@@ -123,13 +123,13 @@ shows:
         arrow_drinko3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: on
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
     - duration: 1
@@ -188,13 +188,13 @@ shows:
         arrow_drinko3: 
           color: red
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: on
           fade: .25s
 
@@ -254,13 +254,13 @@ shows:
         arrow_drinko3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: on
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
     - duration: 1
@@ -319,13 +319,13 @@ shows:
         arrow_drinko3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: on
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
     - duration: 1
@@ -384,13 +384,13 @@ shows:
         arrow_drinko3: 
           color: white
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: on
           fade: .25s
     
@@ -450,13 +450,13 @@ shows:
         arrow_drinko3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: on
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
     - duration: 1
@@ -515,13 +515,13 @@ shows:
         arrow_drinko3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: on
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
     - duration: 1
@@ -580,13 +580,13 @@ shows:
         arrow_drinko3: 
           color: blue
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: on
           fade: .25s
 
@@ -646,13 +646,13 @@ shows:
         arrow_drinko3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
 
@@ -704,13 +704,13 @@ shows:
         arrow_mode3: 
           color: off
           fade: .25s
-        l_popbumper_left: 
+        l_pop_left: 
           color: off
           fade: .25s
-        l_popbumper_right: 
+        l_pop_right: 
           color: off
           fade: .25s
-        l_popbumper_lower: 
+        l_pop_lower: 
           color: off
           fade: .25s
     - duration: 1

@@ -42,11 +42,11 @@ switches:
     number: A0-B1-0
     type: NC
     ignore_window_ms: 750
-  s_popbumper_lower:
+  s_pop_lower:
     number: A0-B1-2
-  s_popbumper_upper_left:
+  s_pop_upper_left:
     number: A0-B1-3
-  s_popbumper_upper_right:
+  s_pop_upper_right:
     number: A0-B1-4
   s_flipper_left:
     number: A0-B1-5

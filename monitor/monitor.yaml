@@ -174,13 +174,13 @@ light:
   l_backglass:
     x: 0.4961504697457102
     y: 0.01173372134380489
-  l_popbumper_left:
+  l_pop_left:
     x: 0.5594909621599014
     y: 0.11317487961785119
-  l_popbumper_lower:
+  l_pop_lower:
     x: 0.6494983212010581
     y: 0.15359447948136945
-  l_popbumper_right:
+  l_pop_right:
     x: 0.7583851481300398
     y: 0.11243997780215086
   l_start:
@@ -343,13 +343,13 @@ switch:
   s_pongcup2:
     x: 0.6467096235308156
     y: 0.3207240163701567
-  s_popbumper_lower:
+  s_pop_lower:
     x: 0.6510247270351308
     y: 0.13608702529467656
-  s_popbumper_upper_left:
+  s_pop_upper_left:
     x: 0.5608058389515344
     y: 0.09342190385094014
-  s_popbumper_upper_right:
+  s_pop_upper_right:
     x: 0.758546626096295
     y: 0.09342190385094014
   s_quarters:

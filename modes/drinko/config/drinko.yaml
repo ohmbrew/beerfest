@@ -29,6 +29,21 @@ sound_player:
   slide_slide_bonus_hammered_active:
     emchammered:
       action: play
+  shot_drinko_d_hit:
+    voice_drinko_d:
+      action: play
+  shot_drinko_r_hit:
+    voice_drinko_r:
+      action: play
+  shot_drinko_n_hit:
+    voice_drinko_n:
+      action: play
+  shot_drinko_k_hit:
+    voice_drinko_k:
+      action: play
+  shot_drinko_o_hit:
+    voice_drinko_o:
+      action: play   
 
 accruals:
   drinko_bonus_accrual:

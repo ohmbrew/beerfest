@@ -66,9 +66,9 @@
     mode_volumechug: off
     mode_trojankeg: off
     mode_dasboot: off
-    l_popbumper_left: off
-    l_popbumper_right: off
-    l_popbumper_lower: off
+    l_pop_left: off
+    l_pop_right: off
+    l_pop_lower: off
     gi_left1: off
     gi_left2: off
     gi_left3: off

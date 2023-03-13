@@ -350,14 +350,14 @@ lights:
     tags: gi 
 
   # lights hooked to coil driver
-  l_popbumper_lower:
-    number: cl_popbumper_lower
+  l_pop_lower:
+    number: cl_pop_lower
     platform: drivers
-  l_popbumper_right:
-    number: cl_popbumper_right
+  l_pop_right:
+    number: cl_pop_right
     platform: drivers
-  l_popbumper_left:
-    number: cl_popbumper_left
+  l_pop_left:
+    number: cl_pop_left
     platform: drivers
   l_backglass:
     number: cl_backglass

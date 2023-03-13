@@ -16,13 +16,13 @@ coils:
   
   # A0-B0-3 and A0-B0-4 are unreliable now - probs with pong cup coils. May have burned out the outputs? Using A0-B1-5/6 now
 
-  c_popbumper_lower:
+  c_pop_lower:
     number: A0-B0-5 # verified
     default_pulse_ms: 15
-  c_popbumper_upper_left:
+  c_pop_upper_left:
     number: A0-B0-6
     default_pulse_ms: 15
-  c_popbumper_upper_right:
+  c_pop_upper_right:
     number: A0-B0-7
     default_pulse_ms: 15
   # Bank B (A0-B1)
@@ -55,13 +55,13 @@ coils:
   # PD-LED is A1
 
   # 12V Coil Driver PCB: A2-B0
-  cl_popbumper_lower:
+  cl_pop_lower:
     number: A2-B0-0
     allow_enable: true
-  cl_popbumper_right:
+  cl_pop_right:
     number: A2-B0-1
     allow_enable: true
-  cl_popbumper_left:
+  cl_pop_left:
     number: A2-B0-2
     allow_enable: true
   c_trough_eject:
@@ -108,15 +108,15 @@ autofire_coils:
   slingshot_right:
     coil: c_slingshot_right
     switch: s_slingshot_right
-  popbumper_lower:
-    coil: c_popbumper_lower
-    switch: s_popbumper_lower
-  popbumper_upper_right:
-    coil: c_popbumper_upper_right
-    switch: s_popbumper_upper_right
-  popbumper_upper_left:
-    coil: c_popbumper_upper_left
-    switch: s_popbumper_upper_left
+  pop_lower:
+    coil: c_pop_lower
+    switch: s_pop_lower
+  pop_upper_right:
+    coil: c_pop_upper_right
+    switch: s_pop_upper_right
+  pop_upper_left:
+    coil: c_pop_upper_left
+    switch: s_pop_upper_left
   slingshot_quarters:
     coil: c_slingshot_quarters
     switch: s_slingshot_quarters
