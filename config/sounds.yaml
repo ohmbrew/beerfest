@@ -7,7 +7,19 @@ sounds:
     volume: 1.0
   intro:
     file: intro1.wav
+    track: music
     volume: 1.0
+  voice_welcome:
+    file: welcome.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: 1.0 sec
+        release: 3.0 sec
   music_bubbles:
     file: soundtrack-bubbles.wav
     volume: 1.0

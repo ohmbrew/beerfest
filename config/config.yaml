@@ -183,21 +183,10 @@ assets:
       file: BeerfestIntro.mp4
 
 sound_player:
-  mode_attract_started:
-    intro:
-      action: play
-      loops: 0
-      events_when_stopped: intro_complete
-  intro_complete:
-    introrepeat:
-      action: play
-      loops: -1
   mode_attract_will_stop:
-    intro:
-      action: stop
-  mode_attract_will_stop.1:
-    introrepeat:
-      action: stop
+    voice_welcome:
+      action: play
+      loops: 0    
 
 coil_player:
   enable_knocker:
