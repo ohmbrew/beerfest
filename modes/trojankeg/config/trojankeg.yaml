@@ -132,10 +132,12 @@ sound_player:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
+  
   award_trojankeg_bonus:
     voice_trojankeg_megabonus:
       action: play
-      
+      events_when_stopped: trojankeg_bonus_audio_complete
+
 slides:
   slide_trojankeg_intro:
     widgets:
@@ -395,7 +397,9 @@ slide_player:
     slide_bonus_trojankeg_themed:
       action: play
       priority: 1000
-      expire: 2s
+  trojankeg_bonus_audio_complete:
+    slide_bonus_trojankeg_themed:
+      action: remove
   trojankeg_success:
     slide_trojankeg_main:
       action: remove

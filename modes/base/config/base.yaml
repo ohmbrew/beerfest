@@ -300,7 +300,7 @@ shows:
         c_shaker: disable
 
 sound_player:
-  shot_diverter_hit:
+  shot_diverter_hit{mode.volumechug.active == False}:
     2burps:
       action: play
   shot_ramp_drinko_hit: 

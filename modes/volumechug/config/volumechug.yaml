@@ -109,6 +109,9 @@ sound_player:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
+  shot_diverter_hit{device.state_machines.volumechug_state_machine.state != "wait_for_ramp_boot"}:
+    2burps:
+      action: play
   award_volumechug_bonus:
     voice_volumechug_megabonus:
       action: play
