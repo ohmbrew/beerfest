@@ -3,9 +3,8 @@
 
 mode:
   priority: 500
-  start_events: game_ending, start_high_score
+  start_events: start_high_score, game_ending
   use_wait_queue: true
-  #game_mode: True
 
 high_score:
   _overwrite: true
@@ -31,10 +30,10 @@ high_score:
       - MRG: 600000
 
 event_player:
-  mode_high_score_started: got_highscore   # attempt to have a counter in config count up. That's the only "thing" left running at this point
+  slide_high_score_enter_initials_active: got_highscore   # attempt to have a counter in config count up. That's the only "thing" left running at this point
 
 sound_player:
-  mode_high_score_started:
+  slide_high_score_enter_initials_active:
     voice_yodel:
       action: play
       loops: -1
