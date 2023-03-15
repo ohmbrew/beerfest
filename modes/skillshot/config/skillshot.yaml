@@ -23,6 +23,30 @@ sound_player:
       action: play
 
 slides:
+  slide_skillshot_instructions:
+    widgets:
+    - type: text
+      text: Skill Shot
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: Time Your Launch to hit
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: green
+    
+    - type: image
+      image: background
+
   slide_skillshot_success_full:
     widgets:
     - type: text
@@ -119,7 +143,7 @@ shows:
   show_gi_back_chase:
     - duration: .1
       lights:
-        gi_back1: white
+        gi_back1: red
         gi_back2: off
         gi_back3: off
         gi_back4: off
@@ -128,7 +152,7 @@ shows:
     - duration: .1
       lights:
         gi_back1: off
-        gi_back2: white
+        gi_back2: red
         gi_back3: off
         gi_back4: off
         gi_back5: off
@@ -137,7 +161,7 @@ shows:
       lights:
         gi_back1: off
         gi_back2: off
-        gi_back3: white
+        gi_back3: red
         gi_back4: off
         gi_back5: off
         gi_back6: off
@@ -146,7 +170,7 @@ shows:
         gi_back1: off
         gi_back2: off
         gi_back3: off
-        gi_back4: white
+        gi_back4: red
         gi_back5: off
         gi_back6: off
     - duration: .1
@@ -155,7 +179,7 @@ shows:
         gi_back2: off
         gi_back3: off
         gi_back4: off
-        gi_back5: white
+        gi_back5: green
         gi_back6: off
     - duration: .1
       lights:
@@ -164,7 +188,7 @@ shows:
         gi_back3: off
         gi_back4: off
         gi_back5: off
-        gi_back6: white
+        gi_back6: green
 
 show_player:
   mode_skillshot_started:

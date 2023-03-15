@@ -1,6 +1,8 @@
 #config_version=5
 ##! mode: bonusv2
 
+# TODO: Bonus slide/mode needs to have light show that stops the blinking of slings. Make all blue?
+
 mode:
   start_events: start_mode_bonus
   stop_events: stop_mode_bonus
