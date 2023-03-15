@@ -23,30 +23,75 @@ sound_player:
       action: play
 
 slides:
-  slide_skillshot_instructions:
+  slide_skillshot_intro:
     widgets:
     - type: text
-      text: Skill Shot
-      font_size: 150
+      text: Timed
+      font_size: 125
       font_name: druillet
-      anchor_x: center
+      anchor_x: right
       anchor_y: top
-      x: middle
-      y: top - 35
+      x: right - 125
+      y: top - 15
       color: 008ce5ff
     - type: text
-      text: Time Your Launch to hit
-      font_size: 150
+      text: Skill Shot
+      font_size: 125
       font_name: druillet
-      anchor_x: center
+      anchor_x: right
       anchor_y: top
-      x: middle
-      y: top - 210
-      color: green
-    
+      x: right - 25
+      y: top - 175
+      color: 008ce5ff
+    - type: text
+      text: Hit When Green
+      font_size: 75
+      font_name: druillet
+      anchor_x: left
+      anchor_y: top
+      x: left + 450
+      y: top - 315
+      rotation: -11.5
+      color: 0a760aff
     - type: image
-      image: background
-
+      image: arrow-down
+      anchor_x: center
+      anchor_y: center
+      x: 858
+      y: 240
+      opacity: 0
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 0.5s
+            easing: in_out_quint
+          - property: opacity
+            value: 0
+            duration: 0.5s
+            repeat: true
+            easing: in_out_quint
+    - type: image
+      image: arrow-down
+      anchor_x: center
+      anchor_y: center
+      x: 730
+      y: 270
+      opacity: 0
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 0.5s
+            easing: in_out_quint
+          - property: opacity
+            value: 0
+            duration: 0.5s
+            repeat: true
+            easing: in_out_quint
+    - type: video
+      video: skillshot-intro
+      end_behavior: loop
   slide_skillshot_success_full:
     widgets:
     - type: text
@@ -126,6 +171,14 @@ slides:
       image: background
 
 slide_player:
+  mode_skillshot_started:
+    slide_skillshot_intro:
+      priority: 1000
+      # expire: 4.25s
+  # slide_slide_skillshot_intro_removed:
+  #   slide_skillshot_intro:
+  #     priority: 1000
+  #     expire: 4.25s
   skill_success_full:
     slide_skillshot_success_full:
       priority: 1000
