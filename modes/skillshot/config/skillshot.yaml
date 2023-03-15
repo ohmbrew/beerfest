@@ -224,10 +224,10 @@ state_machines:
     transitions:
       - source: start
         target: success_full
-        events: shot_plunger_lane_exit_hit{device.lights.gi_back6.color[0] > 0}
+        events: shot_plunger_lane_exit_hit{device.lights.gi_back6.color[1] > 0}
       - source: start
         target: success_partial
-        events: shot_plunger_lane_exit_hit{device.lights.gi_back5.color[0] > 0}
+        events: shot_plunger_lane_exit_hit{device.lights.gi_back5.color[1] > 0}
       - source: start
         target: failed
-        events: shot_plunger_lane_exit_hit{device.lights.gi_back6.color[0]==0 and device.lights.gi_back5.color[0]==0}
+        events: shot_plunger_lane_exit_hit{device.lights.gi_back6.color[1]==0 and device.lights.gi_back5.color[1]==0}
