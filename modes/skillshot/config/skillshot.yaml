@@ -25,34 +25,18 @@ sound_player:
 slides:
   slide_skillshot_intro:
     widgets:
-    - type: text
-      text: Timed
-      font_size: 125
-      font_name: druillet
-      anchor_x: right
-      anchor_y: top
-      x: right - 125
-      y: top - 15
-      color: 008ce5ff
-    - type: text
-      text: Skill Shot
-      font_size: 125
-      font_name: druillet
+    - type: image
+      image: skillshottitle
       anchor_x: right
       anchor_y: top
       x: right - 25
-      y: top - 175
-      color: 008ce5ff
-    - type: text
-      text: Hit When Green
-      font_size: 75
-      font_name: druillet
+      y: top - 15
+    - type: image
+      image: hitwhengreen
       anchor_x: left
       anchor_y: top
       x: left + 450
-      y: top - 315
-      rotation: -11.5
-      color: 0a760aff
+      y: top - 325
     - type: image
       image: arrow-down
       anchor_x: center
