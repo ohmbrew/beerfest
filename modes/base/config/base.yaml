@@ -1,6 +1,8 @@
 #config_version=5
 ##! mode: base
 
+# TODO: Das Boot round, make all targets flashing red
+
 mode:
   start_events: ball_started
   priority: 100
@@ -170,20 +172,20 @@ shows:
         tavern_sign1: white
         tavern_sign2: white
         tavern_inside: white
-        gi_left1: white
-        gi_left2: white
-        gi_left3: white
-        gi_left4: white
-        gi_right1: white
-        gi_right2: white
-        gi_right3: white
-        gi_right4: white
-        gi_back1: white
-        gi_back2: white
-        gi_back3: white
-        gi_back4: white
-        gi_back5: white
-        gi_back6: white
+        gi_left1: 008ce5
+        gi_left2: 008ce5
+        gi_left3: 008ce5
+        gi_left4: 008ce5
+        gi_right1: 008ce5
+        gi_right2: 008ce5
+        gi_right3: 008ce5
+        gi_right4: 008ce5
+        gi_back1: 008ce5
+        gi_back2: 008ce5
+        gi_back3: 008ce5
+        gi_back4: 008ce5
+        gi_back5: 008ce5
+        gi_back6: 008ce5
     - duration: -1
   show_pop_left:
     - time: 0
@@ -211,7 +213,7 @@ shows:
       lights:
         slingquarters_upper: off
         slingquarters_lower: off
-    - time: '+.1'
+    - time: '+.5'
       lights:
         slingquarters_upper: on
         slingquarters_lower: on
@@ -220,7 +222,7 @@ shows:
       lights:
         slingleft_upper: off
         slingleft_lower: off
-    - time: '+.1'
+    - time: '+.5'
       lights:
         slingleft_upper: on
         slingleft_lower: on
@@ -229,7 +231,7 @@ shows:
       lights:
         slingright_upper: off
         slingright_lower: off
-    - time: '+.1'
+    - time: '+.5'
       lights:
         slingright_upper: on
         slingright_lower: on
@@ -298,6 +300,633 @@ shows:
     - duration: .1s
       coils:
         c_shaker: disable
+  
+  # theme mode shows
+  init_lights_themed:
+    - time: 0
+      lights:
+        gi_left1: white
+        gi_right1: white
+        gi_left2: white
+        gi_right2: white
+        gi_left3: white
+        gi_right3: white
+        gi_left4: white
+        gi_right4: white
+        gi_back1: white
+        gi_back2: white
+        gi_back3: white
+        gi_back4: white
+        gi_back5: white
+        gi_back6: white
+        slingleft_upper: white
+        slingleft_lower: white
+        slingright_upper: white
+        slingright_lower: white
+        slingquarters_upper: white
+        slingquarters_lower: white
+        flipper_left: white
+        flipper_right: white
+    - duration: -1
+
+  flash_gi_themed:
+    - duration: 1s
+      lights:
+        gi_back1:
+          color: off
+          fade: .25s
+        gi_back2:
+          color: off
+          fade: .25s
+        gi_back3:
+          color: off
+          fade: .25s
+        gi_back4:
+          color: off
+          fade: .25s 
+        gi_back5:
+          color: off
+          fade: .25s
+        gi_back6:
+          color: off
+          fade: .25s
+        gi_left1:
+          color: 008ce5
+          fade: .25s
+        gi_right1:
+          color: 008ce5
+          fade: .25s  
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s
+        slingleft_upper:
+          color: 008ce5
+          fade: .25s 
+        slingleft_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingright_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingright_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_lower: 
+          color: 008ce5
+          fade: .25s 
+        flipper_left: 
+          color: 008ce5
+          fade: .25s 
+        flipper_right: 
+          color: 008ce5
+          fade: .25s 
+
+    - duration: 1s
+      lights:
+        gi_left1:
+          color: off
+          fade: .25s
+        gi_right1:
+          color: off
+          fade: .25s    
+        gi_left2:
+          color: 008ce5
+          fade: .25s
+        gi_right2:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: off
+          fade: .25s 
+        slingleft_lower: 
+          color: off
+          fade: .25s 
+        slingright_upper: 
+          color: off
+          fade: .25s 
+        slingright_lower: 
+          color: off
+          fade: .25s 
+        slingquarters_upper: 
+          color: off
+          fade: .25s 
+        slingquarters_lower: 
+          color: off
+          fade: .25s 
+        flipper_left: 
+          color: off
+          fade: .25s 
+        flipper_right: 
+          color: off
+          fade: .25s 
+
+    - duration: 1s
+      lights:
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s    
+        gi_left3:
+          color: 008ce5
+          fade: .25s
+        gi_right3:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: 008ce5
+          fade: .25s 
+        slingleft_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingright_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingright_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_lower: 
+          color: 008ce5
+          fade: .25s 
+        flipper_left: 
+          color: 008ce5
+          fade: .25s 
+        flipper_right: 
+          color: 008ce5
+          fade: .25s 
+      
+    - duration: 1s
+      lights:
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s    
+        gi_left4:
+          color: 008ce5
+          fade: .25s
+        gi_right4:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: off
+          fade: .25s 
+        slingleft_lower: 
+          color: off
+          fade: .25s 
+        slingright_upper: 
+          color: off
+          fade: .25s 
+        slingright_lower: 
+          color: off
+          fade: .25s 
+        slingquarters_upper: 
+          color: off
+          fade: .25s 
+        slingquarters_lower: 
+          color: off
+          fade: .25s 
+        flipper_left: 
+          color: off
+          fade: .25s 
+        flipper_right: 
+          color: off
+          fade: .25s 
+
+    - duration: 1s
+      lights:
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s    
+        gi_back1:
+          color: 008ce5
+          fade: .25s
+        gi_back6:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: 008ce5
+          fade: .25s 
+        slingleft_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingright_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingright_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_lower: 
+          color: 008ce5
+          fade: .25s 
+        flipper_left: 
+          color: 008ce5
+          fade: .25s 
+        flipper_right: 
+          color: 008ce5
+          fade: .25s 
+
+    - duration: 1s
+      lights:
+        gi_back1:
+          color: off
+          fade: .25s
+        gi_back6:
+          color: off
+          fade: .25s    
+        gi_back2:
+          color: 008ce5
+          fade: .25s
+        gi_back5:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: off
+          fade: .25s 
+        slingleft_lower: 
+          color: off
+          fade: .25s 
+        slingright_upper: 
+          color: off
+          fade: .25s 
+        slingright_lower: 
+          color: off
+          fade: .25s 
+        slingquarters_upper: 
+          color: off
+          fade: .25s 
+        slingquarters_lower: 
+          color: off
+          fade: .25s 
+        flipper_left: 
+          color: off
+          fade: .25s 
+        flipper_right: 
+          color: off
+          fade: .25s
+
+    - duration: 1s
+      lights:
+        gi_back2:
+          color: off
+          fade: .25s
+        gi_back5:
+          color: off
+          fade: .25s    
+        gi_back3:
+          color: 008ce5
+          fade: .25s
+        gi_back4:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: 008ce5
+          fade: .25s 
+        slingleft_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingright_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingright_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_lower: 
+          color: 008ce5
+          fade: .25s 
+        flipper_left: 
+          color: 008ce5
+          fade: .25s 
+        flipper_right: 
+          color: 008ce5
+          fade: .25s
+    # second round
+    - duration: 1s
+      lights:
+        gi_back3:
+          color: off
+          fade: .25s
+        gi_back4:
+          color: off
+          fade: .25s 
+        gi_left1:
+          color: 008ce5
+          fade: .25s
+        gi_right1:
+          color: 008ce5
+          fade: .25s  
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s
+        slingleft_upper:
+          color: off
+          fade: .25s 
+        slingleft_lower: 
+          color: off
+          fade: .25s 
+        slingright_upper: 
+          color: off
+          fade: .25s 
+        slingright_lower: 
+          color: off
+          fade: .25s 
+        slingquarters_upper: 
+          color: off
+          fade: .25s 
+        slingquarters_lower: 
+          color: off
+          fade: .25s 
+        flipper_left: 
+          color: off
+          fade: .25s 
+        flipper_right: 
+          color: off
+          fade: .25s 
+
+    - duration: 1s
+      lights:
+        gi_left1:
+          color: off
+          fade: .25s
+        gi_right1:
+          color: off
+          fade: .25s    
+        gi_left2:
+          color: 008ce5
+          fade: .25s
+        gi_right2:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: 008ce5
+          fade: .25s 
+        slingleft_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingright_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingright_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_lower: 
+          color: 008ce5
+          fade: .25s 
+        flipper_left: 
+          color: 008ce5
+          fade: .25s 
+        flipper_right: 
+          color: 008ce5
+          fade: .25s
+        
+
+    - duration: 1s
+      lights:
+        gi_left2:
+          color: off
+          fade: .25s
+        gi_right2:
+          color: off
+          fade: .25s    
+        gi_left3:
+          color: 008ce5
+          fade: .25s
+        gi_right3:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: off
+          fade: .25s 
+        slingleft_lower: 
+          color: off
+          fade: .25s 
+        slingright_upper: 
+          color: off
+          fade: .25s 
+        slingright_lower: 
+          color: off
+          fade: .25s 
+        slingquarters_upper: 
+          color: off
+          fade: .25s 
+        slingquarters_lower: 
+          color: off
+          fade: .25s 
+        flipper_left: 
+          color: off
+          fade: .25s 
+        flipper_right: 
+          color: off
+          fade: .25s 
+      
+    - duration: 1s
+      lights:
+        gi_left3:
+          color: off
+          fade: .25s
+        gi_right3:
+          color: off
+          fade: .25s    
+        gi_left4:
+          color: 008ce5
+          fade: .25s
+        gi_right4:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: 008ce5
+          fade: .25s 
+        slingleft_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingright_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingright_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_lower: 
+          color: 008ce5
+          fade: .25s 
+        flipper_left: 
+          color: 008ce5
+          fade: .25s 
+        flipper_right: 
+          color: 008ce5
+          fade: .25s
+
+
+    - duration: 1s
+      lights:
+        gi_left4:
+          color: off
+          fade: .25s
+        gi_right4:
+          color: off
+          fade: .25s    
+        gi_back1:
+          color: 008ce5
+          fade: .25s
+        gi_back6:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: off
+          fade: .25s 
+        slingleft_lower: 
+          color: off
+          fade: .25s 
+        slingright_upper: 
+          color: off
+          fade: .25s 
+        slingright_lower: 
+          color: off
+          fade: .25s 
+        slingquarters_upper: 
+          color: off
+          fade: .25s 
+        slingquarters_lower: 
+          color: off
+          fade: .25s 
+        flipper_left: 
+          color: off
+          fade: .25s 
+        flipper_right: 
+          color: off
+          fade: .25s 
+
+    - duration: 1s
+      lights:
+        gi_back1:
+          color: off
+          fade: .25s
+        gi_back6:
+          color: off
+          fade: .25s    
+        gi_back2:
+          color: 008ce5
+          fade: .25s
+        gi_back5:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: 008ce5
+          fade: .25s 
+        slingleft_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingright_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingright_lower: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_upper: 
+          color: 008ce5
+          fade: .25s 
+        slingquarters_lower: 
+          color: 008ce5
+          fade: .25s 
+        flipper_left: 
+          color: 008ce5
+          fade: .25s 
+        flipper_right: 
+          color: 008ce5
+          fade: .25s
+
+    - duration: 1s
+      lights:
+        gi_back2:
+          color: off
+          fade: .25s
+        gi_back5:
+          color: off
+          fade: .25s    
+        gi_back3:
+          color: 008ce5
+          fade: .25s
+        gi_back4:
+          color: 008ce5
+          fade: .25s
+        slingleft_upper:
+          color: off
+          fade: .25s 
+        slingleft_lower: 
+          color: off
+          fade: .25s 
+        slingright_upper: 
+          color: off
+          fade: .25s 
+        slingright_lower: 
+          color: off
+          fade: .25s 
+        slingquarters_upper: 
+          color: off
+          fade: .25s 
+        slingquarters_lower: 
+          color: off
+          fade: .25s 
+        flipper_left: 
+          color: off
+          fade: .25s 
+        flipper_right: 
+          color: off
+          fade: .25s 
+
+
 
 sound_player:
   shot_diverter_hit{mode.volumechug.active == False}:
@@ -462,6 +1091,19 @@ show_player:
     base_show:
       speed: 1
       loops: -1
+  mode_bonusv2_started:
+    base_show:
+      action: stop
+  mode_bonusv2_started.1:
+    show_init_base:
+      action: stop
+  mode_bonusv2_stopped:
+    base_show:
+      speed: 1
+      loops: -1
+  mode_bonusv2_stopped.1:
+    show_init_base:
+      loops: 0
   shot_pop_lower_hit:
     show_pop_lower:
       loops: 0
@@ -489,7 +1131,7 @@ show_player:
       loops: 0
   shot_tavern_hit:
     show_tavern_hit:
-      speed: 4
+      speed: 1
       loops: 0
     show_shaker_1s:
       loops: 0

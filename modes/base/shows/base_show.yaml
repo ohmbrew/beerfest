@@ -2,124 +2,48 @@
 - duration: 1
   lights:
     slingquarters_upper:
-      color: red
+      color: off
+      fade: .25s
+    slingquarters_lower:
+      color: 008ce5
+      fade: .25s
+    slingleft_upper: off
+    slingleft_lower:
+      color: 008ce5
+      fade: .25s
+    slingright_upper: off
+    slingright_lower:
+      color: 008ce5
+      fade: .25s
+    flipper_left:
+      color: 008ce5
+      fade: .25s
+    flipper_right:
+      color: 008ce5
+      fade: .25s
+- duration: 1
+  lights:
+    slingquarters_upper:
+      color: 008ce5
       fade: .25s
     slingquarters_lower:
       color: off
       fade: .25s
-    slingleft_upper: white
-    slingleft_lower: off
-    slingright_upper: off
-    slingright_lower: blue
-    flipper_left: red
-    flipper_right: red
-- duration: 1
-  lights:
-    slingquarters_upper: off
-    slingquarters_lower: red
-    slingleft_upper: off
-    slingleft_lower: white
-    slingright_upper: blue
-    slingright_lower: off
-    flipper_left: white
-    flipper_right: white
-- duration: 1
-  lights:
-    slingquarters_upper: white
-    slingquarters_lower: off
-    slingleft_upper: blue
-    slingleft_lower: off
-    slingright_upper: off
-    slingright_lower: red
-    flipper_left: blue
-    flipper_right: blue
-- duration: 1
-  lights:
-    slingquarters_upper: off
-    slingquarters_lower: white
-    slingleft_upper: off
-    slingleft_lower: blue
-    slingright_upper: red
-    slingright_lower: off
-    flipper_left: red
-    flipper_right: red
-- duration: 1
-  lights:
-    slingquarters_upper: blue
-    slingquarters_lower: off
-    slingleft_upper: red
-    slingleft_lower: off
-    slingright_upper: off
-    slingright_lower: white
-    flipper_left: white
-    flipper_right: white
-- duration: 1
-  lights:
-    slingquarters_upper: off
-    slingquarters_lower: blue
-    slingleft_upper: off
-    slingleft_lower: red
-    slingright_upper: white
-    slingright_lower: off
-    flipper_left: blue
-    flipper_right: blue
-- duration: 1
-  lights:
-    slingquarters_upper: red
-    slingquarters_lower: off
-    slingleft_upper: white
-    slingleft_lower: off
-    slingright_upper: off
-    slingright_lower: blue
-    flipper_left: red
-    flipper_right: red
-- duration: 1
-  lights:
-    slingquarters_upper: off
-    slingquarters_lower: red
-    slingleft_upper: off
-    slingleft_lower: white
-    slingright_upper: blue
-    slingright_lower: off
-    flipper_left: white
-    flipper_right: white
-- duration: 1
-  lights:
-    slingquarters_upper: white
-    slingquarters_lower: off
-    slingleft_upper: blue
-    slingleft_lower: off
-    slingright_upper: off
-    slingright_lower: red
-    flipper_left: blue
-    flipper_right: blue
-- duration: 1
-  lights:
-    slingquarters_upper: off
-    slingquarters_lower: white
-    slingleft_upper: off
-    slingleft_lower: blue
-    slingright_upper: red
-    slingright_lower: off
-    flipper_left: red
-    flipper_right: red
-- duration: 1
-  lights:
-    slingquarters_upper: blue
-    slingquarters_lower: off
-    slingleft_upper: red
-    slingleft_lower: off
-    slingright_upper: off
-    slingright_lower: white
-    flipper_left: white
-    flipper_right: white
-- duration: 1
-  lights:
-    slingquarters_upper: off
-    slingquarters_lower: blue
-    slingleft_upper: off
-    slingleft_lower: red
-    slingright_upper: white
-    slingright_lower: off
-    flipper_left: blue
-    flipper_right: blue
+    slingleft_upper:
+      color: 008ce5
+      fade: .25s
+    slingleft_lower:
+      color: off
+      fade: .25s
+    slingright_upper:
+      color: 008ce5
+      fade: .25s
+    slingright_lower:
+      color: off
+      fade: .25s
+    flipper_left:
+      color: off
+      fade: .25s
+    flipper_right:
+      color: off
+      fade: .25s

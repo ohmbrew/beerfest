@@ -306,32 +306,6 @@ event_player:
   slide_slide_quarters_partial_removed: slide_event_done
 
 shows:
-  init_lights_quarters:
-    - time: 0
-      lights:
-        gi_left1: white
-        gi_right1: white
-        gi_left2: white
-        gi_right2: white
-        gi_left3: white
-        gi_right3: white
-        gi_left4: white
-        gi_right4: white
-        gi_back1: white
-        gi_back2: white
-        gi_back3: white
-        gi_back4: white
-        gi_back5: white
-        gi_back6: white
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
-    - duration: -1
   flash_quarters_insert:
     - duration: 1
       lights:
@@ -344,165 +318,49 @@ shows:
           color: off
           fade: .5s
   flash_quarters_prop:
-    - duration: 2
+    - duration: 1s
       lights:
         quarters:
           color: red
-          fade: .5
-    - duration: 2
+          fade: .25s
+    - duration: 1s
       lights:
         quarters:
           color: off
-          fade: .5
-    - duration: 2
-      lights:
-        quarters:
-          color: white
-          fade: .5
-    - duration: 2
-      lights:
-        quarters:
-          color: off
-          fade: .5
-    - duration: 2
-      lights:
-        quarters:
-          color: blue
-          fade: .5
-    - duration: 2
-      lights:
-        quarters:
-          color: off
-          fade: .5
-  flash_gi_quarters:
-    - duration: 1s
-      lights:
-        gi_back3:
-          color: off
           fade: .25s
-        gi_back4:
-          color: off
-          fade: .25s  
-        gi_left1:
-          color: white
-          fade: .25s
-        gi_right1:
-          color: white
-          fade: .25s      
-    - duration: 1s
-      lights:
-        gi_left1:
-          color: off
-          fade: .25s
-        gi_right1:
-          color: off
-          fade: .25s    
-        gi_left2:
-          color: white
-          fade: .25s
-        gi_right2:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left2:
-          color: off
-          fade: .25s
-        gi_right2:
-          color: off
-          fade: .25s    
-        gi_left3:
-          color: white
-          fade: .25s
-        gi_right3:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left3:
-          color: off
-          fade: .25s
-        gi_right3:
-          color: off
-          fade: .25s    
-        gi_left4:
-          color: white
-          fade: .25s
-        gi_right4:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left4:
-          color: off
-          fade: .25s
-        gi_right4:
-          color: off
-          fade: .25s    
-        gi_back1:
-          color: white
-          fade: .25s
-        gi_back6:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back1:
-          color: off
-          fade: .25s
-        gi_back6:
-          color: off
-          fade: .25s    
-        gi_back2:
-          color: white
-          fade: .25s
-        gi_back5:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back2:
-          color: off
-          fade: .25s
-        gi_back5:
-          color: off
-          fade: .25s    
-        gi_back3:
-          color: white
-          fade: .25s
-        gi_back4:
-          color: white
-          fade: .25s
-  solid_on_quarters:
-    - time: 0
-      lights:
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
-    - duration: -1
 
 show_player:
   mode_quarters_started:
-    init_lights_quarters:
+    init_lights_themed:
       loops: 0
-  kicker_mode_eject:
+  mode_quarters_started.1:
     flash_quarters_insert:
       speed: 2
-  kicker_mode_eject.1:
+  mode_quarters_started.2:
     flash_quarters_prop:
       speed: 4
-  kicker_mode_eject.2:
-    flash_gi_quarters:
+
+  start_background_music:
+    flash_gi_themed:
       speed: 4
       loops: -1
-  kicker_mode_eject.3:
-    solid_on_quarters:
-      loops: 0
+
+  # stop light shows on success/partial/fail
+  quarters_success:
+    flash_quarters_prop:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  quarters_partial:
+    flash_quarters_prop:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  quarters_fail:
+    flash_quarters_prop:
+      action: stop
+    flash_gi_themed:
+      action: stop
 
 # timed round
 timers:

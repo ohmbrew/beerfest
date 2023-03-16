@@ -345,33 +345,40 @@ event_player:
   slide_slide_strikeout_fail_removed: slide_event_done
   slide_slide_strikeout_partial_removed: slide_event_done
 
+shot_groups:
+  strikeout:
+    shots: shot_strikeout_chugbeer, shot_strikeout_takehit, shot_strikeout_doshot
+    reset_events: bank_strikeout_complete
+    enable_events: mode_strikeout_started
+    disable_events: strikeout_success, strikeout_partial, strikeout_fail
+
+shot_profiles:
+  strikeout_profile:
+    states:
+      - name:
+        show: flash_strikeout_unhit
+      - name: hit
+        show: flash_strikeout_hit
+
+shots:      
+  shot_strikeout_takehit:
+    switch: s_take_hit
+    profile: strikeout_profile
+    show_tokens:
+      led: strikeout_bong
+  shot_strikeout_chugbeer:
+    switch: s_chug_beer
+    profile: strikeout_profile
+    show_tokens:
+      led: strikeout_beer
+  shot_strikeout_doshot:
+    switch: s_do_shot
+    profile: strikeout_profile
+    show_tokens:
+      led: strikeout_shot
+
+
 shows:
-  init_lights_strikeout:
-    - time: 0
-      lights:
-        gi_left1: white
-        gi_right1: white
-        gi_left2: white
-        gi_right2: white
-        gi_left3: white
-        gi_right3: white
-        gi_left4: white
-        gi_right4: white
-        gi_back1: white
-        gi_back2: white
-        gi_back3: white
-        gi_back4: white
-        gi_back5: white
-        gi_back6: white
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
-    - duration: -1
   flash_strikeout_insert:
     - duration: 1
       lights:
@@ -385,181 +392,78 @@ shows:
           fade: .5s
 
   flash_strikeout_prop:
-    - duration: 1
+    - duration: 1s
       lights:
         strikeout_shot:
           color: red
-          fade: .5s
-        strikeout_beer:
-          color: white
-          fade: .5s
-        strikeout_bong:
-          color: blue
-          fade: .5s
-    - duration: 1
-      lights:
-        strikeout_shot:
-          color: white
-          fade: .5s
-        strikeout_beer:
-          color: blue
-          fade: .5s
-        strikeout_bong:
-          color: off
-          fade: .5s
-    - duration: 1
-      lights:
-        strikeout_shot:
-          color: blue
-          fade: .5s
-        strikeout_beer:
-          color: off
-          fade: .5s
-        strikeout_bong:
-          color: red
-          fade: .5s
-    - duration: 1
-      lights:
-        strikeout_shot:
-          color: off
-          fade: .5s
+          fade: .25s
         strikeout_beer:
           color: red
-          fade: .5s
+          fade: .25s
         strikeout_bong:
-          color: white
-          fade: .5s
+          color: red
+          fade: .25s
+    - duration: 1s
+      lights:
+        strikeout_shot:
+          color: off
+          fade: .25s
+        strikeout_beer:
+          color: off
+          fade: .25s
+        strikeout_bong:
+          color: off
+          fade: .25s
 
-  flash_gi_strikeout:
-    - duration: 1s
+  flash_strikeout_unhit:
+    - duration: .5s
       lights:
-        gi_back3:
-          color: off
+        (led):
+          color: red
           fade: .25s
-        gi_back4:
-          color: off
-          fade: .25s  
-        gi_left1:
-          color: white
-          fade: .25s
-        gi_right1:
-          color: white
-          fade: .25s      
-    - duration: 1s
+    - duration: .5s
       lights:
-        gi_left1:
+        (led):
           color: off
           fade: .25s
-        gi_right1:
-          color: off
-          fade: .25s    
-        gi_left2:
-          color: white
-          fade: .25s
-        gi_right2:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left2:
-          color: off
-          fade: .25s
-        gi_right2:
-          color: off
-          fade: .25s    
-        gi_left3:
-          color: white
-          fade: .25s
-        gi_right3:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left3:
-          color: off
-          fade: .25s
-        gi_right3:
-          color: off
-          fade: .25s    
-        gi_left4:
-          color: white
-          fade: .25s
-        gi_right4:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left4:
-          color: off
-          fade: .25s
-        gi_right4:
-          color: off
-          fade: .25s    
-        gi_back1:
-          color: white
-          fade: .25s
-        gi_back6:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back1:
-          color: off
-          fade: .25s
-        gi_back6:
-          color: off
-          fade: .25s    
-        gi_back2:
-          color: white
-          fade: .25s
-        gi_back5:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back2:
-          color: off
-          fade: .25s
-        gi_back5:
-          color: off
-          fade: .25s    
-        gi_back3:
-          color: white
-          fade: .25s
-        gi_back4:
-          color: white
-          fade: .25s
-  solid_on_strikeout:
-    - time: 0
-      lights:
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
+  flash_strikeout_hit:
     - duration: -1
+      lights:
+        (led): green
 
 show_player:
   mode_strikeout_started:
-    init_lights_strikeout:
+    init_lights_themed:
       loops: 0
-  kicker_mode_eject:
+  mode_strikeout_started.1:
     flash_strikeout_insert:
       speed: 2
-  kicker_mode_eject.1:
+  mode_strikeout_started.2:
     flash_strikeout_prop:
       speed: 4
-  kicker_mode_eject.2:
-    flash_gi_strikeout:
+
+  start_background_music:
+    flash_gi_themed:
       speed: 4
       loops: -1
-  kicker_mode_eject.3:
-    solid_on_strikeout:
-      loops: 0
 
+  # stop light shows on success/partial/fail
+  strikeout_success:
+    flash_strikeout_prop:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  strikeout_partial:
+    flash_strikeout_prop:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  strikeout_fail:
+    flash_strikeout_prop:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  
 # timed round
 timers:
   round_timer_strikeout:

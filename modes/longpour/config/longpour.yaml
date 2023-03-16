@@ -308,32 +308,6 @@ event_player:
   slide_slide_longpour_partial_removed: slide_event_done
 
 shows:
-  init_lights_longpour:
-    - time: 0
-      lights:
-        gi_left1: white
-        gi_right1: white
-        gi_left2: white
-        gi_right2: white
-        gi_left3: white
-        gi_right3: white
-        gi_left4: white
-        gi_right4: white
-        gi_back1: white
-        gi_back2: white
-        gi_back3: white
-        gi_back4: white
-        gi_back5: white
-        gi_back6: white
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
-    - duration: -1
   flash_longpour_insert:
     - duration: 1
       lights:
@@ -610,135 +584,39 @@ shows:
         arrow_drinko3:
           color: blue
           fade: .5
-  flash_gi_longpour:
-    - duration: 1s
-      lights:
-        gi_back3:
-          color: off
-          fade: .25s
-        gi_back4:
-          color: off
-          fade: .25s  
-        gi_left1:
-          color: white
-          fade: .25s
-        gi_right1:
-          color: white
-          fade: .25s      
-    - duration: 1s
-      lights:
-        gi_left1:
-          color: off
-          fade: .25s
-        gi_right1:
-          color: off
-          fade: .25s    
-        gi_left2:
-          color: white
-          fade: .25s
-        gi_right2:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left2:
-          color: off
-          fade: .25s
-        gi_right2:
-          color: off
-          fade: .25s    
-        gi_left3:
-          color: white
-          fade: .25s
-        gi_right3:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left3:
-          color: off
-          fade: .25s
-        gi_right3:
-          color: off
-          fade: .25s    
-        gi_left4:
-          color: white
-          fade: .25s
-        gi_right4:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left4:
-          color: off
-          fade: .25s
-        gi_right4:
-          color: off
-          fade: .25s    
-        gi_back1:
-          color: white
-          fade: .25s
-        gi_back6:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back1:
-          color: off
-          fade: .25s
-        gi_back6:
-          color: off
-          fade: .25s    
-        gi_back2:
-          color: white
-          fade: .25s
-        gi_back5:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back2:
-          color: off
-          fade: .25s
-        gi_back5:
-          color: off
-          fade: .25s    
-        gi_back3:
-          color: white
-          fade: .25s
-        gi_back4:
-          color: white
-          fade: .25s
-  solid_on_longpour:
-    - time: 0
-      lights:
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
-    - duration: -1
-
+  
 show_player:
   mode_longpour_started:
-    init_lights_longpour:
+    init_lights_themed:
       loops: 0
-  kicker_mode_eject:
+  mode_longpour_started.1:
     flash_longpour_insert:
       speed: 2
-  kicker_mode_eject.1:
+  mode_longpour_started.2:
     flash_ramp_arrows:
       speed: 4
-  kicker_mode_eject.2:
-    flash_gi_longpour:
+
+  start_background_music:
+    flash_gi_themed:
       speed: 4
       loops: -1
-  kicker_mode_eject.3:
-    solid_on_longpour:
-      loops: 0
+
+  # stop light shows on success/partial/fail
+  longpour_success:
+    flash_ramp_arrows:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  longpour_partial:
+    flash_ramp_arrows:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  longpour_fail:
+    flash_ramp_arrows:
+      action: stop
+    flash_gi_themed:
+      action: stop
 
 # timed round
 timers:

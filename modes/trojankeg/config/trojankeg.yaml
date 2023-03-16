@@ -13,7 +13,8 @@ shot_groups:
     shots: shot_trojankeg_hj, shot_trojankeg_bj, shot_trojankeg_zj
     reset_events: award_trojankeg_bonus
     enable_events: mode_trojankeg_started
-    
+    disable_events: trojankeg_success, trojankeg_partial, trojankeg_fail
+
 shot_profiles:
   xjs_profile:
     states:
@@ -61,10 +62,6 @@ state_machines:
         label: Trojan Keg SM Starting
       wait_for_xjs:
         label: Waiting for HJ, BJ, and ZJ shots
-        #show_when_active:
-        #  show: flash_trojankeg_wait_xjs
-        #  speed: 4
-        #  loops: -1
       wait_for_saucer_keg:
         label: Waiting for Saucer Keg hit
         show_when_active:
@@ -471,32 +468,6 @@ shows:
     - duration: -1
       lights:
         (led): green
-  init_lights_trojankeg:
-    - time: 0
-      lights:
-        gi_left1: white
-        gi_right1: white
-        gi_left2: white
-        gi_right2: white
-        gi_left3: white
-        gi_right3: white
-        gi_left4: white
-        gi_right4: white
-        gi_back1: white
-        gi_back2: white
-        gi_back3: white
-        gi_back4: white
-        gi_back5: white
-        gi_back6: white
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
-    - duration: -1
   flash_trojankeg_insert:
     - duration: 1
       lights:
@@ -508,7 +479,6 @@ shows:
         mode_trojankeg: 
           color: off
           fade: .5s
-
   flash_trojankeg_wait_saucer:
     - duration: 1
       lights:
@@ -592,132 +562,46 @@ shows:
           color: blue
           fade: .5
 
-  flash_gi_trojankeg:
-    - duration: 1s
-      lights:
-        gi_back3:
-          color: off
-          fade: .25s
-        gi_back4:
-          color: off
-          fade: .25s  
-        gi_left1:
-          color: white
-          fade: .25s
-        gi_right1:
-          color: white
-          fade: .25s      
-    - duration: 1s
-      lights:
-        gi_left1:
-          color: off
-          fade: .25s
-        gi_right1:
-          color: off
-          fade: .25s    
-        gi_left2:
-          color: white
-          fade: .25s
-        gi_right2:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left2:
-          color: off
-          fade: .25s
-        gi_right2:
-          color: off
-          fade: .25s    
-        gi_left3:
-          color: white
-          fade: .25s
-        gi_right3:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left3:
-          color: off
-          fade: .25s
-        gi_right3:
-          color: off
-          fade: .25s    
-        gi_left4:
-          color: white
-          fade: .25s
-        gi_right4:
-          color: white
-          fade: .25s    
-    - duration: 1s
-      lights:
-        gi_left4:
-          color: off
-          fade: .25s
-        gi_right4:
-          color: off
-          fade: .25s    
-        gi_back1:
-          color: white
-          fade: .25s
-        gi_back6:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back1:
-          color: off
-          fade: .25s
-        gi_back6:
-          color: off
-          fade: .25s    
-        gi_back2:
-          color: white
-          fade: .25s
-        gi_back5:
-          color: white
-          fade: .25s
-    - duration: 1s
-      lights:
-        gi_back2:
-          color: off
-          fade: .25s
-        gi_back5:
-          color: off
-          fade: .25s    
-        gi_back3:
-          color: white
-          fade: .25s
-        gi_back4:
-          color: white
-          fade: .25s
-  solid_on_trojankeg:
-    - time: 0
-      lights:
-        slingleft_upper: white
-        slingleft_lower: white
-        slingright_upper: white
-        slingright_lower: white
-        slingquarters_upper: white
-        slingquarters_lower: white
-        flipper_left: white
-        flipper_right: white
-    - duration: -1
-
 show_player:
   mode_trojankeg_started:
-    init_lights_trojankeg:
+    init_lights_themed:
       loops: 0
-  start_background_music:
+  mode_trojankeg_started.1:
     flash_trojankeg_insert:
       speed: 2
-  start_background_music.1:
-    flash_gi_trojankeg:
+  start_background_music:
+    flash_gi_themed:
       speed: 4
       loops: -1
-  start_background_music.2:
-    solid_on_trojankeg:
-      loops: 0
+  
+  # stop light shows on success/partial/fail
+  trojankeg_success:
+    flash_xjs_unhit:
+      action: stop
+    flash_xjs_hit:
+      action: stop
+    flash_trojankeg_wait_saucer:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  trojankeg_partial:
+    flash_xjs_unhit:
+      action: stop
+    flash_xjs_hit:
+      action: stop
+    flash_trojankeg_wait_saucer:
+      action: stop
+    flash_gi_themed:
+      action: stop
+  trojankeg_fail:
+    flash_xjs_unhit:
+      action: stop
+    flash_xjs_hit:
+      action: stop
+    flash_trojankeg_wait_saucer:
+      action: stop
+    flash_gi_themed:
+      action: stop       
 
 # timed round
 timers:
