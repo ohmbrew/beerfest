@@ -325,13 +325,13 @@ show_player:
   drain_gameover_highscore:
     show_gameover_highscore:
       loops: 0
-  game_will_end:
-    attract_RWB_sweep:
-      loops: -1
-      speed: 10
-  game_ended:
-    attract_RWB_sweep:
-      action: stop
+  #game_will_end:
+  #  attract_RWB_sweep:
+  #    loops: -1
+  #    speed: 10
+  #game_ended:
+  #  attract_RWB_sweep:
+  #    action: stop
     
 shows:
   show_gameover_nohighscore:

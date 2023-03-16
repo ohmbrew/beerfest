@@ -2,8 +2,8 @@
 ##! mode: bonusv2
 
 mode:
-  start_events: start_mode_bonus
-  stop_events: stop_mode_bonus
+  start_events: start_mode_bonusv2
+  stop_events: stop_mode_bonusv2
   priority: 300
 
 variable_player:
@@ -1108,7 +1108,7 @@ slide_player:
       action: remove
 
 event_player:
-  slide_slide_bonus_total_removed: stop_mode_bonus
+  slide_slide_bonus_total_removed: stop_mode_bonusv2
 
 # These slides are called from our bonus show above. They get data from current player variables data that is set when this bonus mode starts
 slides:

@@ -27,7 +27,7 @@ event_player:
 
 queue_relay_player:
   ball_ending:
-    post: start_mode_bonus
+    post: start_mode_bonusv2
     wait_for: mode_bonusv2_stopped
 
 slides:
