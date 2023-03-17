@@ -1,0 +1,66 @@
+#config_version=5
+##! mode: flipperflop
+
+mode:
+  start_events: start_mode_flipperflop
+  stop_events: stop_mode_flipperflop, ball_will_end
+
+event_player:
+  mode_flipperflop_started: flippers_flopped  # send event to change active flippers
+  mode_flipperflop_will_stop: flippers_normal # go back to normal
+
+slides:
+  flipperflop_activated:
+    widgets:
+    - type: text
+      text: DRUNKEN FLIPPER
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: FLOP!
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: All Targets 5M
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+
+slide_player:
+  mode_flipperflop_started:
+    flipperflop_activated:
+      priority: 1000
+      expire: 2s
+
+  # slide_flipperflop_activated_audio_complete:
+  #   flipperflop_activated:
+  #     action: remove
+
+# variable_player:
+#   spellbeer_group_hit_complete{mode.dasboot.active == False}:
+#     score: current_player.pts_spell_beer
+#     bonus_multiplier: 1
+
+
+

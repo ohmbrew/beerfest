@@ -61,6 +61,7 @@ modes:
   - volumechug
   - trojankeg
   - dasboot
+  - flipperflop
 
 widget_styles:
   attract_mode_high_score_display_label:
@@ -207,14 +208,33 @@ drop_target_banks:
     reset_coils: c_strike_out
     reset_on_complete: 1s
     reset_events: strikeout_bank_reset
-      
+
+# have two sets of flipper definitions. One for normal playing, another for when player activates flipperflop mode
 flippers:
+  # normal
   flipper_left:
     main_coil: c_flipper_left
     activation_switch: s_flipper_left
+    enable_events: machine_reset_phase_3, flippers_normal
+    disable_events: flippers_flopped
   flipper_right:
     main_coil: c_flipper_right
     activation_switch: s_flipper_right
+    enable_events: machine_reset_phase_3, flippers_normal
+    disable_events: flippers_flopped
+
+  # swap flippers during flipperflop mode
+  flipper_flopped_left:
+    main_coil: c_flipper_left
+    activation_switch: s_flipper_right
+    enable_events: flippers_flopped
+    disable_events: machine_reset_phase_3, flippers_normal
+  flipper_flopped_right:
+    main_coil: c_flipper_right
+    activation_switch: s_flipper_left
+    enable_events: flippers_flopped
+    disable_events: machine_reset_phase_3, flippers_normal
+
   flipper_upper:
     main_coil: c_flipper_upper
     activation_switch: s_flipper_right
@@ -325,13 +345,6 @@ show_player:
   drain_gameover_highscore:
     show_gameover_highscore:
       loops: 0
-  #game_will_end:
-  #  attract_RWB_sweep:
-  #    loops: -1
-  #    speed: 10
-  #game_ended:
-  #  attract_RWB_sweep:
-  #    action: stop
     
 shows:
   show_gameover_nohighscore:

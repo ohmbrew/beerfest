@@ -316,6 +316,11 @@ player_vars:
     initial_value: 0
     value_type: int
 
+  # additional point variations
+  flipperflop_pts:
+    initial_value: 5000000
+    value_type: int
+
   # track if we are displaying drinko bonus slide. This is used to enforce order of Monkeychug bonus slide/sound and Drinko bonus slide/sound
   is_slide_drinko1_queued:
     initial_value: 0

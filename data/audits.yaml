@@ -1,5 +1,5 @@
 events:
-  game_ended: 1
+  game_ended: 0
   game_started: 1
 player:
   score:
@@ -26,7 +26,7 @@ shots:
   pongtable_front_left: 89
   pongtable_front_right: 78
   quarters: 30
-  shot_bj: 108
+  shot_bj: 109
   shot_chance: 215
   shot_chug_beer: 189
   shot_diverter: 226
@@ -37,14 +37,14 @@ shots:
   shot_drinko_n: 367
   shot_drinko_o: 362
   shot_drinko_r: 373
-  shot_hj: 132
+  shot_hj: 133
   shot_kicker_mode: 786
   shot_kicker_rimrules: 126
   shot_laneleft_inner: 45
   shot_laneleft_outer: 8
   shot_laneright_inner: 28
   shot_laneright_outer: 5
-  shot_plunger_lane_exit: 814
+  shot_plunger_lane_exit: 815
   shot_pongcup1: 176
   shot_pongcup2: 54
   shot_pop_lower: 332
@@ -52,7 +52,7 @@ shots:
   shot_pop_upper_right: 534
   shot_quarters: 2061
   shot_ramp_boot: 10
-  shot_ramp_drinko: 95
+  shot_ramp_drinko: 96
   shot_sling_left: 1
   shot_sling_quarters: 26
   shot_slingleft: 21
@@ -73,14 +73,14 @@ shots:
   shot_trojankeg_middle: 170
   shot_trojankeg_right: 113
   shot_trojankeg_zj: 48
-  shot_zj: 98
+  shot_zj: 99
   take_hit: 57
   trojankeg_left: 37
   trojankeg_middle: 28
   trojankeg_right: 32
 switches:
   s_adult: 3
-  s_bj: 108
+  s_bj: 109
   s_chance: 324
   s_chug_beer: 268
   s_diverter: 229
@@ -94,7 +94,7 @@ switches:
   s_drinko_r: 342
   s_flipper_left: 2005
   s_flipper_right: 2401
-  s_hj: 133
+  s_hj: 134
   s_horseshoe: 264
   s_kicker_mode: 1380
   s_kicker_rimrules: 615
@@ -108,8 +108,8 @@ switches:
   s_openswitch_2: 0
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 2247
-  s_plunger_lane_exit: 1003
+  s_plunger_lane: 2248
+  s_plunger_lane_exit: 1004
   s_pongcup1: 177
   s_pongcup2: 54
   s_pongtable_exit: 40
@@ -120,7 +120,7 @@ switches:
   s_pop_upper_left: 6449
   s_pop_upper_right: 598
   s_quarters: 2095
-  s_ramp_upf_entry: 130
+  s_ramp_upf_entry: 131
   s_ramp_upf_exit: 0
   s_right_flipper: 183
   s_slingshot_left: 947
@@ -140,7 +140,7 @@ switches:
   s_trough1: 385
   s_trough2: 367
   s_trough3: 326
-  s_trough_eject: 1536
+  s_trough_eject: 1537
   s_upf_tgt_left: 169
   s_upf_tgt_right: 157
-  s_zj: 98
+  s_zj: 99

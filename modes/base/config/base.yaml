@@ -25,6 +25,10 @@ event_player:
     - start_mode_global
   timer_monkeychug_slide_timer_complete: show_queued_drinko_bonus   # tell Drinko Bonus mode that we're done showing Monkeychug slide, if it has queued Drinko Bonus slide
 
+  # TODO: putting these in here to test flipperflop
+  shot_hj_hit: flippers_flopped
+  shot_bj_hit: flippers_normal
+
 queue_relay_player:
   ball_ending:
     post: start_mode_bonusv2
