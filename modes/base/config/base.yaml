@@ -25,9 +25,14 @@ event_player:
     - start_mode_global
   timer_monkeychug_slide_timer_complete: show_queued_drinko_bonus   # tell Drinko Bonus mode that we're done showing Monkeychug slide, if it has queued Drinko Bonus slide
 
-  # TODO: putting these in here to test flipperflop
-  shot_hj_hit: flippers_flopped
-  shot_bj_hit: flippers_normal
+
+counters:
+  track_flipperflop:    # track if we've hit 3 boot shots in 15 seconds
+    count_events: shot_diverter_hit
+    count_complete_value: 3
+    events_when_complete: start_mode_flipperflop
+    logic_block_timer: 15s
+    reset_on_complete: true
 
 queue_relay_player:
   ball_ending:
@@ -1142,9 +1147,9 @@ show_player:
   shot_diverter_hit:
     show_shaker_1s:
       loops: 0
-  #shot_ramp_drinko_hit:
-  #  show_shaker_1s:
-  #    loops: 0
+  shot_ramp_drinko_hit:
+    show_shaker_1s:
+      loops: 0
 
   mode_longpour_stopped{current_player.has_longpour==1}: show_longpour_insert
   mode_base_started{current_player.has_longpour==1}: show_longpour_insert
