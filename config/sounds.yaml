@@ -79,17 +79,7 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
-  voice_longpour_intro:
-    file: modeintro-longpour.wav
-    track: voice
-    volume: 1.0
-    ducking:
-        target: music
-        delay: 0
-        attack: 0.3 sec
-        attenuation: -50db
-        release_point: .5 sec
-        release: 1.5 sec
+  # Longpour is custom from Derek/BL (below)
   voice_quarters_intro:
     file: modeintro-quarters.wav
     track: voice
@@ -274,28 +264,7 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
-  voice_gonnadrinkbeer:
-    file: gonnadrinkbeer.wav
-    track: voice
-    volume: 1.0
-    ducking:
-        target: music
-        delay: 0
-        attack: 0.3 sec
-        attenuation: -50db
-        release_point: .5 sec
-        release: 1.5 sec
-  voice_greatestbeer:
-    file: greatestbeer.wav
-    track: voice
-    volume: 1.0
-    ducking:
-        target: music
-        delay: 0
-        attack: 0.3 sec
-        attenuation: -50db
-        release_point: .5 sec
-        release: 1.5 sec
+   
   voice_ballsave:
     file: death-save-landfillalive.wav
     track: voice
@@ -307,8 +276,56 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
+
+  # Callouts from Derek. TODO: Change to Broken Lizard when I get them
+  voice_flipperflop_active:
+    file: Derek-flippersflopped.wav
+    track: voice
+    volume: 1.0
+    # ducking:
+    #     target: music
+    #     delay: 0
+    #     attack: 0.3 sec
+    #     attenuation: -50db
+    #     release_point: .5 sec
+    #     release: 1.5 sec
+  voice_multiball:
+    file: Derek-MunichMultiball.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+  voice_spelledbeer:
+    file: Derek-SpelledBeer.wav
+    track: voice
+    volume: 1.0
+    # ducking:
+    #     target: music
+    #     delay: 0
+    #     attack: 0.3 sec
+    #     attenuation: -50db
+    #     release_point: .5 sec
+    #     release: 1.5 sec
+
+  voice_longpour_intro:
+    file: Derek-LongpourIntro.wav
+    track: voice
+    volume: 1.0
+    ducking:
+        target: music
+        delay: 0
+        attack: 0.3 sec
+        attenuation: -50db
+        release_point: .5 sec
+        release: 1.5 sec
+
   voice_volumechug_megabonus:
-    file: volumechugmegabonus.wav
+    file: Derek-VolumeChugMegaBonus.wav
     track: voice
     volume: 1.0
     ducking:
@@ -319,7 +336,7 @@ sounds:
         release_point: .5 sec
         release: 1.5 sec
   voice_trojankeg_megabonus:
-    file: trojankegmegabonus.wav
+    file: Derek-TrojanKegMegaBonus.wav
     track: voice
     volume: 1.0
     ducking:
@@ -329,26 +346,24 @@ sounds:
         attenuation: -10db
         release_point: .5 sec
         release: 1.5 sec
-
-  # no ducking on DRINKO letters. Sounds better.
   voice_drinko_d:
-    file: drinko-d.wav
+    file: Derek-D.wav
     track: voice
     volume: 1.0
   voice_drinko_r:
-    file: drinko-r.wav
+    file: Derek-R.wav
     track: voice
     volume: 1.0
   voice_drinko_n:
-    file: drinko-n.wav
+    file: Derek-N.wav
     track: voice
     volume: 1.0
   voice_drinko_k:
-    file: drinko-k.wav
+    file: Derek-K.wav
     track: voice
     volume: 1.0
   voice_drinko_o:
-    file: drinko-o.wav
+    file: Derek-O.wav
     track: voice
     volume: 1.0
       

@@ -957,9 +957,9 @@ shows:
 
 
 sound_player:
-  shot_diverter_hit{mode.volumechug.active == False}:
+  shot_diverter_hit{mode.volumechug.active == False and device.counters.track_flipperflop.value < 2}:
     2burps:
-      action: play
+      action: play  
   shot_ramp_drinko_hit: 
     2burps:
       action: play

@@ -60,16 +60,15 @@ slide_player:
   mode_flipperflop_started:
     flipperflop_activated:
       priority: 1000
-      expire: 2s
+  voice_flipperflop_active_complete:
+    flipperflop_activated:
+      action: remove
 
-  # slide_flipperflop_activated_audio_complete:
-  #   flipperflop_activated:
-  #     action: remove
-
-# variable_player:
-#   spellbeer_group_hit_complete{mode.dasboot.active == False}:
-#     score: current_player.pts_spell_beer
-#     bonus_multiplier: 1
+sound_player:
+  mode_flipperflop_started:
+    voice_flipperflop_active:
+      action: play
+      events_when_stopped: voice_flipperflop_active_complete
 
 
 

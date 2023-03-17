@@ -119,7 +119,7 @@ state_machines:
 
 sound_player:
   slide_multiball_slide_active:
-    voice_gonnadrinkbeer:
+    voice_multiball:
       action: play
       
 variable_player:
