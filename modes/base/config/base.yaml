@@ -45,7 +45,7 @@ timers:
 
 counters:
   track_flipperflop:    # track if we've hit 3 boot shots in 15 seconds
-    enable_events: mode_flipperflop_started
+    enable_events: mode_base_started
     disable_events: mode_flipperflop_stopped
     count_events: shot_diverter_hit
     count_complete_value: 3
