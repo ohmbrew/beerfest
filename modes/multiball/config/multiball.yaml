@@ -6,7 +6,7 @@ mode:
   stop_events: game_ended
 
 queue_relay_player:
-  balldevice_bd_trough_ball_eject_attempt:
+  balldevice_bd_trough_ball_eject_attempt{current_player.is_showing_pongsink_slide == 1}:
     post: nothing
     wait_for: multiball_ready_for_next_ball
   
@@ -169,6 +169,30 @@ event_player:
   slide_multiball_sink2_removed: multiball_ready_for_next_ball
 
 variable_player:
+  slide_multiball_sink1_clean_created:
+    is_showing_pongsink_slide:
+      int: 1
+      action: set
+  slide_multiball_sink1_adult_created:
+    is_showing_pongsink_slide:
+      int: 1
+      action: set
+  slide_multiball_sink2_created:
+    is_showing_pongsink_slide:
+      int: 1
+      action: set
+  slide_multiball_sink1_clean_removed:
+    is_showing_pongsink_slide:
+      int: 0
+      action: set
+  slide_multiball_sink1_adult_removed:
+    is_showing_pongsink_slide:
+      int: 0
+      action: set
+  slide_multiball_sink2_removed:
+    is_showing_pongsink_slide:
+      int: 0
+      action: set    
   start_multiball:
     score: current_player.pts_multiball
 

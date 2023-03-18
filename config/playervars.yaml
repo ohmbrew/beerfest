@@ -334,3 +334,8 @@ player_vars:
   is_slide_monkeychug_active:
     initial_value: 0
     value_type: int
+
+  # track if we are displaying pong sink video slide
+  is_showing_pongsink_slide:
+    initial_value: 0
+    value_type: int
