@@ -6,6 +6,27 @@ mode:
   stop_events: game_ended
   
 slides:
+  multiball_sink1_clean:
+    widgets:
+    - type: image
+      image: background-flag
+    - type: video
+      video: pongsink1-clean
+    expire: 5.5s
+  multiball_sink1_adult:
+    widgets:
+    - type: image
+      image: background-flag
+    - type: video
+      video: pongsink1-adult
+    expire: 5.5s
+  multiball_sink2:
+    widgets:
+    - type: image
+      image: background-flag
+    - type: video
+      video: pongsink2
+    expire: 3.5s
   multiball_slide:
     widgets:
     - type: text
@@ -26,9 +47,18 @@ slides:
       image: background
     
 slide_player:
+  multiball_sink1{device.switches.s_adult.state == 0}:
+    multiball_sink1_clean:
+      priority: 2000
+  multiball_sink1{device.switches.s_adult.state == 1}:
+    multiball_sink1_adult:
+      priority: 2000
+  multiball_sink2:
+    multiball_sink2:
+      priority: 2000
   start_multiball:
     multiball_slide:
-      priority: 1000
+      priority: 2000
       expire: 3s
 
 multiballs:
@@ -79,7 +109,7 @@ state_machines:
             cup: 2
           loops: 0
       pongtable_cupNone:
-        label: PongTable Cup 2 Active
+        label: PongTable Cup None Active
         events_when_started: enable_pt_lock
         show_when_active:
           show: pongtable_show
@@ -121,7 +151,15 @@ sound_player:
   slide_multiball_slide_active:
     voice_multiball:
       action: play
-      
+
+event_player:
+  shot_pongcup1_hit:
+    - pongtable_movetocup2
+    - multiball_sink1
+  shot_pongcup2_hit:
+    - pongtable_movetocupNone
+    - multiball_sink2
+
 variable_player:
   start_multiball:
     score: current_player.pts_multiball

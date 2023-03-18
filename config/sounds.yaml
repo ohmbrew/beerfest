@@ -68,6 +68,7 @@ sounds:
         attenuation: -18db
         release_point: 1.0 sec
         release: 3.0 sec
+  
   voice_betterwhendrunk:
     file: betterwhendrunk.wav
     track: voice
@@ -366,7 +367,33 @@ sounds:
     file: Derek-O.wav
     track: voice
     volume: 1.0
-      
+
+  voice_hitthekeg:
+    file: Derek-HitTheKeg.wav
+    track: voice
+    volume: 1.0
+  voice_hitthesaucers:
+    file: Derek-HitTheSaucers.wav
+    track: voice
+    volume: 1.0
+  voice_hurryup:
+    file: Derek-HurryUp.wav
+    track: voice
+    volume: 1.0
+  voice_letsgotoschnitzengiggle:
+    file: Derek-Schnitz.wav
+    track: voice
+    volume: 1.0
+  voice_shoottheboot:
+    file: Derek-ShootTheBoot.wav
+    track: voice
+    volume: 1.0
+  voice_shootthedrinkoramp:
+    file: Derek-ShootTheDrinkoRamp.wav
+    track: voice
+    volume: 1.0
+
+
   sfx_pongcup:
     file: pongcup.wav
     track: sfx

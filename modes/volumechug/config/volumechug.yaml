@@ -33,6 +33,7 @@ state_machines:
           show: flash_volumechug_wait_tavern
           speed: 4
           loops: -1
+        events_when_started: play_letsgotoschnitzengiggle
       wait_for_pops:
         label: Waiting for Pops
         show_when_active:
@@ -45,6 +46,7 @@ state_machines:
           show: flash_volumechug_wait_ramp_boot
           speed: 4
           loops: -1
+        events_when_started: play_shoottheboot
       volumechug_completed:
         label: Volume Chug Completed
         events_when_started: award_volumechug_bonus
@@ -54,7 +56,7 @@ state_machines:
     transitions:
       - source: start
         target: wait_for_tavern
-        events: mode_volumechug_started
+        events: start_background_music
       - source: wait_for_tavern
         target: wait_for_pops
         events: shot_tavern_hit
@@ -117,6 +119,12 @@ sound_player:
       action: play
   award_volumechug_bonus:
     voice_volumechug_megabonus:
+      action: play
+  play_letsgotoschnitzengiggle:
+    voice_letsgotoschnitzengiggle:
+      action: play
+  play_shoottheboot:
+    voice_shoottheboot:
       action: play
 
 slides:

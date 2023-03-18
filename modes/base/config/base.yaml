@@ -999,14 +999,9 @@ sound_player:
   shot_quarters_hit{mode.dasboot.active == False}:
     quarters:
       action: play
-  shot_pongcup1_hit:
-    voice_sink2left:
-      action: play
-      events_when_stopped: pongtable_movetocup2
-  shot_pongcup2_hit:
-    voice_sink1left:
-      action: play
-      events_when_stopped: pongtable_movetocupNone
+
+  
+
   # drain audio clips
   ball_save_ball_save_saving_ball:
     voice_ballsave:

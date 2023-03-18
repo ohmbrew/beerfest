@@ -1,5 +1,6 @@
 #config_version=5
 
+# TODO: add audio for player added
 shows:
   show_backglass_on:
     - time: 0
