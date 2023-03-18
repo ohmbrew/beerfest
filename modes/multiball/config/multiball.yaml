@@ -4,6 +4,11 @@
 mode:
   start_events: mode_base_started
   stop_events: game_ended
+
+queue_relay_player:
+  balldevice_bd_trough_ball_eject_attempt:
+    post: nothing
+    wait_for: multiball_ready_for_next_ball
   
 slides:
   multiball_sink1_clean:
@@ -159,6 +164,9 @@ event_player:
   shot_pongcup2_hit:
     - pongtable_movetocupNone
     - multiball_sink2
+  slide_multiball_sink1_clean_removed: multiball_ready_for_next_ball
+  slide_multiball_sink1_adult_removed: multiball_ready_for_next_ball
+  slide_multiball_sink2_removed: multiball_ready_for_next_ball
 
 variable_player:
   start_multiball:

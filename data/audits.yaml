@@ -44,8 +44,8 @@ shots:
   shot_laneleft_outer: 8
   shot_laneright_inner: 32
   shot_laneright_outer: 5
-  shot_plunger_lane_exit: 856
-  shot_pongcup1: 204
+  shot_plunger_lane_exit: 858
+  shot_pongcup1: 206
   shot_pongcup2: 64
   shot_pop_lower: 335
   shot_pop_upper_left: 6602
@@ -108,9 +108,9 @@ switches:
   s_openswitch_2: 0
   s_orbit_entry: 0
   s_orbit_exit: 0
-  s_plunger_lane: 2292
-  s_plunger_lane_exit: 1046
-  s_pongcup1: 205
+  s_plunger_lane: 2294
+  s_plunger_lane_exit: 1048
+  s_pongcup1: 207
   s_pongcup2: 64
   s_pongtable_exit: 40
   s_pongtable_front_left: 95
@@ -140,7 +140,7 @@ switches:
   s_trough1: 385
   s_trough2: 367
   s_trough3: 327
-  s_trough_eject: 1580
+  s_trough_eject: 1582
   s_upf_tgt_left: 171
   s_upf_tgt_right: 159
   s_zj: 104
