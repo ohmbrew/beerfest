@@ -504,6 +504,44 @@ slides:
             duration: .5s
     - type: image
       image: background
+  dasboot_slide_bonus_spellmunich:
+    widgets:
+    - type: text
+      text: Spell M-U-N-I-C-H
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: MEGA BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|dasboot_bonustext_spellmunich)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
   dasboot_slide_bonus_strikeout:
     widgets:
     - type: text
@@ -594,7 +632,11 @@ slide_player:
   spellbeer_group_hit_complete:
     dasboot_slide_bonus_spellbeer:
       priority: 1000
-      expire: 2s 
+      expire: 2s
+  spelled_munich:
+    dasboot_slide_bonus_spellmunich:
+      priority: 1000
+      expire: 2s
 
 queue_relay_player:
   mode_dasboot_stopping:  # not a timed round, the ball drained
@@ -1352,4 +1394,9 @@ variable_player:
     dasboot_bonustext_spellbeer:   # set text string for our bonus value
       int: current_player.pts_spell_beer * current_player.dasboot_bonus_multiplier
       action: set
-    bonus_multiplier: 1
+
+  spelled_munich:
+    score: current_player.pts_spell_munich * current_player.dasboot_bonus_multiplier
+    dasboot_bonustext_spellmunich:
+      int: current_player.pts_spell_munich * current_player.dasboot_bonus_multiplier
+      action: set

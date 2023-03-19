@@ -395,6 +395,10 @@ sounds:
     file: Derek-ShootTheDrinkoRamp.wav
     track: voice
     volume: 1.0
+  voice_spelledmunich:
+    file: Derek-MunichBonus.wav
+    track: voice
+    volume: 1.0
 
 
   sfx_pongcup:

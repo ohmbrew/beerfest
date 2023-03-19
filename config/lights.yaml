@@ -299,27 +299,27 @@ lights:
   gi_back6:
     previous: gi_right4
     type: grb
-    tags: back
+    tags: back, munichfill6
   gi_back5:
     previous: gi_back6
     type: grb
-    tags: back
+    tags: back, munichfill5, munichfill6
   gi_back4:
     previous: gi_back5
     type: grb
-    tags: back
+    tags: back, munichfill4, munichfill5, munichfill6
   gi_back3:
     previous: gi_back4
     type: grb
-    tags: back
+    tags: back, munichfill3, munichfill4, munichfill5, munichfill6
   gi_back2:
     previous: gi_back3
     type: grb
-    tags: back
+    tags: back, munichfill2, munichfill3, munichfill4, munichfill5, munichfill6
   gi_back1:
     previous: gi_back2
     type: grb
-    tags: back  
+    tags: back, munichfill1, munichfill2, munichfill3, munichfill4, munichfill5, munichfill6
   tavern_sign1:
     previous: gi_back1
     type: grb

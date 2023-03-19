@@ -24,10 +24,10 @@ player_vars:
     initial_value: 1
     value_type: int
   has_volumechug:
-    initial_value: 0
+    initial_value: 1
     value_type: int
   has_trojankeg:
-    initial_value: 0
+    initial_value: 1
     value_type: int
   has_dasboot:
     initial_value: 0
@@ -167,6 +167,9 @@ player_vars:
   pts_spell_beer:
     initial_value: 125000
     value_type: int
+  pts_spell_munich:
+    initial_value: 150000
+    value_type: int 
   pts_skillshot_full:
     initial_value: 500000
     value_type: int
@@ -310,6 +313,9 @@ player_vars:
     initial_value: 0
     value_type: int
   dasboot_bonustext_spellbeer:
+    initial_value: 0
+    value_type: int
+  dasboot_bonustext_spellmunich:
     initial_value: 0
     value_type: int
   dasboot_bonustext_strikeoutcomplete:

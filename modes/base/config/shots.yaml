@@ -99,4 +99,7 @@ shots:
     profile: spellbeer_profile
     show_tokens:
       led: lane_left_outer
-  
+  shot_leftflipper:
+    switch: s_flipper_left
+  shot_rightflipper:
+    switch: s_flipper_right

@@ -1,0 +1,143 @@
+#config_version=5
+##! mode: spellmunich
+
+mode:
+  start_events: start_mode_spellmunich
+  stop_events: stop_mode_spellmunich, ball_will_end
+  priority: 150
+
+counters:
+  track_spellmunich:    # track how many times shot_tgt_ramp_boot and shot_tgt_rimrules are hit. Each hit goes toward spelling munich
+    enable_events: mode_spellmunich_started
+    count_events: shot_tgt_ramp_boot_hit, shot_tgt_rimrules_hit
+    count_complete_value: 6
+    events_when_hit: fill_munich_X
+    events_when_complete: spelled_munich
+    disable_on_complete: false
+
+slides:
+  slide_bonus_spellmunich:
+    widgets:
+    - type: text
+      text: Spell M-U-N-I-C-H
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 35
+      color: 008ce5ff
+    - type: text
+      text: BONUS
+      font_size: 150
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 210
+      color: 008ce5ff
+    - type: text
+      text: (player|pts_spell_munich)
+      number_grouping: true
+      min_digits: 1
+      font_size: 10
+      font_name: druillet
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top - 425
+      color: 008ce5ff
+      animations:
+        show_slide:
+          - property: font_size
+            value: 200
+            duration: .5s
+    - type: image
+      image: background
+
+slide_player:
+  spelled_munich{mode.dasboot.active == False}:
+    slide_bonus_spellmunich:
+      priority: 1000
+  slide_bonus_spellmunich_audio_complete:
+    slide_bonus_spellmunich:
+      action: remove
+
+# this show sets lights appropriately. MUNICH lights are tagged. Lowest light has tags of municfill1-7, the second
+# lowest light is tagged with munichfill2-7, and the highest light is tagged with only munichfill7. This results in the
+# appropriate set of mug lights lit as the count goes higher.
+shows:
+  fill_munich:
+    - time: 0
+      lights:
+        (tag): 008ce5
+    - duration: -1
+  munich_show_bonus:
+    - duration: .5s
+      lights:
+        munichfill6:
+          color: green
+          fade: .25s
+    - duration: .5s
+      lights:
+        munichfill6:
+          color: off
+          fade: .25s
+    - duration: .5s
+      lights:
+        munichfill6:
+          color: green
+          fade: .25s
+    - duration: .5s
+      lights:
+        munichfill6:
+          color: off
+          fade: .25s
+
+# fill_munich_X event is called whenever count_events are detected. conditional events below call the show
+show_player:
+  fill_munich_X{count==1}:
+    fill_munich:
+      show_tokens:
+        tag: munichfill1
+  fill_munich_X{count==2}:
+    fill_munich:
+      show_tokens:
+        tag: munichfill2
+  fill_munich_X{count==3}:
+    fill_munich:
+      show_tokens:
+        tag: munichfill3
+  fill_munich_X{count==4}:
+    fill_munich:
+      show_tokens:
+        tag: munichfill4
+  fill_munich_X{count==5}:
+    fill_munich:
+      show_tokens:
+        tag: munichfill5
+
+  fill_munich_X{count==6}:
+    fill_munich:
+      show_tokens:
+        tag: munichfill6
+      loops: 0
+  spelled_munich:
+    fill_munich:
+      action: stop
+    munich_show_bonus:
+      action: play
+      loops: 0
+
+sound_player:
+  spelled_munich:
+    voice_spelledmunich:
+      action: play
+      events_when_stopped: slide_bonus_spellmunich_audio_complete
+
+variable_player:
+  spelled_munich{mode.dasboot.active == False}:
+    score: current_player.pts_spell_munich
+
+
+

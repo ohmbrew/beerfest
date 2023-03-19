@@ -1,7 +1,7 @@
 #config_version=5
 ##! mode: base
 
-# TODO: Das Boot round, make all targets flashing red
+# TODO: Das Boot round, make all targets flashing blue
 
 mode:
   start_events: ball_started
@@ -17,6 +17,7 @@ event_player:
     - strikeout_bank_reset
     - enable_knocker
     - start_mode_spellbeer
+    - start_mode_spellmunich
   mode_base_will_stop:
     - stop_mode_global
   mode_type_wizard_started:
@@ -42,6 +43,15 @@ timers:
     control_events:
       - action: restart
         event: logicblock_track_flipperflop_hit
+  wait_flipper_1s:
+    start_value: 2
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: restart
+        event: wait_flipper_1s_restart
+
 
 counters:
   track_flipperflop:    # track if we've hit 3 boot shots in 15 seconds
@@ -51,6 +61,24 @@ counters:
     count_complete_value: 3
     reset_events: timer_flipperflop_activated_complete
     events_when_complete: start_mode_flipperflop
+    disable_on_complete: false
+  lf3:
+    count_events: shot_leftflipper_hit
+    count_complete_value: 3
+    reset_events: lf3_reset
+    events_when_complete: lf3_complete
+    disable_on_complete: false
+  rf1:
+    count_events: shot_rightflipper_hit
+    count_complete_value: 1
+    reset_events: rf1_reset
+    events_when_complete: rf1_complete
+    disable_on_complete: false
+  lf4:
+    count_events: shot_leftflipper_hit
+    count_complete_value: 4
+    reset_events: lf4_reset
+    events_when_complete: lf4_complete
     disable_on_complete: false
 
 queue_relay_player:
@@ -182,6 +210,19 @@ slides:
     - type: image
       image: background
     expire: 4.5s
+  slide_play_easteregg:
+    widgets:
+    - type: text
+      text: First Playtest
+      font_size: 150
+      font_name: druillet
+      anchor_x: left
+      anchor_y: top
+      x: left + 25
+      y: top - 35
+      color: 008ce5ff
+    - type: video
+      video: easteregg
 
 slide_player:
   shot_drinko_i_hit{mode.dasboot.active == False}:
@@ -192,8 +233,11 @@ slide_player:
     slide_bonus_strikeout:
       priority: 1000
       expire: 2s
-
   ball_save_ball_save_saving_ball: slide_ballsave
+  play_easteregg:
+    slide_play_easteregg:
+      priority: 20000
+      expire: 6.35s
 
 # shows to light lights when drinko sensor has been hit
 shows:
@@ -214,12 +258,12 @@ shows:
         gi_right2: 008ce5
         gi_right3: 008ce5
         gi_right4: 008ce5
-        gi_back1: 008ce5
-        gi_back2: 008ce5
-        gi_back3: 008ce5
-        gi_back4: 008ce5
-        gi_back5: 008ce5
-        gi_back6: 008ce5
+        gi_back1: off
+        gi_back2: off
+        gi_back3: off
+        gi_back4: off
+        gi_back5: off
+        gi_back6: off
     - duration: -1
   show_pop_left:
     - time: 0
@@ -1005,7 +1049,16 @@ sound_player:
   shot_quarters_hit{mode.dasboot.active == False}:
     quarters:
       action: play
-
+  # halt background music while we play easteregg
+  play_easteregg:
+    introrepeat:
+      action: stop
+  slide_slide_play_easteregg_removed:
+    introrepeat:
+        action: play
+        track: music
+        loops: -1
+        volume: .5
   
 
   # drain audio clips
@@ -1248,8 +1301,114 @@ state_machines:
       - source: diverter_leftramp
         target: diverter_rightramp
         events: shot_diverter_hit
+  
+  easteregg:
+    persist_state: false
+    states:
+      start:
+        label: Easter Egg started
+
+      wait_for_LF3:
+        label:
+        events_when_started: lf3_reset, wait_flipper_1s_restart
+
+      wait_for_RF1:
+        label:
+        events_when_started: rf1_reset, wait_flipper_1s_restart
+
+      wait_for_LF4:
+        label:
+        events_when_started: lf4_reset, wait_flipper_1s_restart
+
+      wait_for_RF1_second:
+        label:
+        events_when_started: rf1_reset, wait_flipper_1s_restart
+
+      wait_for_flipper_cancel:
+        label:
+        events_when_started: wait_flipper_1s_restart
+
+      easter_egg_activated:
+        label: Easter Egg enabled
+        events_when_started: play_easteregg
+
+    transitions:
+      - source: start
+        target: wait_for_LF3      # init
+        events: mode_base_started
 
 
+
+      # NEW STATE - WAIT FOR LF3
+      - source: wait_for_LF3      
+        target: wait_for_RF1
+        events: lf3_complete
+      # goto wait_for_LF3 if wrong flipper is hit
+      - source: wait_for_LF3     
+        target: wait_for_LF3
+        events: shot_rightflipper_hit
+      # goto wait_for_LF3 if timer expired
+      - source: wait_for_LF3     
+        target: wait_for_LF3
+        events: timer_wait_flipper_1s_complete
+
+
+      # NEW STATE - WAIT FOR RF1
+      - source: wait_for_RF1      
+        target: wait_for_LF4
+        events: rf1_complete
+      # goto wait_for_LF3 if wrong flipper is hit
+      - source: wait_for_RF1     
+        target: wait_for_LF3
+        events: shot_leftflipper_hit
+      # goto wait_for_LF3 if timer expired
+      - source: wait_for_RF1     
+        target: wait_for_LF3
+        events: timer_wait_flipper_1s_complete
+
+
+      # NEW STATE - WAIT FOR LF4
+      - source: wait_for_LF4      
+        target: wait_for_RF1_second
+        events: lf4_complete
+      # goto wait_for_LF3 if wrong flipper is hit
+      - source: wait_for_LF4     
+        target: wait_for_LF3
+        events: shot_rightflipper_hit
+      # goto wait_for_LF3 if timer expired
+      - source: wait_for_LF4     
+        target: wait_for_LF3
+        events: timer_wait_flipper_1s_complete
+
+
+      # NEW STATE - WAIT FOR RF1_SECOND
+      - source: wait_for_RF1_second      
+        target: wait_for_flipper_cancel
+        events: rf1_complete
+      # goto wait_for_LF3 if wrong flipper is hit
+      - source: wait_for_RF1_second     
+        target: wait_for_LF3
+        events: shot_leftflipper_hit
+      # goto wait_for_LF3 if timer expired
+      - source: wait_for_RF1_second     
+        target: wait_for_LF3
+        events: timer_wait_flipper_1s_complete
+
+
+      # NEW STATE - WAIT FOR FLIPPER_CANCEL
+      - source: wait_for_flipper_cancel      
+        target: easter_egg_activated
+        events: flipper_cancel
+      
+      # goto wait_for_LF3 if timer expired
+      - source: wait_for_flipper_cancel     
+        target: wait_for_LF3
+        events: timer_wait_flipper_1s_complete
+
+      # NEW STATE - EASTER EGG ACTIVATED
+      - source: easter_egg_activated      
+        target: wait_for_LF3
+        events: play_easteregg
 
 variable_player:
   mode_base_started:    # this will only be set when highscore mode starts. So we can always just set to 0 when base

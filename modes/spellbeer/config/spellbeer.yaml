@@ -81,7 +81,6 @@ sound_player:
 variable_player:
   spellbeer_group_hit_complete{mode.dasboot.active == False}:
     score: current_player.pts_spell_beer
-    bonus_multiplier: 1
 
 
 
