@@ -11,7 +11,18 @@ config:
   - qualify.yaml
 
 sound_player:
-  mode_field_started:
+  mode_field_started{players[0].is_welcome_played == 0}:
+    voice_welcome:
+      action: play
+      loops: 0
+      events_when_stopped: start_base_theme
+  start_base_theme:
+    introrepeat:
+      action: play
+      track: music
+      loops: -1
+      volume: .5
+  mode_field_started{players[0].is_welcome_played == 1}:
     introrepeat:
       action: play
       track: music
@@ -57,3 +68,9 @@ show_player:
   qualified_for_mode_selection:
     show_qualify_active:
       action: stop
+
+variable_player:
+  start_base_theme:
+    is_welcome_played:
+      int: 1
+      action: set

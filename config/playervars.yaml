@@ -339,3 +339,11 @@ player_vars:
   is_showing_pongsink_slide:
     initial_value: 0
     value_type: int
+
+  is_welcome_played:
+    initial_value: 0
+    value_type: int
+
+  is_skillshot_active:
+    initial_value: 0
+    value_type: int

@@ -3,4 +3,4 @@ master_volume:
   value: 1.0
 player1_score:
   expire: null
-  value: 290840
+  value: 0

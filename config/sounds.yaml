@@ -9,6 +9,10 @@ sounds:
     file: intro1.wav
     track: music
     volume: 1.0
+  voice_newplayer:
+    file: newplayer.wav
+    track: voice
+    volume: 1.0
   voice_welcome:
     file: welcome.wav
     track: voice
@@ -191,7 +195,6 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
-
   voice_tavern:
     file: tavern1.wav
     track: voice

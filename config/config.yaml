@@ -99,10 +99,14 @@ widget_styles:
 slides:
   video_seeyoulater_slide:
     widgets:
+    - type: image
+      image: background-flag
     - type: video
       video: seeyoulater
   video_champions_slide:
     widgets:
+    - type: image
+      image: background-flag
     - type: video
       video: champions
 
@@ -182,12 +186,6 @@ assets:
   videos:
     beerfest_intro1:
       file: BeerfestIntro.mp4
-
-sound_player:
-  mode_attract_will_stop:
-    voice_welcome:
-      action: play
-      loops: 0    
 
 coil_player:
   enable_knocker:

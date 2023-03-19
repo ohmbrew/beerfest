@@ -138,6 +138,9 @@ sound_player:
   play_hitthekeg:
     voice_hitthekeg:
       action: play
+  timer_round_timer_trojankeg_tick{ticks == 5}:
+    voice_hurryup:
+      action: play
 
 slides:
   slide_trojankeg_intro:

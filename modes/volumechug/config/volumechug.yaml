@@ -126,6 +126,9 @@ sound_player:
   play_shoottheboot:
     voice_shoottheboot:
       action: play
+  timer_round_timer_volumechug_tick{ticks == 5}:
+    voice_hurryup:
+      action: play
 
 slides:
   slide_volumechug_intro:

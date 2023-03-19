@@ -9,6 +9,14 @@ mode:
   priority: 500
 
 variable_player:
+  mode_skillshot_started:
+    is_skillshot_active:
+      int: 1
+      action: set
+  mode_skillshot_will_stop:
+    is_skillshot_active:
+      int: 0
+      action: set
   skill_success_full:
     score: current_player.pts_skillshot_full
   skill_success_partial:
@@ -75,6 +83,10 @@ slides:
             easing: in_out_quint
     - type: video
       video: skillshot-intro
+      anchor_x: center
+      anchor_y: center
+      height: 400
+      width: 711
       end_behavior: loop
   slide_skillshot_success_full:
     widgets:
@@ -155,14 +167,6 @@ slides:
       image: background
 
 slide_player:
-  mode_skillshot_started:
-    slide_skillshot_intro:
-      priority: 1000
-      # expire: 4.25s
-  # slide_slide_skillshot_intro_removed:
-  #   slide_skillshot_intro:
-  #     priority: 1000
-  #     expire: 4.25s
   skill_success_full:
     slide_skillshot_success_full:
       priority: 1000
@@ -173,6 +177,7 @@ slide_player:
       expire: 3s
 
 event_player:
+  mode_skillshot_started: add_skillshot_widgets
   slide_slide_skillshot_success_full_removed: skillshot_stop
   slide_slide_skillshot_success_partial_removed: skillshot_stop
 

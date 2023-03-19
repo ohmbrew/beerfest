@@ -61,14 +61,20 @@ queue_relay_player:
 slides:
   video_cantdrinkabeer_slide:
     widgets:
+    - type: image
+      image: background-flag
     - type: video
       video: cantdrinkabeer
   video_firstbeer_slide:
     widgets:
+    - type: image
+      image: background-flag
     - type: video
       video: firstbeer
   video_nipple_slide:
     widgets:
+    - type: image
+      image: background-flag
     - type: video
       video: nipple 
   slide_bonus_monkeychug:

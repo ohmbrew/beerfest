@@ -42,6 +42,9 @@ sound_player:
     prettyclose:
       action: play
       events_when_stopped: slide_event_result_complete
+  timer_round_timer_quarters_tick{ticks == 5}:
+    voice_hurryup:
+      action: play
 
 slides:
   slide_quarters_intro:

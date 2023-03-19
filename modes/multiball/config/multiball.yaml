@@ -153,6 +153,9 @@ state_machines:
         events: multiball_pt_multiball_ended
 
 sound_player:
+  slide_multiball_sink2_removed:
+    voice_hitthesaucers:
+      action: play
   slide_multiball_slide_active:
     voice_multiball:
       action: play

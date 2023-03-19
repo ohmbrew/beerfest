@@ -1,6 +1,11 @@
 #config_version=5
 
-# TODO: add audio for player added
+sound_player:
+  player_adding{number != 1}:
+    voice_newplayer:
+      action: play
+      loops: 0
+
 shows:
   show_backglass_on:
     - time: 0
@@ -40,6 +45,41 @@ widget_player:
       slide: base_slide
     background_widget:
       slide: base_slide
+  add_skillshot_widgets{game.num_players <= 1}:
+    skillshot_video_widget:
+      slide: base_slide
+    skillshot_title_widget:
+      slide: base_slide
+    skillshot_hitwhengreen:
+      slide: base_slide
+    skillshot_arrow1:
+      slide: base_slide
+    skillshot_arrow2:
+      slide: base_slide
+  add_skillshot_widgets{game.num_players >= 2}:
+    skillshot_video_widget:
+      slide: multiplayer_slide
+    skillshot_title_widget:
+      slide: multiplayer_slide   
+    skillshot_hitwhengreen:
+      slide: multiplayer_slide
+    skillshot_arrow1:
+      slide: multiplayer_slide
+    skillshot_arrow2:
+      slide: multiplayer_slide
+
+  mode_skillshot_stopped:
+    skillshot_video_widget:
+      action: remove
+    skillshot_title_widget:
+      action: remove
+    skillshot_hitwhengreen:
+      action: remove
+    skillshot_arrow1:
+      action: remove
+    skillshot_arrow2:
+      action: remove
+
   mode_longpour_stopped{game.num_players == 1}:
     background_widget:
       slide: base_slide
@@ -72,7 +112,7 @@ widget_player:
       slide: multiplayer_slide
 
   # player 2 has entered the chat
-  player_added{num==2}:
+  player_added{num==2 and current_player.is_skillshot_active == 0}:
     base_score_widget:
       slide: multiplayer_slide
     base_ball_widget:
@@ -84,7 +124,29 @@ widget_player:
       slide: multiplayer_slide
     background_widget:
       slide: multiplayer_slide
-  
+  player_added{num==2 and current_player.is_skillshot_active == 1}:
+    base_score_widget:
+      slide: multiplayer_slide
+    base_ball_widget:
+      slide: multiplayer_slide
+    # Start with player1 name and player2 score
+    mp_score_widget_p1_large:
+      slide: multiplayer_slide
+    mp_score_widget_p2_small:
+      slide: multiplayer_slide
+    background_widget:
+      slide: multiplayer_slide
+    skillshot_video_widget:
+      slide: multiplayer_slide
+    skillshot_title_widget:
+      slide: multiplayer_slide
+    skillshot_hitwhengreen:
+      slide: multiplayer_slide
+    skillshot_arrow1:
+      slide: multiplayer_slide
+    skillshot_arrow2:
+      slide: multiplayer_slide
+      
   # Player 3 has entered the chat
   player_added{num==3}:
     mp_score_widget_p3_small:
@@ -146,6 +208,76 @@ widgets:
       video: bubbles
       end_behavior: loop
       z: 0
+
+  skillshot_video_widget:
+    - type: video
+      video: skillshot-intro
+      anchor_x: center
+      anchor_y: center
+      height: 400
+      width: 711
+      end_behavior: loop
+      z: 69
+  skillshot_title_widget:
+    - type: text
+      text: Timed Skill Shot
+      font_name: druillet
+      color: 008ce5ff
+      font_size: 100
+      anchor_x: center
+      anchor_y: top
+      x: middle
+      y: top-35
+      z: 69
+  skillshot_hitwhengreen:
+    - type: image
+      image: hitwhengreen
+      anchor_x: left
+      anchor_y: top
+      x: left + 575
+      y: top - 350
+      z: 70
+  skillshot_arrow1:
+    - type: image
+      image: arrow-down
+      anchor_x: center
+      anchor_y: center
+      x: 708
+      y: 325
+      opacity: 0
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 0.5s
+            easing: in_out_quint
+          - property: opacity
+            value: 0
+            duration: 0.5s
+            repeat: true
+            easing: in_out_quint
+      z: 70
+  skillshot_arrow2:
+    - type: image
+      image: arrow-down
+      anchor_x: center
+      anchor_y: center
+      x: 773
+      y: 312
+      opacity: 0
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 0.5s
+            easing: in_out_quint
+          - property: opacity
+            value: 0
+            duration: 0.5s
+            repeat: true
+            easing: in_out_quint
+      z: 70
+
   base_score_widget:
     - type: text
       text: (score)
