@@ -40,10 +40,10 @@ sound_player:
   high_score_award_display:
     voice_yodel:
       action: stop
-    voice_handsomemf_clean{device.switches.s_adult.active == 0}:    # adult mode OFF
+    voice_handsomemf_clean{device.switches.s_adult.state == 0}:    # adult mode OFF
       action: play
       loops: 0
-    voice_handsomemf_adult{device.switches.s_adult.active == 1}:    # adult mode ON
+    voice_handsomemf_adult{device.switches.s_adult.state == 1}:    # adult mode ON
       action: play
       loops: 0
 

@@ -210,7 +210,7 @@ slides:
     - type: image
       image: background
     expire: 4.5s
-  slide_play_easteregg:
+  slide_play_easteregg_clean:
     widgets:
     - type: text
       text: First Playtest
@@ -222,7 +222,11 @@ slides:
       y: top - 35
       color: 008ce5ff
     - type: video
-      video: easteregg
+      video: easteregg_clean
+  slide_play_easteregg_adult:
+    widgets:
+    - type: video
+      video: easteregg_adult
 
 slide_player:
   shot_drinko_i_hit{mode.dasboot.active == False}:
@@ -234,11 +238,14 @@ slide_player:
       priority: 1000
       expire: 2s
   ball_save_ball_save_saving_ball: slide_ballsave
-  play_easteregg:
-    slide_play_easteregg:
+  play_easteregg{device.switches.s_adult.state == 0}:
+    slide_play_easteregg_clean:
       priority: 20000
       expire: 6.35s
-
+  play_easteregg{device.switches.s_adult.state == 1}:
+    slide_play_easteregg_adult:
+      priority: 20000
+      expire: 11.16s
 # shows to light lights when drinko sensor has been hit
 shows:
   show_init_base:
@@ -1053,13 +1060,18 @@ sound_player:
   play_easteregg:
     introrepeat:
       action: stop
-  slide_slide_play_easteregg_removed:
+  slide_slide_play_easteregg_clean_removed:
     introrepeat:
         action: play
         track: music
         loops: -1
         volume: .5
-  
+  slide_slide_play_easteregg_adult_removed:
+    introrepeat:
+        action: play
+        track: music
+        loops: -1
+        volume: .5
 
   # drain audio clips
   ball_save_ball_save_saving_ball:
