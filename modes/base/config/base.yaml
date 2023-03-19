@@ -226,7 +226,7 @@ slides:
   slide_play_easteregg_adult:
     widgets:
     - type: video
-      video: easteregg_adult_pixelated
+      video: easteregg_adult
 
 slide_player:
   shot_drinko_i_hit{mode.dasboot.active == False}:
