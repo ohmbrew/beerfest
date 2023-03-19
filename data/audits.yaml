@@ -44,7 +44,7 @@ shots:
   shot_laneleft_outer: 8
   shot_laneright_inner: 32
   shot_laneright_outer: 5
-  shot_leftflipper: 257
+  shot_leftflipper: 288
   shot_plunger_lane_exit: 888
   shot_pongcup1: 207
   shot_pongcup2: 65
@@ -54,7 +54,7 @@ shots:
   shot_quarters: 2062
   shot_ramp_boot: 10
   shot_ramp_drinko: 97
-  shot_rightflipper: 78
+  shot_rightflipper: 85
   shot_sling_left: 1
   shot_sling_quarters: 26
   shot_slingleft: 21
@@ -81,7 +81,7 @@ shots:
   trojankeg_middle: 28
   trojankeg_right: 32
 switches:
-  s_adult: 9
+  s_adult: 10
   s_bj: 116
   s_chance: 324
   s_chug_beer: 269
@@ -94,8 +94,8 @@ switches:
   s_drinko_n: 1032
   s_drinko_o: 502
   s_drinko_r: 342
-  s_flipper_left: 2262
-  s_flipper_right: 2483
+  s_flipper_left: 2293
+  s_flipper_right: 2490
   s_hj: 143
   s_horseshoe: 265
   s_kicker_mode: 1410
