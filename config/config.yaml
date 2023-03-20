@@ -35,6 +35,7 @@ window:
   width: 1366
   fullscreen: false
   borderless: false
+  show_cursor: false
   exit_on_escape: True
 
 config:
