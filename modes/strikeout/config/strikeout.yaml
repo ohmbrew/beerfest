@@ -13,13 +13,23 @@ sound_player:
     voice_strikeout_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
-  start_background_music:
-    music_hardasarock:
-      action: play
-      loops: 0
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, intro_done
   mode_strikeout_will_stop:
-    music_hardasarock:
+    themedrinkonme:
+      action: stop
+    themehardasarock:
+      action: stop
+    themejungleboogie:
+      action: stop
+    themealcohol:
+      action: stop
+    themebeer:
+      action: stop
+    themebeerformyhorses:
+      action: stop
+    themebyob:
+      action: stop
+    themecomininhot:
       action: stop
   # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
   shot_kicker_mode_hit:
@@ -286,7 +296,7 @@ slides:
       image: background
 slide_player:
   mode_strikeout_started: slide_strikeout_intro
-  kicker_mode_eject:
+  intro_done:
     slide_strikeout_intro:
       action: remove
     slide_strikeout_main:
@@ -344,7 +354,8 @@ queue_relay_player:
     wait_for: slide_event_done
 
 event_player:
-  slide_slide_strikout_success_removed: slide_event_done
+  slide_slide_strikeout_intro_removed: choose_random_background_music
+  slide_slide_strikeout_success_removed: slide_event_done
   slide_slide_strikeout_fail_removed: slide_event_done
   slide_slide_strikeout_partial_removed: slide_event_done
 
@@ -445,7 +456,7 @@ show_player:
     flash_strikeout_prop:
       speed: 4
 
-  start_background_music:
+  choose_random_background_music:
     flash_gi_themed:
       speed: 4
       loops: -1
@@ -475,7 +486,7 @@ timers:
     direction: down
     control_events:
       - action: start
-        event: kicker_mode_eject
+        event: choose_random_background_music
 
 variable_player:
   mode_strikeout_started:    # init whether we completed this current bonus

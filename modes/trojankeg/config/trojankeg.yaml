@@ -101,13 +101,23 @@ sound_player:
     voice_trojankeg_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
-  start_background_music:
-    music_hardasarock:
-      action: play
-      loops: 0
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, intro_done
   mode_trojankeg_will_stop:
-    music_hardasarock:
+    themedrinkonme:
+      action: stop
+    themehardasarock:
+      action: stop
+    themejungleboogie:
+      action: stop
+    themealcohol:
+      action: stop
+    themebeer:
+      action: stop
+    themebeerformyhorses:
+      action: stop
+    themebyob:
+      action: stop
+    themecomininhot:
       action: stop
   # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
   shot_kicker_mode_hit{device.state_machines.trojankeg_state_machine.state != "wait_for_saucer_keg" and device.state_machines.trojankeg_state_machine.state != "trojankeg_completed"}:
@@ -392,7 +402,7 @@ slides:
 
 slide_player:
   mode_trojankeg_started: slide_trojankeg_intro
-  start_background_music:
+  intro_done:
     slide_trojankeg_intro:
       action: remove
     slide_trojankeg_main:
@@ -454,8 +464,9 @@ queue_relay_player:
     wait_for: slide_event_done
 
 event_player:
+  slide_slide_trojankeg_intro_removed: choose_random_background_music
   slide_slide_trojankeg_success_removed: slide_event_done
-  slide_slide_trojankegfail_removed: slide_event_done
+  slide_slide_trojankeg_fail_removed: slide_event_done
   slide_slide_trojankeg_partial_removed: slide_event_done
   slide_slide_bonus_trojankeg_themed_removed: kicker_mode_eject
 
@@ -576,7 +587,7 @@ show_player:
   mode_trojankeg_started.1:
     flash_trojankeg_insert:
       speed: 2
-  start_background_music:
+  choose_random_background_music:
     flash_gi_themed:
       speed: 4
       loops: -1
@@ -618,7 +629,7 @@ timers:
     direction: down
     control_events:
       - action: start
-        event: start_background_music
+        event: choose_random_background_music
 
 variable_player:
   mode_trojankeg_started:    # init whether we completed this current bonus

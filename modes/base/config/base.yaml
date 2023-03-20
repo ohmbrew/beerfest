@@ -1011,8 +1011,6 @@ shows:
           color: off
           fade: .25s 
 
-
-
 sound_player:
   shot_diverter_hit{mode.volumechug.active == False and device.counters.track_flipperflop.value < 2}:
     2burps:
@@ -1103,6 +1101,39 @@ sound_player:
     strikeoutcomplete:
       action: play
 
+  play_theme_drinkonme:
+    themedrinkonme:
+      action: play
+      loops: 0
+  play_theme_hardasarock:
+    themehardasarock:
+      action: play
+      loops: 0
+  play_theme_jungleboogie:
+    themejungleboogie:
+      action: play
+      loops: 0
+  play_theme_alcohol:
+    themealcohol:
+      action: play
+      loops: 0
+  play_theme_beer:
+    themebeer:
+      action: play
+      loops: 0
+  play_theme_beerformyhorses:
+    themebeerformyhorses:
+      action: play
+      loops: 0
+  play_theme_byob:
+    themebyob:
+      action: play
+      loops: 0
+  play_theme_comininhot:
+    themecomininhot:
+      action: play
+      loops: 0
+
 random_event_player:
   shot_slingleft_hit:    
     events:
@@ -1176,7 +1207,18 @@ random_event_player:
       - random_pts_70
       - random_pts_80
       - random_pts_90
-
+  
+  choose_random_background_music:
+    events:
+      - play_theme_drinkonme         # good
+      - play_theme_hardasarock       # good
+      - play_theme_jungleboogie       # good
+      - play_theme_alcohol           # good  
+      - play_theme_beer              # good
+      - play_theme_beerformyhorses   # good
+      - play_theme_byob               # good
+      - play_theme_comininhot        # good
+  
 show_player:
   mode_base_started:
     show_init_base:

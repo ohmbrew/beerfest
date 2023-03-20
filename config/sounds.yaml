@@ -24,24 +24,58 @@ sounds:
         attenuation: -50db
         release_point: 1.0 sec
         release: 3.0 sec
-  music_bubbles:
-    file: soundtrack-bubbles.wav
+
+  # All 5 theme mode rounds
+  themedrinkonme:
+    file: themedrinkonme.wav
+    track: voice
     volume: 1.0
-  music_drinkonme:
-    file: soundtrack-drinkonme.wav
+  themehardasarock:
+    file: themehardasarock.wav
+    track: voice
     volume: 1.0
-  music_hardasarock:
-    file: soundtrackhardasarock.wav
+  themejungleboogie:
+    file: themejungleboogie.wav
+    track: voice
+    volume: 1.0
+  themealcohol:
+    file: themealcohol.wav
+    track: voice
+    volume: 1.0
+  themebeer:
+    file: themebeer.wav
+    track: voice
+    volume: 1.0
+  themebeerformyhorses:
+    file: themebeerformyhorses.wav
+    track: voice
+    volume: 1.0
+  themebyob:
+    file: themebyob.wav
+    track: voice
+    volume: 1.0
+  themecomininhot:
+    file: themecomininhot.wav
+    track: voice
+    volume: 1.0
+  
+  # other
+  music_wasted:
+    file: soundtrackwasted.wav
     track: music
     volume: 1.0
-  music_jungleboogie:
-    file: soundtrack-jungleboogie.wav
+
+
+  # DAS BOOT
+  music_bubbles:
+    file: dasbootthemebubbles.wav
+    track: voice
     volume: 1.0
-  music_wasted:
-    file: soundtrack-wasted.wav
-    volume: 1.0
+
+  
   voice_ohyea:
     file: buckcherry-ohyea.wav
+    track: voice
     volume: 1.0
     ducking:
         target: music
@@ -50,6 +84,7 @@ sounds:
         attenuation: -18db
         release_point: 1.0 sec
         release: 3.0 sec
+
   voice_sink2left:
     file: notthatdrunk1.wav
     track: voice
@@ -400,7 +435,7 @@ sounds:
     track: voice
     volume: 1.0
 
-
+  
   sfx_pongcup:
     file: pongcup.wav
     track: sfx

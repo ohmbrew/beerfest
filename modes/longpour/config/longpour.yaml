@@ -13,14 +13,25 @@ sound_player:
     voice_longpour_intro:
       action: play
       loops: 0
-      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, start_background_music
-  start_background_music:
-    music_hardasarock:
-      action: play
-      loops: 0
+      events_when_stopped: kicker_mode_eject, kicker_rimrules_eject, intro_done
   mode_longpour_will_stop:
-    music_hardasarock:
+    themedrinkonme:
       action: stop
+    themehardasarock:
+      action: stop
+    themejungleboogie:
+      action: stop
+    themealcohol:
+      action: stop
+    themebeer:
+      action: stop
+    themebeerformyhorses:
+      action: stop
+    themebyob:
+      action: stop
+    themecomininhot:
+      action: stop
+
   # Field, and any of the Game Modes (Quarters, Strike Out, etc.) must implement their own listeners on shot_kicker_mode_hit or shot_kicker_rimrules_hit.
   shot_kicker_mode_hit:
     voice_betterwhendrunk:
@@ -251,7 +262,7 @@ slides:
 
 slide_player:
   mode_longpour_started: slide_longpour_intro
-  kicker_mode_eject:
+  intro_done:
     slide_longpour_intro:
       action: remove
     slide_longpour_main:
@@ -306,6 +317,7 @@ queue_relay_player:
     wait_for: slide_event_done
 
 event_player:
+  slide_slide_longpour_intro_removed: choose_random_background_music
   slide_slide_longpour_success_removed: slide_event_done
   slide_slide_longpour_fail_removed: slide_event_done
   slide_slide_longpour_partial_removed: slide_event_done
@@ -599,7 +611,7 @@ show_player:
     flash_ramp_arrows:
       speed: 4
 
-  start_background_music:
+  choose_random_background_music:
     flash_gi_themed:
       speed: 4
       loops: -1
@@ -629,7 +641,7 @@ timers:
     direction: down
     control_events:
       - action: start
-        event: kicker_mode_eject
+        event: choose_random_background_music
 
 variable_player:
   mode_longpour_started:    # init whether we completed this current bonus
