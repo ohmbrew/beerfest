@@ -842,7 +842,7 @@ show_player:
 # timed round
 timers:
   round_timer_volumechug:
-    start_value: 20
+    start_value: 90
     end_value: 0
     direction: down
     control_events:

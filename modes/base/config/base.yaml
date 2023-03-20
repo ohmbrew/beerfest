@@ -1312,9 +1312,9 @@ show_player:
 
 ball_saves:
   ball_save:
-    active_time: 3s
-    hurry_up_time: 1s
-    grace_period: 1s
+    active_time: 10s
+    hurry_up_time: 3s
+    grace_period: 2s
     early_ball_save_events: shot_laneleft_outer_hit, shot_laneright_outer_hit
     timer_start_events: playfield_active
     auto_launch: false
