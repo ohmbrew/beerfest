@@ -18,6 +18,7 @@ event_player:
     - enable_knocker
     - start_mode_spellbeer
     - start_mode_spellmunich
+    - flippers_normal
   mode_base_will_stop:
     - stop_mode_global
   mode_type_wizard_started:
