@@ -186,20 +186,19 @@ slides:
   slide_ballsave:
     widgets:
     - type: text
-        text: BALL SAVED
-        font_name: druillet
-        color: 008ce5ff
-        font_size: 10
-        anchor_x: middle
-        anchor_y: middle
-        x: middle
-        y: top - 325
-        animations:
-          show_slide:
-            - property: font_size
-              value: 225
-              duration: 3s
-    
+      text: BALL SAVED
+      font_name: druillet
+      color: 008ce5ff
+      font_size: 10
+      anchor_x: middle
+      anchor_y: middle
+      x: middle
+      y: top - 325
+      animations:
+        show_slide:
+          - property: font_size
+            value: 225
+            duration: 3s
     - type: video
       video: landfill
     expire: 7.05s
@@ -1071,9 +1070,9 @@ sound_player:
   slide_slide_ballsave_removed:
     introrepeat:
       action: play
-        track: music
-        loops: -1
-        volume: .5
+      track: music
+      loops: -1
+      volume: .5
 
   # drain audio clips
   # replacing slide/audio of ball save with video clip
