@@ -1231,9 +1231,9 @@ show_player:
       speed: 1
       loops: -1
   # TODO: Knocker test only
-  mode_base_started.2:
-    show_knocker:
-      loops: 0
+  # mode_base_started.2:
+  #   show_knocker:
+  #     loops: 0
   mode_bonusv2_started:
     base_show:
       action: stop
