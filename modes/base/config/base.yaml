@@ -184,33 +184,40 @@ slides:
     - type: image
       image: background
   slide_ballsave:
+    # replacing ball save slide/audio with just the video slide
+    # widgets:
+    # - type: text
+    #   text: Landfill is alive!
+    #   font_size: 150
+    #   font_name: druillet
+    #   anchor_x: center
+    #   anchor_y: top
+    #   x: middle
+    #   y: top - 35
+    #   color: 008ce5ff
+    # - type: text
+    #   text: BALL SAVED
+    #   font_size: 10
+    #   font_name: druillet
+    #   anchor_x: center
+    #   anchor_y: top
+    #   x: middle
+    #   y: top - 400
+    #   color: 008ce5ff
+    #   animations:
+    #     show_slide:
+    #       - property: font_size
+    #         value: 150
+    #         duration: .5s
+    # - type: image
+    #   image: background
+    # expire: 4.5s
+
     widgets:
-    - type: text
-      text: Landfill is alive!
-      font_size: 150
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 35
-      color: 008ce5ff
-    - type: text
-      text: BALL SAVED
-      font_size: 10
-      font_name: druillet
-      anchor_x: center
-      anchor_y: top
-      x: middle
-      y: top - 400
-      color: 008ce5ff
-      animations:
-        show_slide:
-          - property: font_size
-            value: 150
-            duration: .5s
-    - type: image
-      image: background
-    expire: 4.5s
+    - type: video
+      video: landfill
+    expire: 7.05s
+    
   slide_play_easteregg_clean:
     widgets:
     - type: text
@@ -1073,9 +1080,12 @@ sound_player:
         volume: .5
 
   # drain audio clips
-  ball_save_ball_save_saving_ball:
-    voice_ballsave:
-      action: play
+
+  # replacing slide/audio of ball save with video clip
+  # TODO: make sure video clip is sync'd with ball release
+  # ball_savxe_ball_save_saving_ball:
+  #   voice_ballsave:
+  #     action: play
   shot_drinko_i_hit:
     voice_ohyea:
       action: play
