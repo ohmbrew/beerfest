@@ -98,7 +98,7 @@ coils:
 
   c_knocker:
     number: A2-B1-3
-    default_pulse_ms: 10
+    default_pulse_ms: 35
     default_hold_power: 0.125
 
 autofire_coils:
