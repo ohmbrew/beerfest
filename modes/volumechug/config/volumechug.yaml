@@ -167,14 +167,23 @@ slides:
               value: 225
               duration: 2s
       - type: text
-        text: Hit Those Pop Bumpers
+        text: Hit Tavern, Then hit Pops
         font_name: druillet
         color: 008ce5ff
-        font_size: 100
+        font_size: 75
         anchor_x: middle
         anchor_y: top
         x: middle
-        y: top - 500
+        y: top - 475
+      - type: text
+        text: Then Hit Trojan Keg Saucer
+        font_name: druillet
+        color: 008ce5ff
+        font_size: 75
+        anchor_x: middle
+        anchor_y: top
+        x: middle
+        y: top - 575
       - type: video
         video: bubbles
         end_behavior: loop
