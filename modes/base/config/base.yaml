@@ -184,6 +184,7 @@ slides:
     - type: image
       image: background
   slide_ballsave:
+    widgets:
     - type: text
         text: BALL SAVED
         font_name: druillet
@@ -198,7 +199,7 @@ slides:
             - property: font_size
               value: 225
               duration: 3s
-    widgets:
+    
     - type: video
       video: landfill
     expire: 7.05s
