@@ -215,12 +215,12 @@ flippers:
   flipper_left:
     main_coil: c_flipper_left
     activation_switch: s_flipper_left
-    enable_events: machine_reset_phase_3, flippers_normal
+    enable_events: flippers_normal
     disable_events: flippers_flopped, game_ending
   flipper_right:
     main_coil: c_flipper_right
     activation_switch: s_flipper_right
-    enable_events: machine_reset_phase_3, flippers_normal
+    enable_events: flippers_normal
     disable_events: flippers_flopped, game_ending
 
   # swap flippers during flipperflop mode
@@ -228,12 +228,12 @@ flippers:
     main_coil: c_flipper_left
     activation_switch: s_flipper_right
     enable_events: flippers_flopped
-    disable_events: machine_reset_phase_3, flippers_normal, game_ending
+    disable_events: flippers_normal, game_ending
   flipper_flopped_right:
     main_coil: c_flipper_right
     activation_switch: s_flipper_left
     enable_events: flippers_flopped
-    disable_events: machine_reset_phase_3, flippers_normal, game_ending
+    disable_events: flippers_normal, game_ending
 
   flipper_upper:
     main_coil: c_flipper_upper

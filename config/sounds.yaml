@@ -303,20 +303,7 @@ sounds:
         attenuation: -50db
         release_point: .5 sec
         release: 1.5 sec
-  
-  # replacing ball save slide/audio with video
-  # voice_ballsave:
-  #   file: death-save-landfillalive.wav
-  #   track: voice
-  #   volume: 1.0
-  #   ducking:
-  #       target: music
-  #       delay: 0
-  #       attack: 0.3 sec
-  #       attenuation: -50db
-  #       release_point: .5 sec
-  #       release: 1.5 sec
-
+    
   # Callouts from Derek. TODO: Change to Broken Lizard when I get them
   voice_flipperflop_active:
     file: Derek-flippersflopped.wav

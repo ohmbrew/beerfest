@@ -1,16 +1,16 @@
 score:
 - !!python/tuple
-  - AAA
-  - 25791360
+  - OHM
+  - 690000
 - !!python/tuple
-  - AAA
-  - 25411490
+  - ALG
+  - 500000
 - !!python/tuple
-  - AAA
-  - 25391350
+  - ASS
+  - 250000
 - !!python/tuple
-  - CCC
-  - 25291290
+  - DIK
+  - 125000
 - !!python/tuple
-  - DDD
-  - 25201370
+  - BLO
+  - 100000
